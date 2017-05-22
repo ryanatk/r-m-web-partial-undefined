@@ -1,0 +1,21 @@
+<section class="product-recs">
+  <h2 class="product-recs__hed">{{#if hed}}{{hed}}{{else}}Product Recs Title{{/if}}</h2>
+  <ul class="product-recs__list">
+    {{#each products }}
+    <li class="product-recs__product product">
+      <a aria-label="{{name}}" href="{{link}}" class="product-recs__link">
+        <img class="product-recs__img" alt="{{name}}" src="//:0" data-src="{{img}}">
+      </a>
+      <p class="product-recs__brand u-text--lg u-margin-t--sm u-margin-b--none u-ellipsis">{{brand}}</p>
+      <p class="product-recs__price u-text--lg u-margin-b--none u-ellipsis">
+      {{#if regular-price }}
+        <span class="price__markdown">${{price}}</span>
+        <span class="price__retail--strikethrough u-padding-l--xs">${{regular-price}}</span>
+      {{else}}
+        <span class="price__retail">${{price}}</span>
+      {{/if}}
+      </p>
+    </li>
+    {{/each}}
+  </ul>
+</section

@@ -1,0 +1,39 @@
+/**
+
+  @dd-category
+--------------------------------------------------------
+  modules/_dd-category.scss
+--------------------------------------------------------
+
+  Category Dropdown
+
+------------------------------------------------------ */
+
+.dd-category__link {
+  background-color: transparent;
+  padding: 10px;
+  border-width: 0;
+  border-bottom: 1px solid $color__grey--lightest;
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: rem(2.25);
+  @extend %font-secondary--bold;
+}
+.dd-category__link:hover {
+  border-bottom: 1px solid $color__grey--lightest;
+}
+.dd-category__list {
+  background-color: $input-border-color;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: scroll;
+}
+.dd-category__list-link {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 2px;
+  width: 100%;
+  display: block;
+}

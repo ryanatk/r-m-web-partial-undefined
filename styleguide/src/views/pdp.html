@@ -1,0 +1,85 @@
+---
+title: Product Detail Page
+page-name: pdp
+fabricator: false
+layout: mock-page
+---
+
+<header class="page__header">
+  {{> page-head.nav }}
+</header>
+
+{{#> product
+    name=pdp.name
+    brand=pdp.brand
+    number=pdp.styleNumber
+    price=pdp.price
+    block-tag="div"
+    heading-tag="h1"
+    modifier="lg" }}
+
+  {{#*inline "product__image"}}
+    <!-- Image Carousel -->
+    {{> product-image-zoom-carousel }}
+  {{/inline}}
+
+  <!-- Add To Bag Form -->
+  <form method="GET" action="{{url.bag}}"
+    data-open="product-added-confirmation">
+    <div class="product__options product__options--lg">
+      {{> product-options.size modifier="left"
+          attrs='data-unavailable-text="Can\'t Find Your Size?"' }}
+      {{> product-options.color modifier="right" }}
+    </div>
+    <div class="product__notification u-clear--both u-clearfix"></div>
+    <div class="product__cta">{{> cta-buttons.add-to-bag }}</div>
+    <div class="product__delivery-date u-margin-a--xl">{{> delivery-date pdp }}</div>
+  </form>
+
+  <!-- Favorite button -->
+  {{> favorite-buttons.default }}
+
+  <!-- Product Details -->
+  <div id="reviews" class="u-padding-a--xl u-border-t u-border--xs u-border--color-lightest u-left u-text--lg u-line-height--lg"
+    itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+    {{#pdp.reviews}}
+      <h2 class="h4 u-margin-r--lg u-inline">Reviews</h2>
+      {{> star-rating filled=rating modifier="sm"}}
+      <meta itemprop="worstRating" content="1">
+      <meta itemprop="ratingValue" content="{{rating}}">
+      <meta itemprop="bestRating" content="5">
+      <span itemprop="ratingCount" class="u-margin-l--md">({{quantity}})</span>
+    {{/pdp.reviews}}
+    <a class="link u-float-right" href="{{url.reviews}}">View All</a>
+  </div>
+{{/product}}
+
+<!-- Product Recs -->
+{{> product-recs hed="You May Also Like" }}
+{{> product-recs hed="Recently Viewed" }}
+{{> product-recs hed="Styled With" }}
+
+<!-- Revolve Me -->
+{{> revolve-me }}
+
+<!-- Modal: Auto Remove Item -->
+<div id="product-added-confirmation" class="modal u-center" data-type="top">
+  <h2 class="u-margin-a--lg">Item Added To Bag</h2>
+
+  {{#with pdp }}
+    {{> product
+      image=image
+      name=name
+      brand=brand
+      number=number
+      price=sizes.[1].price
+    }}
+  {{/with}}
+
+  <div class="product__cta">
+    {{> cta-buttons.bag }}
+    <p class="u-margin-a--lg u-text--lg">
+      <a class="js-modal-close link u-text--lg" href="#site-header">Continue Shopping</a>
+    </p>
+  </div>
+</div>

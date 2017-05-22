@@ -1,0 +1,179 @@
+/**
+
+  @nav
+--------------------------------------------------------
+  modules/_nav.scss
+--------------------------------------------------------
+
+  Navigations used throughout site
+  Includes site header & footer navigations
+
+
+------------------------------------------------------ */
+
+// ==== Simplify and rewrite using flexbox with table fallback after eagle.
+.nav {
+  background: $color__black;
+
+  overflow: hidden;
+
+  /* ---------------------- */
+  /* OVERRIDE OLD FRAMEWORK */
+  /* ---------------------- */
+  /* This override shows up on the main navigation
+     code below should be deleted once possible */
+  // Clean up after eagle
+  //.nav li li
+
+  &__wrapper {
+    padding: rem(0 19);
+  }
+  
+
+
+  //.nav__item
+  &__item {
+    display: inline-block;
+    padding: 0 rem($base-unit / 2);
+
+    // First element in nav item list
+    //.nav__item:first-of-type
+    &:first-of-type {
+      padding-left: 0;
+    }
+    //.nav__item:last-of-type
+    // Last element in nav item list
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    //.nav__item:hover .nav__link
+    &:hover .nav__link {
+      // border-bottom: rem(3) solid $color__offwhite;
+    }
+  }
+
+  //.nav__link
+  &__link {
+    @extend %font-secondary--bold;
+    position: relative;
+    padding-top: rem(14);
+    padding-bottom: rem(3);
+    color: $color__white;
+    font-size: em(12);
+    letter-spacing: em(2);
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none;
+    //.nav__link--active
+    &--active,
+    &:active,
+    &.is-active {
+      transition: all .125s ease-in-out;
+      border-bottom: rem(3) solid $color__offwhite;
+    }
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+      top: 0;
+      width: rem(25);
+      height: rem(44);
+      content: '';
+    }
+    //.nav__link:before
+    &:before {
+      left: rem(-25);
+    }
+    //.nav__link:after
+    &::after {
+      right: rem(-25);
+    }
+    //.nav__link--last:after
+    &--last::after {
+      display: none;
+    }
+    //.nav__link .icon--star-whole
+    .icon--star-whole {
+      position: absolute;
+      top: rem(11);
+      right: rem(-16);
+      width: rem(14);
+      height: rem(14);
+      color: $early-access-color;
+    }
+  }
+
+  //.nav--justified
+  &--justified {
+    text-align: justify;
+    line-height: 0;
+
+    // .nav--justified .nav__wrapper
+    // Justified nav wrapper
+    .nav__wrapper {
+      display: flex;
+      justify-content: space-between;
+      &::before,
+      &::after {
+        display: none;
+      }
+      // Legacy browsers get correct justified pseudo styles
+      @include old-ie {
+        &::before,
+        &::after {
+          content: '';
+        }
+        &::after {
+          display: inline-block;
+          width: 100%;
+          color: red !important;
+        }
+      }
+    }
+  }
+
+  //.nav--md-height
+  &--md-height {
+    height: rem(38);
+    //.nav--md-height .nav__item
+    .nav__item {
+      height: rem(38);
+    }
+    //.nav--md-height .nav__link
+    .nav__link {
+      line-height: rem(39);
+      padding-bottom: rem(7);
+    }
+  }
+
+  //.nav--lg-spacing
+  &--lg-spacing {
+    .nav__item {
+      padding: rem(0 20);
+      &:first-of-type {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+
+// ==== Add sass nested style after eagle
+// Default nav item
+//.nav__item
+// .nav__item {
+//   display: inline-block;
+//   padding: 0 rem($base-unit / 2);
+
+//   // First element in nav item list
+//   //.nav__item:first-of-type
+//   &:first-of-type {
+//     padding-left: 0;
+//   }
+//   //.nav__item:last-of-type
+//   // Last element in nav item list
+//   &:last-of-type {
+//     padding-right: 0;
+//   }
+// }

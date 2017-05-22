@@ -1,0 +1,5 @@
+{
+  "elements": "Styled html elements used as building blocks of modules and throughout the website.",
+  "helpers": "Various helpers for single element quick fixes. Helper classes should be used anywhere at anytime with no dependencies or over specific styling e.g., <code>text-align: center;</code> with a helper class of <code>.u-text-center</code> All helper classes are prefixed with the 'u-' namespace('U' for utility) for readability purposes for developers.",
+  "modules": "Styled and re-usable components comprised of multiple elements that can stand alone providing content and allowing interaction for the user."
+}

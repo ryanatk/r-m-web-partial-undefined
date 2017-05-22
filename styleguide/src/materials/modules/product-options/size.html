@@ -1,0 +1,26 @@
+---
+notes: |
+  Represents the default Product Size dropdown (`select`),
+  in the "[floating label](./elements.html#forms.floating-label-select-)" style.
+
+  The default `option` ("SELECT SIZE") should have an empty `value`,
+  and must include the following `data` attributes to show product info on initial page load:
+  `delivery-date` & `regular-price`.
+
+  Additional `option` elements (for each size) should include the appropriate `value`,
+  and must include the following `data` attributes: `delivery-date`, `regular-price`, `price`.
+
+  The following `data` attributes are optional for the non-default size `option`:
+  - `oos` - when the size is out of stock
+  - `preorder` - when the size is on preorder
+  - `one-left` - when there is only 1 left of that size
+  - `final-sale` - when the size is "final sale"
+  - `sample-defect` - when the size is "final sale sample defect"
+
+  Whenever the user should not be able to select a certain `option`
+  (i.e. on PDP when the size is out of stock), add the `disabled` attribute.
+
+  For products with only one size, see "[One Size](./modules.html#product-options.one-size)"
+---
+
+{{> product-size sizes=pdp.sizes modifier=modifier attrs=attrs }}

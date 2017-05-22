@@ -1,0 +1,364 @@
+/**
+
+  @sizeguide
+--------------------------------------------------------
+  modules/_sizeguide.scss
+--------------------------------------------------------
+
+  Sizeguide Section
+
+------------------------------------------------------ */
+$sizeguide-disabled-tab: #e4e4e4;
+$sizeguide-cell-bg: #f1f1f1;
+
+.sizeguide {
+  &__header {
+    border-bottom: 1px solid black;
+  }
+  &__button {
+    padding: rem(9 4);
+    letter-spacing: .1em;
+    border-radius: rem(3);
+    width: 100%;
+  }
+  &__diagram-image {
+    border-bottom: 1px solid black;
+  }
+  &__diagram-text {
+    padding-left: rem(45);
+    padding-right: rem(45);
+    margin-top: rem(20);
+  }
+  &__scroll-content {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: rem(333)
+  }
+  &__footer {
+    padding: rem(20 26 20 26);
+  }
+}
+
+/*
+.sizeguide {
+	&__tab {
+		background-color: $sizeguide-disabled-tab;
+		border-color: $sizeguide-disabled-tab;
+		color: $color__white;
+		padding: rem(10);
+		border-width: rem(2);
+		font-size: em(10);
+		line-height: 2.35;
+		display: inline-block;
+		transition: all .25s ease-in-out;
+		border-style: solid;
+		letter-spacing: 2.25px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: initial;
+		width: 100%;
+		border-radius: rem(2);
+		&--active {
+			background: $color__black;
+			border-color: $color__black;
+		}
+	}
+  &__table {
+    background: $sizeguide-cell-bg;
+    td {
+      @extend %font-primary;
+      padding: rem(10);
+      border: rem(1) solid $color__white;
+      text-align: center;
+    }
+  }
+  &__table-header {
+    th {
+      @extend %font-secondary;
+      padding: rem(10);
+      font-size: em(12);
+      font-weight: bold;
+      letter-spacing: .12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &__table-subheader {
+   @extend %font-secondary;
+    padding: rem(10);
+    background: $color__black;
+    color: $color__white;
+    font-size: em(12);
+    font-weight: bold;
+    letter-spacing: .12em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__scroll-content {
+    overflow-y: scroll;
+    height: rem(334)
+  }
+  &__footer {
+  	padding: rem(10);
+  }
+  
+}
+
+
+
+.sizeguide .padtop {
+  padding-top: 20px;
+}
+.sizeguide_seperator {
+  padding: 0 10px;
+}
+.sizeguide_topheader h1 {
+  font: normal 14px "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+  color: #717171;
+  letter-spacing: 0.125em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: .139em;
+  color: white;
+  display: inline-block;
+}
+.sizeguide_measure p {
+  font-size: 10px;
+  margin: 9px 0;
+}
+.sizeguide_measure_title {
+  font-size: 14px !important;
+  font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+}
+.sizeguide_topheader {
+    background: black;
+    padding: 15px;
+}
+.sizeguide img {
+    width: 100%;
+} 
+
+
+
+/* Tabs for flags*/
+.sizeguide__tabs {
+  color: white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow-x: scroll;
+  text-align: center;
+  margin: 0;
+
+  &.justified {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  &.justified .sizeguide__tab {
+    display: table-cell;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.bigtext .sizeguide__tab {
+    padding-top: rem(28);
+    padding-bottom: rem(14);
+    font-size: em(15);
+  }
+  
+  &-wrap {
+    background: black;
+    border-bottom: 1px solid white;
+  }
+}
+
+.sizeguide__tab {
+  padding-top: rem(12);
+  padding-bottom: rem(5);
+  // .sizeguide__tab-wrap
+  &-wrap {
+    display: inline-block;
+    vertical-align: top;
+  }
+  // .sizeguide__tab-button
+  &-button {
+    color: $color__white;
+    cursor: pointer;
+    padding-bottom: rem(12);
+    padding-left: rem(16);
+    padding-right: rem(16);
+    text-align: center;
+    line-height: 1.5em;
+    // .sizeguide__tab-button.active
+    &.active {
+      padding-bottom: 0;
+    }
+    // .sizeguide__tab-button.active:after
+    &.active:after {
+      content: "";
+      vertical-align: bottom;
+      background-image: url('//is4.revolveassets.com/r/i/rev_global_icons.png');
+      background-repeat: no-repeat;
+      display: block;
+      background-position: -260px -1369px;
+      display: inline-block;
+      width: rem(23);
+      height: rem(12);
+      text-align: center;
+    }
+  }
+  &-label {
+    font-family: "KarlaBold", Arial, sans-serif !important;
+    color: black;
+  }
+  &-text {
+    padding-top: rem(5);
+  }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+    &-tab-wrap.active:after {
+      background-image: url('//is4.revolveassets.com/r/i/rev_global_icons_2x.png');
+      background-size: 294px;
+    }
+  }
+}
+
+/* Flags */
+.sizeguide__flag {
+  &:before {
+    background-image: url('//is4.revolveassets.com/r/i/rev_global_icons.png');
+    background-repeat: no-repeat;
+    display: block;
+    content: "";
+    display: inline-block;
+    width: rem(23);
+    height: rem(16);
+    clear: both;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
+    &:before {
+      background-image: url('//is4.revolveassets.com/r/i/rev_global_icons_2x.png');
+      background-size: 294px;
+    }
+  }
+  &.flag--left .sizeguide__flag-label {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: rem(2);
+    margin-left: rem(14);
+  }
+  &.flag--us:before {
+    background-position: -90px -1366px;
+  }
+  &.flag--gb:before {
+    background-position: -181px -1366px;
+  }
+  &.flag--eu:before {
+    background-position: -44px -1366px;
+  }
+  &.flag--ru:before {
+    background-position: -136px -1366px;
+  }
+  &.flag--cn:before {
+    background-position: -227px -1366px;
+  }
+  &.flag--jp:before {
+    background-position: -68px -1402px;
+  }
+  &.flag--au {
+    &:before {
+      background-position: -113px -1402px;
+      display: inline-block;
+      padding-top: rem(0);
+    }
+  }
+  &.flag--fr:before {
+    background-position: -158px -1402px;
+  }
+  &.flag--it:before {
+    background-position: -22px -1402px;
+  }
+  &.flag--br:before {
+    background-position: -250px -1402px;
+  }
+  &.flag--kr:before {
+    background-position: -204px -1402px;
+  }
+  &--inline {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+    .responsive-table {
+      margin-bottom: 0;
+      // .responsive-table__pinned
+      &__pinned {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #fff; 
+        overflow: hidden;
+        overflow-x: scroll;
+        border-right: 1px solid white;
+        box-shadow: -3px 0 16px #888888;
+        table {
+          border-right: none;
+          border-left: none;
+          width: 100%;
+          width: 97px!important;
+          th,
+          td {
+            white-space: nowrap;
+          }
+        }
+        td:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      &__wrapper {
+        position: relative;
+        overflow: hidden;
+        border-right: 1px solid #ccc;
+        .responsive-table__scrollable {
+          overflow: scroll;
+          overflow-y: hidden;
+        }
+      }
+      td,
+      th {
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      th.pinit,
+      td.pinit {
+        display: none;
+      }
+    }
+    
+    
+
+    
+
+    .pinned table.x2 {
+      width: 180px;
+    }
+    .table-wrapper .scrollable table.x2 {
+      margin-left: 180px;
+    }
+
+    .responsive-table__scrollable .responsive-table .sizeby_country {
+    	display: none !important;
+    }
+}

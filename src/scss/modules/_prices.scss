@@ -1,0 +1,66 @@
+/**
+
+  @prices
+--------------------------------------------------------
+  modules/_prices.scss
+--------------------------------------------------------
+
+  Prices for products
+
+------------------------------------------------------ */
+.price {
+  //prices__retail
+  @extend %h3;
+  @extend %u-ellipsis;
+  &__retail {
+    &--strikethrough {
+      color: $color__grey;
+      text-decoration: line-through;
+    }
+  }
+  //prices__markdown
+  &__markdown {
+    color: $color__error;
+    font-weight: bold;
+  }
+  // This is for price options on the PDP page.
+  // Toggle between prices using radio buttons.
+  &-option {
+    margin-bottom: 0;
+  }
+  &-option__retail {
+    font-size: em(14,12);
+    line-height: em(14,14);
+    color: $color__grey--light;
+    width: 100%;
+    display: inline-block;
+  }
+  &-option__checkbox:checked ~ label .prices-option__retail {
+    color: $color__black;
+  }
+  &-options__label {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+    &--sm {
+    margin-top: 4px;
+  }
+  &--lg {
+    font-size: em( 20 );
+  }
+  &--md {
+    font-size: em(14);
+    line-height: em(14,14);
+  }
+  &--sm {
+    font-family: $font-primary;
+    font-size: em(12);
+    line-height: em(15, 12);
+    margin-top: 4px;
+  }
+  &--font-secondary {
+    @extend %font-secondary--bold;
+  }
+}

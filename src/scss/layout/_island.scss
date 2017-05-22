@@ -1,0 +1,25 @@
+/**
+
+  @island
+--------------------------------------------------------
+  modules/_island.scss
+--------------------------------------------------------
+
+  A simple boxed off bleed using padding. Island uses the
+  $base-unit variable, while islet uses half of the same
+  variable. There's a u-full-bleed class available in
+  /_helpers.scss to counter the padding if necessary.
+
+  Usage: http://terabytenz.github.io/inuit.css-kitchensink/#island
+
+-----------------------------------------------------  */
+
+// Boxed off content
+.island {
+  padding: rem($base-unit);
+}
+
+// Smaller boxed off content
+.islet {
+  padding: rem($base-unit / 2);
+}

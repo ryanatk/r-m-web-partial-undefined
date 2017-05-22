@@ -1,0 +1,54 @@
+/**
+
+  @container
+--------------------------------------------------------
+  layout/_container.scss
+--------------------------------------------------------
+
+  The .container class is applied to restrict the
+  max-width of an element, usually a bit of content.
+
+  Often, you will place a .container div within another
+  element that has a background color. This gives you
+  a u-full-bleed background, but the content is contained
+  within the max-width.
+
+  Example: Container within a section
+  <section class="awesome-section-with-background-color">
+    <div class="container">
+      <p>Your content goes here... </p>
+    </div>
+  </section>
+
+------------------------------------------------------ */
+
+/**
+ * The $container__max-width var is used within the .container class and is applied to restrict the
+ * max-width of an element, usually a bit of content.
+ * Often, you will place a .container div within another
+ * element that has a background color. This gives you
+ * a u-full-bleed background, but the content is contained
+ * within the max-width.
+ *
+ * @example html
+ *   <section class="awesome-section-with-background-color">
+ *    <div class="container">
+ *       <p>Your content goes here... </p>
+ *    </div>
+ *   </section>
+ *
+ */
+
+$container__max-width: rem(980); // restricts width
+
+.container {
+  @extend %u-clearfix;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 rem(16);
+  @include bp-at-least($tablet) {
+    width: 100%;
+    max-width: $container__max-width;
+  }
+}

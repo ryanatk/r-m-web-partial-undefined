@@ -1,0 +1,135 @@
+/**
+
+  @slideshow
+--------------------------------------------------------
+  modules/_slideshow.scss
+--------------------------------------------------------
+
+  Slideshow Section
+
+------------------------------------------------------ */
+.slick-slideshow {
+    &__slide {
+        display: block;
+    }
+    /* hack to override 3rd party revolveme */
+    &.slick-dotted.slick-slider {
+      margin-bottom: 0;
+    }
+}
+
+.slick-carousel {
+    &--extend{
+        width: 115%;
+    }
+    &__slide {
+        display: block;
+        padding-right: rem(3);
+        padding-left: rem(7);
+        img {
+            display: inline-block !important;
+            vertical-align: top;
+        }
+    }
+    &.js-lazyload-slick {
+        height: 130px;
+    }
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin-left: 0;
+    li {
+        position: relative;
+        display: inline-block;
+        button {
+            display: block;
+            padding: rem(5);
+            opacity: .50;
+            cursor: pointer;
+            color: transparent;
+            width: rem(15);
+            height: rem(15);
+            border: #fff solid rem(3);
+            background-color: #949494;
+            border-radius: 50%;
+            margin: rem(8);
+            /* hack to override 3rd party revolveme */
+            &:before {
+              content: "";
+            }
+        }
+        &.slick-active button {
+            opacity: 1;
+        }
+    }
+}
+
+
+.cycle {
+  &-slide {
+    width: 100%;
+  }
+}
+
+.carousel {
+  &__slide-over-p--md {
+    padding-right: rem(3);
+    padding-left: rem(7);
+  }
+}
+.carousel--edge{
+  width: 120%;
+}
+
+.slideshow {
+  img {
+      vertical-align: top;
+  }
+  &__pager {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    span {
+      display: inline-block;
+      width: rem(12);
+      height: rem(12);
+      margin: 0 rem(6);
+      border: rem(2) solid $color__white;
+      border-radius: rem(12);
+      background: $color__black;
+      text-indent: -100%;
+      opacity: .3;
+      text-indent: -999em;
+    }
+    .cycle-pager-active {
+      opacity: 1;
+    }
+    &--grey {
+        span{
+            width: rem(15);
+            height: rem(15);
+            border-width: rem(3);
+            background-color: $color__grey--light;
+      }
+    }
+  }
+}
+
+.revolveme_module__slide {
+  padding-right: rem(3);
+  padding-left: rem(7);
+  /* Will need to fix this, quickfix */
+  img {
+      display: inline-block !important;
+      vertical-align: top;
+  }
+}

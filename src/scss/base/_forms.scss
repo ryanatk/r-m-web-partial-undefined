@@ -1,0 +1,907 @@
+/**
+
+  @forms
+---------------------------------------------------------
+  base/_forms.scss
+--------------------------------------------------------
+
+  Base styles for all forms and form related elements
+
+  Below you'll set styles for all forms, and if you have
+  any specific kinds of forms, like a search form that you
+  create a classname of form--search, put that at the
+  bottom of this partial.
+
+  This scss partial is pretty big.  Here's how it is
+  organized.
+
+  * Base styling on form elements
+
+  * Styles for form & form modules
+
+
+--------------------------------------------------------- */
+
+
+
+
+
+/* @text inputs
+--------------------------------------------------------
+
+  Base styles for inputs
+
+  Example: Text Input
+  <input type="text" name="schramburger" placeholder="Your Name">
+
+  Inputs can use sizing classes, .input--s .input--l
+
+  Example: Text Small Input
+  <input class="input--s" type="text" name="schramburger" placeholder="Your Name">
+
+  Example: Text Input
+  <input class="input--l" type="text" name="schramburger" placeholder="Your Name">
+
+------------------------------------------------------ */
+
+// Input elements
+input,
+select {
+  @extend %font-primary;
+  padding: rem(10);
+  border: rem(1) solid $color__grey--lighter;
+  border-radius: 0;
+  background-color: $color__offwhite;
+  color: $color__black;
+  font-size: em(14, 14);
+  text-rendering: optimizeLegibility;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+  }
+  // input pseduo classes & states
+  &:not(:focus) {
+    &:invalid {
+      border-color: $color__pink--light;
+      background-color: $color__pink--light;
+      color: $color__error;
+      @include placeholder {
+        color: $color__error;
+        opacity: 1;
+      }
+    }
+  }
+  &:required {
+    border: rem(1) solid $color__grey--lighter;
+    background-color: $color__offwhite;
+    color: $color__black;
+  }
+  &:disabled {
+    opacity: .5;
+  }
+}
+
+// Define the input placeholder color to be reused in the
+// following code
+$input-placeholder: $color__black;
+
+// Placeholders
+// scss-lint:disable MergeableSelector, VendorPrefix
+input,
+textarea,
+select {
+  @include placeholder {
+    transition: opacity .25s ease-in-out;
+    color: $input-placeholder;
+    font-family: $font-primary;
+    opacity: .3;
+  }
+}
+input.placeholder--dark,
+textarea.placeholder--dark,
+select.placeholder--dark {
+  @include placeholder {
+    opacity: 1;
+  }
+}
+// Placeholders on focus
+input:focus,
+textarea:focus,
+select:focus {
+  @include placeholder {
+    opacity: .4;
+  }
+}
+// scss-lint:enable MergeableSelector, VendorPrefix
+
+/* @select inputs
+--------------------------------------------------------
+
+  Base styling for all selects
+
+------------------------------------------------------ */
+
+select {
+  background-image: url('../imgs/svg/backgrounds/arrow-down--thin.svg');
+  width: auto;
+  height: auto;
+  padding-right: rem( 30 );
+  border-top: 0;
+  border-right: rem(10) solid $color__offwhite;
+  border-bottom: 0;
+  border-left: 0;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: rem( 15 10 );
+  color: $color__grey--light;
+  letter-spacing: normal;
+  text-transform: none;
+  box-shadow: 0 0 0 1px $color__grey--lighter;
+  cursor: pointer;
+  &.alt {
+    box-shadow: none;
+  }
+  &.is-error {
+    color: $color__error;
+    &:not(.field__select--underline) {
+      border-color: $color__pink--light;
+      background-color: $color__pink--light;
+      box-shadow: none;
+    }
+    &.field__select--underline {
+      box-shadow: 0 2px 0 0 $color__error;
+    }
+  }
+}
+
+/* @textareas
+--------------------------------------------------------
+
+  Base styling for textareas
+
+  Textareas can have .textarea--s or .textarea--l classes
+  for different sizes
+
+  Example: Textarea
+  <textarea name="schramburger">Hello, there.</textarea>
+
+  Example: Small Textarea
+  <textarea class="textarea--s" name="schramburger">Hello, there.</textarea>
+
+  Example: Large Textarea
+  <textarea class="textarea--l" name="schramburger">Hello, there.</textarea>
+
+------------------------------------------------------ */
+
+textarea {
+  @extend %font-primary;
+  width: 100%;
+  min-height: rem(96);
+  padding: rem(10);
+  border: rem(1) solid $color__grey--lighter;
+  border-radius: 0;
+  background-color: $color__offwhite;
+  color: $color__black;
+  font-size: em(14, 14);
+  text-rendering: optimizeLegibility;
+  resize: none;
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+  }
+  &.textarea--s {
+    font-size: em(10);
+  }
+  &.textarea--l {
+    font-size: em(18);
+  }
+}
+
+.textarea__counter {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  &--right {
+    top: 6%;
+    left: 87%;
+    transform: none;
+  }
+}
+
+//Used on NPS survey w/ .textarea__counter
+.textarea__label {
+  position: absolute;
+  &--left {
+    top: 6%;
+    left: 4%;
+  }
+}
+
+
+
+/* @radio and checkbox inputs
+--------------------------------------------------------
+
+------------------------------------------------------ */
+
+// Placeholders for Radio and Checkbox
+
+%radio-checkbox-base {
+  position: absolute;
+  z-index: -1;
+  clip: rect(0 0 0 0);
+  + label,
+  + .label {
+    display: inline-block;
+    cursor: pointer;
+    line-height: rem( 25 );
+    &::before {
+      display: inline-block;
+      width: rem(23);
+      height: rem(23);
+      margin-right: rem( 10 );
+      padding: 0;
+      transition: border .25s ease-in-out, background .25s ease-in-out;
+      border-width: rem(2);
+      border-style: solid;
+      border-radius: rem( 50 );
+      border-color: $input-border-color--darker;
+      background-color: $color__white;
+      color: $color__white;
+      line-height: rem( 22 );
+      content: '';
+      vertical-align: top;
+      fill: $color__white;
+    }
+  }
+  &:checked + label::before,
+  &:checked + .label::before, {
+    border-color: $color__black;
+    background-color: $color__black;
+  }
+  &:hover + label::before,
+  &:active + label::before,
+  &:checked + label::before,
+  &:hover + .label::before,
+  &:active + .label::before,
+  &:checked + .label::before {
+    border-width: rem(2);
+    border-color: $color__black;
+  }
+  &:disabled + label::before,
+  &:disabled + .label::before {
+    &:hover + label::before,
+    &:active + label::before,
+    &:checked + label::before,
+    &:hover + .label::before,
+    &:active + .label::before,
+    &:checked + .label::before {
+      border-color: inherit;
+    }
+  }
+  // is-error JS state
+  &.is-error + label,
+  &.is-error + .label {
+    color: $color__error;
+    &::before {
+      border-color: $input-error-border-color;
+    }
+  }
+  &.is-v-middle + label::before,
+  &.is-v-middle + .label::before {
+    vertical-align: middle;
+  }
+}
+
+
+// IE8 Reset
+
+%radio-checkbox-ie8 {
+  position: static;
+  padding: 0;
+  border: 0;
+  background: none;
+  z-index: 0;
+
+  clip: auto;
+  + label {
+    display: inline-block;
+    cursor: pointer;
+    &:before {
+      display: none;
+      border: 0;
+    }
+  }
+}
+
+// Label Placeholders For Radio and Checkbox
+
+%radio-checkbox-label {
+  font-size: em( 12 );
+  font-weight: normal;
+  line-height: 2;
+  text-align: left;
+}
+
+
+// Radio
+
+.form__radio {
+  @extend %radio-checkbox-base;
+  + label::before,
+  + .label::before {
+    font-size: em( 40 , 12 );
+    text-align: center;
+  }
+  + .label--middle::before {
+    transform: translateY(-50%);
+  }
+  + .label--blank {
+    
+    margin-bottom: 0;
+    &::before {
+      margin-right: 0;
+    }
+  }
+  &:checked + label::before,
+  &:checked + .label::before {
+    color: $color__black;
+    box-shadow: inset 0 0 0 5px $color__white;
+  }
+}
+
+// Checkbox
+
+.form__checkbox {
+  @extend %radio-checkbox-base;
+  + label::before,
+  + .label::before {
+    padding-left: rem( 6 );
+    transform: rotate(-138deg);
+    font-size: em( 13, 11 );
+    font-weight: bold;
+    line-height: rem( 22 );
+    content: '\0393';
+    vertical-align: top;
+  }
+  + .label--middle::before {
+    transform: translateY(-50%) rotate(-138deg);
+  }
+  + .label--blank {
+    margin-bottom: 0;
+    &::before {
+      margin-right: 0;
+    }
+  }
+}
+
+.form__radio + label,
+.form__checkbox + label {
+  @extend %radio-checkbox-label;
+}
+
+// select
+
+.form__select-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+}
+
+// Label
+
+.label {
+  &--middle {
+    position: relative;
+    padding-left: rem( 33 );
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+  }
+  &--top {
+    position: relative;
+    padding-left: rem( 33 );
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__multiline {
+    display: inline-block;
+    line-height: em( 18, 13 );
+  }
+}
+
+.lt-ie9 {
+  .form__radio,
+  .form__checkbox {
+    @extend %radio-checkbox-ie8;
+  }
+}
+
+
+
+/* @labels
+--------------------------------------------------------
+
+  Base styling for labels
+
+  Example: label
+  <label>Don't label me, I'm a free spirit</labe>
+
+------------------------------------------------------ */
+
+label {
+  display: block;
+  margin-bottom: rem( 7 );
+  font-size: em( 12 );
+}
+
+
+
+
+
+
+/* @form
+--------------------------------------------------------
+
+  Like the bootstrap convention, apply standard styling
+  on any form with the classname .form
+
+  This allows us to create modifier classnames like
+  .form--inline and .form--horizontal, which will be
+  laid out further below.
+
+------------------------------------------------------ */
+
+.form {
+  display: block;
+  padding: rem(10);
+  // border: rem(1) solid $color__grey--light;
+  // background: $color__offwhite;
+}
+
+
+
+
+/* @form-title
+--------------------------------------------------------
+
+  A form title usually is found within the header element
+  at the beginning of a form.
+
+  Example: Form title
+  <header>
+    <h2 class="form__title">Contact Us</h2>
+    <p>Use this form to contact us.  We love talking to
+    our customers.</p>
+  </header>
+
+-------------------------------------------------------- */
+
+.form__title {
+  margin: 0;
+  font-size: em(15);
+}
+
+
+
+
+/* @fieldsets
+--------------------------------------------------------
+
+  Fieldsets group together related fields.
+
+  Example: Fieldset
+  <fieldset>
+    <legend>Personal Information</legend>
+    <div class="field">
+      <label class="field__label" for="exampleInput1">Your Name</label>
+      <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
+      <span class="field__feedback"></span>
+      <span class="field__hint"></span>
+    </div>
+    <div class="field">
+      <label class="field__label" for="exampleInput2">Your Email</label>
+      <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
+      <span class="field__feedback"></span>
+      <span class="field__hint">Must be a valid email address</span>
+    </div>
+  </fieldset>
+
+  Fieldsets are also nested inside other fieldsets.
+
+  Example: Nested Fieldsets
+  <fieldset>
+    <legend>Personal Information</legend>
+    <div class="field">
+      <label class="field__label" for="exampleInput31">Your Name</label>
+      <input class="field__input="exampleInput31" type="text" required="required" placeholder="Your name">
+      <span class="field__feedback"></span>
+      <span class="field__hint"></span>
+    </div>
+    <div class="field">
+      <label class="field__label" for="exampleInput32">Your Email</label>
+      <input class="field__input="exampleInput32" type="email" required="required" placeholder="Your email">
+      <span class="field__feedback"></span>
+      <span class="field__hint">Must be a valid email address</span>
+    </div>
+    <fieldset>
+      <legend>Address</legend>
+        <div class="field">
+          <label class="field__label" for="exampleInput33">Address 1</label>
+          <input class="field__input="exampleInput33" type="text" required="required" placeholder="Address 1">
+          <span class="field__feedback"></span>
+          <span class="field__hint">Must be a valid email address</span>
+        </div>
+        <div class="field">
+          <label class="field__label" for="exampleInput34">Address 2</label>
+          <input class="field__input="exampleInput34" type="text" required="required" placeholder="Address 2">
+          <span class="field__feedback"></span>
+          <span class="field__hint">Must be a valid email address</span>
+        </div>
+    </fieldset>
+  </fieldset>
+
+-------------------------------------------------------- */
+
+fieldset {
+  border: 0;
+}
+
+/* @fields
+--------------------------------------------------------
+
+  .field wrapped each input fields
+
+-------------------------------------------------------- */
+
+.field {
+  position: relative;
+  margin-bottom: rem($base-margin);
+  // field error states
+  &.is-error {
+    color: $color__error;
+    // add as parent selector reference after eagle to remove gross over nesting
+    input {
+      &:not(:focus) {
+        border-color: $color__pink--light;
+        background-color: $color__pink--light;
+        color: $color__error;
+      }
+    }
+    // display error feedback
+    .field__feedback {
+      display: block;
+    }
+    // hide input hint
+    .field__hint {
+      display: none;
+    }
+  }
+  &--select {
+    padding-left: rem(1);
+    padding-right: rem(1);
+  }
+}
+
+
+
+// Underline Style for Input and Select fields
+// ===========================================
+
+.field__input--underline {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: rem( 2 ) solid $color__black;
+  border-left: 0;
+  background-color: transparent;
+  &:not(:focus) {
+    &:invalid {
+      border-color: $color__error;
+      background-color: transparent;
+    }
+  }
+}
+.field__select--underline {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: 0 2px 0 0 $color__black;
+}
+
+
+// Field label
+.field__label {
+  display: block;
+}
+
+// Field hint
+.field__hint {
+  // position: relative;
+  // top: rem(-5);
+  color: $color__grey--light;
+  font-size: smaller;
+  font-style: italic;
+  line-height: 1;
+}
+
+// Field feedback
+.field__feedback {
+  display: none; // hidden by default, shown if inside .is-error
+  margin-top: rem( 7 );
+  color: $color__error;
+  font-size: em(12);
+}
+
+
+
+
+
+
+/* @input group
+--------------------------------------------------------
+
+  Group containing multiple inputs, helpful for lists
+  of radios or checkboxes.  Shown below in a field...
+
+  Example: Field with input group of radios
+  <div class="field">
+    <label class="field__label">Choose your favorite</label>
+    <div class="field__input-group">
+      <label class="label--radio" for="favorite-food-1"><input id="favorite-food-1" name="favorite-food" type="radio" value="pizza"> Pizza</label>
+      <label class="label--radio" for="favorite-food-2"><input id="favorite-food-2" name="favorite-food" type="radio" value="tacos"> Tacos</label>
+      <label class="label--radio" for="favorite-food-3"><input id="favorite-food-3" name="favorite-food" type="radio" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </div>
+
+  Example: Field with input group of checkboxes
+  <div class="field">
+    <label class="field__label">Select your favorites</label>
+    <div class="field__input-group">
+      <label class="label--checkbox" for="favorite-food-4"><input id="favorite-food-4" name="favorite-food-alt" type="checkbox" value="pizza"> Pizza</label>
+      <label class="label--checkbox" for="favorite-food-5"><input id="favorite-food-5" name="favorite-food-alt" type="checkbox" value="tacos"> Tacos</label>
+      <label class="label--checkbox" for="favorite-food-6"><input id="favorite-food-6" name="favorite-food-alt" type="checkbox" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </div>
+
+  Example: Field with input group list modifier
+  <div class="field">
+    <label class="field__label">Select your favorites</label>
+    <div class="field__input-group--list">
+      <label class="label--checkbox" for="favorite-food-7"><input id="favorite-food-7" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
+      <label class="label--checkbox" for="favorite-food-8"><input id="favorite-food-8" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
+      <label class="label--checkbox" for="favorite-food-9"><input id="favorite-food-9" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
+    </div>
+    <span class="field__feedback"></span>
+    <span class="field__hint"></span>
+  </div>
+
+------------------------------------------------------ */
+
+.field__input-group {
+  @extend %u-clearfix;
+  display: block;
+  > * {
+    display: inline-block;
+    width: auto;
+    //margin-right: rem(15);
+    float: left;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.field__input-group--list {
+  display: block;
+  > * {
+    display: block;
+    margin: rem(10) 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.selection__dropdown--arrow {
+  position: absolute;
+  top: 24%;
+  right: 5%;
+}
+
+/* @input [type=range]
+--------------------------------------------------------
+
+  Base styling for input[type=range]
+
+  Example: input[type=range]
+
+  <fieldset>
+    <div class="field field__range">
+      <datalist id="range-setting" class="spread">
+        <option class="h4 option-0 spread__item">0</option>
+        <option class="h4 option-1 spread__item">1</option>
+        <option class="h4 option-2 spread__item">2</option>
+        <option class="h4 option-3 spread__item">3</option>
+        <option class="h4 option-4 spread__item ">4</option>
+        <option class="h4 option-5 spread__item ">5</option>
+        <option class="h4 option-6 spread__item ">6</option>
+        <option class="h4 option-7 spread__item ">7</option>
+        <option class="h4 option-8 spread__item ">8</option>
+        <option class="h4 option-9 spread__item ">9</option>
+        <option class="h4 option-10 spread__item ">10</option>
+      </datalist>
+
+      <label for="range" class="u-hide-visible">Range</label>
+      <input type="range" min="0" max="10"  id="range" step="1" list="range-setting" name="range" value="0" required aria-required="true">
+    </div>
+  </fieldset>
+
+------------------------------------------------------ */
+
+/* .field__range used to encapsulate datalist and input[type=range] for ease of styling */
+// .field__range{
+//   input[type=range]{
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     -ms-appearance: none;
+//     -o-appearance: none;
+//     appearance: none;
+//     background-color: $color__grey--light;
+//     width: 100%;
+//     height: rem(5);
+//     border-color: $color__grey--light;
+//     border-radius: rem(15);
+//     padding: rem(2);
+//     z-index: 10;
+//     &::-webkit-slider-runnable-track {
+//         border: none;
+//     }
+//     &::-moz-range-track {
+//         background-color: $color__grey--light;
+//         border: rem(1) solid $color__grey--light;
+//         z-index: 10;
+//     }
+//     &:focus::-moz-range-track,
+//     &:active::-moz-range-track {
+//       background-color: $color__grey--light;
+//       border: rem(1) solid $color__grey--light;
+//       outline: 0 !important;
+//     }
+//     /* Special styling for WebKit/Blink */
+//     &::-webkit-slider-thumb {
+//       -webkit-appearance: none;
+//       border: rem(2) solid $color__white;
+//       height: rem(24);
+//       width: rem(24);
+//       border-radius: 50%;
+//       background-color: $color__black;
+//       cursor: pointer;
+//       z-index: 10;
+//       margin-left: -rem(1);
+//       margin-top: 0;
+//       opacity: 0;
+//     }
+//     &:focus::-webkit-slider-thumb,
+//     &:active::-webkit-slider-thumb {
+//       opacity: 1;
+//     }
+//     input[type=range]:focus::-webkit-slider-thumb:after{
+//       opacity: 1 !important;
+//     }
+//     /* All the same stuff for Firefox */
+//     &::-moz-range-thumb {
+//       -moz-appearance: none;
+//       border: rem(2) solid $color__white;
+//       height: rem(24);
+//       width: rem(24);
+//       border-radius: 50%;
+//       background-color: $color__black;
+//       cursor: pointer;
+//       z-index: 10;
+//     }
+//     /* All the same stuff for IE */
+//     &::-ms-thumb {
+//       -ms-appearance: none;
+//       border: rem(2) solid $color__white;
+//       height: rem(24);
+//       width: rem(24);
+//       border-radius: 50%;
+//       background-color: $color__black;
+//       cursor: pointer;
+//       z-index: 10;
+//     }
+//   }
+//
+//   .datalist {
+//     width: 100%;
+//     position: relative;
+//     display: block;
+//     z-index: -1;
+//     .step{
+//       position: relative;
+//       width: rem(12);
+//       height: rem(12);
+//       border-radius: 50%;
+//       box-shadow: 0px 30px 0px $color__grey--light;
+//       padding-left: rem(2);
+//       color: $color__black;
+//       margin-bottom: 10px;
+//     }
+//     .step:first-child{
+//       box-shadow: 1px 30px 0px $color__grey--light;
+//     }
+//     .step.range-10 {
+//       box-shadow: -1px 30px 0px $color__grey--light;
+//       text-indent: -rem(6);
+//     }
+//   }
+//
+// }
+
+/* @radio__range
+-------------------------------------------------------------
+
+  .field .radio__range wrapped on each input and label field
+
+  Example:
+
+  <div class="field radio__range" role="radio">
+    <input type="radio" id="0" name="q1" value="0">
+    <label for="0">0</label>
+  </div>
+
+------------------------------------------------------------- */
+
+.radio__range {
+  input{
+    opacity: 0.1;
+    position: absolute;
+    cursor: pointer;
+    height: inherit;
+  }
+  input[type="radio"] + label {
+    cursor: pointer;
+    width: rem(15);
+    height: rem(15);
+    border-radius: 50%;
+    color: $color__grey--light !important;
+    text-align: center;
+    border: rem(1) solid $color__grey--light;
+    background-color: $color__grey--light !important;
+  }
+  input[type="radio"] + label:hover,
+  input[type="radio"] + label:active {
+    cursor: pointer;
+    width: rem(15);
+    height: rem(15);
+    border-radius: 50%;
+    color: $color__black !important;
+    text-align: center;
+    border: rem(1) solid $color__black !important;
+    background-color: $color__black !important;
+  }
+  input[type="radio"]:checked + label {
+    cursor: pointer;
+    width: rem(15);
+    height: rem(15);
+    border-radius: 50%;
+    color: $color__black !important;
+    text-align: center;
+    border: rem(1) solid $color__black !important;
+    background-color: $color__black !important;
+  }
+}

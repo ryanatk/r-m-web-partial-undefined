@@ -1,0 +1,70 @@
+// .image-carousel
+.image-carousel {
+  margin: 0;
+  list-style: none;
+
+  // .image-carousel__image
+  &__image {
+    width: auto;
+
+    // hide FOUC
+    &:not([src]) {
+      display: none;
+    }
+  }
+
+  &__previous,
+  &__next {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    margin-top: rem( -20 );
+    padding: rem( 12 );
+    border-radius: 50%;
+    &:focus {
+      z-index: 2;
+      background-color: $color__black;
+      color: $color__white;
+    }
+  }
+
+  &__previous {
+    left: rem( 8 );
+  }
+  &__next {
+    right: rem( 8 );
+  }
+
+  // .image-carousel__dots
+  &__dots {
+    height: rem( 8 );
+    margin: rem( 20 0 18 );
+    padding: 0;
+    line-height: 0;
+    text-align: center;
+
+    // elements created by slick-carousel
+    // with little control over the mark-up
+    > li {
+      display: inline-block;
+      padding: rem( 0 14 );
+      line-height: 0;
+    }
+  }
+
+  // .image-carousel__dot-button
+  &__dot-button {
+    display: inline-block;
+    text-indent: -99em;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid $color__black;
+    width: rem( 8 );
+    height: rem( 8 );
+    background-color: $color__white;
+
+    .slick-active & {
+      background-color: $color__black;
+    }
+  }
+}

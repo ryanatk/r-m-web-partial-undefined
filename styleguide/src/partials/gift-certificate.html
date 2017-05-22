@@ -1,0 +1,38 @@
+{{!-- Set the default `block-tag`, for the product wrapper --}}
+{{#*inline "wrap"}}{{#block-tag}}{{.}}{{else}}section{{/block-tag}}{{/inline}}
+
+{{!-- Set the default `heading-tag`, for the product-name --}}
+{{#*inline "hn"}}{{#heading-tag}}{{.}}{{else}}h2{{/heading-tag}}{{/inline}}
+
+<{{> wrap }}
+  class="product {{#modifier}}product--{{.}}{{/modifier}} {{productClassName}}"
+  itemscope itemtype="http://schema.org/Product">
+  <div class="product__image {{#modifier}}product__image--{{.}}{{/modifier}}">
+    {{> product-image src="//is4.revolveassets.com/images/p4/n/ct/GIFT-UE3_V1.jpg"
+        brand="Revolve" name="Gift Certificate" href=link }}
+  </div>
+
+  <div class="product__information {{#modifier}}product__information--{{.}}{{/modifier}}">
+    <div class="product__title {{#modifier}}product__title--{{.}}{{/modifier}}">
+      <{{> hn }} itemprop="name" class="product-name {{#modifier}}product-name--{{.}}{{/modifier}}">
+        ${{value}} {{#if email}}E-{{/if}}Gift Certificate
+      </{{> hn }}>
+    </div>
+
+    {{#if email }}
+      <p class="product__message {{#modifier}}product__message--{{.}}{{/modifier}}">
+        Recipient: {{email}}
+      </p>
+    {{/if}}
+
+
+    <p class="product__message {{#modifier}}product__message--{{.}}{{/modifier}}">
+      Message: {{#if message }}{{message}}{{else}}None{{/if}}
+    </p>
+
+
+    {{#if @partial-block}}
+      {{> @partial-block }}
+    {{/if}}
+  </div>
+</{{> wrap }}>

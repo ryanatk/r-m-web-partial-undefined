@@ -1,0 +1,28 @@
+/**
+
+  @spread
+--------------------------------------------------------
+  modules/_spread.scss
+--------------------------------------------------------
+
+  Spread elements evenly across
+  parents's width
+
+------------------------------------------------------ */
+.spread {
+  line-height: 0;
+  text-align: justify;
+  &__item {
+    display: inline-block;
+    margin-right: rem(7);
+  }
+  &:after {
+    display: inline-block;
+    width: 100%;
+    line-height: 0;
+    content: '';
+  }
+  .spread__item {
+    margin-right: 0;
+  }
+}

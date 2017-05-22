@@ -1,0 +1,15 @@
+{{!--
+  Displays a `product image`, with link if applicable
+  @param {String} src - the img.src
+  @param {String} brand - the product's brand
+  @param {String} name - the product's name
+  @param {String} href - href for the image to link to
+--}}
+
+{{#if href}}
+  <a class="product-link {{#modifier}}product-link--{{.}}{{/modifier}}" href="{{href}}">
+{{/if}}
+  <img itemprop="image" class="product-image {{#modifier}}product-image--{{.}}{{/modifier}}" src="{{src}}" alt="{{brand}} {{name}}" />
+{{#if href}}
+  </a>
+{{/if}}

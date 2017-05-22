@@ -1,0 +1,40 @@
+/**
+
+  @burger-icon
+--------------------------------------------------------
+  modules/_burger-icon.scss
+--------------------------------------------------------
+
+  Burger Icon Section
+
+------------------------------------------------------ */
+
+.burger-icon {
+  display: block;
+  position: relative;
+  width: rem(20);
+  height: rem(2);
+  margin-top: rem(7);
+  margin-bottom: rem(7);
+  float: left;
+  background-color: $color__black;
+  &::before {
+    top: rem(-5);
+  }
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    width: rem(20);
+    height: rem(2);
+    background-color: $color__black;
+    content: '';
+  }
+  &::after {
+    top: rem(5);
+  }
+  &__wrap {
+    padding: rem(13);
+    float: left;
+  }
+}

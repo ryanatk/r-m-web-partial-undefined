@@ -1,0 +1,187 @@
+/**
+
+  @links
+--------------------------------------------------------
+  base/_links.scss
+--------------------------------------------------------
+
+  Links, <a> etc. & Webkit tap highlight
+
+  Example: link
+  <p>Lorem Ipsum is simply <a href="#">dummy text</a> of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+-------------------------------------------------------- */
+
+
+
+
+/* @anchors
+--------------------------------------------------------
+
+  Anchors will have this base styling
+
+------------------------------------------------------ */
+
+a {
+  transition: color .25s ease-in-out;
+  color: $color__link;
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+/* @link
+--------------------------------------------------------
+
+  Alternative link class for a tags
+
+------------------------------------------------------ */
+
+// Use link as base class along with any other modifier class
+.link {
+  display: inline;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+// Underline link by default and on hover/focus
+.link--underline {
+  text-decoration: underline;
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+// No line by default or on hover/focus
+.link--noline {
+  text-decoration: none;
+  &:focus {
+    border-color: transparent;
+    text-decoration: none;
+  }
+}
+
+// lighter link color
+.link--light {
+  color: $color__link;
+  &:focus {
+    color: $color__link--hover;
+  }
+}
+
+// larger underline styled links
+.link--bold {
+  @extend %font-secondary--bold;
+  transition: border-color .25s ease-in-out;
+  color: $color__black;
+  border-bottom: rem(2) solid $color__black;
+  font-size: em(12);
+  line-height: em(13);
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:focus,
+  .active {
+    border-color: transparent;
+    text-decoration: none;
+  }
+}
+
+// larger underline styled links
+.link--light-bold {
+  @extend %font-secondary--bold;
+  transition: border-color .25s ease-in-out;
+  border-bottom: rem(2) solid transparent;
+  color: $color__grey--light;
+  font-size: em(12);
+  line-height: em(20);
+  text-decoration: none;
+  text-transform: uppercase;
+  &:focus,
+  &.active {
+    color: $color__black;
+    text-decoration: none;
+  }
+  &.active {
+    border-color: $color__black;
+  }
+}
+
+.link--sm {
+  padding-bottom: 0;
+  border-bottom: rem(1) solid transparent;
+  font-size: em( 10 );
+}
+
+
+// .link__underline_bold_small {
+//   display: inline-block;
+//   transition: color .25s ease-in-out;
+//   font-size: em(12);
+//   font-family: $font-secondary--bold;
+//   text-transform: uppercase;
+//   text-decoration: none;
+//   height: 19px;
+//   &:after {
+//     border-bottom: 2px solid #000000;
+//     content: "";
+//     display: block;
+//     margin-left: 0px;
+//     margin-top: -3px;
+//   }
+//   &:hover,
+//   &:focus {
+//     text-decoration: none;
+//     &:after {
+//       border-bottom: none;
+//     }
+//   }
+// }
+
+// .link__underline_bold_large {
+//   display: inline-block;
+//   transition: color .25s ease-in-out;
+//   font-size: em(14);
+//   font-family: $font-secondary--bold;
+//   text-transform: uppercase;
+//   text-decoration: none;
+//   height: 19px;
+//   &:after {
+//     border-bottom: 2px solid #000000;
+//     content: "";
+//     display: block;
+//     margin-left: 0px;
+//     margin-top: -2px;
+//   }
+//   &:hover,
+//   &:focus {
+//     text-decoration: none;
+//     &:after {
+//       border-bottom: none;
+//     }
+//   }
+// }
+
+
+
+
+
+
+/* @webkit-tap-highlight
+--------------------------------------------------------
+
+  Declare the webkit tap highlight style
+
+------------------------------------------------------ */
+
+body {
+  -webkit-tap-highlight-color: rba(0, 0, 0, .35);
+}

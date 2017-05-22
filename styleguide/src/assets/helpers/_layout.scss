@@ -1,0 +1,208 @@
+@import '../lib/lib';
+
+// Border
+@mixin u-borders($output: false) {
+  $prefix: selector-prefix($output);
+
+  #{$prefix}u-border {
+    // Positions
+    &-t {
+      border-top-style: solid;
+      &--none {
+        border-top-width: rem(0);
+      }
+    }
+    &-r {
+      border-right-style: solid;
+      &--none {
+        border-right-width: rem(0);
+      }
+    }
+    &-b {
+      border-bottom-style: solid;
+      &--none {
+        border-bottom-width: rem(0);
+      }
+    }
+    &-l {
+      border-left-style: solid;
+      &--none {
+        border-left-width: rem(0);
+      }
+    }
+    &-a { border-style: solid; }
+
+    // thicknesses
+    &--none      { border-width: rem(0); }
+    &--xs        { border-width: rem(1); }
+    &--sm        { border-width: rem(2); }
+    &--md        { border-width: rem(3); }
+    &--lg        { border-width: rem(4); }
+    &--xl        { border-width: rem(5); }
+
+    // Palettes
+    &--color-xdark      { border-color: $color__black; }
+    &--color-dark       { border-color: $color__grey; }
+    &--color-red { border-color: $color__red; }
+    &--color-grey-md { border-color: $color__grey--md; }
+    &--color-medium     { border-color: $color__grey--light; }
+    &--color-light      { border-color: $color__grey--lighter; }
+    &--color-lightest   { border-color: $color__grey--lightest; }
+    &--color-xlight     { border-color: $color__offwhite; }
+    &--color-xxlight    { border-color: $color__white; }
+  }
+}
+
+
+/// Brief consistent assignment of thicknesses across padding & margin
+/// @param {string} $prop - which property: margin or padding?
+/// @param {map} $widths - key-value pairs of human-readable & numeric widths
+/// @todo Update improper BEM usage (thicknesses are not modifiers)
+@mixin loop-thru-sides($pre, $prop, $widths) {
+  $all-sides: (
+    a: '',
+    t: '-top',
+    r: '-right',
+    b: '-bottom',
+    l: '-left',
+    tb: ('-top', '-bottom'),
+    lr: ('-left', '-right')
+  );
+
+  // loop thru sides to append abbrev to className
+  @each $abbrev, $css-sides in $all-sides {
+    // loop thru $widths to append thickness
+    @each $thickness, $px in $widths {
+      // loop thru $css-sides, from $all-sides values
+      @each $side in $css-sides {
+        // declare css selector & property { $prop-side: width }
+        #{$pre}u-#{$prop}-#{$abbrev}--#{$thickness} {
+          #{$prop}#{$side}: #{$px};
+        }
+      }
+    }
+  }
+}
+
+// Padding
+@mixin u-paddings($output: false) {
+  $prefix: selector-prefix($output);
+  @include loop-thru-sides($prefix, 'padding', $padding-widths);
+}
+
+@include u-paddings();
+
+// Margin
+@mixin u-margins($output: false) {
+  $prefix: selector-prefix($output);
+  @include loop-thru-sides($prefix, 'margin', $margin-widths);
+
+}
+
+@include u-margins();
+
+%u-margin-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  float: none;
+}
+
+%u-neg-margin-t-xs { margin-top: -$margin-xs; }
+%u-neg-margin-t-sm { margin-top: -$margin-sm; }
+
+
+// Floats & Clears
+%u-float-left {
+  float: left !important;
+}
+%u-float-right {
+  float: right !important;
+}
+%u-float-none {
+  float: none !important;
+}
+
+%u-clearfix {
+  @include clearfix();
+}
+
+%u-clear-both {
+  clear: both;
+}
+
+%u-clear-left {
+  clear: left;
+}
+
+%u-clear-right {
+  clear: right;
+}
+
+
+// Width
+%u-full-width {
+  width: 100% !important;
+}
+
+%u-width-auto {
+  width: auto !important;
+}
+
+
+// Display
+%u-block {
+  display: block;
+}
+
+%u-inline {
+  display: inline;
+}
+
+%u-inline-block {
+  display: inline-block;
+}
+
+%u-inline-block-top {
+  display: inline-block;
+  vertical-align: top;
+}
+%u-inline-block-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+%u-inline-block-bottom {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+
+// Positioning
+%u-relative {
+  position: relative;
+}
+
+%u-absolute {
+  position: absolute;
+}
+
+@mixin u-absolute() {
+  @extend %u-absolute;
+
+  &--top {
+    top: 0;
+  }
+  &--right {
+    right: 0;
+  }
+  &--bottom {
+    bottom: 0;
+  }
+  &--left {
+    left: 0;
+  }
+}
+
+%u-static {
+  position: static;
+}

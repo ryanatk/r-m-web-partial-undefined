@@ -1,0 +1,23 @@
+{{!--
+    Used for text selects throughout the site
+    @param {string} id - select element's id, label's for attribute, and select's name (unless otherwise passed in)
+    @param {string} label - label's text, select's placeholder (unless otherwise passed in)
+    @param {string} [fieldClassName] - optional className applied to the field
+    @param {string} [labelClassName] - optional className applied to the label
+    @param {string} [selectClassName] - optional className applied to the select
+    @param {boolean} [required] - Whether a field should be required
+    @param {string} [attrs] - Any additional attributes
+--}}
+
+{{!-- TODO: should we try to use the input partial for "one size"?
+            or make it its own thing like this? --}}
+
+<div class="field field--select {{fieldClassName}}">
+  <label class="field__label {{labelClassName}}" for="{{id}}">{{label}}</label>
+  <input id="{{id}}"
+    class="field__one {{selectClassName}}"
+    type="text"
+    name="{{id}}"
+    disabled="true"
+    {{{attrs}}} />
+</div>

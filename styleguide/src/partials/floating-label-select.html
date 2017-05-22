@@ -1,0 +1,28 @@
+{{!--
+    Creates a floating label select
+    @param {string} id - select element's id, label's for attribute, and select's name (unless otherwise passed in)
+    @param {string} label - text node for the label
+    @param {string} [index] - when used within a loop, this string is appended to the id
+    @param {string} [name] - select element's name (defaults to id)
+    @param {string} [fieldClassName] - optional className applied to the field
+    @param {string} [fieldModifier] - optional modifier applied to field className
+    @param {string} [labelClassName] - optional className applied to the label
+    @param {string} [selectClassName] - optional className applied to the select
+    @param {boolean} [required] - Whether a field should be required
+    @param {string} [attrs] - Any additional attributes
+--}}
+
+<div class="floating-label {{fieldClassName}}
+  {{#if fieldModifier}}{{#if fieldClassName}} {{fieldClassName}}--{{fieldModifier}} {{/if}}{{/if}}">
+  <label class="floating-label__label {{labelClassName}}" for="{{id}}{{#index}}-{{.}}{{/index}}">{{label}}</label>
+  <select
+      class="floating-label__select {{selectClassName}}"
+      id="{{id}}{{#index}}-{{.}}{{/index}}"
+      name="{{#name}}{{.}}{{else}}{{id}}{{/name}}"
+      {{#required}}required{{/required}}
+      {{{attrs}}}>
+
+    {{!-- pass in all the options as HTML --}}
+    {{> @partial-block }}
+  </select>
+</div>

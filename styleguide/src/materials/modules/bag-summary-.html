@@ -1,0 +1,29 @@
+---
+notes: |
+  Presents a summary of items in the bag, notably: `subtotal`, `shipping`, and `total`.
+  Optionally can show additional lines, based on conditions.
+---
+
+{{#*inline "line" }}
+  <p class="bag-summary__line{{#modifier}} bag-summary__line--{{.}}{{/modifier}}">
+    {{{html}}} <span class="bag-summary__price">{{price}}</span>
+  </p>
+{{/inline}}
+
+<section class="bag-summary {{class}}">
+  <h2 class="u-hide-visible">Bag Summary</h2>
+
+  {{> line html="Subtotal (7)" price="$456.00" }}
+
+  {{#if preorder }}
+    {{> line html="Preorder (1)" price="$143.00" }}
+  {{/if}}
+
+  {{> line html='FREE Shipping <a class="bag-summary__link" href="./shipping-options.html"><span class="u-hide-visible">Shipping</span>Options</a>' price="$0.00" }}
+
+  {{> line html="Estimated Total" price="$500.00" modifier="total" }}
+
+  {{#if preorder }}
+    <p class="bag-summary__message">* Your preorder item(s) totaling $143.00 will be charged when it is shipped to you.</p>
+  {{/if}}
+</section>

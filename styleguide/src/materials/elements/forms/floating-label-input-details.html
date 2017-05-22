@@ -1,0 +1,31 @@
+---
+notes: |
+  Demonstrates how to use the more details floating label. The purpose behind
+  this is to always show a more details icon regardless of the state of the
+  field. When the icon has been interacted with, it will open a modal and
+  leverages all it's supported [data attributes of a modal](modules.html#modals).
+
+  Here are the minimum data attributes/requirements needed:
+
+  - `data-iconify-details`: Denotes to use the iconify floating label for a more
+  details
+  - `data-open`: A reference to a modal that exists in the DOM
+
+  See the [modal documentation](modules.html#modals) for more details on how
+  to configure a modal.
+---
+
+{{> floating-label-input
+    id="floating-label-input-details-icons"
+    type="email"
+    label="Email"
+    placeholder="Gimmie Your Email"
+    inputClassName="floating-label__input--inset"
+    fieldAttrs='
+    data-iconify-details="More Details"
+    data-open="more-details-modal-example"
+    '}}
+
+<div id="more-details-modal-example" class="modal u-center" data-type="default-modal">
+  <p>Nobody calls me lebowski, you got the wrong guy, I'm the the dude, man</p>
+</div>

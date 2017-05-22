@@ -1,0 +1,50 @@
+/**
+
+  @tabs
+--------------------------------------------------------
+  modules/_tabs.scss
+--------------------------------------------------------
+
+  Tabs Section
+
+------------------------------------------------------ */
+
+.tabs {
+  padding: rem(0 17);
+  &__tab {
+    margin: 0;
+    width: 100%;
+    border-bottom: rem(2) solid $color__grey--lighter;
+    color: $color__grey--light;
+    vertical-align: middle;
+    text-align: center;
+    line-height: rem(58);
+
+    @extend %h4;
+    &.is-active {
+      color: $color__black;
+      border-color: $color__black;
+    }
+  }
+}
+
+.section-tab {
+  float: left;
+  text-align: center;
+  &__title {
+    text-transform: uppercase;
+    font-family: $font-secondary;
+    font-size: em(12);
+    color: $color__black;
+    letter-spacing: rem(1);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: rem(2) solid $color__black;
+    width: 100%;
+    padding: rem(10) 0;
+    &.js-not-active { 
+      color: $color__grey--light;
+      border-bottom: rem(2) solid $color__grey--light;
+    }
+  }
+}

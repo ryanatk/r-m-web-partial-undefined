@@ -1,0 +1,16 @@
+@import '../lib/vars';
+
+/**
+
+  @product oos
+
+**/
+
+// .product-oos
+.product-oos {
+  @extend %h4;
+  display: block;
+  padding: rem( 23 14 21 );
+  background-color: $color__pink--light;
+  color: $color__error;
+}

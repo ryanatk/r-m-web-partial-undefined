@@ -1,0 +1,10 @@
+---
+notes: |
+  - `name` & `location` are optional when submitting a review, so many reviews will not include an `author` when displaying
+  - `comments` are also optional
+  - more info on [microdata in docs](./docs.html#microdata)
+---
+
+{{#with reviews.customer.[0] }}
+  {{> review }}
+{{/with}}

@@ -1,0 +1,116 @@
+/**
+
+  @beauty-shop
+--------------------------------------------------------
+  modules/_beauty-shop.scss
+--------------------------------------------------------
+
+  Beauty Shop Feature
+
+------------------------------------------------------ */
+
+.beautyshop {
+  &__banner {
+    &-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      width: 95%;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+  &-lp {
+    &__cta {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translate3d(0, -50%, 0);
+      text-align: center;
+    }
+    &__button {
+      color: $color__black;
+      width: 85%;
+      margin: 0 auto;
+      background-color: $color__white;
+      height: rem(46);
+      line-height: rem(46);
+      border: rem(2) solid $color__black;
+    }
+    &__banner {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+  &-lb {
+    &__hover-container {
+      overflow: hidden;
+    }
+    &__hover-container:hover .beautyshop-lb__video-hover,
+    &__hover-container:focus .beautyshop-lb__video-hover,
+    &__hover-container:active .beautyshop-lb__video-hover {
+      display: block;
+    }
+    &__hover-container:hover .beautyshop-lb__video-img,
+    &__hover-container:focus .beautyshop-lb__video-img,
+    &__hover-container:active .beautyshop-lb__video-img {
+      transform: scale(1.1);
+    }
+    &__video-container {
+      position: relative;
+      padding-bottom: 57.5%; /* 16:9 */
+      margin-top: 2%;
+      height: 0;
+    }
+    &__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      &-title {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translate3d(0, -50%, 0);
+        text-align: center;
+        color: $color__white;
+        text-transform: uppercase;
+      }
+      &-hover {
+        position: absolute;
+        top: 0;
+        background-color: rgba(0, 0, 0, .5);
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        text-align: center;
+        display:none;
+      }
+      &-img {
+        transition: all 0.5s ease;
+      }
+      &-play,
+      &-play:hover,
+      &-play:focus,
+      &-play:active, {
+        position: absolute;
+        border: rem(3) solid $color__white;
+        background: transparent;
+        color: $color__white;
+        text-align: center;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+    &__vlogger-portrait {
+      border-radius: 50%;
+    }
+  }
+  &-nav__img{
+    width: 7%;
+    padding-bottom: 1%;
+  }
+}

@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+
+var WebpackDevServer = require('webpack-dev-server');
+var webpack = require('webpack');
+var path = require('path');
+var merge = require('lodash/merge');
+var program = require('commander');
+var casperTask = require('../tasks/casperjs');
+var devServerConfig = require('../webpack/webpack.development.config').devServer;
+
+program
+  .version('0.0.1')
+  .option('-p, --port [port]', 'The port of the dev server', 8080)
+  .option('-f, --files [files]', 'The test files')
+  .option('-l, --log-level [log-level]', 'The log level for casperjs')
+  .option('-i, --includes [includes]', 'Any additional includes used for running against casperjs')
+  .option('-d, --disable-server', 'Disables the development server', false)
+  .parse(process.argv);
+
+function runCasperTask() {
+  return casperTask(program.files, {
+      logLevel: program.logLevel,
+      includes: program.includes,
+      phantomjs: require('phantomjs-prebuilt').path
+    });
+}
+
+if (program.disableServer) {
+  runCasperTask();
+} else {
+  var compiler = webpack(require('../webpack/webpack.build.config'), function(err, stats) {
+    if (err) {
+      console.error(err);
+      process.exit(-1);
+      return;
+    }
+
+    runCasperTask()
+      .then(closeServer(0), closeServer(-1))
+  });
+
+  var server = new WebpackDevServer(compiler, merge({}, devServerConfig, {
+    hot: false,
+    quiet: true
+  }));
+
+  function closeServer(code) {
+    return function() {
+      console.log('closing server running on', program.port);
+      server.close();
+      // This is only in place until webpack 2.0 is out of beat where the server
+      // is properly closed. Therefore, this hack is in place to kill the
+      // current process based on the results from the tests results. It's not
+      // graceful but it works.
+      process.exit(code);
+    };
+  }
+
+  server.listen(program.port, 'localhost', function() {
+    console.log('Webpack Dev Server started at', program.port);
+    console.log('Hold on, I\'m building things, OK?');
+  });
+}

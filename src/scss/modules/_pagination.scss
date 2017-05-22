@@ -1,0 +1,106 @@
+/**
+
+  @pagination
+--------------------------------------------------------
+  modules/_pagination.scss
+--------------------------------------------------------
+
+  pagination
+
+-----------------------------------------------------  */
+
+.pagination {
+  // .pagination__controls
+  &__controls {
+    padding: rem(4 0);
+    line-height: normal;
+    vertical-align: middle;
+    position: relative;
+    // .pagination__controls-icon
+    &-icon {
+      margin-top: 14px;
+    }
+    // .pagination__controls--round
+    // Round controls modifier
+    &--round {
+      width: rem(64);
+      height: rem(64);
+      margin: 0 rem(10);
+      padding: 0;
+      color: $color__black;
+      vertical-align: middle;
+      &:hover,
+      &:active {
+        color: $color__grey--light;
+      }
+    }
+
+    // .pagination__controls--disabled
+    // Round controls modifier
+    &--disabled{
+      //color: $color__offwhite;
+      &:hover,
+      &:active {
+        color: $color__offwhite;
+      }
+      .btn {
+        color: $color__offwhite;
+      }
+    }
+    // .pagination__controls .btn
+    .btn {
+      padding: 1%;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+    &-text {
+      position: absolute;
+      margin-top: 3px;
+      text-align: center;
+      text-transform: uppercase;
+      width: 100%;
+    }
+  }
+  &__controls-left {
+    float: left;
+  }
+  &__controls-right {
+    float: right;
+  }
+
+  &__wrap {
+    @extend %u-clearfix;
+    margin-top: 30px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  // .pagination__item
+  // List item for pagination
+  &__item {
+    display: inline-block;
+  }
+  &__list {
+    list-style: none;
+    display: inline;
+    font-size: 14px;
+    font-family: "Karla", Arial, sans-serif;
+    position: relative;
+    top: 15px;
+  }
+  // .pagination__link
+  // List item link
+  &__link {
+    padding: 0 rem(6);
+    color: $color__grey--light;
+    // .pagination__link.active
+    // Active list item
+    &.active {
+      color: $color__black;
+      text-decoration: underline;
+    }
+  }
+
+}

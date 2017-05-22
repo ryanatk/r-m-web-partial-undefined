@@ -1,0 +1,164 @@
+
+/**
+
+  @burger menu
+--------------------------------------------------------
+  base/_mixin-burger.scss
+--------------------------------------------------------
+
+// Usage: @include burger();
+// Use Pixel Values
+
+------------------------------------------------------ */
+
+/**
+ * CSS Menu Burger
+ *
+ * @param {Width}         $width (30px)  -  desired width
+ * @param {Height}        $height (5px)  -  desired height
+ * @param {Gutter}        $gutter (3px)  -  desired gutter space
+ * @param {Color}         $color (#000)  -  desired color
+ * @param {Border Radius} $border-radius (0)  -  desired border radius
+ * @param {Transition}    $transiition-duration (.3s)  -  desired transition time
+ * @example scss
+ * // @include burger();
+ * // @include burger('20px', 5px, 5px, $color, 2px, .1s);
+ *
+ */
+
+@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+
+    position: relative;
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+
+    &, &:before, &:after {
+        display: block;
+        width: $width;
+        height: $height;
+        background-color: $color;
+        @if $border-radius != 0 {
+            border-radius: $border-radius;
+        }
+
+        -webkit-transition-property: background-color, -webkit-transform;
+        -moz-transition-property: background-color, -moz-transform;
+        -o-transition-property: background-color, -o-transform;
+        transition-property: background-color, transform;
+
+        -webkit-transition-duration: $transition-duration;
+        -moz-transition-duration: $transition-duration;
+        -o-transition-duration: $transition-duration;
+        transition-duration: $transition-duration;
+    }
+
+    &:before, &:after {
+        position: absolute;
+        content: "";
+    }
+
+    &:before {
+        top: -($height + $gutter);
+    }
+
+    &:after {
+        top: $height + $gutter;
+    }
+}
+
+
+
+
+/**
+ * Select all parts of the burger
+ * @content Custom overrides of default mixin in mixin format
+ * @access private
+ * @requires burger
+ * @example scss
+ * // @include burger-parts {
+ * //   color: black;
+ * // }
+ */
+@mixin burger-parts {
+    &, &:before, &:after {
+        @content;
+    }
+}
+
+/**
+ * Top part of the burger
+ * @content Custom overrides of default mixin in mixin format
+ * @access private
+ * @requires burger
+ * @example scss
+ * // @include burger-top {
+ * //   color: black;
+ * // }
+ */
+@mixin burger-top {
+    &:before {
+        @content;
+    }
+}
+
+/**
+ * Middle part of the burger
+ * @access private
+ * @requires burger
+ * @example scss
+ * // @include burger-middle {
+ * //   color: black;
+ * // }
+ */
+@mixin burger-middle {
+    & {
+        @content;
+    }
+}
+
+/**
+ * Bottom part of the burger
+ * @access private
+ * @requires burger
+ * @example scss
+ * // @include burger-bottom {
+ * //   color: black;
+ * // }
+ */
+@mixin burger-bottom {
+    &:after {
+        @content;
+    }
+}
+
+/**
+ * Burger animations
+ * @access private
+ * @requires burger
+ * @example scss
+ * // @include burger-to-cross();
+ * // @include burger-to-cross(green);
+ */
+@mixin burger-to-cross($active-color: $color) {
+    & {
+        background-color: transparent;
+    }
+    &:before {
+        -webkit-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        -moz-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        -ms-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        -o-transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+        background-color: $active-color;
+    }
+    &:after {
+        -webkit-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        -moz-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        -ms-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        -o-transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+        background-color: $active-color;
+    }
+}

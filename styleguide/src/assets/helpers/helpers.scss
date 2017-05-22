@@ -1,0 +1,157 @@
+/// Helpers are reusable, abstract classes
+/// that can be used anwhere and override existing styles.
+/// Each class is responsible for doing one job well.
+
+@import 'colors';
+@import 'layout';
+@import 'links';
+@import 'misc';
+@import 'text';
+@import 'visibility';
+
+// Colors
+@include u-colors($output: true);
+/// @deprecated Improper BEM usage (not a modifier)
+.u-color--black         { @extend .u-color-black; }
+.u-color--grey          { @extend .u-color-grey; }
+.u-color--grey-light    { @extend .u-color-grey-light; }
+.u-color--grey-lighter  { @extend .u-color-grey-lighter; }
+.u-color--none          { @extend .u-color-none; }
+.u-color--offwhite      { @extend .u-color-offwhite; }
+.u-color--white         { @extend .u-color-white; }
+.u-color--blue          { @extend .u-color-blue; }
+.u-color--blue-dark     { @extend .u-color-blue-dark; }
+.u-color--pink          { @extend .u-color-pink; }
+.u-color--pink-light    { @extend .u-color-pink-light; }
+.u-color--pink-dark     { @extend .u-color-pink-dark; }
+.u-color--error         { @extend .u-color-error; }
+.u-color--red           { @extend .u-color-red; }
+
+@include u-bg-colors($output: true);
+/// @deprecated Improper BEM usage (not a modifier)
+.u-bg-color--black         { @extend .u-bg-color-black; }
+.u-bg-color--grey          { @extend .u-bg-color-grey; }
+.u-bg-color--grey-md       { @extend .u-bg-color-grey-md; }
+.u-bg-color--grey-light    { @extend .u-bg-color-grey-light; }
+.u-bg-color--grey-lighter  { @extend .u-bg-color-grey-lighter; }
+.u-bg-color--grey-lightest { @extend .u-bg-color-grey-lightest; }
+.u-bg-color--none          { @extend .u-bg-color-none; }
+.u-bg-color--offwhite      { @extend .u-bg-color-offwhite; }
+.u-bg-color--white         { @extend .u-bg-color-white; }
+.u-bg-color--blue          { @extend .u-bg-color-blue; }
+.u-bg-color--blue-dark     { @extend .u-bg-color-blue-dark; }
+.u-bg-color--pink          { @extend .u-bg-color-pink; }
+.u-bg-color--pink-light    { @extend .u-bg-color-pink-light; }
+.u-bg-color--pink-dark     { @extend .u-bg-color-pink-dark; }
+.u-bg-color--green         { @extend .u-bg-color-green; }
+.u-bg-color--error         { @extend .u-bg-color-error; }
+
+.u-muted { @extend %u-muted; }
+.u-invert { @extend %u-invert; }
+.u-invert-grey { @extend %u-invert-grey; }
+.u-invert-svg { @extend %u-invert-svg; }
+.u-invert-link { @extend %u-invert-link; }
+.u-invert-input { @extend %u-invert-input; }
+/// @deprecated Improper BEM usage (not a modifier)
+.u-invert--svg { @extend .u-invert-svg; }
+.u-invert--link { @extend .u-invert-link; }
+.u-invert--input { @extend .u-invert-input; }
+
+// Layout
+@include u-borders($output: true);
+@include u-paddings($output: true);
+@include u-margins($output: true);
+.u-margin-center { @extend %u-margin-center; }
+/// @deprecated Use `.u-margin-center`
+.u-margin--center { @extend .u-margin-center; }
+.u-neg-margin-t-xs { @extend %u-neg-margin-t-xs; }
+.u-neg-margin-t-sm { @extend %u-neg-margin-t-sm; }
+/// @deprecated Use `.u-neg-margin-t-sm`
+.u-neg-margin-t--sm { @extend .u-neg-margin-t-sm; }
+.u-clearfix { @extend %u-clearfix; }
+.u-float-left { @extend %u-float-left; }
+.u-float-right { @extend %u-float-right; }
+.u-float-none { @extend %u-float-none; }
+.u-clear-left { @extend %u-clear-left; }
+.u-clear-right { @extend %u-clear-right; }
+.u-clear-both { @extend %u-clear-both; }
+.u-clear { @extend .u-clear-both; }
+.u-full-width { @extend %u-full-width; }
+.u-width-auto { @extend %u-width-auto; }
+.u-block { @extend %u-block; }
+.u-inline { @extend %u-inline; }
+.u-inline-block { @extend %u-inline-block; }
+.u-inline-block-top { @extend %u-inline-block-top; }
+.u-inline-block-middle { @extend %u-inline-block-middle; }
+.u-inline-block-bottom { @extend %u-inline-block-bottom; }
+.u-relative { @extend %u-relative; }
+.u-absolute { @include u-absolute(); }
+.u-static { @extend %u-static; }
+
+// Links
+@include links($output: true);
+
+// Misc
+.u-pointer { @extend %u-pointer; }
+.u-pointer-default { @extend %u-pointer-default; }
+/// @deprecated Use `.u-pointer-default`
+.u-pointer--default { @extend .u-pointer-default; }
+.u-no-select { @extend %u-no-select;}
+
+// Text
+.u-center { @extend %u-center; }
+.u-left { @extend %u-left; }
+.u-right { @extend %u-right; }
+.u-font-primary { @extend %font-primary; }
+.u-font-primary-bold { @extend %font-primary-bold; }
+.u-font-secondary { @extend %font-secondary; }
+.u-font-secondary-bold { @extend %font-secondary-bold; }
+.u-font-secondary-lighter { @extend %font-secondary-lighter; }
+.u-font-secondary-condensed { @extend %font-secondary-condensed; }
+/// @deprecated Use `.u-font-primary-bold`
+.u-font-primary--bold { @extend .u-font-primary-bold; }
+/// @deprecated Use `.u-font-secondary-bold`
+.u-font-secondary--bold { @extend .u-font-secondary-bold; }
+/// @deprecated Use `.u-font-secondary-lighter`
+.u-font-secondary--lighter { @extend .u-font-secondary-lighter; }
+/// @deprecated Use `.u-font-secondary-condensed`
+.u-font-secondary--condensed { @extend .u-font-secondary-condensed; }
+.u-text {
+  &--sm { @extend %text-sm; }
+  &--md { @extend %text-md; }
+  &--lg { @extend %text-lg; }
+  &--inherit { @extend %text-inherit; }
+}
+.u-weight-normal { @extend %u-weight-normal; }
+.u-weight-bold { @extend %u-weight-bold; }
+.u-underline { @extend %u-underline; }
+.u-text-decoration-none { @extend %u-text-decoration-none; }
+.u-letter-space { @extend %u-letter-space; }
+.u-line-height { @extend %u-line-height; }
+.u-uppercase { @extend %u-uppercase; }
+.u-lowercase { @extend %u-lowercase; }
+.u-capitalize { @extend %u-capitalize; }
+.u-text-transform-none { @extend %u-text-transform-none; }
+.u-ellipsis { @extend %u-ellipsis; }
+.u-truncate { @extend %u-truncate; }
+.u-letter-space { @extend %u-letter-space; }
+.u-letter-space-sm { @extend %u-letter-space-sm; }
+.u-letter-space-xs { @extend %u-letter-space-xs; }
+/// @deprecated Use `.u-letter-space-sm`
+.u-letter-space--sm { @extend .u-letter-space-sm; }
+.u-line-height { @extend %u-line-height; }
+.u-line-height-xs { @extend %u-line-height-xs; }
+.u-line-height-sm { @extend %u-line-height-sm; }
+.u-line-height-one { @extend %u-line-height-one; }
+.u-line-height-lg { @extend %u-line-height-lg; }
+/// @deprecated Use `.u-line-height-sm`
+.u-line-height--sm { @extend .u-line-height-sm; }
+/// @deprecated Use `.u-line-height-lg`
+.u-line-height--lg { @extend .u-line-height-lg; }
+
+// Visibility
+.u-hide { @extend %u-hide; }
+@include visibility-hide-at-breakpoints($output: true);
+/// @deprecated Instead use `.u-screen-reader`
+.u-hide-visible { @extend %u-screen-reader; }
+.u-screen-reader { @extend %u-screen-reader; }

@@ -1,0 +1,20 @@
+---
+notes: |
+  Illustrates how a rating scale works when form validation has been applied. To
+  apply form validation to the rating scale, add the `validate-radio-group`
+  className to the element containing the rating scale. Therefore, the element
+  containing the rating scale should at least have a `rating-scale` and
+  `form-section` classNames.
+---
+
+<form class="form form-no-submit" data-validate="true">
+  {{> rating-scale
+      starRatings=writeReview.starRatings
+      required=true
+      append-id="-required"
+      fieldset-class-name="validate-radio-group"
+      error-message="Please rate this item"
+      insert-error-after=".form-section__title"}}
+  <button type="submit" class="btn">Submit Rating Scale</button>
+</form>
+

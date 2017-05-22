@@ -1,0 +1,20 @@
+/**
+
+  @close button
+--------------------------------------------------------
+  modules/_close-button.scss
+--------------------------------------------------------
+
+Close Button
+
+------------------------------------------------------ */
+
+.close-button {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: rem(16);
+  padding: rem(3);
+  z-index: 10;
+}

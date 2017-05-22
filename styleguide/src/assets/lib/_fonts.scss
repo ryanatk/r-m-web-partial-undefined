@@ -1,0 +1,243 @@
+/**
+
+  @fonts
+--------------------------------------------------------
+  base/_fonts.scss
+--------------------------------------------------------
+
+  Define the fonts used in this app and declare silent
+  classes to be used in your CSS. Fonts are declared first
+  and font weight is declared at the bottom
+
+  If you are using a webfont, use the @embed-font() mixin
+  from base/_mixin-font-face-importer.scs
+
+  Usage: Create a font-family named "interstate-light" using a font at /fonts/interstate_light-webfont.woff (and other extensions)
+  @include embed-font("interstate-light", "/fonts/interstate_light-webfont");
+
+-------------------------------------------------------- */
+
+
+
+/* Import All custom Fonts
+--------------------------------------------------------*/
+// Karla Font Faces
+@include embed-font("Karla", "//is4.revolveassets.com/r/font/karla-regular-webfont", normal);
+@include embed-font("Karla", "//is4.revolveassets.com/r/font/karla-bold-webfont", bold);
+
+// Proxima Nova Font Faces
+@include embed-font("ProximaNova", "//is4.revolveassets.com/r/font/proximanova-thin-webfont", 200);
+@include embed-font("ProximaNova", "//is4.revolveassets.com/r/font/ProximaNova-Reg-webfont", normal);
+@include embed-font("ProximaNova", "//is4.revolveassets.com/r/font/ProximaNova-Bold-webfont", bold);
+@include embed-font("ProximaNovaCondensedBlk", "//is4.revolveassets.com/r/font/proxima_nova_alt_cond_black-webfont", normal);
+
+// EB Garamond Font Faces
+@include embed-font("EB Garamond", "//is4.revolveassets.com/r/font/ebgaramond-regular-webfont", normal);
+
+// Nanum Gothic Font Faces
+@include embed-font("NanumGothic", "//is4.revolveassets.com/r/font/nanumgothic-regular-webfont", normal);
+@include embed-font("NanumGothic", "//is4.revolveassets.com/r/font/nanumgothic-bold-webfont", bold);
+
+
+
+
+/* @font-primary
+--------------------------------------------------------
+
+  Font Stack: Karla
+
+  Primary font with all variations
+
+  Usage: use serif regular on body and bold on h1
+  body {
+    @extend %font-primary;
+  }
+
+  h1 {
+    @extend %font-primary--bold;
+  }
+
+------------------------------------------------------ */
+
+// Karla Regular variable
+$font-primary: 'Karla', 'Arial', sans-serif;
+
+// Karla Regular placeholder
+%font-primary {
+  font-family: $font-primary;
+  font-weight: normal;
+}
+
+// Karla Bold placeholder
+%font-primary--bold {
+  font-family: $font-primary;
+  font-weight: bold;
+}
+
+
+
+
+/* @font-secondary
+--------------------------------------------------------
+
+  Font Stack: Proxima Nova
+
+  Secondary font with all variations
+
+  Usage: use serif regular on .btn
+  .btn {
+    @extend %font-secondary;
+  }
+
+  .title {
+    @extend %font-secondary--bold;
+  }
+
+------------------------------------------------------ */
+
+// Proxima Nova Regular variable
+$font-secondary: 'ProximaNova', 'Helvetica', 'Arial', sans-serif;
+$font-secondary--lighter: 'ProximaNova', 'Helvetica', 'Arial', sans-serif;
+$font-secondary--condensed: 'ProximaNovaCondensedBlk', 'Helvetica', 'Arial', sans-serif;
+
+// Proxima Nova Regular placeholder
+%font-secondary {
+  font-family: $font-secondary;
+  font-weight: normal;
+}
+
+
+// ProximaNova Bold placeholder
+%font-secondary--bold {
+  font-family: $font-secondary;
+  font-weight: bold;
+}
+
+// ProximaNova Bold placeholder
+%font-secondary--lighter {
+  font-family: $font-secondary--lighter;
+  font-weight: lighter;
+}
+
+// ProximaNova Bold placeholder
+%font-secondary--condensed {
+  font-family: $font-secondary--condensed;
+  font-weight: normal;
+}
+
+
+/* @font-japanese
+--------------------------------------------------------
+
+  Font Stack: Karla, ProximaNovaBold, & Localized fonts
+
+  Japanese font with all variations
+
+  Usage: use serif regular on .btn
+  .btn {
+    @extend %font-japanese;
+  }
+
+  .title {
+    @extend %font-japanese--bold;
+  }
+
+------------------------------------------------------ */
+
+// Karla Regular with localized fallback fonts variable
+$font-japanese: 'Karla', 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ', Meiryo;
+
+// Karla Regular with localized fallback fonts placeholder
+%font-japanese {
+  font-family: $font-japanese !important;
+  font-weight: normal;
+}
+
+// ProximaNova Bold with localized fallback fonts placeholder
+%font-japanese--bold {
+  font-family: $font-japanese !important;
+  font-weight: bold;
+}
+
+
+
+
+/* @font-korean
+--------------------------------------------------------
+
+  Font Stack: Karla, ProximaNovaBold, & Localized fonts
+
+  Korean font with all variations
+
+  Usage: use serif regular on .btn
+  .btn {
+    @extend %font-korean;
+  }
+
+  .title {
+    @extend %font-korean--bold;
+  }
+
+------------------------------------------------------ */
+
+// Karla Regular with localized fallback fonts variable
+$font-korean: 'Karla', 'NanumGothic', sans-serif;
+
+// Karla Regular with localized fallback fonts placeholder
+%font-korean {
+  font-family: $font-korean !important;
+  font-weight: normal;
+}
+
+// ProximaNova Bold with localized fallback fonts placeholder
+%font-korean--bold {
+  font-family: $font-korean !important;
+  font-weight: bold;
+}
+
+
+
+
+/* @font-wedding
+--------------------------------------------------------
+
+  Font Stack: EB Garamond
+
+  wedding font with all variations
+
+  Usage: use serif regular on body and bold on h1
+  body {
+    @extend %font-wedding;
+  }
+
+------------------------------------------------------ */
+
+// EB Garamond Regular variable
+$font-wedding: "EB Garamond", "Helvetica", "Arial", sans-serif;
+
+// EB Garamond Regular placeholder
+%font-wedding {
+  font-family: $font-wedding;
+  font-weight: normal;
+}
+
+
+/* @font-weight
+--------------------------------------------------------
+
+  Font Weight placeholders.
+
+  Usage: use font weight on .nav__item
+  .nav__item {
+    @extend %serif--regular;
+  }
+
+------------------------------------------------------ */
+
+%font-weight {
+  font-weight: 400;
+}
+
+%font-weight--bold {
+  font-weight: 700;
+}

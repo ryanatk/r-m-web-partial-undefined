@@ -1,0 +1,153 @@
+/**
+
+  @page-header
+--------------------------------------------------------
+  modules/_page-header.scss
+--------------------------------------------------------
+
+  Page Header Styles : Mainly for PDP + PLP
+
+------------------------------------------------------ */
+.page-header {
+  &__title {
+    height: rem(60);
+    margin: 0;
+    border-bottom: rem(1) solid $color__border;
+    color: $color__black;
+    font-size: em(14);
+    letter-spacing: normal;
+    line-height: rem(60);
+    vertical-align: middle;
+    background: $color__white;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    &--dark {
+      &.page-header__title {
+        @extend %font-secondary--bold;
+        background-color: $color__black;
+        color: $color__white;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+    }
+  }
+  &__filter {
+    @extend %font-primary;
+    font-size: 12px;
+    text-transform: capitalize;
+    padding-left: 6px;
+  }
+  &__title--dropdown {
+    &:after {
+      display: inline-block;
+      top: 50%;
+      width: rem(10);
+      height: rem(10);
+      margin-top: rem(-3);
+      margin-left: rem(10);
+      transform: translate(0, rem(-2)) rotate(-45deg);
+      transition: transform .2s linear;
+      border-bottom: rem(2) solid $color__black;
+      border-left: rem(2) solid $color__black;
+      content: '';
+    }
+    &.is-active {
+      &:after {
+        margin-top: rem(-3);
+        transform: translate(0, 35%) rotate(-225deg);
+      }
+      &~.page-header__dropdown .page-header__dropdown-overlay,
+      &~.page-header__dropdown-overlay, {
+        opacity: 0.8;
+        padding-top: 300%;
+        transition: opacity .10s linear;
+      }
+    }
+  }
+  &__dropdown {
+    position: relative;
+  }
+  &__dropdown-overlay {
+    background: $color__black;
+    position: absolute;
+    width: 100%;
+    padding-top: 0;
+    z-index:1;
+    display:block;
+    opacity: 0;
+    transition: opacity .5s linear;
+    z-index: 8;
+  }
+  &__nav-list {
+    position: absolute;
+    width: 100%;
+    max-height: rem(272);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 9;
+    &--top {
+        z-index: 10;
+        max-height: rem(330);
+        @media (min-width: 360px) {
+          max-height: rem(390);
+        }
+        @media (min-width: 400px) {
+          max-height: rem(510);
+        }
+    }
+  }
+  &__link {
+    @extend %font-primary;
+    color: $color__black;
+    letter-spacing: normal;
+    vertical-align: middle;
+    background-color: $color__white;
+    display: block;
+    width: 100%;
+    padding: rem(22 10 21 10);
+    border-bottom: rem(1) solid $color__border;
+    text-decoration: none;
+    margin: 0;
+    &:hover {
+      background-color: $color__white;
+      color: $color__black;
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+      background-color: $color__black;
+      color: $color__white;
+      text-decoration: none;
+    }
+  }
+  &__arrow {
+    margin-top: rem(4);
+    padding-right: rem(20);
+    float: right;
+  }
+  &__sub-title {
+    @extend %headings;
+    height: rem(60);
+    color: $color__black;
+    font-size: em(14);
+    line-height: rem(60);
+    vertical-align: middle;
+    background: $color__grey--md;
+    display: block;
+    width: 100%;
+    border-bottom: rem(1) solid $color__border;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__country {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: rem(12);
+    z-index: 2;
+  }
+}

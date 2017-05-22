@@ -1,0 +1,36 @@
+---
+notes: |
+  The submit modal is used to make an ajax request and show a modal that
+  leverages work done in the [modal module](#modals). It will take all the
+  fields in the form, serialize them based on the content type, and if the
+  submission was successful, it will show a modal. If a form has a `submit-modal`
+  CSS class name, then this treatment will be applied. Here are the required
+  data attributes for submit modal:
+
+  - `data-submit-modal-url`: a string containing the URL for the ajax request,
+    defaults back to the action attribute on the form, but if that doesn't
+    exist, an error is thrown
+
+  Here are the optional data attributes that can be applied to the submit modal:
+
+  - `data-submit-modal-method`: a string containing the method of the request,
+    falls back to the method attribute on the form, but if that doesn't exist,
+    falls back to GET
+  - `data-submit-modal-headers`: an object of request headers
+  - `data-submit-modal-request-content-type`: the content type for the request,
+    defaults to application/x-www-form-urlencoded
+  - `data-submit-modal-request-charset`: a string containing the character set,
+    defaults to UTF-8
+---
+<form class="submit-modal"
+      data-open="submit-modal-example"
+      data-submit-modal-url="https://mockbin.org/bin/5b5f61e0-0dd4-44a3-849f-70d479c62d15">
+
+  {{> floating-label-input id="dude" label="His dudeness, duder, or" }}
+  {{> floating-label-input id="world-of" label="You are entering a world of" }}
+  <button type="submit" class="btn btn--full">Get a modal dude!</button>
+</form>
+
+<div id="submit-modal-example" class="modal u-center" data-type="default-modal">
+  <p>I myself dabbled in pacifism once, that was before 'Nam of course</p>
+</div>

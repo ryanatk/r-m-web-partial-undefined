@@ -1,0 +1,181 @@
+@import '../layouts/grids';
+@import '../layouts/widths';
+@import '../helpers/links';
+@import '../helpers/text';
+@import '../helpers/visibility';
+
+/**
+
+  @product
+
+**/
+
+.product {
+  position: relative;
+  text-align: center;
+
+  &--horizontal {
+    @extend %g;
+    margin: rem( 0 $base-margin );
+    padding: rem( $base-pad 0 );
+    border-bottom: 1px solid $color__grey--lighter;
+    text-align: left;
+  }
+
+  // .product__image
+  &__image {
+    position: relative;
+    display: inline-block;
+    margin-bottom: rem( 10 );
+
+    &--default {
+      width: 30%;
+    }
+
+    &--horizontal {
+      @extend %gc;
+      @extend %n-1-of-3;
+      margin-top: rem( 4 );
+      max-width: rem( 182 ); // this is the size of the image requested
+    }
+
+    &--lg {
+      width: 60%;
+    }
+
+    &--full {
+      width: 100%;
+      margin: 0;
+      padding: rem( 0 $base-margin );
+    }
+  }
+
+  // .product__information
+  &__information {
+    &--lg {
+      padding: rem( 0 $base-margin );
+    }
+
+    &--horizontal {
+      @extend %gc;
+      @extend %n-2-of-3;
+    }
+  }
+
+  // .product__badge
+  &__badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    &--horizontal {
+      position: static;
+      margin-bottom: rem( 4 );
+    }
+  }
+
+  // .product__title, .product__detail
+  &__title,
+  &__detail {
+    @extend %text-md;
+
+    &--carousel {
+      margin: rem(0 48);
+      overflow: hidden;
+    }
+  }
+
+  // .product__message
+  &__message {
+    @extend %text-md;
+
+    &--horizontal {
+      margin: rem( $base-margin 0 );
+    }
+  }
+
+  // .product__price
+  &__price {
+    margin-bottom: rem( $base-margin );
+
+    &--horizontal {
+      margin-top: rem( 16 );
+    }
+  }
+
+  // .product__options
+  &__options {
+    @extend %u-clearfix;
+    margin-bottom: rem( $base-margin );
+
+    &--lg {
+      margin-bottom: rem( $base-margin/2 );
+    }
+
+    &--horizontal {
+      margin-top: rem( $base-margin );
+    }
+  }
+
+  @mixin two-options( $border-side ) {
+    float: left;
+    width: 50%;
+    border-#{$border-side}: rem(4) solid $color__white;
+    margin-bottom: rem( 0 );
+  }
+
+  // .product__size, .product__color
+  // .product__quantity, .product__value
+  &__size,
+  &__color,
+  &__quantity,
+  &__value {
+
+    &--left {
+      @include two-options("right");
+    }
+
+    &--right {
+      @include two-options("left");
+    }
+  }
+
+  // .product__notification, .product__policy
+  &__notification,
+  &__policy {
+
+    &--horizontal {
+
+      // TODO: update implementation to allow for BEM modifiers (coming soon)
+      .notification__description,
+      .delivery-date {
+        display: inline;
+        &::after {
+          content: ".";
+        }
+      }
+    }
+
+    // .product__notification .delivery-date
+    .delivery-date {
+      @extend %text-md;
+    }
+  }
+
+  // .product__remove
+  &__remove {
+    clear: both;
+    margin-bottom: 0;
+  }
+
+  // .product__remove-button
+  &__remove-button {
+    @extend %text-lg;
+    @extend %link;
+  }
+
+  // .product__remove-button
+  &__remove-name {
+    @extend %u-screen-reader;
+  }
+}

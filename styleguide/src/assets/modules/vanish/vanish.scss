@@ -1,0 +1,16 @@
+%vanish-default-state {
+  transition: opacity 400ms ease-in;
+  opacity: 1;
+}
+
+%vanish-hidden-state {
+  opacity: 0;
+}
+
+.vanish {
+  @extend %vanish-default-state;
+
+  &--hide {
+    @extend %vanish-hidden-state;
+  }
+}

@@ -1,0 +1,77 @@
+/**
+
+  @sizeguide
+--------------------------------------------------------
+  modules/_sizeguide.scss
+--------------------------------------------------------
+
+  Sizeguide Section
+
+------------------------------------------------------ */
+$sizeguide-disabled-tab: #e4e4e4;
+$sizeguide-cell-bg: #f1f1f1;
+
+.sizeguide {
+	&__tab {
+		background-color: $sizeguide-disabled-tab;
+		border-color: $sizeguide-disabled-tab;
+		color: $color__white;
+		padding: rem(10);
+		border-width: rem(2);
+		font-size: em(10);
+		line-height: 2.35;
+		display: inline-block;
+		transition: all .25s ease-in-out;
+		border-style: solid;
+		letter-spacing: 2.25px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: initial;
+		width: 100%;
+		border-radius: rem(2);
+		&--active {
+			background: $color__black;
+			border-color: $color__black;
+		}
+	}
+  &__table {
+    background: $sizeguide-cell-bg;
+    td {
+      @extend %font-primary;
+      padding: rem(10);
+      border: rem(1) solid $color__white;
+      text-align: center;
+    }
+  }
+  &__table-header {
+    th {
+      @extend %font-secondary;
+      padding: rem(10);
+      font-size: em(12);
+      font-weight: bold;
+      letter-spacing: .12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &__table-subheader {
+   @extend %font-secondary;
+    padding: rem(10);
+    background: $color__black;
+    color: $color__white;
+    font-size: em(12);
+    font-weight: bold;
+    letter-spacing: .12em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &__scroll-content {
+    overflow-y: scroll;
+    height: rem(334)
+  }
+  &__footer {
+  	padding: rem(10);
+  }
+  
+}

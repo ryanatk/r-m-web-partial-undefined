@@ -1,0 +1,31 @@
+@import '../lib/mixins/stars';
+
+.star-rating {
+  $block: &;
+  margin: rem(6 0);
+
+  &__list {
+    margin: 0;
+    list-style: none;
+  }
+
+  &--md,
+  &--sm {
+    display: inline-block;
+    font-size: 0;
+    margin: 0;
+    #{$block}__list {
+      line-height: 12px; // keep stars from being too tall
+    }
+  }
+
+  &--md &__item {
+    top: -4px; // vertically align stars with inline text
+  }
+
+  &--sm &__item {
+    top: -6px; // vertically align stars with inline text
+  }
+
+  @include stars(5, $block);
+}

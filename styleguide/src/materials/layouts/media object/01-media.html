@@ -1,0 +1,30 @@
+---
+notes: |
+
+  The 'media' object is a common pattern in OOCSS.
+
+  It consists of a wrapper element with a class of `.media` and then two child elements, one that contains
+  an image or video that is wrapped in either a class of `.media__left` to float left or `.media__right` to float right, and the other contains text.
+
+  This used commonly in bios, or comments where you have an avatar to one side, and the comment next to it.
+
+---
+
+  <article class="media">
+    <div class="media__left">
+      <img src="http://fillmurray.com/300/300">
+    </div>
+    <div class="media__body">
+      <p>This media is set to the left with content on the right.</p>
+    </div>
+  </article>
+
+
+  <article class="media">
+    <div class="media__right">
+      <img src="http://fillmurray.com/300/300">
+    </div>
+    <div class="media__body">
+      <p>This media is set to the right with content on the left.</p>
+    </div>
+  </article>

@@ -1,0 +1,32 @@
+/*
+  @text-helpers mixins
+
+  These mixins contain all global styles for text-helpers
+*/
+
+// Text Sizes
+@mixin text-sm() {
+  font-size: $text-sm;
+  line-height: rem( 14 );
+  text-transform: none;
+  font-weight: normal;
+}
+
+@mixin text-md() {
+  font-size: $text-md;
+  line-height: rem( 16 );
+  text-transform: none;
+  font-weight: normal;
+}
+
+@mixin text-lg() {
+  font-size: $text-lg;
+  line-height: rem( 18 );
+  text-transform: none;
+  font-weight: normal;
+}
+
+@mixin text-inherit() {
+  font-size: inherit;
+  line-height: inherit;
+}

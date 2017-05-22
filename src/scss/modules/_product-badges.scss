@@ -1,0 +1,50 @@
+/**
+
+  @product badges
+--------------------------------------------------------
+  modules/_product-badges.scss
+--------------------------------------------------------
+
+  Product's Badges
+
+------------------------------------------------------ */
+
+.product-badges {
+  @extend %font-secondary;
+  font-size: em(12);
+  font-weight: bold;
+  letter-spacing: .125em;
+  text-transform: uppercase;
+  &__early-access {
+    display: inline-block;
+    padding: rem(3 10);
+    border: rem(1) solid $early-access-color;
+    color: $early-access-color;
+    .icon {
+      position: relative;
+      top: rem(-1);
+      transition: all 0.5s ease;
+    }
+    &:hover,
+    &:focus {
+      color: $early-access-color;
+      text-decoration: none;
+      .icon {
+        transform: rotate( 75deg );
+      }
+    }
+  }
+  &__oos {
+    display: inline-block;
+    margin-bottom: rem(12);
+    padding: rem(8);
+    border: 0;
+    background: $input-error-background-color;
+    color: $error-text-color;
+    font-weight: bold;
+    &--border {
+      border: rem(1) solid $error-text-color;
+    }
+  }
+
+}

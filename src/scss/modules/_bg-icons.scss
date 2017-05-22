@@ -1,0 +1,45 @@
+/**
+
+  @bg-icons
+--------------------------------------------------------
+  base/_bg-icons.scss
+--------------------------------------------------------
+
+  Background Icons
+
+**/
+
+.bg-icon {  //Default styling
+  display: inline-block;
+  width: rem(43);
+  //height: rem(55);
+  @include background-image("cc-generic");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  //Background SVG Icons
+  &--cc-unionpay {
+    @include background-image("cc-unionpay");
+  }
+  &--cc-visa {
+    @include background-image("cc-visa");
+  }
+  &--cc-mc {
+    @include background-image("cc-mc");
+  }
+  &--cc-amex {
+    @include background-image("cc-amex");
+  }
+  &--cc-discover {
+    @include background-image("cc-discover");
+  }
+  &--cc-jcb {
+    @include background-image("cc-jcb");
+  }
+  &--cc-diners {
+    @include background-image("cc-diners");
+  }
+  &--cc-paypal {
+    @include background-image("cc-paypal");
+  }
+}

@@ -1,0 +1,29 @@
+{{!--
+    Creates a floating label input
+    @param {string} id - input element's id, label's for attribute, and input's name (unless otherwise passed in)
+    @param {string} label - label's text, input's placeholder (unless otherwise passed in)
+    @param {string} [name] - input element's name (defaults to id)
+    @param {string} [placeholder] - input element's name (defaults to id)
+    @param {string} [fieldClassName] - optional className applied to the field
+    @param {string} [labelClassName] - optional className applied to the label
+    @param {string} [inputClassName] - optional className applied to the input
+    @param {boolean} [required] - Whether a field should be required
+    @param {string} [attrs] - Any additional attributes
+--}}
+
+<div class="floating-label {{fieldClassName}}" {{{fieldAttrs}}}>
+  <label for="{{id}}" class="floating-label__label floating-label__label--hidden {{labelClassName}}">{{label}}</label>
+  <input
+    type="{{#type}}{{.}}{{else}}text{{/type}}"
+    class="floating-label__input {{inputClassName}}"
+    id="{{id}}"
+    name="{{#name}}{{.}}{{else}}{{id}}{{/name}}"
+    placeholder="{{#placeholder}}{{.}}{{else}}{{label}}{{/placeholder}}"
+    value="{{value}}"
+    {{#pattern}}pattern="{{.}}"{{/pattern}}
+    {{#required}}required{{/required}}
+    {{{attrs}}}>
+  {{#if @partial-block}}
+    {{> @partial-block }}
+  {{/if}}
+</div>

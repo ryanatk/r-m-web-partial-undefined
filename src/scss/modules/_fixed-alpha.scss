@@ -1,0 +1,39 @@
+/**
+
+  @fixed-alpha
+--------------------------------------------------------
+  modules/_fixed-alpha.scss
+--------------------------------------------------------
+
+  fixed alpha list
+  this is used for designer index
+
+------------------------------------------------------ */
+.fixed-alpha {
+  position: fixed;
+  top: rem(100);
+  right: rem(0);
+  list-style: none;
+  display: block;
+  text-align: center;
+  z-index: 100;
+  @include bp-at-least($mobile) {
+    display: none;
+  }
+  &--condensed {
+    display: none;
+    @include bp-at-least($mobile) {
+      display: block;
+    }
+  }
+  &__item {
+    line-height: rem(17);
+  }
+  &__item-link {
+    color: $color__grey--light;
+    display: block;
+    height: rem(17);
+    width: rem(47);
+    background: transparent;
+  }
+}

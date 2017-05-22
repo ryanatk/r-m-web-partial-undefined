@@ -1,0 +1,273 @@
+/**
+
+  @buttons
+--------------------------------------------------------
+  base/_buttons.scss
+--------------------------------------------------------
+
+  Buttons are a common UI component in sites/apps.  They
+  are usually either anchor, button, or input elements
+  with a classname of 'btn'.  They provide an easily
+  identified clickable target. This file uses a series
+  of private mixins that are only to be used in this partial.
+
+  Buttons commonly have modifying classes that apply
+  specific styles.  Examples of these are .btn--large and
+  .btn--inline
+
+  Example: Buttons using anchors
+  <p><a href="#" class="btn">Regular Button</a></p>
+
+  Example: Buttons using buttons
+  <p><button class="btn">Regular Button</button></p>
+
+*/
+
+
+// ==== Clean up after eagle
+// We use these to build padding for buttons.
+// $button-sm: 10;
+// $button-md: 16;
+// $button-lg: 20;
+
+// // We use this to control the display property.
+// $button-display: inline-block;
+// $button-margin-bottom: rem(20);
+
+// // We use these to control button text styles.
+// $button-font-family: $font-primary;
+// $button-font-color-alt: #333;
+// $button-font-sm: em(11);
+// $button-font-md: em(12);
+// $button-font-lg: em(14);
+// $button-font-weight: normal;
+// $button-font-align: center;
+
+// // We use these to control button border styles.
+// $button-border-width: 2;
+// $button-border-style: solid;
+
+// // Default Button Settings
+// $button-default-background: #000;
+// $button-default-border-color: #000;
+// $button-default-text: #fff;
+// $button-default-hover-color: #000;
+// $button-default-hover-background: #fff;
+// $button-default-hover-border: #000;
+
+// // Lighter Button
+// $button-lighter-background: transparent;
+// $button-lighter-border-color: #fff;
+// $button-lighter-color: #fff;
+// $button-lighter-hover-color: #000;
+// $button-lighter-hover-background: #fff;
+// $button-lighter-hover-border: #000;
+
+
+// @function calculate-button-padding($padding, $border) {
+//   $newPad: ();
+
+//   @each $pad in $padding {
+//     $newPad: append( $newPad, rem($pad - $border));
+//   }
+//   @return $newPad;
+// }
+
+// @mixin create-button ( $background-color: $button-default-background, $color: $button-default-text, $border-color: $button-default-border-color ) {
+//   display: inline-block;
+//   padding: calculate-button-padding($button-md, $button-border-width);
+//   font-size: $button-font-md;
+//   font-family: $font-secondary--bold;
+//   text-decoration: none;
+//   text-align: center;
+//   text-transform: uppercase;
+//   letter-spacing: em(2);
+//   line-height: rem(11);
+//   background-color: $background-color;
+//   color: $color;
+//   border: rem($button-border-width) solid $border-color;
+//   transition: all .25s ease-in-out;
+//   cursor: pointer;
+//   &:hover,
+//   &:active,
+//   &:focus {
+//     border-color: $button-default-hover-border;
+//     background-color: $button-default-hover-background;
+//     color: $button-default-hover-color;
+//     text-decoration: none;
+//   }
+// }
+
+
+// scss-lint:disable SpaceAfterComma
+/* @_btn-colors
+--------------------------------------------------------
+
+  Button border, BG, and text color vars. Default vars
+  are passed as agruments in button-colors
+
+------------------------------------------------------ */
+
+$btn-disabled-bg-color: #e4e4e4;
+$btn-disabled-color: #ffffff;
+
+$btn-border-color--dark  : $color__black;
+$btn-u-bg-color--dark    : $color__black;
+$btn-txt-color--dark     : $color__black;
+
+$btn-border-color--light : $color__white;
+$btn-u-bg-color--light   : $color__white;
+$btn-txt-color--light    : $color__white;
+
+
+// @_btn-colors privatemixin
+@mixin _btn-colors(
+  // default mixin vars
+  $btn-border-color : $color__grey--lighter,
+  $btn-u-bg-color   : $color__white,
+  $btn-txt-color    : $color__grey,
+  $btn-border-hover : $color__black,
+  $btn-bg-hover     :  $color__black,
+  $btn-txt-hover    : $color__black) {
+
+  border-color: $btn-border-color;
+  background-color: $btn-u-bg-color;
+  color: $btn-txt-color;
+  .h4 {
+    color: $btn-txt-color;
+  }
+  // pseudo states
+  &:hover,
+  &:active,
+  &:focus,
+  &.active  {
+    border-color: $btn-border-hover;
+    color: $btn-txt-hover;
+  }
+  &:hover .h4 {
+    color: $btn-txt-hover;
+  }
+}
+
+
+
+
+
+/* @_btn-sizing
+--------------------------------------------------------
+
+  Font and padding vars. Values are passed through
+  em and rem functions, respectively. Default vars
+  are passed as default arguments in button-sizing
+  mixin.
+
+------------------------------------------------------ */
+
+/* Desktop Settings
+---------------------
+
+  Desktop Variables
+
+--------------------- */
+// Default border width
+$btn-border-width  : 1;
+
+// Default medium button sizing
+$btn-padding--md        : 7;
+$btn-padding-tops--md   : 3;
+$btn-font-size--md      : 12;
+$btn-line--md           : em(16, 12);
+
+
+
+
+// @_btn-sizing private mixin
+@mixin _btn-sizing(
+
+  // default mixin vars
+  $btn-padding      : $btn-padding--md,
+  $btn-padding-tops : $btn-padding-tops--md,
+  $btn-font-size    : $btn-font-size--md,
+  $btn-line         : $btn-line--md) {
+
+  padding: rem($btn-padding-tops $btn-padding $btn-padding-tops $btn-padding);
+  border-width: rem($btn-border-width);
+  font-size: em($btn-font-size);
+  line-height: $btn-line;
+}
+
+
+
+/* @btn
+--------------------------------------------------------
+
+  Default Button
+  Style .btn class, button element, and input button element
+  .btn class is required for btn modifier classes
+
+  Example: .btn
+  <a class="btn">Small button</a>
+  <button>Button</button>
+  <input type="button" value="Use this in Forms Only!">
+
+------------------------------------------------------ */
+.push-button {
+  @extend %font-primary;
+  @include _btn-colors;
+  @include _btn-sizing;
+  border-radius: rem(5);
+  display: inline-block;
+  transition: all .25s ease-in-out;
+  border-style: solid;
+  letter-spacing: 0;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  white-space: initial;
+  min-height: rem(60);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    text-decoration: none;
+  }
+  &[disabled] {
+    background-color: $btn-disabled-bg-color;
+    border-color:  $btn-disabled-bg-color;
+    color: $btn-disabled-color;
+    cursor: default;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      background-color: $btn-disabled-bg-color;
+      border-color:  $btn-disabled-bg-color;
+      color: $btn-disabled-color;
+    }
+  }
+}
+
+input:checked + .push-button {
+  background-color: $color__black;
+  border-color: $color__black !important;
+  color: $color__white !important;
+  .h4 {
+    color: $color__white !important;
+  }
+}
+
+
+.push-button .push-button__toggle--visiblility {
+  opacity: 0;
+  height: 0;
+  transition: all .15s ease-in-out;
+}
+input:checked + .push-button .push-button__toggle--visiblility {
+  opacity: 1;
+  height: auto;
+}

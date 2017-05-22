@@ -1,0 +1,40 @@
+{{!--
+  Carousel of images, using javascript to flip thru
+  @param {array} images - img.src strings
+  @param {string} alt - alt attribute used for all img elements
+  @param {string} idPrefix - string inserted at beginning of `li` id attribute
+  @param {string} [modifier] - modifier to be added to the wrapper
+  @param {string} [dataAttrs] - string of additional data attributes and values
+
+  Zoom options (All 3 must be set)
+  @param {array} images - Images used consumed when zooming
+  @param {string} tapToZoom - i18n text used for the tap to zoom badge
+  @param {string} noImages - i18n text used when no images have been provided
+--}}
+
+<ul tabindex="0"
+  class="image-carousel {{#modifier}}image-carousel--{{.}}{{/modifier}}"
+  data-next-arrow-title="Next" data-previous-arrow-title="Previous"
+  {{#if images}}data-images='{{{json images}}}'{{/if}}
+  {{#tap-to-zoom}}data-tap-to-zoom="{{.}}"{{/tap-to-zoom}}
+  {{#no-images}}data-no-images="{{.}}"{{/no-images}}
+  {{{dataAttrs}}}>
+
+  {{#each images}}
+    <li class="image-carousel__item"
+      id="{{../idPrefix}}-img-{{@index}}" tabindex="-1">
+
+      <img itemprop="image" class="image-carousel__image"
+        alt="{{../brand}} {{../name}}"
+        data-zoom="{{this}}"
+        {{#if @first}}
+           src="{{#if src}}{{src}}{{else}}{{this}}{{/if}}"
+        {{else}}
+           data-lazy="{{#if src}}{{src}}{{else}}{{this}}{{/if}}"
+        {{/if}}
+      />
+
+    </li>
+  {{/each}}
+
+</ul>

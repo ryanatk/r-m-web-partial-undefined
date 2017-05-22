@@ -1,0 +1,171 @@
+@import "../lib/lib";
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Third Party
+
+---------------------------------------------------------  */
+// @import '~slick-carousel/slick/slick';
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Reusable objects that are combinations
+  of elements and other modules.
+
+  When you create a new module, make sure the partial is
+  in the modules directory, and you import it below
+
+  Comment out any partial you don't need for this app.
+
+---------------------------------------------------------  */
+
+
+// Site Modules
+// @import 'site';
+@import 'site-header';
+@import 'back-button';
+@import 'revolve-logo';
+// @import 'site-main';
+@import 'site-footer';
+
+// Component Modules
+// @import 'alerts';
+@import 'beauty-shop';
+@import 'bg-icons';
+@import 'bg-image';
+@import 'burger-icon';
+@import 'branding';
+@import 'site-search';
+@import 'site-sign-up';
+@import 'site-controls';
+@import 'currency_flags';
+@import 'cc-icons';
+// @import 'callouts';
+// @import 'chat';
+@import 'dropdown-overlay';
+// @import 'heroes';
+@import 'modals';
+@import 'nav';
+@import 'nav-side';
+@import 'nav-list';
+// @import 'ntf';
+// @import 'tooltips';
+// @import 'crumbs';
+// @import 'region-flags';
+// @import 'sidebar';
+@import 'accordion';
+// @import 'thumbnails';
+// @import 'video-embeds';
+@import 'badges';
+@import 'dd-refine';
+@import 'dd-category';
+@import 'double-callout';
+@import 'form-search';
+// @import 'search';
+@import 'prices';
+@import 'notification';
+@import 'delivery-date';
+@import 'product';
+@import 'product-titles';
+@import 'product-sections';
+@import 'product-details';
+@import 'product-quickview';
+@import 'reviews';
+@import 'range-meter';
+@import 'product-recs';
+@import 'product-image-carousel';
+@import 'product-colors';
+// @import 'product-lists';
+@import 'product-oos';
+@import 'products-grid';
+// @import 'carousel';
+// @import 'tags';
+@import 'cycle';
+@import 'ui-tabs';
+// @import 'filters';
+// @import 'slidedown';
+// @import 'revolve-me';
+@import 'pagination';
+// @import 'page-titles';
+// @import 'page-cta';
+@import 'image-text-overlay';
+@import 'back-to-top';
+// @import 'image-hover-outline';
+// @import 'text-field-single';
+@import 'stacked-menu';
+@import 'sizeguide';
+@import 'page-header';
+// @import 'payment-cards';
+// @import 'flag-country';
+// @import 'ipad-download-banner';
+// @import 'back-to-top';
+// @import 'button-icons';
+// @import 'accordion';
+@import 'region-flags';
+@import 'signup-welcome';
+@import 'snapchat';
+@import 'welcome-landing';
+@import 'bag-summary';
+
+// Feature Specific Modules
+// @import 'favorites';
+// @import 'favorites-onboard';
+@import 'favorites-chart';
+@import 'option-list';
+@import 'promo-landing';
+// @import 'wedding';
+// @import 'designers-a-z';
+// @import 'style-up-inbox';
+// @import 'refer-friend';
+@import 'favorite-button';
+@import 'revolve-me';
+// @import 'live-chat';
+// @import 'shop-size';
+// @import 'activewear';
+// @import 'order-summary';
+
+// Temp
+//
+// @import 'temp-holiday-vars-helpers';
+// @import 'temp-holiday-shop-15';
+// @import 'temp-holiday-countdown';
+// @import 'temp-holiday-snow';
+
+// A/B Test
+// @import 'ab-title';
+
+// Optimizely
+// @import 'optimizely-title';
+
+@import 'aboutus';
+@import 'text-field-single';
+@import 'page-title';
+@import 'wedding-shop';
+@import 'product-badges';
+@import 'mini-popup';
+@import 'fixed-corner';
+@import 'fixed-alpha';
+@import 'notify-me';
+
+// Feature Specific Modules
+@import 'email-signup';
+@import 'gift-cert';
+@import 'horizontal-scroll';
+
+// NOT INCLUDED IN STYLES SENT OVER BY WALTER
+@import "product-sizes";
+@import "table";
+@import "table-tab";
+
+@import "rating-scale/rating-scale";
+@import "star-rating";
+@import 'vanish/vanish';
+
+// Vendor
+@import '~slick-carousel/slick/slick';

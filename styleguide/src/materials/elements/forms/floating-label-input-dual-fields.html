@@ -1,0 +1,29 @@
+---
+notes: |
+  Demonstrates floating label with an input,
+    stacked on top of another field(s) with no space between.
+  This can be applied to any number of fields,
+    and should not be applied to the last field.
+---
+
+{{> floating-label-input
+    id="floating-label-input"
+    type="text"
+    label="Address 1"
+    fieldClassName="floating-label--dual-fields"
+    inputClassName="floating-label__input--dual-fields"
+    placeholder="Address 1"}}
+
+{{> floating-label-input
+    id="floating-label-input"
+    type="text"
+    label="Address 2"
+    fieldClassName="floating-label--dual-fields"
+    inputClassName="floating-label__input--dual-fields"
+    placeholder="Address 2"}}
+
+{{> floating-label-input
+    id="floating-label-input"
+    type="text"
+    label="Address 3"
+    placeholder="Address 3"}}

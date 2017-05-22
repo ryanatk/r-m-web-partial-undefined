@@ -1,0 +1,31 @@
+/**
+
+  @site-sign-up
+--------------------------------------------------------a
+  modules/_site-sign-up.scss
+--------------------------------------------------------
+
+  Site Sign-Up
+
+------------------------------------------------------ */
+.site-sign-up {
+  &__text {
+    background-color: $color__black;
+    border-color: $input-border-color--invert;
+    color: $color__white;
+    &::-webkit-input-placeholder {
+      color: $color__white;
+    }
+  }
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: rem(10 15);
+    color: $color__white;
+    &.site-sign-up__button--big {
+      padding: rem(24 16);
+      line-height: 0;
+    }
+  }
+}

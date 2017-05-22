@@ -1,0 +1,79 @@
+/**
+
+  @accordion
+--------------------------------------------------------
+  modules/_accordion.scss
+--------------------------------------------------------
+
+  Epic accordion yo.
+
+------------------------------------------------------ */
+
+.accordion {
+  $accordion-gutter: 16;
+
+  border-bottom: rem(2) solid $color__grey--lighter;
+  // .accordion__item
+  &__item {
+    position: relative;
+  }
+  // .accordion__label
+  &__label {
+    position: relative;
+    padding: rem(20 $accordion-gutter);
+    border-top: rem(2) solid $color__grey--lighter;
+    cursor: pointer;
+    &:before {
+      position: absolute;
+      right: rem($accordion-gutter + 2);
+      height: rem(10);
+      width: rem(10);
+      content: "";
+      display: block;
+      border-left: rem(2) solid $color__black;
+      border-bottom: rem(2) solid $color__black;
+      top: 50%;
+      margin-top: rem(-7);
+      transform: translate(0, -50%) rotate(-45deg);
+      transition: transform 0.2s linear;
+    }
+
+    &:active {
+      background: $color__black;
+
+      &:before {
+        border-color: $color__white;
+      }
+
+      > div {
+        color: $color__white;
+      }
+    }
+  }
+  // .accordion__content
+  &__content {
+    position: relative;
+    height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    padding: 0 rem($accordion-gutter);
+    font-size: em(13);
+  }
+}
+
+// Remove after eagle use parent nest style above
+.accordion__item--active .accordion__label {
+  border-bottom: 0;
+  &:before {
+    transform: translate(0, 35%) rotate(-225deg);
+  }
+}
+
+
+.accordion__content--border-top:before {
+    content: "\a0";
+    display: block;
+    padding: rem(2 0);
+    line-height: rem(2);
+    border-top: rem(2) solid $color__grey--lighter;
+}

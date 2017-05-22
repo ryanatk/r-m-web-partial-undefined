@@ -1,0 +1,1168 @@
+input, select {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.mr_acct_settings {
+    background-color: #fff;
+    width: 100%;
+    min-height: 100%;
+    display: block;
+    letter-spacing: .02em;
+    padding-bottom: 7px;
+}
+.mr_acct_settings.active p {
+    font-weight: bold;
+}
+.rev_page_header, .rev_page_header_back {
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    margin-bottom: 2px;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+     font-weight: normal;
+}
+.rev_page_header h1,.rev_page_header_back h1 {
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.12em;
+}
+
+.co_required {
+    color: #000000;
+    margin: 10px 0 15px;
+    font-family: "Karla",Arial,sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.mr_acct_inner {
+    font-family: "Karla", Arial, sans-serif;
+    padding: 20px 7px 15px;
+}
+.mr_acct_inner_ship_edit {
+    font-family: "Karla", Arial, sans-serif;
+    padding: 10px 7px 5px;
+}
+.mr_acct_inner_ship {
+    font-family: "Karla", Arial, sans-serif;
+    padding: 7px 7px 15px;
+}
+.mr_acct_submit {
+    padding: 7px 7px 0;
+}
+.mr_acct_submit input {
+    margin:  0 auto;
+}
+.mr_acct_inner p {
+    font-size: 12px;
+    font-family: "Karla", Arial, sans-serif;
+}
+.mr_settings_top  {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.mr_settings_top_pref  {
+    font-size: 12px;
+}
+.mr_settings_top_pref p {
+    margin-top: 12px;
+}
+.mr_settings_top_pref.mr_shipping p, .mr_settings_top_pref.mr_billing p {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.mr_settings_top_pref.mr_billing {
+    margin-top: 18px;
+}
+
+
+
+.mr_settings_top h2, .mr_settings_top_pref h2 {
+    font-size: 14px;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 6px;
+}
+.mr_settings_top a {
+    color: #000;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.co_input_box{
+    margin-bottom: 15px;
+    overflow:hidden;
+}
+
+.co_input_box.int_zip_link a {
+  text-align: center;
+  color: #000000;
+  text-decoration: underline;
+  padding: 10px;
+  display: block;
+}
+
+.mr_acct_inner_ship_edit .co_input_box.co_half_input label {
+    display:block;
+}
+.mr_acct_inner_ship_edit .co_input_box.co_half_input input {
+    display:inline-block;
+    width: 47%;
+}
+.co_input_box label {
+    font-size: 12px;
+    color: #717171;
+}
+.co_input_box input {
+    background: none repeat scroll 0 0 #EAEAEA;
+    border: 1px solid #E1E1E1;
+    display: block;
+    margin-top: 10px;
+    height: 33px;
+    width: 100%;
+    text-indent: 10px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.co_input_box .errortxtbox , .errortextbox{
+    border: 1px solid #A53838!important;
+    background: #EDDADA!important;
+    color: #A53838;
+}
+.okaytextbox {
+  background: url("//is4.revolveassets.com/r/i/checkmark-green.png") #EAEAEA right center no-repeat!important;
+}
+.errormsg {
+    margin: -5px 0 10px;
+    color: #A53838;
+    font-size: 11px;
+    display: block;
+}
+.errormsg a {
+    color: #A53838;
+}
+.errorcolor {
+    color: #A53838!important;
+}
+p.errorcolor {
+    font-size: 11px;
+    margin-top: 8px;
+}
+.mr_acct_inner_ship_edit .co_input_box{
+    margin-bottom: 7px;
+
+}
+.mr_acct_inner_ship_edit .co_input_box label {
+    font-size: 12px;
+    color: #717171;
+}
+.mr_acct_inner_ship_edit .co_input_box input {
+    background: none repeat scroll 0 0 #EAEAEA;
+    border: 1px solid #E1E1E1;
+    display: block;
+    margin-top: 10px;
+    height: 33px;
+    width: 100%;
+    text-indent: 10px;
+}
+
+.edit_cancel {
+    float: right;
+    text-decoration: underline;
+    font-size: 14px;
+    color: #000;
+    margin-top: 12px;
+}
+
+.css_btn input {
+    background: #000000;
+    color: #FFFFFF;
+    display: block;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    padding: 16px 18px 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-style: none;
+    font-weight: normal;
+    -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+}
+.page_sep {
+    width: 100%;
+    border-bottom: 1px solid #c1c1c1;
+}
+.clear {
+    clear: both;
+}
+.mr_pref_edit_remove {
+    margin: 15px auto 0;
+    width: 100%;
+    display: block;
+    height: 40px;
+    text-align: center;
+}
+.mr_pref_edit_remove a {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    height: 30px;
+    text-align: center;
+    color: #717171;
+    text-decoration: underline;
+    padding-top: 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.mr_order_bill {
+    color: #717171;
+    font-family: "Karla",Arial,sans-serif;
+    font-size: 11px;
+    text-transform: none;
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+}
+.mr_order_bill a {
+	color: #717171;
+	text-decoration: underline;
+	margin-left: 10px;
+}
+.mr_billing_top {
+    text-align: center;
+    color: #000;
+    font-family: "Karla",Arial,sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+.mr_billing_top p {
+    margin-top: 15px;
+}
+.mr_acct_inner_ship_edit .mr_settings_top_pref {
+    margin-bottom: 20px;
+}
+/*iCheck radio buttons */
+
+.mr_settings_radio .radio_list li {
+    display: inline;
+    float: left;
+    margin-right: 35px;
+}
+.mr_settings_radio .radio_list.bz_checkout li {
+    margin-right:8px;
+}
+.mr_settings_radio .radio_list .bz_input_box input {
+    background: none repeat scroll 0 0 #EAEAEA;
+    border: 1px solid #E1E1E1;
+    height: 33px;
+    text-indent: 10px;
+    width: 100%;
+}
+.mr_settings_radio {
+    display: block;
+    margin-bottom: 10px;
+}
+.mr_settings_radio label {
+    color: #000000;
+    font-size: 12px;
+}
+.mr_settings_radio input {
+    float: left;
+}
+.radio_list {
+    display: block;
+    margin-top: 5px;
+    overflow: hidden;
+}
+.radio_list li {
+    display: block;
+    line-height: 20px;
+    margin: 10px 0;
+}
+.icheckbox_square, .iradio_square {
+    background: url("//is4.revolveassets.com/r/mobile/images/square.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 22px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    width: 23px;
+}
+.icheckbox_square {
+    background-position: -120px 0;
+}
+.icheckbox_square.hover {
+    background-position: -144px 0;
+}
+.icheckbox_square.checked {
+    background-position: -168px 0;
+}
+.icheckbox_square.disabled {
+    background-position: -192px 0;
+    cursor: default;
+}
+.icheckbox_square.checked.disabled {
+    background-position: -216px 0;
+}
+.iradio_square {
+    background-position: -120px 0;
+}
+.iradio_square.hover {
+    background-position: -144px 0;
+}
+.iradio_square.checked {
+    background-position: -168px 0;
+}
+.iradio_square.disabled {
+    background-position: -192px 0;
+    cursor: default;
+}
+.iradio_square.checked.disabled {
+    background-position: -216px 0;
+}
+
+.bill_what {
+   /* margin-left:10px;
+    font-size: 12px;
+    color: #000;
+    text-decoration: underline;
+    line-height: 22px;
+    height: 28px;*/
+    text-indent:-9999em;
+    overflow:hidden;
+    display:inline-block;
+    background-image: url("//is4.revolveassets.com/r/i/rev_global_icons.png");
+    background-repeat: no-repeat;
+    width:15px;
+    height:15px;
+    background-position:-244px -837px;
+    border:none;
+    position:absolute;
+    top:0;
+    margin:0 0 0 5px;
+}
+
+/*Credit Card Images*/
+
+
+.co_payment_sprite {
+	margin-top: 10px!important;
+}
+.co_payment_sprite li {
+	display: inline-block;
+	/*margin-right: 2px;*/
+	height: 45px;
+}
+
+.mr_all_cc {
+    display: block;
+    height: 24.5px;
+    background: url('//is4.revolveassets.com/r/mobile/images/all_cc.gif') no-repeat 0 top;
+    background-size: 238.5px;
+    width: 238.5px;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-left: auto;
+}
+
+.mr_cc_visa {
+    display: block;
+    margin: 0 auto 14px;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/cc_lrg.png') no-repeat -210px top;
+    background-size: 370px;
+    width: 53px;
+}
+.mr_cc_disc {
+    display: block;
+    margin: 0 auto 14px;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/cc_lrg.png') no-repeat -51px top;
+    background-size: 370px;
+    width: 53px;
+}
+.mr_cc_master {
+    display: block;
+    margin: 0 auto 14px;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/cc_lrg.png') no-repeat -157px top;
+    background-size: 370px;
+    width: 53px;
+}
+.mr_cc_jcb {
+    display: block;
+    margin: 0 auto 14px;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/cc_lrg.png') no-repeat -105px top;
+    background-size: 370px;
+    width: 53px;
+}
+.mr_cc_amex {
+    display: block;
+    margin: 0 auto 14px;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/cc_lrg.png') no-repeat left top;
+    background-size: 370px;
+    width: 53px;
+}
+
+.mr_cc_paypal {
+    display: block;
+    margin: 0 auto 14px;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/cc_lrg.png') no-repeat -315px top;
+    background-size: 370px;
+    width: 53px;
+}
+.cc_opacity {
+	opacity: 0.30
+}
+.paypal_disc1 {
+	color: #717171;
+	text-align: center;
+	font-size: 11px!important;
+	line-height: 16px!important;
+	margin-top: 20px;
+}
+
+
+
+.mr_paypal {
+    display: block;
+    height: 24.5px;
+    background: url('//is4.revolveassets.com/r/mobile/images/paypal_payment.gif') no-repeat 0;
+    background-size: 49.5px;
+    width: 49.5px;
+    margin-right: 10px 0 10px 10px;
+}
+.mr_cc_ali {
+    display: block;
+    margin: 0;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/cc_ali.gif') no-repeat 0;
+    background-size: 100%;
+    width: 120px;
+}
+.mr_cc_none {
+    display: block;
+    margin: 0 auto 14px;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/cc_lrg.png') no-repeat -325px top;
+    background-size: 325px;
+    width: 55px;
+}
+
+/*select boxes*/
+
+.select_style_mpdp select {
+    background: none repeat scroll 0 0 transparent;
+    border-style: none;
+    color: #000;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    height: 30px;
+    padding: 7px 5px 5px 10px;
+    text-overflow: ellipsis;
+    width: 100%;
+    letter-spacing: 0.2em;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    font-weight: normal;
+}
+
+
+.select_style_mpdp {
+   overflow: hidden;
+   background: #eeeeee url('//is4.revolveassets.com/images/mobile/select_arrows.png') no-repeat scroll right center;
+   background-size: 30px 27.5px;
+    height: 30px;
+    float: left;
+    margin-bottom: 13px;
+    width: 100%;
+    color: #000;
+    border: 1px solid #e1e1e1;
+    margin-top: 14px;
+     padding-right: 34px;
+    box-sizing: border-box;
+}
+
+.select_style_mpdp.mr_boutiques_refine {
+   overflow: hidden;
+   background: #eeeeee url('//is4.revolveassets.com/images/mobile/select_arrows.png') no-repeat scroll right center;
+   background-size: 30px 27.5px;
+    height: 30px;
+    float: none;
+    width: 98%;
+    color: #000;
+    border: 1px solid #e1e1e1;
+    margin: 14px auto 13px;
+}
+#cc_exp_wrap{
+    overflow:hidden;
+    width:66.66666666666666%;
+    float:left;
+}
+#cc_exp_wrap label{
+    display:block;
+    width:100%;
+}
+.select_style_month select, .select_style_year select {
+    background: none repeat scroll 0 0 transparent;
+    border-style: none;
+    color: #000;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    height: 30px;
+    padding: 7px 5px 5px 10px;
+    text-overflow: ellipsis;
+    width: 100%;
+    letter-spacing: 0.2em;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    font-weight: normal;
+}
+
+#cc_securitycode_wrap{
+    float:left;
+    width: 33.33333333333333%;
+    padding-left: 6px;
+}
+
+#cc_securitycode_wrap label{
+    display:block;
+    position:relative;
+}
+.select_style_month{
+    padding-right:6px;
+}
+.select_style_year{
+    padding:0 6px;
+}
+.select_style_month, .select_style_year {
+    float: left;
+    width:50%;
+}
+.select_style_month .content, .select_style_year .content{
+    overflow: hidden;
+    background: #eeeeee url('//is4.revolveassets.com/images/mobile/select_arrows.png') no-repeat scroll right center;
+    background-size: 30px 27.5px;
+    border: 1px solid #E1E1E1;
+    color: #000000;
+    height: 30px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Favorites V2 */
+.rev_page_header.favheader h1 a {
+    color: white;
+}
+.rev_page_header.favheader h1 a span {
+    font-family: 'Karla', 'Arial', sans-serif;
+    padding: 0 3px;
+    font-weight: normal;
+    text-transform: none;
+}
+.rev_page_header.favheader h1 .arrowdown {
+    @extend .icon;
+    @include sprite($icons-big-white-arrow-down);
+    display: inline-block;
+    margin-left: 7px;
+}
+
+.mr_fav_item_count.loginsave {
+    text-align: inherit;
+    padding: 10px 0 25px;
+}
+.mr_fav_item_count.loginsave .item_count {
+    float: left;
+    display:inline-block;
+    margin-left: 10px;
+}
+.mr_fav_item_count.loginsave .signin_save {
+    float: right;
+    display:inline-block;
+    margin-right: 10px;
+}
+.mr_fav_item_count.loginsave .signin_save a {
+    color: #000000;
+    text-decoration:underline;
+}
+.plp_filter_dd {
+    min-height: 40px;
+    max-height: 215px;
+    /* height: 215px; */
+    overflow-y: scroll;
+    border-bottom: 1px solid #e1e1e1;
+}
+.fav_filter_dd ul, .plp_filter_dd ul {
+    width: 100%;
+    background: #EAEAEA;
+    text-align: center;
+    font-family: 'Karla', 'Arial', sans-serif;
+}
+.fav_filter_dd ul li a, .plp_filter_dd ul li a {
+    color: #000000;
+    display: block;
+    font-size: 12px;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 12px 0;
+}
+.fav_filter_dd ul li a:active {
+    background: #ccc;
+}
+.select_style_size select {
+    background: none repeat scroll 0 0 transparent;
+    border-style: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+    height: 30px;
+    padding: 7px 5px 5px 10px;
+    text-overflow: ellipsis;
+    width: 100%;
+    letter-spacing: 0.2em;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    font-weight: normal;
+}
+
+.select_style_size {
+   overflow: hidden;
+   background: #eeeeee url('//is4.revolveassets.com/images/mobile/select_arrows.png') no-repeat scroll right center;
+   background-size: 30px 27.5px;
+    border: 1px solid #E1E1E1;
+    color: #000000;
+    height: 30px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    width: 98.5%;
+    margin-top: 8px;
+}
+
+.add_bag_btn.css_btn {
+    display: block;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 85%;
+}
+.add_bag_btn.css_btn a {
+    background: none repeat scroll 0 0 #000000;
+    color: #FFFFFF;
+    display: block;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    padding: 16px 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.add_bag_btn.css_btn a:active {
+    background: none repeat scroll 0 0 #666666;
+    color: #FFFFFF;
+}
+.mr_fav_item_count {
+    font: bold 11px "Karla", Arial, sans-serif;
+    text-align: center;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+.mr_boutique_item_count {
+    font: bold 11px "Karla", Arial, sans-serif;
+    text-align: left;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    float: right;
+    margin-right: 6px;
+}
+.mr_fav_item_count span {
+    font: normal 11px "Karla", Arial, sans-serif;
+}
+.mr_boutique_refine a {
+    text-decoration: underline;
+    color: #000;
+    font-size: 11px;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    float: left;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 15px;
+}
+
+.mr_sort_by {
+    float: left;
+    margin-top: 9px;
+    margin-left: 2px;
+    overflow: hidden;
+    width: 58px;
+
+}
+.mr_sort_by .selectbox {
+    text-decoration: underline;
+    color: #000;
+    font-size: 11px;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    text-transform: uppercase;
+    border-style: none;
+}
+.select_title {
+
+}
+
+.diamond_sep {
+    //background: url('//is4.revolveassets.com/r/mobile/images/diamond_sep.gif') no-repeat;
+    @extend .icon;
+    @include sprite($icons-diamond);
+    display: inline-block;
+    float: left;
+    margin-top: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.mr_fav_info {
+    font-weight: normal;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom-style: none;
+}
+.mr_sub_title {
+    text-transform: uppercase;
+    margin-bottom: 10px !important;
+}
+.mr_fav_info .mr_fav_p {
+    font-size: 11px;
+    letter-spacing: 0.02em;
+}
+.fav_heart_no_link {
+    background: url("//is4.revolveassets.com/r/mobile/images/m/fav_heart.png") no-repeat scroll 0 bottom / 30px 58px rgba(0, 0, 0, 0);
+    height: 28px;
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.rev_page_header p {
+    font: normal 12px "Karla", Arial, sans-serif;
+    text-transform: none;
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+.rev_page_header p a {
+    text-decoration: underline;
+    color: #fff;
+}
+
+
+/*refine*/
+
+#set_filters .select_multiple, #set_filters .select_single, #filter_results .select_multiple, #filter_results .select_single {
+    border-radius: 0px;
+    border-style: none;
+    color: #494949;
+    height: 30px;
+    margin-bottom: 13px;
+    overflow: hidden;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+.select_single {
+    background: url("//is4.revolveassets.com/images/mobile/select_arrows.png") no-repeat scroll right center / 15.5px 27.5px #DFDFDF;
+    margin:  0 auto;
+}
+#set_filters select, #filter_results select {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-style: none;
+    color: #494949;
+    cursor: pointer;
+    height: 30px;
+    padding: 5px;
+    text-overflow: ellipsis;
+    width: 100%;
+
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    position: relative;
+    z-index: 2;
+}
+.select_multiple {
+    background-color: #eee;
+    //background: #eeeeee url("//is4.revolveassets.com/r/mobile/images/m/select_multiple.jpg") no-repeat scroll right center;
+    margin:  0 auto;
+    //background-size: 40px 32px;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border: 1px solid #e1e1e1!important;
+    position: relative;
+
+  .select-multiple-icon {
+    @include sprite($icons-dots);
+    position: absolute;
+    top: 19px;
+    right: 7px;
+    z-index: 1;
+  }
+}
+.apply_clear {
+    width: 100%;
+    margin: 0 10% 0 6px;
+
+}
+
+
+
+/*mr favorites end*/
+/*---------------*/
+
+/* Popups for Cancel and Removing Items */
+.cancel_remove_popup {
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    background: white;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #e1e1e1;
+    display: block;
+    z-index: 999;
+}
+.cancel_remove_popup .cancel_remove_content {
+    padding: 15px 10px;
+    font-size: 12px;
+    text-align: center;
+}
+.cancel_remove_popup .cancel_remove_content h1 {
+    font-size: 16px;
+    text-align: center;
+    margin: 5px 0;
+    display: block;
+    font-weight: normal;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .120em;
+}
+.cancel_remove_popup .cancel_remove_content .keyline {
+    display:block;
+    border-bottom: 1px solid #717171;
+    width: 80px;
+    text-align: center;
+    margin: 10px auto;
+}
+.cancel_remove_popup .cancel_remove_content p {
+    font: bold 12px "Karla", Arial, sans-serif;
+}
+.cancel_remove_popup .cancel_remove_content p span {
+    font-weight: bold;
+}
+.cancel_remove_popup .cancel_remove_content .popup_couponcode {
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: .180em;
+    font-size: 13px;
+    color: #000000;
+    margin: 5px 0;
+}
+.cancel_remove_popup .cancel_remove_content .popup_couponcode2 {
+    display: block;
+    color: #717171;
+    font: normal 11px "Karla", Arial, sans-serif;
+    margin: 5px 0;
+}
+.cancel_remove_popup .cancel_remove_content .feedback_cta input {
+    width: 85%;
+}
+.cancel_remove_popup .cancel_remove_content input {
+    display:block;
+    margin: 5px auto;
+    padding: 15px 30px;
+    background: #000000;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    border: none;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: .120em;
+}
+.cancel_remove_popup .cancel_remove_content .cancel_close_popup a {
+    letter-spacing: .120em;
+    text-decoration: underline;
+    color: #000000;
+}
+.mr_paypal_remove_pop {
+	margin-top: 10px;
+	font-size: 11px;
+	text-align: center;
+}
+/* Popup for Item Added */
+.cancel_remove_popup .cancel_remove_content .item_added_r.fav_notifyme {
+    display: block;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r.fav_notifyme form {
+    margin: 10px 0;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r.fav_notifyme form label {
+    font-family: "Karla", Arial, sans-serif;
+    font-size: 13px;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r.fav_notifyme input {
+    width: 100%;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r.fav_notifyme .enteremail {
+    font-family: "Karla", Arial, sans-serif;
+    border: 1px solid #e1e1e1;
+    background: #eaeaea;
+    color: #000000;
+    letter-spacing: 0;
+    padding: 8px 0;
+    text-align: left;
+    text-indent: 10px;
+    text-transform: none;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+
+}
+
+
+.cancel_remove_popup .cancel_remove_content .item_added_l, .item_added_r {
+    display:inline-block;
+    vertical-align: top;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r {
+    margin-left: 5px;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r h1 {
+    margin: 0 0 5px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 15px;
+}
+.cancel_remove_popup .cancel_remove_content p {
+    font: 12px "Karla", Arial, sans-serif;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r {
+    text-align: left;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r p, .cancel_remove_popup .cancel_remove_content .item_added_r span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r span {
+    display: block;
+    color: #717171;
+    font-family: "Karla",Arial,sans-serif;
+}
+.cancel_remove_popup .cancel_remove_content .item_added_r .co_sub_cta {
+    padding: 15px;
+    margin: 5px 0;
+}
+.cancel_remove_popup .popup_cta {
+	background: #000000;
+    color: #FFFFFF;
+    display: inline-block;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    margin: 5px 0 10px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-style: none;
+    font-weight: normal;
+}
+
+.mr_acct_inner_ship_edit .select_style_mpdp {
+   overflow: hidden;
+   background: #eeeeee url('//is4.revolveassets.com/images/mobile/select_arrows.png') no-repeat scroll right center;
+   background-size: 30px 27.5px;
+    height: 30px;
+    float: left;
+    margin-bottom: 8px;
+    width: 100%;
+    color: #000;
+    border: 1px solid #e1e1e1;
+    margin-top: 8px;
+    padding-right: 34px;
+    box-sizing: border-box;
+}
+
+/*alipay css*/
+.mr_alipay {
+    display: block;
+    height: 40px;
+    background: url('//is4.revolveassets.com/r/mobile/images/co_ali.gif') no-repeat 0;
+    background-size: 100%;
+    width: 53px;
+    margin: 0 0 10px;
+}
+
+.co_bottom_cta_alipay {
+	margin: 0 auto;
+	text-align: center;
+	display: block;
+	clear: both;
+}
+.co_bottom_cta_alipay input {
+    background: #ec6c00 url('//is4.revolveassets.com/r/mobile/images/alipay_cta_btn.gif') no-repeat left;
+    text-align: center;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: .120em;
+    color: white;
+    font-weight: normal;
+    padding: 15px 15px 15px 85px;
+    width: 97%;
+    font-size: 13px;
+	border: 1px solid #ec6c00;
+	background-size: 76px;
+}
+
+.co_alipay_popup {
+	position: fixed;
+	/*background: #fff;*/
+	background: white;
+	width: 100%;
+	height: 100%;
+	z-index: 977;
+}
+.co_alipay_inner {
+	width: 180px;
+	height: 128.5px;
+	text-align: center;
+	padding-top: 25px;
+	box-sizing: border-box;
+	background-color: #fff;
+	margin: 35% auto 0;
+}
+.co_alipay_inner h3 {
+	font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.025em;
+    margin-top: 5px;
+}
+.oh_order_info .mr_alipay, .mr_settings_top_pref.mr_billing .mr_alipay {
+	margin-left: auto;
+	margin-right: auto;
+}
+/*
+
+Return Printing
+
+*/
+
+.mr_oh_delivered--darker {
+    color: black!important;
+}
+.return-printing__dek {
+    font-size: 14px;
+    padding: 20px 0 0 0;
+    padding-left: 14px;
+}
+.return-printing__textarea {
+    height:100px!important;
+}
+.select_style_mpdp.is-error {
+    border-color: #961c1c;
+}
+.error-message {
+    color:#a53838;
+    font-size: 11px;
+}
+.return-printing__copy {
+    font-size:14px;
+    line-height: 22px;
+}
+.return-printing__carrier {
+    line-height: 55px;
+    height: 55px;
+    vertical-align: middle;
+}
+.return-printing__carrier-img {
+    width: 50px!important;
+    height: auto;
+    margin-right: 15px;
+    display: inline-block;
+}
+.return-printing__carrier-copy {
+    line-height: 55px;
+}
+.return-printing__message {
+    color:#961c1c;
+    font-size: 11px;
+    line-height: 15px;
+}
+.return-printing__share {
+    width: 22px;
+    height: auto;
+    display: inline-block;
+    line-height: 27px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.btn--lighter {
+    border: 1px solid #e1e1e1;
+    background: white;
+    color: black;
+    line-height: 27px;
+    vertical-align: middle;
+    width: 100%;
+}
+.btn--lighter__copy {
+    line-height: 27px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.return-printing__hed {
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;;
+}

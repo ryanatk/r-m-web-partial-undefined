@@ -1,0 +1,28 @@
+<section class="star-rating {{#modifier}}star-rating--{{.}}{{/modifier}}" aria-label="{{filled}} Stars" role="img">
+  <ol aria-hidden="true" class="star-rating__list star-rating--filled-{{filled}}">
+    <li class="star-rating__item">
+      {{> icons.star-half star-title="1/2 star" star-description="1/2 star rating" modifier=modifier }}
+      {{> icons.star star-title="1 star" star-description="1 star rating" modifier=modifier }}
+    </li>
+
+    <li class="star-rating__item">
+      {{> icons.star-half star-title="1 1/2 star" star-description="1 1/2 star rating" modifier=modifier }}
+      {{> icons.star star-title="2 stars" star-description="2 star rating" modifier=modifier }}
+    </li>
+
+    <li class="star-rating__item">
+      {{> icons.star-half star-title="2 1/2 star" star-description="2 1/2 star rating" modifier=modifier }}
+      {{> icons.star star-title="3 stars" star-description="3 star rating" modifier=modifier }}
+    </li>
+
+    <li class="star-rating__item">
+      {{> icons.star-half star-title="3 1/2 star" star-description="3 1/2 star rating" modifier=modifier }}
+      {{> icons.star star-title="4 stars" star-description="4 star rating" modifier=modifier }}
+    </li>
+
+    <li class="star-rating__item">
+      {{> icons.star-half star-title="4 1/2 star" star-description="4 1/2 star rating" modifier=modifier }}
+      {{> icons.star star-title="5 stars" star-description="5 star rating" modifier=modifier }}
+    </li>
+  </ol>
+</section>

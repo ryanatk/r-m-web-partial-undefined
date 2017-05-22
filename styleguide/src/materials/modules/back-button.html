@@ -1,0 +1,15 @@
+---
+notes: |
+  Simple back button that can be used anywhere on the site.
+  Related javascript is responsible for sending "back".
+---
+
+{{!--
+  @param {string} [href] - optionally set an href other than the homepage
+  @param {string} [modifier] - optionally set a BEM modifier
+  @param {string} [className] - optionally set a BEM element name
+--}}
+
+<a href="{{#href}}{{.}}{{else}}{{url.homepage}}{{/href}}"
+  class="icon icon--arrow-left--thin back-button {{#modifier}}back-button--{{.}}{{/modifier}} {{className}}"
+  title="Back Button">{{> icon svg="arrow-left--thin" skip-wrap=true title="Back Button" }}</a>

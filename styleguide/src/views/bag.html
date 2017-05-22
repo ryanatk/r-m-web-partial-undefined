@@ -1,0 +1,131 @@
+---
+title: My Bag
+page-name: bag
+fabricator: false
+layout: mock-page
+site-header: site-header.checkout
+---
+
+<header class="page__header">
+  {{> page-head.title text=title }}
+</header>
+
+<div class="u-margin-a--xl">
+  <p class="u-center u-text--lg u-padding-a--sm">Subtotal (7): $456.00</p>
+  {{>buttons.full- text="Proceed To Checkout" href=url.checkout }}
+</div>
+
+{{#*inline "removeButton" }}
+<p class="product__remove">
+  <button class="product__remove-button vanish__action js-modal"
+    data-open="item-removed-modal">Remove
+    {{#name}}<span class="product__remove-name">{{.}}</span>{{/name}}
+  </button>
+</p>
+{{/inline}}
+
+{{#each bag.products }}
+  {{#> product
+      productClassName="vanish"
+      image=image
+      badge=badge
+      name=name
+      brand=brand
+      number=styleNumber
+      price=price
+      link=link
+      modifier="horizontal"}}
+    <form method="GET" action="{{url.bag}}">
+      <div class="product__notification product__notification--horizontal"></div>
+      <!-- product-specific policies that should not be overridden by notifications -->
+      <div class="product__policy product__policy--horizontal">
+        <div class="notification">{{policy}}</div>
+      </div>
+      <div class="product__options product__options--horizontal">
+        {{#if oneSize}}
+          {{> product-options.one-size index=@index modifier="left" }}
+        {{else}}
+          {{> product-size sizes=sizes index=@index modifier="left" }}
+        {{/if}}
+        <!-- Quantity Dropdown -->
+        {{#> floating-label-select id="quantity" index=@index label="Qty"
+            fieldClassName="product__quantity" fieldModifier="right" }}
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        {{/floating-label-select}}
+      </div>
+    </form>
+
+    {{> removeButton name=name }}
+  {{/product}}
+{{/each}}
+
+{{#each bag.gift-certificates }}
+  {{#> gift-certificate
+      productClassName="vanish"
+      value=value
+      email=email
+      message=message
+      link=../../url.gift-certificates
+      modifier="horizontal" }}
+    <form method="GET" action="{{url.bag}}">
+      <div class="product__options product__options--horizontal">
+        {{#> floating-label-select id="value" index=@index label="Value"
+            fieldClassName="product__value" }}
+          <option value="25" {{#if value-25}}selected{{/if}}>$25</option>
+          <option value="50" {{#if value-50}}selected{{/if}}>$50</option>
+          <option value="75" {{#if value-75}}selected{{/if}}>$75</option>
+          <option value="100" {{#if value-100}}selected{{/if}}>$100</option>
+          <option value="125" {{#if value-125}}selected{{/if}}>$125</option>
+          <option value="150" {{#if value-150}}selected{{/if}}>$150</option>
+          <option value="175" {{#if value-175}}selected{{/if}}>$175</option>
+          <option value="200" {{#if value-200}}selected{{/if}}>$200</option>
+          <option value="250" {{#if value-250}}selected{{/if}}>$250</option>
+          <option value="300" {{#if value-300}}selected{{/if}}>$300</option>
+          <option value="500" {{#if value-500}}selected{{/if}}>$500</option>
+        {{/floating-label-select}}
+      </div>
+    </form>
+
+    {{> removeButton name="Gift Certificate" }}
+  {{/gift-certificate }}
+{{/each}}
+
+{{> bag-summary- }}
+
+<div class="u-margin-a--xl">
+  {{> buttons.full- text="Proceed To Checkout" href=url.checkout class="u-margin-b--xl" }}
+  {{> cta-buttons.checkout-with-paypal }}
+</div>
+
+<!-- Modal: Item Removed Notification -->
+<div id="item-removed-modal" class="modal" data-type="notification">
+  <p class="u-center u-margin-b--none u-text--lg">Item removed.</p>
+</div>
+
+<!-- Modal: Auto Remove Item -->
+<div id="auto-remove-modal" class="modal u-center" data-type="top">
+  <h2 class="u-error u-margin-a--lg">Item Removed</h2>
+  <p class="u-error u-text--lg">We're very sorry, but this item has been removed from your cart because someone else has just purchased the last one.</p>
+
+  {{#with pdp }}
+    {{> product
+      image=image
+      name=name
+      brand=brand
+      number=styleNumber
+      price=sizes.[1].price
+    }}
+  {{/with}}
+
+  <div class="product__cta">
+    {{> buttons.full- href=url.checkout class="u-margin-b--lg" text="Continue to Checkout" }}
+    <p class="u-margin-a--lg u-text--lg">
+      <a href="{{url.bag}}" class="js-modal-close link">View My Bag</a>
+    </p>
+  </div>
+</div>

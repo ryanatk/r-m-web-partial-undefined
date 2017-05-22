@@ -1,0 +1,14 @@
+/// Euclid's Algorithm to find GCD of Fraction,
+/// used to determine if a fraction can be reduced.
+/// @param {number} $numerator - numerator
+/// @param {number} $denominator - denominator
+/// @return greatest common denominator
+@function gcd($numerator, $denominator) {
+  @if ($denominator == 0) {
+    @return $numerator;
+  }
+  @else {
+    $remainder: $numerator % $denominator;
+    @return gcd($denominator, $remainder);
+  }
+}

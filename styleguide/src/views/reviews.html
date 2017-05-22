@@ -1,0 +1,59 @@
+---
+title: Customer Reviews
+page-name: notifyMe
+fabricator: false
+layout: mock-page
+---
+
+{{> title-bar page-title=title}}
+
+<section class="page__main" itemscope itemtype="https://schema.org/Product">
+  {{#reviews.product}}
+    <!-- Product Brand & Name -->
+    <meta itemprop="name" content="{{brand}} {{name}}" />
+  {{/reviews.product}}
+  <!-- Product URL -->
+  <link itemprop="url" href="{{url.pdp}}" />
+  <div class="u-bg-color--offwhite u-padding-a--xl"
+    itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+    {{#with reviews.aggregate.stars }}
+      <h3 class="h4 u-float-left u-margin-t--none u-margin-b--sm">Overall Rating</h3>
+      <p class="u-float-right u-margin-b--sm u-line-height">
+        <span itemprop="ratingCount">{{quantity}} Reviews</span>
+      </p>
+      <p class="h2 u-clear--right u-float-right u-margin-a--none">
+        <meta itemprop="worstRating" content="1">
+        <span itemprop="ratingValue">{{rating}}</span>
+        <meta itemprop="bestRating" content="5">
+      </p>
+      <div class="u-clear--left u-padding-b--lg u-border-b u-border--xs u-border--color-medium">
+        {{> star-rating filled=rating modifier="sm"}}
+      </div>
+    {{/with}}
+
+    {{#with reviews.aggregate.fit }}
+      <h3 class="h4 u-float-left u-clear u-margin-b--sm">Fit Rating</h3>
+      <p class="u-float-right u-margin-t--xl u-margin-b--sm u-line-height">{{quantity}} Reviews</p>
+      {{#with attributes.[2] }}
+        <h4 class="h2 u-clear u-clearfix u-margin-a--none">
+          {{label}} <span class="u-float-right">{{percent}}%</span>
+        </h4>
+      {{/with}}
+      <div class="u-clear u-padding-a--xl u-padding-t--md u-padding-b--none">
+        {{#each attributes}}
+          {{> range-meter }}
+        {{/each}}
+      </div>
+    {{/with}}
+  </div>
+
+  <div class="u-margin-a--xl">
+    {{> buttons.full- href=url.write-review text="Rate This Item" }}
+  </div>
+</section>
+
+<section class="page__secondary u-margin-a--xl">
+  {{#each reviews.customer }}
+    {{> review truncate="3" }}
+  {{/each}}
+</section>

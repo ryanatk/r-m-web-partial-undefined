@@ -1,0 +1,29 @@
+@import "../lib/lib";
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Third Party
+
+---------------------------------------------------------  */
+// @import '~slick-carousel/slick/slick';
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Reusable objects that are combinations
+  of elements and other modules.
+
+  When you create a new module, make sure the partial is
+  in the modules directory, and you import it below
+
+  Comment out any partial you don't need for this app.
+
+---------------------------------------------------------  */
+@import 'reviews';
+@import 'favorites-chart';
+@import 'activewear';

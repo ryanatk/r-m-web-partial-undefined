@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="no-js eagle" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Styleguide and Site</title>
+        <meta name="description" content="Styleguide">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./dist/chrome.css" rel="stylesheet" type="text/css">
+        <script src="http://www.revolve.com/r/js/vendor/jquery-2.1.4.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+          <h1 class="u-center"><a href="styleguide/site">Forward Main Site &amp; Styleguide</a></h1>
+        </div>
+        <script>
+          (function(doc) {
+            var head = doc.getElementsByTagName('head')[0];
+            function loadScript(targetScript, dependentScript) {
+              var script = doc.createElement('script');
+              script.async = true;
+              script.src = targetScript;
+
+              if (dependentScript) {
+                script.onload = function() {
+                  loadScript(dependentScript)
+                };
+              }
+              head.appendChild(script);
+            }
+            loadScript('dist/chrome.js', 'dist/homepage.js');
+          }(document));
+        </script>
+    </body>
+</html>

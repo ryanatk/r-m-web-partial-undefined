@@ -1,0 +1,135 @@
+{
+  "products": [
+    {
+      "image": "//is4.revolveassets.com/images/p4/ip2/sb2/TULA-WD273_V1.jpg",
+      "name": "x REVOLVE Wyoming Gown in Off White",
+      "brand": "Tularosa",
+      "styleNumber": "ABBA-WJ111",
+      "color": "Off White",
+      "sizes": [
+        {
+          "value": "S",
+          "label": "S",
+          "delivery-date": "Jan 1 - Jan 3",
+          "regular-price": 365,
+          "price": 298
+        }, {
+          "value": "M",
+          "label": "M",
+          "delivery-date": "Feb 7 - Feb 9",
+          "regular-price": 365,
+          "price": 298,
+          "preorder": true
+        }
+      ],
+      "link": "./pdp.html"
+    }, {
+      "image": "//is4.revolveassets.com/images/p4/n/z/CLYN-WD142_V1.jpg?resize=960:*",
+      "badge": "badges.product",
+      "name": "Jaelyn Dress in Crimson",
+      "brand": "Clayton",
+      "styleNumber": "ABBA-WJ222",
+      "color": "Crimson",
+      "sizes": [
+        {
+          "value": "L",
+          "label": "L",
+          "delivery-date": "Jan 1 - Jan 3",
+          "regular-price": 145,
+          "price": 109,
+          "one-left": true
+        }, {
+          "value": "LT",
+          "label": "LT",
+          "delivery-date": "Jan 1 - Jan 3",
+          "regular-price": 145,
+          "price": 145,
+          "oos": true
+        }
+      ],
+      "link": "./pdp.html"
+    }, {
+      "image": "//is4.revolveassets.com/images/p4/ip2/sb2/TULA-WD273_V1.jpg",
+      "badge": "badges.wedding",
+      "name": "x REVOLVE Wyoming Gown in Off White",
+      "brand": "Tularosa",
+      "styleNumber": "ABBA-WJ777",
+      "color": "Off White",
+      "sizes": [
+        {
+          "value": "XL",
+          "label": "XL",
+          "delivery-date": "Jan 1 - Jan 3",
+          "regular-price": 298,
+          "price": 99,
+          "final-sale": true
+        }, {
+          "value": "XXL",
+          "label": "XXL",
+          "delivery-date": "Jan 1 - Jan 3",
+          "regular-price": 298,
+          "price": 99,
+          "final-sale": true,
+          "sample-defect": true
+        }
+      ],
+      "link": "./pdp.html"
+    }, {
+      "image": "//is4.revolveassets.com/images/p4/ip2/sb2/VITA-WL123_V2.jpg",
+      "name": "CATENA TITAN RING",
+      "brand": "Vita Fede",
+      "styleNumber": "ABBA-WJ333",
+      "color": "Gold",
+      "sizes": [
+        {
+          "value": "6",
+          "label": "6",
+          "delivery-date": "Jan 1 - Jan 3",
+          "regular-price": 365,
+          "price": 365
+        }, {
+          "value": "7",
+          "label": "7",
+          "delivery-date": "Feb 7 - Feb 9",
+          "regular-price": 365,
+          "price": 298,
+          "preorder": true
+        }
+      ],
+      "policy": "Signature required for delivery. For orders with multiple items, this piece will ship separately.",
+      "link": "./pdp.html"
+    }, {
+      "image": "//is4.revolveassets.com/images/p4/ip2/sb2/100R-WU20_V1.jpg",
+      "name": "Luminous Primer",
+      "brand": "100% Pure",
+      "styleNumber": "ABBA-WJ444",
+      "color": "N/A",
+      "oneSize": true,
+      "policy": "Return within 30 days if unopened and unused.",
+      "link": "./pdp.html"
+    }
+  ],
+  "gift-certificates": [
+    {
+      "value": "100",
+      "value-100": true,
+      "message": "I discovered at a very early age that if I talked long enough I could make anything wrong or right. So either I'm God, or truth is relative. In either case BOOYAH!"
+    }, {
+      "value": "200",
+      "value-200": true,
+      "email": "jwinger@greendale.edu",
+      "message": "I discovered at a very early age that if I talked long enough I could make anything wrong or right. So either I'm God, or truth is relative. In either case BOOYAH!"
+    }, {
+      "value": "250",
+      "value-250": true
+    }
+  ],
+  "templates": [
+    "price.horizontal",
+    "price.horizontal-on-sale"
+  ],
+  "page-options": [
+    "bag-summary-preorder",
+    "bag-summary-preorder"
+  ]
+}

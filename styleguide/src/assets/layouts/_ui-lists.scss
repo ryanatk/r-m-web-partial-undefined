@@ -1,0 +1,109 @@
+@import '../lib/lib';
+
+/**
+
+  @ui-lists
+--------------------------------------------------------
+  modules/_ui-list.scss
+--------------------------------------------------------
+
+  The base ui-list layout object removes padding, margin,
+  and list style type and prepares it for any optional
+  ui-list modifier classes that can be used along side it
+
+  Example: Unordered List
+  <ul class="ui-list">
+    <li>List Item</li>
+    <li>List Item 2</li>
+  </ul>
+
+  Example: Ordered Counter List
+  <ul class="ui-list">
+    <li class="ui-list__item">List Item</li>
+    <li class="ui-list__item">List Item 2
+      <ol class="ui-list ui-list--inline">
+        <li class="ui-list__num">Inline Numbered List Item</li>
+        <li class="ui-list__num">Inline Numbered List Item 2</li>
+      </ol>
+    </li>
+  </ul>
+
+-----------------------------------------------------  */
+
+// Remove all default list styling - use on <ol> or <ul>
+.ui-list {
+  @extend %u-clearfix;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: inside;
+
+  // .ui-list__item
+  // Inherit line height or change to 1.618 - use on <li>
+  &__item {
+    line-height: inherit;
+    &:before {
+      content: '';
+    }
+  }
+
+  // .ui-list__num
+  // Counter list item - use on <ol> list items
+  &__num {
+    list-style-type: none;
+    counter-increment: step-counter;
+    &:before {
+      display: inline-block;
+      padding-right: rem(5);
+      content: counter(step-counter) '.';
+    }
+  }
+
+  // .ui-list.ui-list--inline
+  // All direct children display inline
+  &--inline {
+    > * {
+      display: inline-block;
+    }
+  }
+
+  // .ui-list--inside
+  &--inside {
+    list-style-position: inside;
+  }
+
+  // .ui-list--bulleted
+  &--bulleted {
+    list-style-type: disc;
+
+    // Minipulate legacy style
+    li {
+      list-style-type: disc;
+    }
+  }
+}
+
+.ui-list--inline-block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ui-list__bold {
+  position: relative;
+  padding-left: rem(16);
+  &:before {
+    display: inline-block;
+    position: absolute;
+    top: rem(0);
+    left: rem(0);
+    font-size: em(22);
+    line-height: 1.45;
+    content: '\2022';
+  }
+  &--sm-line-height {
+    line-height: em(14 * 1.4);
+    &:before {
+      line-height: 1.1;
+    }
+  }
+}

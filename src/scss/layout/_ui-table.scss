@@ -1,0 +1,60 @@
+/**
+
+  @ui-table
+--------------------------------------------------------
+  modules/_ui-table.scss
+--------------------------------------------------------
+
+  The ui-table layout object uses the many properties
+  and values the table element has to build layouts,
+  center things, and even modify actual table elements.
+  Use the ui-table object when you need to lay something
+  out in table format but semantically speaking it's not
+  a table
+
+
+  Example: Table Row on List
+  <ul class="table">
+    <li>List Item</li>
+    <li>List Item 2</li>
+  </ul>
+
+
+-----------------------------------------------------  */
+
+// Table layout parent
+.table {
+  display: table;
+  width: 100%;
+  table-collapse:separate;
+}
+
+.table--fixed {
+  table-layout: fixed;
+}
+
+.table__cell {
+  display: table-cell;
+  vertical-align: center;
+  &--responsive {
+    width: rem(50);
+  }
+}
+
+.table--odds {
+  tr:nth-child(odd) {
+    background: $color__table-cell;
+  }
+}
+
+.table--evens {
+  tr:nth-child(even) {
+    background: $color__table-cell;
+  }
+}
+
+.table--collapse-all {
+  td {
+    padding: 0;
+  }
+}

@@ -1,0 +1,60 @@
+/**
+
+  @image text overlay
+--------------------------------------------------------
+  modules/_image-text-overlay.scss
+--------------------------------------------------------
+
+  Image Text Overlay
+
+------------------------------------------------------ */
+.image-text-overlay {
+  display: block;
+  position: relative;
+  &__cta-wrap,
+  &__cta-wrap:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__cta-wrap {
+    &:before {
+      display: inline-block;
+      background-color: transparent;
+      content: '';
+      transition: opacity .35s;
+    }
+    // &--dark:before {
+    //   background-color: $color__black;
+    // }
+    // &--light:before {
+    //   background-color: $color__white;
+    // }
+  }
+  &__copy {
+    @extend %font-secondary--bold;
+    letter-spacing: em(1.26);
+  }
+  // &:hover {
+  //   .image-text-overlay__cta {
+  //     transform: translate3d(0, -50%, 0);
+  //     transition: transform .35s;
+  //   }
+  //   .image-text-overlay__cta-wrap {
+  //     transition: opacity .35s;
+  //     opacity: 1;
+  //     &:before {
+  //       opacity: .7;
+  //     }
+  //   }
+  // }
+  &__cta {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translate3d(0, -50%, 0);
+    transition: transform .35s;
+  }
+}

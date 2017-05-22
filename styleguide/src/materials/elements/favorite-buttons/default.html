@@ -1,0 +1,21 @@
+---
+notes: |
+  By default the favorite button is absolute positioned. A favorite accepts the
+  following data attributes:
+
+  - `data-favorite-message`: the message to use to indicate that an item can be
+    favorited
+  - `data-unfavorite-message`:  the message to use to indicate that an item can
+    be unfavorited
+  - `data-favorite-notification`: the content within the notification when an
+    item has been favorited
+  - `data-unfavorite-notification`: the content within the notification when an
+    item has been unfavorited
+---
+
+{{> favorite-button
+    favorite-message=pdp.favoriteMessages.favoriteMessage
+    unfavorite-message=pdp.favoriteMessages.unfavoriteMessage
+    favorite-notification=pdp.favoriteMessages.favoriteNotification
+    unfavorite-notification=pdp.favoriteMessages.unfavoriteNotification
+}}

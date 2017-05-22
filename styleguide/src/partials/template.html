@@ -1,0 +1,16 @@
+{{!--
+  Simple partial used to centralize HTML output for template tags,
+    to keep consistent across templates and javascript usage,
+    and in case changes are made in the future.
+  `html` is used to pass HTML in from javascript, mainly for tests
+    (surrounding tildas trim whitespace '\n', needed for tests)
+  `partial-block` will output output the nested content
+    when this partial is used in another handlebars template.
+--}}
+
+<template id="{{id}}">
+  {{~{html}~}}
+  {{#if @partial-block}}
+    {{> @partial-block }}
+  {{/if}}
+</template>

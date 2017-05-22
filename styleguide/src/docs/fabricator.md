@@ -1,0 +1,1 @@
+This style guide was created using <a href="https://github.com/fbrctr/fbrctr.github.io">Fabricator, an open source project</a>. You can find <a href="http://fbrctr.github.io/docs/">more info on the fbrctr site</a>.

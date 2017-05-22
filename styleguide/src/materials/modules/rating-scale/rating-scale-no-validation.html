@@ -1,0 +1,14 @@
+---
+notes: |
+  Allows a user to apply a rating within 1 to 5 stars. Upon interacting with
+  the stars, the title will change based on the rating. The title can be found
+  on a field level containing the star in a `data-rating-text` attribute, for
+  the ease of i18n.
+
+  The value is captured in a radio button fieldset, such that each radio has
+  the same name attribute for ease of collecting the value. This version does
+  not have any validation. Therefore, if this is submitted and no value is
+  present, the form submission will be prevented.
+---
+
+{{> rating-scale starRatings=writeReview.starRatings }}

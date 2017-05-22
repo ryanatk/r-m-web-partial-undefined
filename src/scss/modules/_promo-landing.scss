@@ -1,0 +1,48 @@
+/**
+
+  @promo-landing
+--------------------------------------------------------
+  modules/_promo-landing.scss
+--------------------------------------------------------
+
+  Styles for the mobile promocode landing page.
+
+------------------------------------------------------ */
+$promoLandingImage: "//is4.revolveassets.com/r/images/promo-landing-border-m.gif";
+.promo-landing{
+  // .promo-landing__hero
+  &__hero {
+    background: url($promoLandingImage);
+    padding: rem(12);
+    margin-bottom: rem(14);
+    // .promo-landing__hero-content
+    &-content {
+      background: $color__white;
+      overflow: hidden;
+      padding: rem(40);
+    }
+  }
+  // .promo-landing__discount-num
+  &__discount-num {
+      font-size: em(48);
+  }
+  // .promo-landing--nocode
+  &--nocode {
+    margin-top: rem(10);
+    &:before {
+      content: "";
+      display: block;
+      height: rem(18);
+      background: url($promoLandingImage);
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-top: rem(-36);
+    }
+  }
+  // .promo-landing__details-list--bulleted
+  &__details-list--bulleted li{
+    list-style: inside disc;
+    font-size: em(10,9);
+  }
+}

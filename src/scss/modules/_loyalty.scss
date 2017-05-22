@@ -1,0 +1,201 @@
+/**
+
+	@loyalty
+--------------------------------------------------------
+	modules/_loyalty.scss
+--------------------------------------------------------
+
+	loyalty feature
+
+------------------------------------------------------ */
+$loyaltyGold: #a7924d;
+.loyalty {
+  &__dek {
+    font-size: em(12);
+    letter-spacing: em(.6);
+    text-transform: uppercase;
+
+    @extend %font-primary;
+  }
+  &__card {
+    position: relative;
+    font-size: em(12);
+    line-height: rem(32);
+    &--inherit {
+      font-size: inherit;
+      line-height: inherit;
+    }
+    &--fixed {
+      position: absolute;
+      top: rem(20);
+      right: rem(20);
+    }
+    &:before {
+      display: block;
+      width: rem(32);
+      height: rem(19);
+      margin: rem(5) auto;
+      border-radius: rem(2);
+      background: $color__black;
+      color: $color__white;
+      font-size: em(12);
+      font-weight: normal;
+      line-height: rem(20);
+      text-align: center;
+      content: 'R';
+
+      @extend %font-secondary--bold;
+    }
+    &--inline {
+      position: relative;
+      padding-left: rem(32);
+      &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-74%);
+      }
+    }
+    &--inline-right {
+      padding-right: rem(32);
+      padding-left: inherit;
+      &:before {
+        right: 0;
+        left: auto;
+      }
+    }
+    &--bronze:before {
+      background: url('//is4.revolveassets.com/r/assets/main/source/loyalty/08-2016/loyalty-card-bronze.gif') repeat-y left top;
+    }
+    &--silver:before {
+      background: url('//is4.revolveassets.com/r/assets/main/source/loyalty/08-2016/loyalty-card-silver.gif') repeat-y left top;
+    }
+    &--gold:before {
+      background: url('//is4.revolveassets.com/r/assets/main/source/loyalty/08-2016/loyalty-card-gold.gif') repeat-y left top;
+    }
+    &--black:before {
+      background: url('//is4.revolveassets.com/r/assets/main/source/loyalty/08-2016/loyalty-card-black.gif') repeat-y left top;
+    }
+    &--lg:before {
+      width: rem(45);
+      height: rem(27);
+      background-size: rem(45 1);
+      line-height: rem(27);
+    }
+    &--xl:before {
+      width: rem(75);
+      height: rem(44);
+      background-size: rem(75 1);
+      line-height: rem(44);
+      font-size: em(14);
+    }
+  }
+  &__card-copy {
+    display: inline-block;
+    margin: 0;
+    padding-left: rem(17);
+    font-size: em(16);
+    line-height: rem(49);
+    vertical-align: middle;
+    @extend %headings;
+  }
+  &__nav-item {
+    display: block;
+    background: url(//is4.revolveassets.com/images/mobile/bottom_nav_arrow_3.jpg) no-repeat right top;
+    background-size: rem(30) auto;
+  }
+  &__margin-b {
+    margin-bottom: rem(32);
+  }
+  &__promo {
+    background: url('//is4.revolveassets.com/r/assets/main/source/loyalty/08-2016/promo-marble-background.jpg') repeat center top;
+  }
+  // meter
+  &__meter {
+    display: table;
+    width: 100%;
+  }
+  &__meter-bar-wrap {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__meter-bar-base {
+    height: rem(6);
+    border-radius: rem(6 0 0 6);
+    background: $color__offwhite;
+  }
+  &__meter-bar {
+    height: rem(6);
+    border-radius: rem(6);
+    background: $color__black;
+  }
+  &__meter-reward-wrap {
+    display: table-cell;
+    width: rem(56);
+    vertical-align: middle;
+  }
+  &__meter-reward {
+    width: 100%;
+    height: rem(45);
+    border-radius: rem(3);
+    background: $color__black;
+    color: $color__white;
+    text-align: center;
+  }
+  &__meter-reward-amount {
+    padding-top: rem(5);
+    font-size: em(20);
+    line-height: em(20, 20);
+  }
+  &__meter-label {
+    font-size: em(12);
+    line-height: em(12,12);
+  }
+  &__gold {
+    color: $loyaltyGold;
+  }
+  &__reward-bonus {
+    position: relative;
+    margin-right: rem(24);
+    &:after {
+      display: block;
+      position: absolute;
+      top: rem(3);
+      right: rem(-5);
+      width: rem(17);
+      height: rem(17);
+      border: rem(1) solid $loyaltyGold;
+      border-radius: 50%;
+      color: $loyaltyGold;
+      font-size: em(8);
+      line-height: rem(17);
+      text-align: center;
+      content: 'B';
+      vertical-align: middle;
+      @extend %font-secondary--bold;
+    }
+  }
+  &__reward-bonus--inline {
+    margin-right: 0;
+    &:after {
+      position: static;
+      display: inline-block;
+    }
+  }
+  &__toggle-rewards-history {
+    &-show {
+      display: inline;
+    }
+    &-hide {
+      display: none;
+    }
+    &.is-active {
+      .loyalty__toggle-rewards-history-hide {
+        display: inline;
+      }
+      .loyalty__toggle-rewards-history-show {
+        display: none;
+      }
+    }
+  }
+}

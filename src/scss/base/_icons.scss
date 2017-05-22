@@ -1,0 +1,136 @@
+/**
+
+  @icons
+---------------------------------------------------------
+  base/_icons.scss
+--------------------------------------------------------
+
+  Icon classes are used on SVG elements, their PNG fallbacks,
+  and can be used on all other non-svg icons.
+
+  .icon--heart and all other specific icons should be used
+  on span for fallback support. Background CSS is conditionally
+  loaded on browsers that don't support SVG.
+
+  Example: Small Heart Icon
+  <span class="icon icon--sm icon--heart">
+    <svg> <use xlink:href="#icon-heart"></use>
+  </span>
+
+  Example: Large Chat Icon
+  <span class="icon icon--lg icon--chat">
+    <svg> <use xlink:href="#icon-chat"></use>
+  </span>
+
+--------------------------------------------------------- */
+
+// IE data uri icon fallback placeholder
+%icon-ie-size {
+  &.icon {
+    .lt-ie9 & {
+      width: rem(12);
+      height: rem(12);
+      color: transparent;
+      font: 0/0 a; // image replacement for desc and title
+      text-shadow: none;
+    }
+  }
+}
+
+
+// Default icon style
+.icon {
+  display: inline-block;
+  width: rem(20);
+  height: rem(20);
+  background-image: none !important;
+  color: inherit;
+  vertical-align: middle;
+  fill: currentColor;
+  // SVG or icon child
+  > * {
+    display: block;
+    width: inherit;
+    height: inherit;
+    vertical-align: middle;
+  }
+}
+
+.icon--xxs {
+  width: rem(5);
+  height: rem(5);
+  // If IE 8 fallback to default icon size
+  @include old-ie {
+    @extend %icon-ie-size;
+  }
+}
+
+.icon--xs {
+  width: rem(8);
+  height: rem(8);
+  // If IE 8 fallback to default icon size
+  @include old-ie {
+    @extend %icon-ie-size;
+  }
+}
+
+.icon--sm {
+  width: rem(12);
+  height: rem(12);
+  // If IE 8 fallback to default icon size
+  @include old-ie {
+    @extend %icon-ie-size;
+  }
+}
+
+.icon--md {
+  width: rem(16);
+  height: rem(16);
+  // If IE 8 fallback to default icon size
+  @include old-ie {
+    @extend %icon-ie-size;
+  }
+}
+
+.icon--lg {
+  width: rem(24);
+  height: rem(24);
+  // If IE 8 fallback to default icon size
+  @include old-ie {
+    @extend %icon-ie-size;
+  }
+}
+
+.icon--xl {
+  width: rem(34);
+  height: rem(34);
+  // If IE 8 fallback to default icon size
+  @include old-ie {
+    @extend %icon-ie-size;
+  }
+}
+
+.icon--xxl {
+  width: rem(46);
+  height: rem(46);
+  // If IE 8 fallback to default icon size
+  @include old-ie {
+    @extend %icon-ie-size;
+  }
+}
+
+$icon-heart-fill-stroke: #b2b2b2;
+// Heart Fill Hover States
+.icon--heart-fill--animate {
+  fill: $color__white;
+  stroke: $icon-heart-fill-stroke;
+  stroke-width: rem(6);
+  &:hover {
+    stroke: $color__black;
+  }
+}
+
+// // use margin helper
+// li .icon--heart-fill {
+//   margin-right: rem(5);
+// }

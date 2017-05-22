@@ -1,0 +1,44 @@
+---
+notes: Pagination
+---
+<div class="pagination__wrap">
+    <a id="prev_btn" class="pagination__controls pagination__controls-left link link--noline u-inline-block plp-filter-clickable" href="javascript:void(0);" rel="prev" aria-label="previous page">
+        <div class="btn" disabled>
+            <span class="pagination__controls-icon icon icon--md icon--arrow-left--thin">
+                <svg><use xlink:href="#icon-arrow-left--thin"></use></svg>
+            </span>
+        </div>
+    </a>
+    <div class="pagination u-inline-block">
+        <ul class="pagination__list u-margin-l--none">
+            <li class="filters__pagination-item pagination__item">
+                <a class="pagination__link u-padding-l--none active plp-filter-clickable" data-page-no="1">1</a>
+            </li>
+            <li class="filters__pagination-item pagination__item">
+                <a class="pagination__link u-padding-l--none plp-filter-clickable" data-page-no="2">2</a>
+            </li>
+            <li class="filters__pagination-item pagination__item">
+                <a class="pagination__link u-padding-l--none plp-filter-clickable" data-page-no="3">3</a>
+            </li>
+            <li class="filters__pagination-item pagination__item">
+                <a class="pagination__link u-padding-l--none plp-filter-clickable" data-page-no="4">4</a>
+            </li>
+            <li class="filters__pagination-item pagination__item">
+                <a class="pagination__link u-padding-l--none plp-filter-clickable" data-page-no="5">5</a>
+            </li>
+            <li class="filters__pagination-item pagination__item pagination__disabled" aria-disabled="true">...</li>
+            <li class="filters__pagination-item pagination__item">
+                <a class="pagination__link u-padding-l--none plp-filter-clickable" data-page-no="559">559</a>
+            </li>
+        </ul>
+    </div>
+    <a id="next_btn" class="pagination__controls pagination__controls-right link link--noline u-inline-block-top plp-filter-clickable" href="javascript:void(0)" rel="next" aria-label="next page">
+        <div class="btn">
+            <span class="pagination__controls-icon icon icon--md icon--arrow-right--thin">
+                <svg><use xlink:href="#icon-arrow-right--thin"></use></svg>
+            </span>
+        </div>
+        <p class="pagination__controls-text">Nov 19</p>
+    </a>
+    <input id="pageNum_param" type="hidden" name="pageNum" value="1"/>
+</div>

@@ -1,0 +1,383 @@
+/****
+
+  MAIN STYLESHEET for Revolve
+
+---------------------------------------------------------
+
+  EVOLVING CSS ARCHITECTURE
+
+---------------------------------------------------------
+
+  TABLE OF CONTENTS
+  @toc
+
+  - Base ............ foundations, mixins, functions, vars
+  - Elements ........ single elements
+  - Layout .......... layout objects like grids, containers
+  - Modules ......... objects created by combining elements
+  - Feature
+  - Temp
+
+---------------------------------------------------------  */
+
+
+/***
+
+  @config
+---------------------------------------------------------
+
+  Config for main stylesheet. Declares variable to compile
+  regular browser stylesheet
+
+-----------------------------------------------------  */
+
+$old-ie: false !default;
+$px-only: false !default;
+$dev-mode: false !default;
+$is-mobile: true !default;
+
+
+/***
+
+  @utils
+---------------------------------------------------------
+
+  Your CSS begins with some global variables, a reset which
+  is basically Normalize, some mixins, and a print stylesheet.
+
+-----------------------------------------------------  */
+
+// Functions
+//
+@import 'utils/function-rem';
+
+@import 'utils/function-font-em';
+
+// Vars
+//
+@import 'utils/vars';
+
+// Print
+//@import 'utils/print';
+
+// Mixins
+//
+@import 'utils/mixin-breakpoints';
+
+@import 'utils/mixin-arrows';
+
+@import 'utils/mixin-burger';
+
+@import 'utils/mixin-flexbox';
+
+@import 'utils/mixin-retina';
+
+@import 'utils/mixin-old-ie';
+
+@import 'utils/mixin-is-mobile';
+
+@import 'utils/mixin-clearfix';
+
+@import 'utils/mixin-font-face-importer';
+
+@import 'utils/mixin-lang-font';
+
+//@import 'utils/mixin-gradual-media-queries';
+
+@import 'utils/mixin-placeholder';
+
+
+
+
+// Global
+//
+@import 'utils/fonts';
+
+@import 'base/html';
+
+@import 'base/body';
+
+// Reset
+//
+@import 'utils/reset';
+// Print
+//
+
+
+
+/***
+
+  @base
+---------------------------------------------------------
+
+  Global styling of base.
+
+---------------------------------------------------------  */
+
+@import 'base/buttons';
+
+@import 'base/code';
+
+@import 'base/forms';
+
+@import 'base/headings';
+
+@import 'base/hr';
+
+@import 'base/images';
+
+@import 'base/icons';
+
+@import 'base/links';
+
+@import 'base/lists';
+
+@import 'base/quotes';
+
+@import 'base/tables';
+
+@import 'base/text';
+
+
+
+/***
+
+  @layout
+---------------------------------------------------------
+
+  A large portion of CSS is structural layout. You will use
+  these helpers to create the scaffolding that will support
+  the elements that make up your site.
+
+---------------------------------------------------------  */
+
+@import 'layout/blocks';
+
+@import 'layout/container';
+
+@import 'layout/flag';
+
+@import 'layout/grids';
+
+@import 'layout/block-grids';
+
+@import 'layout/widths';
+
+@import 'layout/island';
+
+@import 'layout/media';
+
+@import 'layout/ui-lists';
+
+@import 'layout/ui-table';
+
+@import 'layout/fixed-fluid';
+
+@import 'layout/fluid-frame';
+
+// @import 'layout/_this-or-this';
+
+
+
+/***
+
+  @modules
+---------------------------------------------------------
+
+  Reusable objects that are combinations
+  of elements and other modules.
+
+  When you create a new module, make sure the partial is
+  in the modules directory, and you import it below
+
+  Comment out any partial you don't need for this app.
+
+---------------------------------------------------------  */
+
+
+// Site Modules
+//
+// @import 'modules/site';
+
+// @import 'modules/site-header';
+
+// @import 'modules/site-main';
+
+// @import 'modules/site-footer';
+
+// Component Modules
+//
+// @import 'modules/alerts';
+
+// @import 'modules/branding';
+
+// @import 'modules/callouts';
+
+// @import 'modules/chat';
+
+// @import 'modules/dropdown';
+
+// @import 'modules/heroes';
+
+// @import 'modules/modals';
+
+// @import 'modules/nav';
+
+// @import 'modules/ntf';
+
+// @import 'modules/tooltips';
+
+// @import 'modules/crumbs';
+
+// @import 'modules/region-flags';
+
+// @import 'modules/sidebar';
+
+// @import 'modules/thumbnails';
+
+// @import 'modules/video-embeds';
+
+// @import 'modules/badges';
+
+// @import 'modules/search';
+
+// @import 'modules/prices';
+
+// @import 'modules/product-titles';
+
+// @import 'modules/product-sections';
+
+// @import 'modules/product-details';
+
+@import 'modules/product-review';
+
+@import 'modules/rsvp-landing';
+
+
+// @import 'modules/product-lists';
+
+// @import 'modules/products-grid';
+
+// @import 'modules/carousel';
+
+// @import 'modules/tags';
+
+// @import 'modules/slideshow';
+
+// @import 'modules/tabs';
+
+// @import 'modules/filters';
+
+// @import 'modules/slidedown';
+
+// @import 'modules/revolve-me';
+
+// @import 'modules/pagination';
+
+// @import 'modules/page-titles';
+
+// @import 'modules/page-cta';
+
+// @import 'modules/image-hover';
+
+// @import 'modules/image-hover-outline';
+
+// @import 'modules/text-field-single';
+
+// @import 'modules/sizeguide';
+
+// @import 'modules/payment-cards';
+
+// @import 'modules/flag-country';
+
+// @import 'modules/ipad-download-banner';
+
+// @import 'modules/back-to-top';
+
+// @import 'modules/button-icons';
+
+// @import 'modules/accordion';
+
+// Feature Specific Modules
+//
+// @import 'modules/favorites';
+
+// @import 'modules/favorites-onboard';
+
+@import 'modules/favorites-chart';
+
+@import 'modules/activewear';
+
+// @import 'modules/wedding';
+
+// @import 'modules/designers-a-z';
+
+// @import 'modules/style-up-inbox';
+
+// @import 'modules/refer-friend';
+
+// @import 'modules/favorite-button';
+
+// @import 'modules/live-chat';
+
+// @import 'modules/shop-size';
+
+// @import 'modules/activewear';
+
+
+// @import 'modules/order-summary';
+
+// Temp
+//
+// @import 'modules/temp-holiday-vars-helpers';
+
+// @import 'modules/temp-holiday-shop-15';
+
+// @import 'modules/temp-holiday-countdown';
+
+// @import 'modules/temp-holiday-snow';
+
+// A/B Test
+//
+// @import 'modules/ab-title';
+
+// Optimizely
+// @import 'modules/optimizely-title';
+ // @import 'modules/region-flags';
+
+
+
+/***
+
+  @helpers
+---------------------------------------------------------
+
+  Helpers are reusable, abstract classes
+  that can be used anwhere and override existing styles.
+  Each class is responsible for doing one job and doing it
+  well.
+
+---------------------------------------------------------  */
+
+// Helpers
+//
+@import 'utils/helpers';
+
+
+
+/***
+
+  @shame
+---------------------------------------------------------
+
+  Add css here if you're unsure where it should go for now.
+  shame.scss is jokingly titled to make it a little
+  light-hearted whilst also indicating that anything in
+  there is a bit of a shame; a shame to have to have done,
+  a shame to pollute the codebase with and so on…
+
+---------------------------------------------------------  */
+
+// Damn Shame
+//
+// @import 'shame';

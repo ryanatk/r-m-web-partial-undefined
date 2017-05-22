@@ -1,0 +1,188 @@
+/// Used to generate the child selectors denoting what should be filled in.
+/// @access private
+/// @param {Number} $index - The index or rating being filled
+/// @param {String} $block-selector - The high level block name
+/// @param {String} $item-element - The actual star item
+/// @return {List} List of selectors being filled in
+@function chain-filled-selectors($length, $block-selector, $item-element) {
+  $selectors: ();
+
+  @for $i from 1 to $length+1 {
+    $selector: unquote('#{$block-selector}__#{$item-element}\:nth-child\(#{$i})');
+    $selectors: append($selectors, $selector, 'comma');
+  }
+
+  @return $selectors;
+}
+
+
+/// Responsible for rendering a filled rating by it's number or index. More
+/// specifically, it takes in a whole number to fill, i.e. 1, 2, 3...Infinity
+/// and converts that over to a chain of selectors representing what should be
+/// filled in.
+/// @access private
+/// @param {Number} $index - The index or rating being filled
+/// @param {String} $block-selector - The high level block name
+/// @param {Map} options - Configurable options
+@mixin fill-stars($index, $block-selector, $options) {
+  $item-element: map-get($options, 'item-element');
+  $child-selector: map-get($options, 'child-selector');
+  $filled-modifier: map-get($options, 'filled-modifier');
+
+  // This covers the use case of a half filled star. Since the half filled star
+  // goes into the next star, i.e. 4.5 actually covers part of the 5th star, we
+  // take the index which is one higher than the actual rating, subtract it by
+  // 1 to get the actual rating, and reference the next star with the index
+  // since that is one ahead of the actual index. This appears before the
+  // chained selectors so that the outputted CSS is in the correct order. It
+  // doesn't really affect anything, but it's a nice thing to have.
+  $prev: $index - 1;
+  &--#{$filled-modifier}-#{$prev}\.5 {
+    #{$block-selector}__#{$item-element}:nth-child(#{$index}) {
+      #{$child-selector}:nth-child(1) {
+        @extend %icon--star-filled;
+        display: block;
+      }
+    }
+  }
+
+  // Obtain the full selector chain for all the filled selectors.
+  $selectors: chain-filled-selectors($index, $block-selector, $item-element);
+
+  // Apply the selector chain to the top level modifier so the filled
+  // denominations can be fulfilled. The modifiers cover n, n.0, and n.5, which
+  // should cover all possible use cases of wholes/halves.
+  &--#{$filled-modifier}-#{$index},
+  &--#{$filled-modifier}-#{$index}\.0,
+  &--#{$filled-modifier}-#{$index}\.5 {
+    #{$selectors} {
+      #{$child-selector} {
+        @extend %icon--star-filled;
+      }
+    }
+  }
+}
+
+/// This mixin will build out a set of stars based on the number of stars that
+/// should be filled in. It does so by covering for n, n.0, and n.5.
+/// Afterwards, the modifier sets the precedent, but then the element (or star)
+/// will get the filled in treatment.
+///
+/// This abstract explanation probably makes no sense so let's provide an
+/// example. This work assumes the following HTML structure where the maximum
+/// amount of stars is 5:
+///
+/// @example markup - Expected HTML
+///   <div class="stars--filled-2.0">
+///     <div class="stars__star">
+///       <span class="icon icon--lg">
+///       <svg>
+///         <use xmlns:xlink="http://www.w3.org/1999/star-half" xlink:href="#icon-star-half"></use>
+///       </svg>
+///       </span>
+///       <span class="icon icon--lg">
+///         <svg>
+///           <use xmlns:xlink="http://www.w3.org/1999/star" xlink:href="#icon-star"></use>
+///         </svg>
+///       </span>
+///     </div>
+///     <!-- Imagine a total of 5 stars appearing -->
+///   </div>
+///
+/// The first child represents half a star while the second/last child
+/// represents a full star. Using the above markup, here's a partially SCSS
+/// representation:
+///
+/// @example css - Semi-generated 2(.n) star
+///   .stars--filled-2,
+///   .stars--filled-2\.0,
+///   .stars--filled-2\.5 {
+///     .stars__star:nth-child(1),
+///     .stars__star:nth-child(2) {
+///       .icon {
+///         stroke: black;
+///         fill: black;
+///       }
+///     }
+///   }
+///
+/// In the above example, icon is a child of .stars__star and contains two
+/// children. By default, the first child (or half star) is not shown. In
+/// order to show the half star, the first child (half star) is shown, but the
+/// second/last child (full star) is shown as unfilled, creating the illusion
+/// of a single icon, when it's actual two. Using the generated CSS above,
+/// here's the generated CSS for the 2.5 star:
+///
+/// @example css - Semi-generated 2.5 star
+///   .stars--filled-2\.5 {
+///     .stars__star:nth-child(3) {
+///       .icon:nth-child(1) {
+///         stroke: block;
+///         fill: black;
+///         display: block;
+///       }
+///     }
+///   }
+///
+/// @access public
+/// @param {Number} $length - The amount of stars
+/// @param {String} $block-selector - The high level block name
+/// @param {Map} overrides - Configurable overrides
+@mixin stars($length, $block-selector, $overrides: ()) {
+  $defaults: (
+      filled-modifier: 'filled',
+      item-element: 'item',
+      child-selector: '.icon',
+  );
+
+  $options: map-merge($defaults, $overrides);
+  $item-element: map-get($options, 'item-element');
+  $child-selector: map-get($options, 'child-selector');
+  $filled-modifier: map-get($options, 'filled-modifier');
+
+  &__#{$item-element} {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+    margin: 0 2px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &last-child {
+      margin-right: 0;
+    }
+
+    #{$child-selector} {
+      &:nth-child(1) {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @extend %icon--star-unfilled;
+      stroke: $color__black;
+      stroke-width: rem(.5);
+    }
+  }
+
+  @for $i from 1 to $length+1 {
+    @include fill-stars($i, $block-selector, $options);
+  }
+}
+
+/// Used to apply unfilled styling to a star.
+%icon--star-unfilled {
+  fill: $color__white;
+  stroke: $color__grey--light;
+  stroke-width: rem(.5);
+}
+
+/// Used to apply filled styling to a star.
+%icon--star-filled {
+  stroke-width: 0;
+  fill: $color__black;
+}

@@ -1,0 +1,45 @@
+@import '../lib/lib';
+
+// Use this if you want a screen reader to access text
+// It's visually hidden but still in the DOM
+%u-screen-reader {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+// Hide by not displaying (also hides from screen readers)
+%u-hide {
+  display: none;
+}
+
+// Hide at specific breakpoints
+@mixin visibility-hide-at-breakpoints($output: false) {
+  $hide-at-breakpoints: (
+    xs: $small-mobile,
+    sm: $mobile,
+    md: $tablet,
+    lg: $small-desktop,
+    xl: $desktop,
+  );
+
+  $prefix: selector-prefix($output);
+
+  @each $name, $size in $hide-at-breakpoints {
+    @include bp-at-least($size) {
+      #{$prefix}u-hide-#{$name} {
+        display: none;
+      }
+    }
+  }
+}
+
+// run once
+@include visibility-hide-at-breakpoints();

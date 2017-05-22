@@ -1,0 +1,44 @@
+---
+notes: |
+  ```javascript
+  $(element).modal({
+    url: "",
+    type: "",
+    open: null,
+    cache: true,
+    overlayClose: true,
+    triggerOpen: false,
+    onComplete : function () {}
+  });
+  ```
+  ### Utility function
+  ```javascript
+  $.modal({
+    open: "modal-id",
+    triggerOpen: true
+  });
+  ```
+  Most of the modal options could be use as a data attribute on the modal wrapper, example:  `<div class="modal" data-type="full"></div>`
+
+  ### `url`
+  this will trigger the modal's ajax function and load the content specify by the url.
+
+  ### `type`
+  There are four types of modals: default (middle), `full` , `top` , `notification`
+
+  ### `open`
+  This tells the plugin which modal to open. The value must be the ID of the modal.
+
+  ### `cache`
+  If cache is set to fault then ajax content will be reloaded.
+
+  ### `overlayClose`
+  If set to false, clicking outside the modal will not close it.
+
+  ### `triggerOpen`
+  If set to true, the modal will open on initialization.
+
+  ### `onComplete`
+  Callback function for when ajax finish loading.
+
+---

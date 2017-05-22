@@ -1,0 +1,78 @@
+/**
+
+  @product review
+--------------------------------------------------------
+  modules/_product-review.scss
+--------------------------------------------------------
+
+  Product Review Section
+
+------------------------------------------------------ */
+
+.product-review {
+  // Rating
+  &__post {
+    margin-bottom: rem(16);
+    padding-bottom: rem(16);
+    border-bottom: rem(1) solid $color__grey--lighter;
+  }
+
+  //.product-review__star
+  &__star {
+    width: rem(15);
+    height: rem(15);
+    fill: $color__grey--lighter;
+    // .product-review__star-outline
+    &-outline {
+      fill: $color__white;
+      stroke: $color__black;
+      stroke-width: rem(1);
+    }
+    //.product-review__star--lg
+    &--lg {
+      width: rem(18);
+      height: rem(18);
+      line-height: rem(18);
+    }
+    //.product-review__star--lg
+    &--xl {
+      width: rem(25);
+      height: rem(25);
+      line-height: rem(25);
+    }
+    //.product-review__star-whole
+    &-whole {
+      fill: $color__black;
+    }
+    //.product-review__star-half
+    &-half {
+      position: absolute;
+      //top: rem(7);
+      top: rem(0);
+      left: 0;
+      fill: $color__black;
+      stroke: $color__black;
+    }
+    //.product-review__star-half--lg
+    &-half--lg {
+      top: rem(1);
+    }
+    //.product-review__star-holder
+    &-holder {
+      position: relative;
+      line-height: em(12);
+      vertical-align: bottom;
+    }
+    //.product-review__star-holder--lg
+    &-holder--lg {
+      line-height: rem(22);
+    }
+    //.product-review__star-rating
+    &-rating {
+      display: inline-block;
+      margin-left: rem(8);
+      line-height: rem(16);
+      vertical-align: bottom;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+/**
+ *  USAGE
+ *  npm run svg-disable svgname(s)
+ *  does not delete .svg file from svg/available
+ */
+
+var svg = require('../tasks/svglinks');
+
+// get file name(s) from command line arguments
+var links = svg.getLinks(process.argv);
+
+// add symlinks, looping thru fileNames
+links.forEach(svg.disable);

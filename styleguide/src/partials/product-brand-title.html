@@ -1,0 +1,16 @@
+{{!-- Set the default `heading-tag`, for the product-name --}}
+{{#*inline "hn"}}{{#heading-tag}}{{.}}{{else}}h2{{/heading-tag}}{{/inline}}
+
+<{{> hn }} itemprop="name"
+  class="product-name {{#modifier}}product-name--{{.}}{{/modifier}}">{{product-name}}</{{> hn }}>
+<p itemprop="brand" class="product-brand {{#modifier}}product-brand--{{.}}{{/modifier}}">
+  {{#if brand-link}}
+    <a href="{{brand-link}}" title="{{{brand-name}}}" class="product-brand__link">{{{brand-name}}}</a>
+  {{else}}
+    {{{brand-name}}}
+  {{/if}}
+</p>
+
+<p itemprop="number" class="product-number">
+    Style No. {{{product-number}}}
+</p>

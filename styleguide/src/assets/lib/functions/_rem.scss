@@ -1,0 +1,63 @@
+
+/**
+
+  @unit
+--------------------------------------------------------
+  base/_function-u.scss
+--------------------------------------------------------
+
+// Usage: rem({number})
+
+------------------------------------------------------ */
+
+/**
+ * @see rem
+ * @see u
+*/
+$pixelBase : 12;
+
+@function parseInt($n) {
+      @return $n / ($n * 0 + 1);
+}
+
+/**
+ * Passes value and returns as pixel for IE stylesheet and rem for regular stylesheet. Used in conjunction with {rem} function
+ *
+ * @param {Values}  $values - Value to convert
+ * @param {Pixel Base}   $pixelBase (16)  - Base pixel value
+ *
+ * @requires {u} u - used inside of u function
+ *
+ * @example scss
+ * // margin: rem($value)
+ **
+ * @return {$value rem | $value px}
+ */
+@function rem($values){
+
+      $list: ();
+      @each $value in $values { 
+
+            // Uncomment the lines before once we styleguide has been implemented
+            /*
+            $rem : ($value / $pixelBase)+0rem;
+
+            @if $px-only  {
+                  $list: append($list, $value + px);
+            } @else {
+                  $list: append($list, $rem);
+            }
+            */
+
+            // Force px unit instead of rem
+            // Remove line below once styleguide has been implemented
+            $list: append($list, $value + px);
+
+            @if (round($value)) {
+                  //@warn 'rem() only accepts pixel value without unit';
+            }
+
+      }
+
+      @return $list();
+}

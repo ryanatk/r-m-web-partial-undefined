@@ -1,0 +1,42 @@
+---
+notes: |
+  ### Keyboard.parseKey(event)
+  Parses the (keyboard) event and returns a String that represents its key
+  Can be used like Keyboard.parseKey(event) === Keyboard.keys.SPACE
+
+  Avaliable keys (strings):
+  * 'TAB'
+  * 'ENTER'
+  * 'ESCAPE'
+  * 'SPACE'
+  * 'ARROWLEFT'
+  * 'ARROWUP'
+  * 'ARROWRIGHT'
+  * 'ARROWDOWN'
+  * 'SHIFT_${key}'
+  * 'CTRL_${key}'
+  * 'ALT_${key}'
+
+  Example of use:
+  ```javascript
+  if (Keyboard.parseKey(evt) === Keyboard.keys.ESCAPE) {
+    // Do something
+  }
+  ```
+  ### Keyboard.trapFocus($el)
+  Traps the focus in the given element.
+
+  Example of use:
+  ```javascript
+  Keyboard.trapFocus($content);
+  ```
+
+  ### Keyboard.releaseFocus($el, $lastFocus);
+  Releases the trapped focus from the given element. If $lastFocus is assigned then return focus to original element
+
+  Example of use:
+  ```javascript
+  Keyboard.releaseFocus($content, $lastFocus);
+  ```
+
+---

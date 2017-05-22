@@ -1,0 +1,13 @@
+{
+  "plugins": ["plugins/markdown", "node_modules/jsdoc-babel"],
+
+  "babel": {
+    "presets": ["env"]
+  },
+
+  "opts": {
+    "destination": "./docs",
+    "template": "node_modules/minami",
+    "readme": "./README.md"
+  }
+}

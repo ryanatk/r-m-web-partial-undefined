@@ -1,0 +1,115 @@
+{
+  "name": "x REVOLVE Wyoming Gown in Off White",
+  "brand": "Tularosa",
+  "brandLink": "?brand-page",
+  "styleNumber": "TULA-WD273",
+  "reviews": {
+    "quantity": "123",
+    "rating": "4.0"
+  },
+  "image": "//is4.revolveassets.com/images/p4/n/z/TULA-WD273_V1.jpg?resize=960:*",
+  "alt": "Tularosa x REVOLVE Wyoming Gown in Off White",
+  "carousel": [
+    "//is4.revolveassets.com/images/p4/n/z/TULA-WD273_V1.jpg?resize=960:*",
+    "//is4.revolveassets.com/images/p4/n/z/TULA-WD273_V2.jpg?resize=960:*",
+    "//is4.revolveassets.com/images/p4/n/z/TULA-WD273_V3.jpg?resize=960:*",
+    "//is4.revolveassets.com/images/p4/n/z/TULA-WD273_V4.jpg?resize=960:*",
+    "//is4.revolveassets.com/images/p4/n/z/TULA-WD273_V5.jpg?resize=960:*"
+  ],
+  "sizes": [
+    {
+      "value": "",
+      "label": "Select Size",
+      "delivery-date": "Jan 1 - Jan 3",
+      "regular-price": 298,
+      "price": 298
+    }, {
+      "value": "S",
+      "label": "S",
+      "delivery-date": "Jan 1 - Jan 3",
+      "regular-price": 298,
+      "price": 298
+    }, {
+      "value": "M",
+      "label": "M",
+      "delivery-date": "Feb 7 - Feb 9",
+      "regular-price": 298,
+      "price": 298,
+      "preorder": true
+    }, {
+      "value": "L",
+      "label": "L",
+      "delivery-date": "Jan 1 - Jan 3",
+      "regular-price": 298,
+      "price": 189,
+      "one-left": true
+    }, {
+      "value": "LT",
+      "label": "LT",
+      "delivery-date": "Jan 1 - Jan 3",
+      "regular-price": 298,
+      "price": 298,
+      "oos": true
+    }, {
+      "value": "XL",
+      "label": "XL",
+      "delivery-date": "Jan 1 - Jan 3",
+      "regular-price": 298,
+      "price": 99,
+      "final-sale": true
+    }, {
+      "value": "XXL",
+      "label": "XXL",
+      "delivery-date": "Jan 1 - Jan 3",
+      "regular-price": 298,
+      "price": 99,
+      "final-sale": true,
+      "sample-defect": true
+    }
+  ],
+  "oneSize": [
+    {
+      "value": "one-size",
+      "label": "One Size",
+      "delivery-date": "Jan 1 - Jan 3",
+      "regular-price": 298,
+      "price": 298
+    }
+  ],
+  "colors": [
+    {
+      "label": "Off White",
+      "href": "/mobile/toesox-bella-half-toe-sock-in-heather-grey-lime/dp/TOER-WT1/?d=Womens"
+    }, {
+      "label": "Black",
+      "href": "/mobile/toesox-bella-half-toe-sock-in-heather-grey-lime/dp/TOER-WT11/?d=Womens"
+    }
+  ],
+  "favoriteMessages": {
+    "favoriteMessage": "Favorite x REVOLVE Wyoming Gown in Off White",
+    "unfavoriteMessage": "Unfavorite x REVOLVE Wyoming Gown in Off White",
+    "favoriteNotification": "x REVOLVE Wyoming Gown in Off White has been added to your favorites",
+    "unfavoriteNotification": "x REVOLVE Wyoming Gown in Off White has been removed from your favorites"
+  },
+  "revolve-me": [
+    "//d1k5ox7rxhgie3.cloudfront.net/feed/oa3pjp8f4_m.jpg",
+    "//d1k5ox7rxhgie3.cloudfront.net/feed/kk1a7rb5_m.jpg",
+    "//d1k5ox7rxhgie3.cloudfront.net/feed/gn0ftnr_m.jpg",
+    "//d1k5ox7rxhgie3.cloudfront.net/feed/rjg00gm81_m.jpg",
+    "//d1k5ox7rxhgie3.cloudfront.net/feed/tpah0l34_m.jpg",
+    "//d1k5ox7rxhgie3.cloudfront.net/feed/76l5n1833_m.jpg"
+  ],
+  "templates": [
+    "price.default",
+    "price.default-on-sale",
+    "price.lg",
+    "price.lg-on-sale"
+  ],
+  "page-options": [
+    "badges.product",
+    "badges.wedding",
+    "product-options.out-of-stock",
+    "product-options.one-color",
+    "product-options.one-size"
+  ]
+}

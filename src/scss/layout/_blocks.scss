@@ -1,0 +1,33 @@
+/**
+
+  @blocks
+--------------------------------------------------------
+  modules/_blocks.scss
+--------------------------------------------------------
+
+  Blocks contain sections of content.  Blocks can have
+  different visual styling, but usually have the same
+  structure; one spacing unit margin at the bottom,
+  and some have borders, and padding, etc.
+
+-----------------------------------------------------  */
+
+// Blocks add bottom margin
+//
+.block {
+  margin-bottom: rem($base-margin);
+  // These blocks don't contain visual styling by default, but you can add your own
+  &--xs { margin-bottom: rem( 8 ); }
+  &--sm { margin-bottom: rem( 12 ); }
+  &--md { margin-bottom: rem( 15 ); }
+  &--lg { margin-bottom: rem( 28 ); }
+  &--xl { margin-bottom: rem( $base-margin * 3 ); } // 42
+}
+
+
+// Block with top and bottom margin
+//
+.block--ends {
+  margin-top: rem($base-margin);
+  margin-bottom: rem($base-margin);
+}

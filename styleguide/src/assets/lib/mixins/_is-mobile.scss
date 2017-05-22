@@ -1,0 +1,28 @@
+
+/**
+
+  @is-mobile
+--------------------------------------------------------
+  base/_mixin-is-mobile.scss
+--------------------------------------------------------
+
+/**
+ * Mobile mixin - returns content to mobile stylesheet only
+ *
+ * @example scss
+ * // @include is-mobile {
+ * // 	position: relative;
+ * // }
+ *
+ */
+
+$is-mobile: false !default;
+
+
+@mixin is-mobile {
+    // Only use this content if we're dealing with mobile only CSS
+
+    @if $is-mobile {
+        @content;
+    }
+}

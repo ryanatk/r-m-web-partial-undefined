@@ -1,0 +1,21 @@
+<fieldset class="form-section rating-scale {{fieldset-class-name}}"
+          {{#error-message}}data-radio-group-error-message="{{.}}"{{/error-message}}
+          {{#insert-error-after}}data-radio-group-insert-error-after="{{.}}"{{/insert-error-after}}>
+  <h2 class="form-section__title">Rate This Item</h2>
+
+  <ol class="form-section__content">
+    {{#starRatings}}
+      <li class="rating-scale-field" data-rating-text="{{text}}">
+        <input type="radio"
+               name="rating-scale"
+               value="{{rating}}"
+               id="rating-scale-{{rating}}-star{{../append-id}}"
+               class="rating-scale-field__input u-screen-reader"
+               {{#if ../required}}required{{/if}}>
+        <label for="rating-scale-{{rating}}-star{{../append-id}}" class="rating-scale-field__label icon">
+          {{> icons.star skip-wrap=true star-title=icon.title star-description=icon.description }}
+        </label>
+      </li>
+    {{/starRatings}}
+  </ol>
+</fieldset>

@@ -1,0 +1,5 @@
+{{#each this}}
+<script id="{{this}}" type="text/x-handlebars-template">
+  {{> (lookup ../this @index)}}
+</script>
+{{/each}}

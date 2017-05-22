@@ -1,0 +1,15 @@
+---
+notes: |
+  JavaScript forwards a user when `color` dropdown is changed.
+  This is based on the **required** `data-href` attribute of the `option`.
+  A `value` can optionally be added to the `option`, and it will submit with the form,
+  however it means nothing to the front-end, as the color is tied to the URL.
+---
+
+{{#> floating-label-select id="color" label="Color"
+  fieldClassName="product__color" fieldModifier=modifier
+}}
+  {{#each pdp.colors}}
+    <option data-href="{{this.href}}">{{this.label}}</option>
+  {{/each}}
+{{/floating-label-select}}

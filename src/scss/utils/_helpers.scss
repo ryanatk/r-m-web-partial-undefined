@@ -1,0 +1,786 @@
+/**
+
+  @helpers
+---------------------------------------------------------
+  base/_helpers.scss
+--------------------------------------------------------
+
+  This partial is for global helper classes only! Don't
+  tamper with units or add items that can't be used as
+  utilized helper classes. Helpers are abstract classes
+  that can be used over and over on any given HTML element.
+  Each class is responsible for doing one job and doing it
+  well. Don't use helpers as JS state classes.
+
+--------------------------------------------------------- */
+// scss-lint:disable ImportantRule, SpaceBeforeBrace
+
+
+
+/*
+  @hide
+---------------------------------------------------------
+ */
+
+// The classic, display: none;
+.u-hide {
+  display: none;
+}
+
+// Use this if you still need js access to this element
+// it's visually hidden but still in the DOM
+.u-hide-visible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+// hide with opacity
+.u-hide-opacity {
+  opacity: 0;
+}
+
+.u-before--none {
+  &:before {
+    display:none;
+  }
+}
+
+
+// Responsive hiders
+// Min Width @ $small-mobile
+@include bp-at-least($small-mobile) {
+  .u-hide-xs {
+    display: none;
+  }
+}
+
+// Min Width @ $mobile
+@include bp-at-least($mobile) {
+  .u-hide-sm {
+    display: none;
+  }
+}
+
+// Min Width @ $tablet
+@include bp-at-least($tablet) {
+  .u-hide-md {
+    display: none;
+  }
+}
+
+// Min Width @ $small-desktop
+@include bp-at-least($small-desktop) {
+  .u-hide-lg {
+    display: none;
+  }
+}
+
+// Min Width @ $desktop
+@include bp-at-least($desktop) {
+  .u-hide-xl {
+    display: none;
+  }
+}
+
+/*
+  @reveal & conceal effects
+  slowly change visibility (good for modals, etc)
+---------------------------------------------------------
+ */
+
+.u-reveal {
+  visibility: visible;
+  transition: all .3s;
+}
+
+.u-conceal {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+}
+
+// mixin to allow brief consistent assignment of sizes across padding & margin
+@mixin loop-thru-sides($prop, $widths) {
+  // $sides: map used to build padding & margin css
+  // element: css property -suffix indicating side
+  $allsides: (
+    a: '',
+    t: '-top',
+    r: '-right',
+    b: '-bottom',
+    l: '-left',
+    tb: ('-top', '-bottom'),
+    lr: ('-left', '-right')
+  );
+
+  // loop thru sides to append element to className
+  @each $element, $sides in $allsides {
+    &-#{$element} {
+      // loop thru $widths to append modifier
+      @each $modifier, $px in $widths {
+        &--#{$modifier} {
+          @each $side in $sides {
+          // declare css property { $prop-side: width }
+          #{$prop}#{$side}: #{$px};
+          }
+        }
+      }
+    }
+  }
+}
+
+// @padding-helpers
+.u-padding {
+  $widths: (
+    none: 0,
+    xs  : rem(2),
+    sm  : rem(4),
+    md  : rem(6),
+    lg  : rem(12),
+    xl  : rem(16),
+    xxl : rem(22)
+  );
+  @include loop-thru-sides('padding', $widths);
+}
+
+// @margin-helpers
+.u-margin {
+  $widths: (
+    none: 0,
+    xs  : rem(2),
+    sm  : rem(4),
+    md  : rem(8),
+    lg  : rem(12),
+    xl  : rem(16),
+    xxl : rem(22)
+  );
+  @include loop-thru-sides('margin', $widths);
+
+  &--center {
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+  }
+}
+
+.u-neg-margin-t {
+  &--xs      { margin-top: rem(-2); }
+  &--sm      { margin-top: rem(-4); }
+}
+
+/* @border-helpers
+// - @todo clean up if this isn't already being used too much
+--------------------------------------------------------
+*/
+
+.u-border {
+  // Positions
+  &-t {
+    border-top-style: solid;
+    &--none {
+      border-top-width: rem(0);
+    }
+  }
+  &-r {
+    border-right-style: solid;
+    &--none {
+      border-right-width: rem(0);
+    }
+  }
+  &-b {
+    border-bottom-style: solid;
+    &--none {
+      border-bottom-width: rem(0);
+    }
+  }
+  &-l {
+    border-left-style: solid;
+    &--none {
+      border-left-width: rem(0);
+    }
+  }
+  &-a       { border-style: solid; }
+
+  // thicknesses
+  &--none      { border-width: rem(0); }
+  &--xs        { border-width: rem(1); }
+  &--sm        { border-width: rem(2); }
+  &--md        { border-width: rem(3); }
+  &--lg        { border-width: rem(4); }
+  &--xl        { border-width: rem(5); }
+
+  // Palettes
+  &--color-xdark      { border-color: $color__black; }
+  &--color-dark       { border-color: $color__grey; }
+  &--color-red { border-color: $color__red; }
+  &--color-grey-md { border-color: $color__grey--md; }
+  &--color-medium     { border-color: $color__grey--light; }
+  &--color-light      { border-color: $color__grey--lighter; }
+  &--color-lightest   { border-color: $color__grey--lightest; }
+  &--color-xlight     { border-color: $color__offwhite; }
+  &--color-xxlight    { border-color: $color__white; }
+}
+
+
+
+/* @bg-color
+--------------------------------------------------------
+*/
+
+.u-bg-color {
+  &--black         { background-color: $color__black; }
+  &--grey          { background-color: $color__grey; }
+  &--grey-md    { background-color: $color__grey--md; }
+  &--grey-light    { background-color: $color__grey--light; }
+  &--grey-lighter  { background-color: $color__grey--lighter; }
+  &--grey-lightest { background-color: $color__grey--lightest; }
+  &--none          { background-color: transparent; }
+  &--offwhite      { background-color: $color__offwhite; }
+  &--white         { background-color: $color__white; }
+  &--blue          { background-color: $color__blue; }
+  &--blue-dark     { background-color: $color__blue--dark; }
+  &--pink          { background-color: $color__pink; }
+  &--pink-light    { background-color: $color__pink--light; }
+  &--pink-dark     { background-color: $color__pink--dark; }
+  &--green         { background-color: $color__green; }
+  &--error         { background-color: $color__error; }
+}
+
+
+
+/* @color - @todo: remove hover on error.
+--------------------------------------------------------
+*/
+
+.u-color {
+  &--black         { color: $color__black; }
+  &--grey          { color: $color__grey; }
+  &--grey-light    { color: $color__grey--light; }
+  &--grey-lighter  { color: $color__grey--lighter; }
+  &--none          { color: transparent; }
+  &--offwhite      { color: $color__offwhite; }
+  &--white         { color: $color__white; }
+  &--blue          { color: $color__blue; }
+  &--blue-dark     { color: $color__blue--dark; }
+  &--pink          { color: $color__pink; }
+  &--pink-light    { color: $color__pink--light; }
+  &--pink-dark     { color: $color__pink--dark; }
+  &--error         { color: $color__error; }
+  &--red         { color: $color__red; }
+
+  // remove this after testing u-error class
+  // &--error         {
+  //   border-color: $color__error;
+  //   color: $color__error;
+  //   &:hover {
+  //     color: $color__error;
+  //   }
+  // }
+}
+
+
+/* General error class that covers border-color, color, and hover color
+--------------------------------------------------------
+*/
+.u-error {
+  border-color: $color__error !important;
+  color: $color__error !important;
+  &:hover {
+    color: $color__error;
+  }
+}
+
+
+/* @font-primary
+--------------------------------------------------------
+*/
+
+.u-font-primary {
+  font-family: $font-primary;
+  font-weight: normal;
+}
+
+.u-font-primary--bold {
+  font-family: $font-primary;
+  font-weight: bold;
+}
+
+/* @font-secondary
+--------------------------------------------------------
+*/
+
+.u-font-secondary {
+  font-family: $font-secondary;
+  font-weight: normal;
+}
+
+.u-font-secondary--bold {
+  font-family: $font-secondary;
+  font-weight: bold;
+}
+
+.u-font-secondary--lighter {
+  font-family: $font-secondary--lighter;
+  font-weight: lighter;
+}
+
+.u-font-secondary--condensed {
+  font-family: $font-secondary--condensed;
+  font-weight: normal;
+}
+
+
+
+/* @font-size-helpers - @todo: move over mobile styles
+--------------------------------------------------------
+*/
+
+.u-text-xs {
+  font-size: em(9);
+}
+
+.u-text-sm {
+  font-size: em(10);
+}
+
+.u-text-md {
+  font-size: em(12);
+}
+
+.u-text-lg {
+  font-size: em(14)
+}
+
+.u-text-xl {
+  font-size: em(16);
+}
+
+.u-text-xxl {
+  font-size: em(18);
+}
+
+.u-text-inherit {
+  font-size: inherit;
+}
+
+
+
+
+/* @font-weight-helpers
+--------------------------------------------------------
+*/
+.u-weight--normal {
+  font-weight: normal;
+}
+
+.u-weight--bold {
+  font-weight: bold;
+}
+
+/* @text-decoration-helpers
+--------------------------------------------------------
+*/
+.u-underline {
+  text-decoration: underline;
+}
+.u-text-decoration-none {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* @push-pull-helpers
+--------------------------------------------------------
+*/
+// Need to document
+.u-full-bleed {
+  margin-right: - rem($base-unit) !important;
+  margin-left: - rem($base-unit) !important;
+
+  // if fullbleed is child of island layout classes
+  // Remove after eagle - Remove comment below
+  // .island & {
+  //   margin-right: - rem( $base-unit) !important;
+  //   margin-left: - rem($base-unit) !important;
+  // }
+  // .islet & {
+  //   margin-right: - rem( $base-unit / 2) !important;
+  //   margin-left: - rem($base-unit / 2) !important;
+  // }
+
+  &--md {
+    margin-right: - rem(12) !important;
+    margin-left: - rem(12) !important;
+  }
+
+  &--lg { //This works with Modal
+    margin-right: - rem(16) !important;
+    margin-left: - rem(16) !important;
+  }
+}
+
+
+/* @float-helpers
+--------------------------------------------------------
+*/
+
+.u-float-left {
+  float: left !important;
+}
+
+.u-float-right {
+  float: right !important;
+}
+
+.u-float-none {
+  float: none !important;
+}
+
+
+/* @word-wrap-helpers // still needs to move over to styleguide repo
+--------------------------------------------------------
+*/
+.u-wrap-break-word {
+  word-wrap: break-word !important;
+}
+
+
+/* @opacity-helpers
+--------------------------------------------------------
+*/
+
+// Mute an object by reducing its opacity.
+.u-muted {
+  opacity: .5  !important;
+  filter: alpha(opacity = 50)  !important;
+}
+
+
+/* @clearfix
+--------------------------------------------------------
+*/
+
+.u-clearfix,
+%u-clearfix {
+  @include clearfix();
+}
+
+/* @clearfix
+--------------------------------------------------------
+*/
+
+.u-clear-both {
+  clear: both;
+}
+
+
+/* @full-width
+--------------------------------------------------------
+*/
+
+.u-full-width {
+  width: 100% !important;
+}
+
+/* @width-auto
+--------------------------------------------------------
+*/
+
+.u-width-auto {
+  width: auto !important;
+}
+
+/* @width-auto
+--------------------------------------------------------
+*/
+
+.u-height-auto {
+  height: auto !important;
+}
+
+
+/* @letter-spacing
+--------------------------------------------------------
+*/
+
+// Default letter spacing
+.u-letter-space {
+  letter-spacing: em(2) !important;
+}
+
+// Small letter spacing
+.u-letter-space--sm {
+  letter-spacing: em(1.35, 12);
+}
+
+// Extra Small letter spacing
+.u-letter-space--xs {
+  letter-spacing: em(1, 12);
+}
+
+
+/* @line-height
+--------------------------------------------------------
+*/
+
+
+
+// line-height
+.u-line-height {
+  line-height: normal !important;
+}
+
+// line-height small
+.u-line-height--xs {
+  line-height: em(16, 12) !important;
+}
+
+// line-height small
+.u-line-height--sm {
+  line-height: em(24, 16) !important;
+}
+
+// line-height
+.u-line-height--one {
+  line-height: em(16, 16);
+}
+
+
+/* @overflow
+--------------------------------------------------------
+*/
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+
+/* @ellipsis
+--------------------------------------------------------
+*/
+
+// Ellipsis overflow
+.u-ellipsis,
+%u-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* @u-no-wrap - @todo: move over mobile styles
+--------------------------------------------------------
+*/
+.u-no-wrap {
+  white-space: nowrap !important;
+}
+
+/* @uppercase
+--------------------------------------------------------
+*/
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+/* @lowercase
+--------------------------------------------------------
+*/
+.u-lowercase {
+  text-transform: lowercase;
+}
+
+/* @capitalize
+--------------------------------------------------------
+*/
+.u-capitalize {
+  text-transform: capitalize;
+}
+
+/* @text-transform-none
+--------------------------------------------------------
+*/
+.u-text-transform-none {
+  text-transform: none;
+}
+
+
+/* @pointer
+--------------------------------------------------------
+*/
+.u-pointer {
+  cursor: pointer;
+}
+.u-pointer--default {
+  cursor: default;
+}
+
+
+/* @block
+--------------------------------------------------------
+*/
+.u-block {
+  display: block;
+}
+
+/* @inline-block
+--------------------------------------------------------
+*/
+.u-inline-block {
+  display: inline-block;
+}
+
+/* @inline-block-top
+--------------------------------------------------------
+*/
+.u-inline-block-top {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* @inline-block-bottom
+--------------------------------------------------------
+*/
+.u-inline-block-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+/* @inline-block-bottom
+--------------------------------------------------------
+*/
+.u-inline-block-bottom {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* @text-center
+--------------------------------------------------------
+*/
+.u-center {
+  text-align: center;
+}
+
+
+/* @text-left
+--------------------------------------------------------
+*/
+.u-left {
+  text-align: left;
+}
+
+
+/* @text-right
+--------------------------------------------------------
+*/
+.u-right {
+  text-align: right;
+}
+
+/* @no-select
+--------------------------------------------------------
+*/
+.u-no-select,
+%u-no-select {
+  user-select: none;
+}
+/* @relative-position
+--------------------------------------------------------
+*/
+.u-relative {
+  position: relative;
+}
+/* @absolute-position
+--------------------------------------------------------
+*/
+.u-absolute {
+  position: absolute;
+  &--top {
+    top: 0;
+  }
+  &--right {
+    right: 0;
+  }
+  &--bottom {
+    bottom: 0;
+  }
+  &--left {
+    left: 0;
+  }
+}
+/* @static-position
+--------------------------------------------------------
+*/
+.u-static {
+  position: static;
+}
+
+.u-flex {
+  display: flex;
+}
+
+/* @invert - @todo: move to shame or remove
+// Invert copy for readiblity on black backgrounds.
+--------------------------------------------------------
+*/
+.u-invert {
+  color: $color__white;
+}
+.u-invert--grey {
+  color: $color__text--invert;
+}
+.u-invert--svg {
+  fill: $color__white;
+}
+.u-invert--link {
+  &:hover,
+  &:focus {
+    color: $color__grey--lighter;
+    text-decoration: none;
+  }
+}
+.u-invert--input {
+  border-color: $input-border-color--invert;
+  background: none;
+  color: $color__grey;
+  @include placeholder {
+    color: $color__grey;
+    opacity: 1;
+  }
+}
+
+/* @ui-list--links-block
+--------------------------------------------------------
+*/
+.ui-list--links-block li a {
+  display: block;
+}
+
+
+.u-keyline {
+  &:before {
+    border-top: 4px solid $color__grey--light;
+    content:"";
+    margin: 0 auto; /* this centers the line to the full width specified */
+    position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+    top: 29%; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.u-text-xxs {
+  font-size: rem(14);
+}
+
+.u-vertical-align-t {
+  vertical-align: top;
+}

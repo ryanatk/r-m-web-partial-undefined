@@ -1,0 +1,13 @@
+{
+  "extends": "airbnb",
+
+  "env": {
+    "browser": true
+  },
+
+  "globals": {
+    "ga": true,
+    "YT": true,
+    "Vimeo": true
+  }
+}

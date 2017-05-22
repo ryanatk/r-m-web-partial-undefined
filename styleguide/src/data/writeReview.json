@@ -1,0 +1,163 @@
+{
+  "title": "Tell Us What's Up!",
+
+  "product": {
+    "image": "//is4.revolveassets.com/images/p4/n/z/TULA-WD273_V1.jpg?resize=960:*",
+    "name": "Product Description",
+    "brand": "Brand Name",
+    "price": 200
+  },
+
+  "starRatings": [
+    {
+      "rating": 1,
+      "text": "Not My Fave",
+      "icon": {
+        "title": "1 star",
+        "description": "Give a 1 star rating"
+      }
+    },
+
+    {
+      "rating": 2,
+      "text": "So-So",
+      "icon": {
+        "title": "2 stars",
+        "description": "Give a 2 star rating"
+      }
+    },
+
+    {
+      "rating": 3,
+      "text": "Satisfied",
+      "icon": {
+        "title": "3 stars",
+        "description": "Give a 1 star rating"
+      }
+    },
+
+    {
+      "rating": 4,
+      "text": "Like It",
+      "icon": {
+        "title": "4 stars",
+        "description": "Give a 1 star rating"
+      }
+    },
+
+    {
+      "rating": 5,
+      "text": "Obsessed",
+      "icon": {
+        "title": "5 stars",
+        "description": "Give a 1 star rating"
+      }
+    }
+  ],
+
+  "multipleChoices": [
+    {
+      "title": "Size Up Or Down?",
+      "name": "size",
+      "errorMessage": "Please select a recommendation",
+      "choices": [
+        {
+          "id": "size-up",
+          "value": "size up",
+          "label": "Size Up"
+        },
+        {
+          "id": "as-is",
+          "value": "as-is",
+          "label": "As-is"
+        },
+        {
+          "id": "size-down",
+          "value": "size down",
+          "label": "Size Down"
+        }
+      ]
+    },
+
+    {
+      "title": "About My Curves",
+      "name": "curves",
+      "errorMessage": "Please select your body type",
+      "choices": [
+        {
+          "id": "straight-hips",
+          "value": "straight hips",
+          "label": "Straight Hips"
+        },
+        {
+          "id": "some-curves",
+          "value": "some curves",
+          "label": "Some Curves"
+        },
+        {
+          "id": "curvy",
+          "value": "curvy",
+          "label": "Curvy"
+        }
+      ]
+    },
+
+    {
+      "title": "About My Height",
+      "name": "height",
+      "errorMessage": "Please select your height",
+      "choices": [
+        {
+          "id": "short",
+          "value": "short",
+          "label": "Short"
+        },
+        {
+          "id": "average",
+          "value": "average",
+          "label": "Average"
+        },
+        {
+          "id": "tall",
+          "value": "tall",
+          "label": "Tall"
+        }
+      ]
+    }
+  ],
+
+  "comment": {
+    "title": "Real Talk",
+    "placeholder": "Tell us what's up...",
+    "description": "Give us the dish on your new items, shopping experience, or anything else you'd like to share with the revolve community!"
+  },
+
+  "inputFields": [
+    {
+      "id": "name",
+      "label": "Name (Optional)"
+    },
+    {
+      "id": "email",
+      "type": "email",
+      "label": "Email (Will not be displayed)",
+      "attrs": "data-validate-not-empty=\"true\"",
+      "fieldAttrs": "data-iconify-valid=\"Valid\" data-iconify-invalid=\"Invalid\" data-iconify-clear=\"Clear\""
+    },
+    {
+      "id": "city-state",
+      "label": "City, State (Optional)"
+    }
+  ],
+
+  "submit": {
+    "value": "Submit"
+  },
+
+  "thankYouModal": {
+    "title": "Thanks for your review!",
+    "body": "Your opinion means everything to us! Please wait a few days for us to review your product evaluation before seeing it online.",
+    "url": "https://www.rottentomatoes.com/m/big_lebowski/quotes/",
+    "action": "Continue Shopping"
+  }
+}

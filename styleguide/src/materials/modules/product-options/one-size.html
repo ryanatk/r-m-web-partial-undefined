@@ -1,0 +1,17 @@
+---
+notes: |
+  An example of a single `product option`,
+  offering only ONE SIZE as a disabled select.
+---
+
+{{#> floating-label-select id="size" index=index label="Size"
+  fieldClassName="product__size"
+  fieldModifier=modifier
+  attrs="disabled"
+}}
+  <option value="One Size"
+    data-delivery-date="Nov 4 - Nov 7"
+    data-price="298"
+    data-regular-price="298"
+  >One Size</option>
+{{/floating-label-select}}

@@ -1,0 +1,103 @@
+@import '../lib/vars';
+@import '../lib/mixins/breakpoints';
+
+/**
+
+  @product options
+--------------------------------------------------------
+  modules/_product-options.scss
+--------------------------------------------------------
+
+  Product's options (size & color)
+
+------------------------------------------------------ */
+
+.product-option {
+  position: relative;
+  float: left;
+  width: 50%;
+  margin-bottom: rem(8);
+  background-color: $color__grey--lighter;
+  z-index: 1; // need this for the label overlap trickery
+
+  @include bp-until($small-mobile) {
+    width: 100%;
+  }
+
+  &:active {
+    background-color: $color__black;
+    label, select {
+      color: $color__white;
+    }
+  }
+
+  // .product-option--size
+  &--size {
+    @include bp-at-least($small-mobile) {
+      border-right: rem(4) solid $color__white;
+    }
+  }
+  // .product-option--color
+  &--color {
+    @include bp-at-least($small-mobile) {
+      border-left: rem(4) solid $color__white;
+    }
+  }
+  // .product-option--oos
+  &--oos {
+    background-color: $color__pink--light;
+    .product-option__select {
+      padding: rem(23 14 21);
+      line-height: rem(16);
+      text-align: center;
+      color: $color__error;
+    }
+  }
+
+  // .product-option__label, .product-option__select
+  &__label,
+  &__select {
+    background-color: transparent;
+  }
+  // .product-option__label
+  &__label {
+    position: absolute;
+    top: rem(12);
+    left: rem(16);
+    z-index: -1; // to stay behind the select it overlaps
+    font-size: em(10);
+    text-align: left;
+    // override default form styles
+    margin-bottom: 0;
+  }
+  // .product-option__select
+  &__select {
+    @extend %h4;
+    display: block;
+    padding: rem(30 24 15 16);
+    z-index: 2; // to stay behind the select it overlaps
+    background-size: rem(16 16);
+    // override default form styles
+    width: 100%;
+    border: {
+      color: transparent;
+      width: 0;
+    }
+    border-right-width: rem(16);
+    box-shadow: none;
+    // .product-option__select.default
+    &.default {
+      color: $color__grey--light;
+    }
+    // .product-option__select--one
+    &--one {
+      margin-bottom: 0;
+      line-height: rem(15);
+      text-align: left;
+      &:disabled {
+        color: inherit;
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+---
+title: Notify Me
+page-name: notifyMe
+fabricator: false
+layout: mock-page
+---
+
+{{> title-bar page-title=notifyMe.cant-find-your-size.title}}
+
+<section class="page__main">
+  <div class="ui-tabs">
+    <ul class="ui-tabs__nav">
+      <li class="ui-tabs__tab"><a class="ui-tabs__link" href="#back-in-stock">{{notifyMe.back-in-stock.title}}</a></li>
+      <li class="ui-tabs__tab"><a class="ui-tabs__link" href="#special-order">{{notifyMe.special-order.title}}</a></li>
+    </ul>
+
+    {{> notify-me notifyMe.back-in-stock tabs=true pdp=pdp }}
+
+    {{> notify-me notifyMe.special-order tabs=true pdp=pdp }}
+  </div>
+</section>

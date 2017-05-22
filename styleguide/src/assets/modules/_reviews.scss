@@ -1,0 +1,49 @@
+/**
+
+  @reviews
+
+*/
+
+.review {
+  padding: rem( $base-margin );
+  margin-bottom: rem( $base-margin/2 );
+  background-color: $color__offwhite;
+
+  &__author {
+    margin-bottom: rem( $base-margin );;
+    font-style: normal;
+    &-name {
+      @extend %h4;
+      display: block;
+    }
+  }
+
+  &__rating {
+    @extend %h4;
+    margin-left: 4px;
+  }
+
+  &__attributes-list {
+    margin: 0;
+    list-style: none;
+  }
+  &__attribute {
+    @extend %h4;
+    display: inline;
+    &:after {
+      content: " /";
+    }
+    &:last-child:after {
+      content: "";
+    }
+  }
+
+  &__comments {
+    margin: rem( $base-margin 0 0 );
+    font-size: em( 14 );
+  }
+
+  .truncate-toggle-button {
+    margin-top: rem( $base-margin );
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "back-in-stock": {
+    "id": "back-in-stock",
+    "title": "Back In Stock Inquiry",
+    "intro": "We will try our best to get you the size you want. Select a size and we'll email you if we get more in!"
+  },
+  "preorder-notify": {
+    "id": "back-in-stock",
+    "title": "Back In Stock Inquiry",
+    "intro": "This item is available for PREORDER. We'll email you when we have it in stock!"
+  },
+  "cant-find-your-size": {
+    "title": "Can't Find Your Size"
+  },
+  "special-order": {
+    "id": "special-order",
+    "title": "Special Order Inquiry",
+    "intro": "We will contact the manufacturer to see if the item is available for special order. This service absolutely FREE and there is no obligation to make a purchase."
+  },
+  "thank-you-email": {
+    "intro": "We will email you at <strong class=\"notify-me__email\">Name@email.com</strong> if this item becomes available."
+  },
+  "thank-you-submitted": {
+    "intro": "Your inquiry was successfully submitted, and we will get back to you in 5-10 days."
+  },
+  "page-options": [
+    "product-options.one-size",
+    "product-options.one-color"
+  ]
+}

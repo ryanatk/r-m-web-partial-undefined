@@ -1,0 +1,59 @@
+---
+title: Revolve Clothing | Styleguide
+fabricator: true
+---
+
+<h1>Revolve Mobile Style Guide</h1>
+
+<section>
+  <p>Global CSS settings, fundamental HTML elements styled and enhanced with extendible classes, and an advanced grid system.</p>
+</section>
+
+<section id="sections">
+  <h2>Sections</h2>
+
+  {{#each sections}}
+  <h3 class="h4">{{@key}}</h2>
+
+  <p>{{{this}}}</p>
+  {{/each}}
+
+</section>
+
+<section>
+  <h2>How to Use</h2>
+
+  <p>This style guide is <a href="#sections">organized into sections</a> that group together components used throughout the website. Each component includes the HTML necessary to add it to the website, which can be copy+pasted, and modified to your use. By default, this HTML is hidden from view and can be revealed using the "Toggle Code" button, either in the global nav or for each individual component.
+  <svg style="width:16px; height:16px;">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#f-icon-code"></use>
+  </svg>
+
+  <p>Many components also include "notes", which provide further detail on how they can be used.
+</section>
+
+<section>
+  <h2>Full Page Mocks</h2>
+
+  <h3 id="shopping-pages" class="h4">Shopping Pages</h2>
+  <ul>
+    <li><a href="{{url.pdp}}">PDP</a></li>
+    <li><a href="{{url.bag}}">Bag</a></li>
+    <li><a href="{{url.empty-bag}}">Empty Bag</a></li>
+  </ul>
+
+  <h3 id="notify-me" class="h4">Notify Me</h2>
+  <ul>
+    <li><a href="{{url.back-in-stock}}">{{notifyMe.back-in-stock.title}}</a></li>
+    <li><a href="{{url.cant-find-your-size}}">{{notifyMe.cant-find-your-size.title}}</a></li>
+    <li><a href="{{url.preorder-notify}}">{{notifyMe.preorder-notify.title}} (Preorder)</a></li>
+    <li><a href="{{url.special-order}}">{{notifyMe.special-order.title}}</a></li>
+    <li><a href="{{url.thank-you-email}}">Thank You! (email)</a></li>
+    <li><a href="{{url.thank-you-submitted}}">Thank You! (submitted)</a></li>
+  </ul>
+
+  <h2 id="reviews">Reviews</h2>
+  <ul>
+    <li><a href="{{url.write-review}}">Write a Review</a></li>
+    <li><a href="{{url.reviews}}">Product Reviews</a></li>
+  </ul>
+</section>

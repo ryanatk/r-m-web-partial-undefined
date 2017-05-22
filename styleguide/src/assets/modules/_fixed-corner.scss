@@ -1,0 +1,24 @@
+/**
+
+  @fixed-corner
+--------------------------------------------------------
+  modules/_fixed-corner.scss
+--------------------------------------------------------
+
+  fixed-corner module is a container that fixed the corner
+  of the the viewport.
+
+------------------------------------------------------ */
+
+.fixed-corner {
+  position: fixed;
+  right: rem(16);
+  bottom: rem(30);
+  z-index: 9999;
+  &--off {
+    position: absolute;
+    top: rem(-80);
+    bottom: auto;
+    transform: translateY(-100%);
+  }
+}

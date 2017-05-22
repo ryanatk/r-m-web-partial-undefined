@@ -1,0 +1,160 @@
+---
+notes: |
+  ### Button to open modal:
+  * Add `js-modal` class to bind click event.
+  * Add `data-open` attribute with the value of the modal ID you wish to open.
+  * **Example**: `<a href="##default-modal" class="js-modal btn u-margin-b--sm">Open</a>`
+
+  ### Inline modal markup:
+  * Add class `modal` to the wrapping div.
+  #### Option: Type
+  * There are four types of modals: default (middle), full, top, notification
+  * To set the types you could add `data-type` attribute with either of these values: `full` , `top` , `notification`.
+  #### Option: Overlay Close
+  * By default the functionality to click outside the modal box to close it is set `true`.
+  * To set it to false add the attribute `data-overlay-close` and the value of `false`
+---
+<!--
+Default Modal
+-->
+<a href="#default-modal" class="js-modal btn u-margin-b--sm">
+  Default Modal
+</a>
+<div id="default-modal" class="modal">
+    <div class="u-center">
+      <h2 class="modal__hed" tabindex="0">
+        PopUp Title (H2)
+      </h2>
+      <p>
+        (Body Copy - Large) Lorem ipsum
+        Tellus odio vivamus mollis sit luctus magnis ornare cras commodo habitasse.
+        Maecenas cum nulla natoque cubilia aptent donec. Rhoncus magna quis ante.
+      </p>
+      <button class="btn btn--full u-margin-b--lg u-margin-t--lg">
+        Main CTA
+      </button>
+      <div>
+        <a href="#" class="js-modal-close link u-margin-b--lg">
+          Cancel
+        </a>
+      </div>
+    </div>
+</div>
+
+<!--
+Default Modal
+Long Content + Disabled Overlay Close
+-->
+<a class="js-modal btn u-margin-b--sm" href="#default-modal-long-content">
+      Long Content + Disabled Overlay Close
+</a>
+<div id="default-modal-long-content"
+  class="modal"
+  data-overlay-close="false">
+    <div class="u-center">
+      <h2 class="modal__hed" tabindex="0">
+        PopUp Title (H2)
+      </h2>
+      <p>
+        (Body Copy - Large) Lorem ipsum
+        Tellus odio vivamus mollis sit luctus magnis ornare cras commodo habitasse.
+        Maecenas cum nulla natoque cubilia aptent donec. Rhoncus magna quis ante.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae nulla massa. In quam risus, placerat sed urna ut, dictum congue dolor. Nulla libero lorem, rhoncus vulputate justo at, iaculis ultrices nulla. Sed placerat mollis facilisis. Aenean vitae ante mollis, volutpat quam vel, scelerisque est. Aenean nulla sem, consectetur id pretium nec, consectetur non turpis. Nullam vehicula lectus sit amet diam facilisis rutrum. Fusce nisl nisl, luctus vel elementum id, facilisis iaculis mauris. Quisque at diam a libero pharetra pellentesque nec quis eros. Nunc ornare tortor eu semper interdum. Nunc ornare sem erat, quis vestibulum nibh mattis ornare. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque in dolor vitae libero condimentum placerat.
+      </p>
+      <p>
+        Vestibulum nec libero tempor, volutpat ligula eget, finibus risus. Suspendisse feugiat augue id erat vehicula, at eleifend metus tincidunt. Ut at elit quis risus lacinia laoreet sodales a turpis. Suspendisse facilisis finibus erat, malesuada bibendum velit varius ut. Aenean facilisis vehicula mi vel hendrerit. Vivamus eget enim feugiat, euismod mi et, vehicula magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lectus leo, sagittis vel consequat ut, aliquet ut massa. Curabitur nibh libero, faucibus imperdiet dui at, sodales ultrices massa.
+      </p>
+      <p>
+        Praesent mollis semper sapien quis elementum. Curabitur iaculis mauris nec convallis volutpat. Curabitur tortor nunc, bibendum sit amet massa nec, cursus viverra nibh. Vivamus at consectetur ex. Proin enim neque, ultrices non consectetur in, venenatis ac neque. Suspendisse ultricies condimentum quam, a varius purus pharetra ac. Quisque facilisis sem sit amet nisi porttitor lobortis. Integer sed magna commodo, cursus dui id, vehicula turpis.
+      </p>
+      <a href="#default-modal" class="js-modal btn u-margin-b--sm btn--full u-margin-b--lg u-margin-t--lg">
+        Main CTA
+      </a>
+      <div>
+        <a href="#" class="js-modal-close link u-margin-b--lg">
+          Cancel
+        </a>
+      </div>
+    </div>
+  </div>
+<!--
+Full Modal
+-->
+<a class="js-modal btn u-margin-b--sm" href="#default-modal-full">
+  Full Modal
+</a>
+<div id="default-modal-full" class="modal"
+  data-type="full">
+    <div class="u-center">
+      <h2 class="modal__hed" tabindex="0">
+        PopUp Title (H2)
+      </h2>
+      <p>
+        (Body Copy - Large) Lorem ipsum
+        Tellus odio vivamus mollis sit luctus magnis ornare cras commodo habitasse.
+        Maecenas cum nulla natoque cubilia aptent donec. Rhoncus magna quis ante.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae nulla massa. In quam risus, placerat sed urna ut, dictum congue dolor. Nulla libero lorem, rhoncus vulputate justo at, iaculis ultrices nulla. Sed placerat mollis facilisis. Aenean vitae ante mollis, volutpat quam vel, scelerisque est. Aenean nulla sem, consectetur id pretium nec, consectetur non turpis. Nullam vehicula lectus sit amet diam facilisis rutrum. Fusce nisl nisl, luctus vel elementum id, facilisis iaculis mauris. Quisque at diam a libero pharetra pellentesque nec quis eros. Nunc ornare tortor eu semper interdum. Nunc ornare sem erat, quis vestibulum nibh mattis ornare. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque in dolor vitae libero condimentum placerat.
+      </p>
+      <p>
+        Vestibulum nec libero tempor, volutpat ligula eget, finibus risus. Suspendisse feugiat augue id erat vehicula, at eleifend metus tincidunt. Ut at elit quis risus lacinia laoreet sodales a turpis. Suspendisse facilisis finibus erat, malesuada bibendum velit varius ut. Aenean facilisis vehicula mi vel hendrerit. Vivamus eget enim feugiat, euismod mi et, vehicula magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lectus leo, sagittis vel consequat ut, aliquet ut massa. Curabitur nibh libero, faucibus imperdiet dui at, sodales ultrices massa.
+      </p>
+      <p>
+        Praesent mollis semper sapien quis elementum. Curabitur iaculis mauris nec convallis volutpat. Curabitur tortor nunc, bibendum sit amet massa nec, cursus viverra nibh. Vivamus at consectetur ex. Proin enim neque, ultrices non consectetur in, venenatis ac neque. Suspendisse ultricies condimentum quam, a varius purus pharetra ac. Quisque facilisis sem sit amet nisi porttitor lobortis. Integer sed magna commodo, cursus dui id, vehicula turpis.
+      </p>
+      <a href="#default-modal" class="js-modal btn u-margin-b--sm btn--full u-margin-b--lg u-margin-t--lg">
+        Main CTA
+      </a>
+      <div>
+        <a href="#" class="js-modal-close link u-margin-b--lg">
+          Cancel
+        </a>
+      </div>
+    </div>
+</div>
+<!--
+Top Modal
+-->
+<a class="js-modal btn u-margin-b--sm" href="#top-modal">
+  Top Modal
+</a>
+<div id="top-modal"
+  class="modal"
+  data-type="top">
+    <div class="u-center">
+      <h2 class="modal__hed" tabindex="0">
+        PopUp Title (H2)
+      </h2>
+      <p>
+        (Body Copy - Large) Lorem ipsum
+        Tellus odio vivamus mollis sit luctus magnis ornare cras commodo habitasse.
+        Maecenas cum nulla natoque cubilia aptent donec. Rhoncus magna quis ante.
+      </p>
+      <a href="#default-modal" class="js-modal btn u-margin-b--sm btn--full u-margin-b--lg u-margin-t--lg">
+        Main CTA
+      </a>
+      <div>
+        <a href="#" class="js-modal-close link u-margin-b--lg">
+          Cancel
+        </a>
+      </div>
+    </div>
+</div>
+<!--
+Notification Modal
+-->
+<a href="#notification-modal" class="js-modal btn u-margin-b--sm">
+  Notification Modal
+</a>
+<div id="notification-modal"
+  class="modal modal--notification"
+  data-type="notification">
+    <div class="u-center">
+      <p class="u-margin-b--none">
+        Lorem ipsum Tellus odio vivamus mollis.
+      </p>
+    </div>
+</div>

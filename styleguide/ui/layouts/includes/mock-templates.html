@@ -1,0 +1,13 @@
+{{#each templates }}
+
+  {{!-- get the template, and add it to an inline partial, because scope --}}
+  {{#*inline "templateHTML"}}
+    {{> (lookup ../templates @index)}}
+  {{/inline}}
+
+  {{!-- write the template partial, along with its HTML --}}
+  {{#> template id=this }}
+    {{> templateHTML}}
+  {{/template}}
+
+{{/each}}

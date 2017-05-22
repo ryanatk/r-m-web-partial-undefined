@@ -1,0 +1,24 @@
+{{!--
+  `enableOOS` - to avoid disabling the `option` for OOS products, set enableOOS to `true`
+--}}
+
+
+{{#> floating-label-select id="size" index=index label="Size"
+  fieldClassName="product__size" fieldModifier=modifier
+  attrs=attrs
+}}
+  <!-- attach size-specific data to each option, including price -->
+  {{#each sizes }}
+    <option value="{{value}}"
+      data-delivery-date="{{delivery-date}}"
+      data-price="{{price}}"
+      data-regular-price="{{regular-price}}"
+      {{#unless ../enableOOS}}{{#if oos}}disabled{{/if}}{{/unless}}
+      {{#if oos}}data-oos="true"{{/if}}
+      {{#if preorder}}data-preorder="true"{{/if}}
+      {{#if one-left}}data-one-left="true"{{/if}}
+      {{#if final-sale}}data-final-sale="true"{{/if}}
+      {{#if sample-defect}}data-sample-defect="true"{{/if}}
+    >{{label}}{{#unless ../enableOOS}}{{#if oos}} (Out of Stock){{/if}}{{/unless}}</option>
+  {{/each}}
+{{/floating-label-select}}

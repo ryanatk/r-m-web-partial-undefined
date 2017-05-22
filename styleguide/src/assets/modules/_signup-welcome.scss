@@ -1,0 +1,54 @@
+/**
+
+  @sign-up
+--------------------------------------------------------
+  modules/_sign-up.scss
+--------------------------------------------------------
+
+  Sign up & Welcome Pages
+
+------------------------------------------------------ */
+
+.welcome {
+  &__fav-img {
+    position: absolute;
+    bottom: 0;
+  }
+  &__hotlist-text {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    line-height: normal;
+  }
+  &__wedding-text {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    line-height: normal;
+  }
+  &__best-sellers-btn {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 28%;
+    line-height: normal;
+  }
+  &__shipping-icon {
+    width: 12%;
+  }
+  &__returns-icon {
+    width: 12%;
+  }
+  &__pricematch-icon {
+    width: 12%;
+  }
+  &__cc-icon {
+    width: 12%;
+  }
+  &__newsfeed-confirm {
+    position: absolute;
+    top: 50%;
+    width: 95%;
+    transform: translate3d(0, -50%, 0);
+  }
+}

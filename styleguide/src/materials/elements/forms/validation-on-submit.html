@@ -1,0 +1,67 @@
+---
+notes: |
+  There comes a time when we may not want to have a form give instant feedback
+  when a field is invalid. For such situations, provide the following data
+  attribute:
+
+  - `data-validate-only-on-submit`: set to true or nothing, it's HTML so it
+    doesn't matter the value
+
+  Behind the scenes, when this attribute has been set on the form, it will
+  notify all fields in the form that validation shouldn't only happen upon
+  submit. This is done by overriding the built in invalid styling on an element.
+  Since this is built in browser behavior, we cannot override it, but we have
+  the ability to mask or suppress the error with the intention of showing the
+  error when the form has been properly submitted.
+
+  _Note: This only currently works on elements within a form. If there is a
+  need to have this work on a container that isn't a form, that will have to
+  be implemented at a later point._
+---
+
+<form class="form form-no-submit" data-validate="true" data-validate-only-on-submit="true">
+  {{> floating-label-input
+      id="vos-input-error-message"
+      type="text"
+      label="URL"
+      placeholder="Gimmie A Valid URL"
+      pattern="https?://.+"
+      fieldAttrs='
+        data-iconify-valid="Valid"
+        data-iconify-invalid="Invalid"
+        data-iconify-clear="Clear"
+        data-floating-error-message="Dude, no valid URL!"
+      '
+  }}
+
+  {{> floating-label-input
+    id="vos-not-empty-field"
+    type="text"
+    label="Field cannot be empty"
+    attrs='data-validate-not-empty="true"'
+  }}
+
+  {{#> floating-label-select id="vos-floating-label-select-invalid" label="Make Me Valid" attrs='data-validate-not-empty="true"' }}
+    <option value="">Select Something</option>
+    <option value="option-1">Option 1</option>
+    <option value="option-2">Option 2</option>
+    <option value="option-3">Option 3</option>
+    <option value="option-4">Option 4</option>
+    <option value="option-5">Option 5</option>
+  {{/floating-label-select}}
+
+  {{> floating-label-input
+    id="vos-not-empty-field"
+    type="text"
+    label="Field cannot be empty"
+    attrs='data-validate-not-empty="true"'
+    fieldAttrs='
+      data-iconify-valid="Valid"
+      data-iconify-invalid="Invalid"
+      data-iconify-clear="Clear"
+      data-floating-error-message="Come on man, I need something!"
+    '
+  }}
+
+  <button type="submit" class="btn btn--block" data-validate-trigger="true">Submit with Button</button>
+</form>

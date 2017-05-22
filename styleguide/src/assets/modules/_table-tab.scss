@@ -1,0 +1,116 @@
+/**
+
+  @table-tab
+--------------------------------------------------------
+  modules/_table-tab.scss
+--------------------------------------------------------
+
+  Table tabs
+
+------------------------------------------------------ */
+
+.table-tab {
+  margin: 0;
+  color: $color__white;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow-x: scroll;
+  &__container {
+    border-bottom: rem(1) solid $color__white;
+    background-color: $color__black;
+  }
+  &__item {
+    display: inline-block;
+    position: relative;
+    padding: rem(10 16 16 16);
+    line-height: rem(22);
+    text-align: center;
+    cursor: pointer;
+    vertical-align: top;
+    &.active::after,
+    &:hover::after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: rem(-10);
+      border-right: rem(10) solid transparent;
+      border-bottom: rem(10) solid $color__white;
+      border-left: rem(10) solid transparent;
+      text-align: center;
+      content: '';
+      vertical-align: bottom;
+    }
+  }
+  &__icon-flag::before {
+    display: inline-block;
+    width: rem(23);
+    height: rem(16);
+    clear: both;
+    background-image: url('//is4.revolveassets.com/r/i/flags_2x.gif');
+    background-repeat: no-repeat;
+    background-size: rem(138);
+    content: '';
+  }
+
+  &__item--left {
+    .table-tab__icon-flag::before {
+      vertical-align: text-top;
+      margin-right: rem(20);
+    }
+    .table-tab__icon-text {
+      color: $color__black;
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon-flag {
+    .icon {
+      width: rem(12);
+      height: rem(12);
+    }
+    &.flag-us::before {
+      background-position: rem(-46 -16);
+    }
+    &.flag-uk::before {
+      background-position: rem(-92 -16);
+    }
+    &.flag-eu::before {
+      background-position: rem(-23 -16);
+    }
+    &.flag-ru::before {
+      background-position: rem(-69 -16);
+    }
+    &.flag-cn::before {
+      background-position: rem(-115 0);
+    }
+    &.flag-jp::before {
+      background-position: rem(-23 0);
+    }
+    &.flag-au::before {
+      background-position: rem(-46 0);
+    }
+    &.flag-br::before {
+      background-position: rem(0 -16);
+    }
+    &.flag-kr::before {
+      background-position: rem(-92 0);
+    }
+    &.flag-it::before {
+      background-position: rem(0 0);
+    }
+    &.flag-fr::before {
+      background-position: rem(-69 0);
+    }
+  }
+  &__icon-text {
+    margin-top: rem(5);
+    margin-bottom: rem(2);
+    color: $color__white;
+    font-size: em(12);
+  }
+}

@@ -1,0 +1,22 @@
+---
+notes: |
+  Vanish is responsible for having an element/container disappear based on an
+  inner element being interacted with inside of the container. This example
+  provides all the defaults that can be provided, which can be mixed and
+  matched. For a more thorough breakdown of each:
+
+  - `data-vanish-target`: contains a jQuery selector of what elements will
+    trigger an element to vanish.
+  - `data-vanish-hidden-class-name`: Class name applied when the vanish has
+    been triggered.
+  - `data-vanish-remove-delay`: The delay applied for when the element should
+    be removed from the DOM.
+---
+<div class="vanish"
+     data-vanish-target=".some-target-selector"
+     data-vanish-hidden-class-name="vanish--hide"
+     data-vanish-remove-delay="10000">
+  <p>Calm down your being very undude.</p>
+
+  <a class="some-target-selector u-text--lg" href="">{{> icons.x-icon }} Remove walter quote</a>
+</div>

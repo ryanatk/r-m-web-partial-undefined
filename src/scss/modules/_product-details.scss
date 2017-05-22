@@ -1,0 +1,44 @@
+/**
+
+  @product details
+--------------------------------------------------------
+  modules/_product-details.scss
+--------------------------------------------------------
+
+  Product's detail
+
+------------------------------------------------------ */
+
+.product-details {
+  // .product-details__title
+  &__title {
+    color: $color__grey--light;
+    white-space: nowrap;
+    cursor: pointer;
+    &--active {
+      border-bottom: rem(2) solid $color__black;
+      color: $color__black;
+    }
+  }
+  // .product-details__list
+  &__list {
+    color: $color__grey;
+    font-size: em(12);
+    line-height: em(22, 12);
+    li {
+      margin-left: rem(20);
+      list-style: disc;
+    }
+  }
+  // .product-details__copy
+  &__copy {
+    color: $color__grey;
+    font-size: em(12);
+    line-height: em(18, 12);
+  }
+}
+
+
+
+
+

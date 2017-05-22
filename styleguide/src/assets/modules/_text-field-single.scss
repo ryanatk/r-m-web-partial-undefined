@@ -1,0 +1,29 @@
+/**
+
+  @text-field-single
+--------------------------------------------------------
+  modules/_text-field-single.scss
+--------------------------------------------------------
+
+  Text Field Single - Meant for search or email sign-ups
+
+------------------------------------------------------ */
+
+.text-field-single {
+  position: relative;
+  &__field {
+    background: $color__white;
+    @include placeholder {
+      color: $color__black;
+      opacity: 1;
+    }
+  }
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+  }
+}

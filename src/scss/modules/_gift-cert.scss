@@ -1,0 +1,41 @@
+/**
+
+  @gift-cert
+--------------------------------------------------------
+  modules/_gift-cert.scss
+--------------------------------------------------------
+
+  Gift Cards
+
+------------------------------------------------------ */
+
+.gift-cert {
+  &__logo {
+    color: $color__white;
+    width: rem(200);
+    height: rem(45);
+    margin-top: rem(25);
+  }
+  &__sub-heading {
+    font-family: $font-secondary--lighter;
+    color: $color__white;
+    text-transform: uppercase;
+    font-size: em(10);
+    letter-spacing: rem(4);
+    margin-top: rem(10);
+    padding-top: rem(25);
+  }
+  &__value-selected {
+    width: 100%;
+    height: rem(65);
+    color: $color__white;
+    text-align: center;
+    font-size: em(35);
+    font-family: $font-secondary;
+    font-weight: bold;
+    letter-spacing: rem(7);
+    margin-top: rem(20);
+    margin-left: rem(-8);
+  }
+  
+}

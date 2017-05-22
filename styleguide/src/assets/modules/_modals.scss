@@ -1,0 +1,140 @@
+/**
+
+  @modal
+--------------------------------------------------------
+  modules/_modal.scss
+--------------------------------------------------------
+
+  Modal Section
+
+------------------------------------------------------ */
+$overlayColor: rgba(0,0,0,.9);
+$overlayMargin: 35;
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99998;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: $overlayColor;
+    opacity: 0;
+    transition: opacity .3s;
+    &--notification {
+      display: none;
+    }
+    &.is-active {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    visibility: hidden;
+    padding: rem($overlayMargin);
+    &:before {
+      display: inline-block;
+      height: 100%;
+      content: '';
+      vertical-align: middle;
+    }
+    &__content {
+      position: relative;
+      display: inline-block;
+      overflow: auto;
+      padding: rem(16);
+      max-height: 80%;
+      width: 100%;
+      background-color: $color__white;
+      vertical-align: middle;
+      opacity: 0;
+      transition: all .3s;
+      transform: scale(.7);;
+    }
+    &__hed {
+        margin: rem(16 0);
+        @extend %h2;
+    }
+    &.is-active {
+        visibility: visible;
+        .modal__content {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    &__close {
+      position: absolute;
+      top: rem(3);
+      right: rem(3);
+      color: $color__black;
+    }
+}
+
+// Modal Type: Full
+.modal--full {
+    padding:0;
+    .modal__content {
+        top: 0;
+        max-height: 100%;
+        height: 100%;
+        transform: translateY(0) scale(.7);
+    }
+    &.is-active {
+        .modal__content {
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+// Modal Type: Top
+.modal--top {
+  padding-top:0;
+  .modal__content {
+    vertical-align: top;
+    transform: translateY(-50%) scale(1);
+  }
+  &.is-active {
+    .modal__content {
+      transform: scale(1);
+    }
+  }
+}
+
+.popup-container {
+  position: relative;
+  background: $color__offwhite;
+  .link--bold {
+    display: block;
+    width: 8%;
+    text-align: center;
+  }
+  .field__input-group .btn {
+    min-width: 17%;
+  }
+  .field.u-margin-r--sm {
+    width: 82%;
+  }
+}
+
+// Modal Type: Notification
+.modal--notification {
+  padding:0;
+  bottom: auto;
+  .modal__content {
+    padding: rem(24);
+    background-color: $overlayColor;
+    color: $color__white;
+    vertical-align: top;
+    transform: translateY(-50%) scale(1);
+  }
+}

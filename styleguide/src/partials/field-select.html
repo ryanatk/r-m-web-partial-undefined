@@ -1,0 +1,25 @@
+{{!--
+    Used for text selects throughout the site
+    @param {string} id - select element's id, label's for attribute, and select's name (unless otherwise passed in)
+    @param {string} label - label's text, select's placeholder (unless otherwise passed in)
+    @param {string} [name] - select element's name (defaults to id)
+    @param {string} [fieldClassName] - optional className applied to the field
+    @param {string} [labelClassName] - optional className applied to the label
+    @param {string} [selectClassName] - optional className applied to the select
+    @param {boolean} [required] - Whether a field should be required
+    @param {string} [attrs] - Any additional attributes
+--}}
+
+<div class="field field--select {{fieldClassName}}">
+  <label class="field__label {{labelClassName}}" for="{{id}}">{{label}}</label>
+  <select
+    class="field__select {{selectClassName}}"
+    id="{{id}}"
+    name="{{#if name}}{{name}}{{else}}{{id}}{{/if}}"
+    {{#required}}required{{/required}}
+    {{{attrs}}}>
+
+    {{!-- pass in all the options as HTML --}}
+    {{> @partial-block }}
+  </select>
+</div>

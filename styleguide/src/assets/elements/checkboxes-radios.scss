@@ -1,0 +1,102 @@
+@import '../lib/mixins/text-helpers';
+
+/*
+
+  @checkbox and radio inputs
+
+*/
+
+.checkbox,
+.radio {
+  width: 100%;
+  padding: rem( 8 16 );
+  color: $color__black;
+  cursor: pointer;
+
+  // default to vertically center
+  display: flex;
+  align-items: center;
+
+  // modifier to vertically align top
+  &--top-align {
+    align-items: flex-start;
+  }
+
+  // invert colors on click/touch
+  &:active {
+    background-color: $color__black;
+    color: $color__white;
+  }
+
+  &__input:active:after {
+    border-color: $color__white;
+  }
+
+  // the displayed radio/checkbox is the "after" pseudo-element
+  // to allow us custom "content"
+  &__input:after {
+    display: block;
+    width: rem( 34 );
+    height: rem( 34 );
+    border: {
+      width: rem(2);
+      style: solid;
+      radius: rem( 50 );
+      color: $input-border-color--darker;
+    }
+    // must set content for pseudo-element to appear
+    content: '';
+    font: bold em( 18 ) $font-secondary;
+    background-color: $color__white;
+    transition: border .25s ease-in-out, background .25s ease-in-out;
+  }
+
+  &__input:checked:after {
+    background-color: $color__black;
+  }
+
+  &__input--invalid {
+    &:after {
+      border-color: $color__error;
+    }
+    &:checked:after {
+      background-color: $color__error;
+    }
+  }
+
+  &__label {
+    @extend %h4;
+    padding-left: rem( 8 );
+    color: inherit; // this is for the 'active' color change
+
+    &--invalid {
+      color: $color__error;
+    }
+  }
+
+  &__label--description,
+  &__description {
+    @include text-md();
+    display: block;
+  }
+}
+
+// Radio-specific styles
+.radio__input {
+  &:checked:after {
+    box-shadow: inset 0 0 0 8px $color__white;
+  }
+}
+
+// Checkbox-specific styles
+.checkbox__input {
+  &:after {
+    color: $color__white;
+    transform: rotate(-138deg);
+    line-height: rem( 36 );
+    padding-left: rem( 10 );
+  }
+  &:checked:after {
+    content: '\0393';
+  }
+}

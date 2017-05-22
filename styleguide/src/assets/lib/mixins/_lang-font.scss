@@ -1,0 +1,45 @@
+/**
+
+  @language font-face
+-----------------------------------------------------------
+  _base/_mixin-lang-font.scss
+-----------------------------------------------------------
+
+  Use this mixin to specify a different font family on any
+  given element when a different language attr is present
+  on the html element.
+  See imported language fonts in _fonts.scss to view
+  acceptable mixin arguments.
+
+  EXAMPLES:
+  @include lang-font(japanese, bold);
+  @include lang-font(korean);
+
+--------------------------------------------------------- */
+
+@mixin lang-font($language, $weight) {
+
+  $attr: null;
+
+  @if $language == japanese {
+    $attr: ja;
+  }
+  @else if $language == korean {
+    $attr: ko;
+  }
+
+  // target parent html lang attr
+  @if $attr != null {
+    html:lang(#{$attr}) & {
+
+      // extend bold font family if bold is passed arg
+      @if $weight == bold {
+        @extend %font-#{$language}--bold;
+      }
+      // else extend regular font family
+      @else {
+        @extend %font-#{$language};
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+/**
+
+  @horizontal-scrollmenu
+--------------------------------------------------------
+  modules/_horizontal-scrollmenu.scss
+--------------------------------------------------------
+
+ Horizontal Scroll Menu
+
+------------------------------------------------------ */
+
+.scrollmenu {
+	position: relative;
+	background-color: $color__white;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	padding-left: 0.333em;
+  overflow: auto;
+  white-space: nowrap;
+	border-bottom: 1px solid $color__grey--md;
+	z-index: 10;
+	&--fixed {
+		position: fixed;
+		top: 0;
+	}
+	&__item {
+    display: inline-block;
+    color: $color__grey;
+    text-align: center;
+    padding: 1.167em; //14px
+    text-decoration: none;
+		&:active,
+		&:hover{
+			color: $color__black;
+		  border-bottom: 1px solid $color__black;
+			a {
+				color: $color__black;
+			}
+		}
+
+	}
+}

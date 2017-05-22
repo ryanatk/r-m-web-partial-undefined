@@ -1,0 +1,165 @@
+/**
+
+  @activewear
+--------------------------------------------------------
+  modules/_activewear.scss
+--------------------------------------------------------
+
+  Activewear Feature
+
+------------------------------------------------------ */
+
+.activewear {
+  &__bucket {
+    position: relative;
+  }
+  &__bucket-content {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+}
+
+.active-hdr__wrap {
+  position: relative;
+  &--container {
+    position:absolute;
+    top: 50%;
+    left:0;
+    right:0;
+    transform: translateY(-50%);
+      
+  }
+}
+
+.active-hdr__text {
+  font-size:30px;
+  font-weight: 400;
+  &--feat {
+    font-size: 24px;
+    font-weight: 500;
+  }
+    
+}
+
+.active-border__all {
+  position: absolute;
+  border-bottom: 2px solid #FFF;
+  display: block;
+  top: 12px;
+  left: 14.5%;
+  right: 15%;
+  bottom: -10px;
+}
+
+.active-wrap__all-cta {
+  position:relative;
+  top:44%;
+  bottom:-36px;
+  left:0;
+  right:0;
+  font-size:50px;
+}
+
+.active__wrap--alt {
+  font-size:30px;
+  // position:relative;
+  position: absolute;
+  top: 39%;
+  // /* bottom: 0; */
+  left: 0;
+  right: 0;
+}
+
+
+.active__wrap {
+  font-size:30px;
+  // position:relative;
+  position: absolute;
+  top: 50%;
+  // /* bottom: 0; */
+  left: 0;
+  right: 0;
+}
+
+.active__wrap--btn {
+  font-size:30px;
+  position:relative;
+  position: absolute;
+  top: 42%;
+  bottom: em(3);
+  left: 0;
+  right: 0;
+}
+
+.active-border__tops {
+  position: absolute;
+  border-bottom: 2px solid #FFF;
+  display: block;
+  top: 0px;
+  left: 37%;
+  right: 37%;
+  bottom: -6px
+}
+
+.active-border__bottoms {
+  position: absolute;
+  border-bottom: 2px solid #FFF;
+  display: block;
+  top: 16px;
+  left: 24%;
+  right: 25%;
+  bottom: -5px
+}
+
+.active-border__bras {
+  position: absolute;
+  border-bottom: 2px solid #FFF;
+  display: block;
+  top: 12px;
+  left: 12%;
+  right: 14%;
+  bottom: -5px;
+}
+
+.active-border__sm {
+  position: absolute;
+  border-bottom: 2px solid #FFF;
+  display: block;
+  top: 12px;
+  left: 17%;
+  right: 19%;
+  bottom: 5px;
+}
+
+.active-border__fp {
+  position: absolute;
+  border-bottom: 2px solid #FFF;
+  display: block;
+  top: 12px;
+  left: 29%;
+  right: 30%;
+  bottom: 5px;
+}
+
+.active-border__all {
+  position: absolute;
+    border-bottom: 2px solid #FFF;
+    display: block;
+    top: 67px;
+    left: 14%;
+    right: 16%;
+    bottom: 12px;
+}
+
+.active-wrap__all-cta {
+  position:relative;
+  top:44%;
+  bottom:-36px;
+  left:0;
+  right:0;
+  font-size:30px;
+}

@@ -1,0 +1,33 @@
+{{!--
+    Creates a floating label textarea
+    @param {string} id - textarea element's id, label's for attribute, and textarea's name (unless otherwise passed in)
+    @param {string} label - label's text, input's placeholder (unless otherwise passed in)
+    @param {string} [name] - textarea element's name (defaults to id)
+    @param {string} [placeholder] - textare element's name (defaults to id)
+    @param {string} [fieldClassName] - optional className applied to the field
+    @param {string} [labelClassName] - optional className applied to the label
+    @param {string} [textareaClassName] - optional className applied to the textarea
+    @param {string} [cols] - Number of columns for the textarea (defaults to 30)
+    @param {string} [rows] - Number of rows for the textarea (defaults to 6)
+    @param {boolean} [required] - Whether a field should be required
+    @param {string} [attrs] - Any additional attributes
+--}}
+
+<div class="floating-label {{fieldClassName}}" {{{fieldAttrs}}}>
+  <label for="{{id}}" class="floating-label__label {{labelClassName}}">{{label}}</label>
+  <textarea
+    class="floating-label__textarea {{textareaClassName}}"
+    id="{{id}}"
+    name="{{#name}}{{.}}{{else}}{{id}}{{/name}}"
+    placeholder="{{#placeholder}}{{.}}{{else}}{{label}}{{/placeholder}}"
+    {{#required}}required{{/required}}
+    cols="{{#cols}}{{.}}{{else}}30{{/cols}}"
+    rows="{{#rows}}{{.}}{{else}}6{{/rows}}"
+    {{#required}}required{{/required}}
+    {{#maxlength}}maxlength="{{.}}"{{/maxlength}}
+    {{{attrs}}}></textarea>
+
+  {{#if @partial-block}}
+    {{> @partial-block }}
+  {{/if}}
+</div>

@@ -1,0 +1,35 @@
+/* @branding
+--------------------------------------------------------
+
+  The logo & (optional) wordmark
+
+  Example: Branding logo
+  <a class="branding" href="/">
+    <img class="branding__logo img--title" src="images/logo.svg" alt="My Company">
+    <h1 class="branding__wordmark">My Company</h1>
+  </a>
+
+------------------------------------------------------ */
+/**/
+.branding {
+  display: block;
+  position: relative;
+  width: auto;
+  height: auto;
+  padding-right: rem(20);
+  float: left;
+  text-align: left;
+  text-decoration: none;
+
+  // .branding__logo
+  // Embedded image element
+  &__logo {
+    // display: block;
+    width: rem(70);
+    height: rem(18);
+    &--men,
+    &--kids {
+      width: rem(91);
+    }
+  }
+}

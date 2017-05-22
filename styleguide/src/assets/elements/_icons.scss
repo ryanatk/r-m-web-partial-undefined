@@ -1,0 +1,97 @@
+/**
+
+  @icons
+---------------------------------------------------------
+  base/_icons.scss
+--------------------------------------------------------
+
+  Icon classes are used on SVG elements, their PNG fallbacks,
+  and can be used on all other non-svg icons.
+
+  .icon--heart and all other specific icons should be used
+  on span for fallback support. Background CSS is conditionally
+  loaded on browsers that don't support SVG.
+
+  Example: Small Heart Icon
+  <span class="icon icon--sm icon--heart">
+    <svg><use xlink:href="#icon-heart"></use>
+  </span>
+
+  Example: Large Chat Icon
+  <span class="icon icon--lg icon--chat">
+    <svg><use xlink:href="#icon-chat"></use>
+  </span>
+
+--------------------------------------------------------- */
+
+// IE data uri icon fallback placeholder
+%icon-ie-size {
+  &.icon {
+    .lt-ie9 & {
+      width: rem(12);
+      height: rem(12);
+      color: transparent;
+      font: 0/0 a; // image replacement for desc and title
+      text-shadow: none;
+    }
+  }
+}
+
+// Default icon style
+.icon {
+  $small-icon-size:  16;
+  $medium-icon-size: 24;
+  $large-icon-size:  32;
+
+  display: inline-block;
+  width: rem( $small-icon-size );
+  height: rem( $small-icon-size );
+  background-image: none !important;
+  color: inherit;
+  vertical-align: middle;
+  fill: currentColor;
+  // SVG or icon child
+  > * {
+    display: block;
+    width: inherit;
+    height: inherit;
+    vertical-align: middle;
+  }
+
+  // Icon Sizes
+  // mixin to allow brief consistent setup
+  @mixin icon-size($value) {
+    width: rem( $value );
+    height: rem( $value );
+
+    // If IE 8 fallback to default icon size
+    @include old-ie {
+      @extend %icon-ie-size;
+    }
+  }
+
+  &--sm {
+    @include icon-size( $small-icon-size );
+  }
+  &--md {
+    @include icon-size( $medium-icon-size );
+  }
+  &--lg {
+    @include icon-size( $large-icon-size );
+  }
+  &--wide {
+    width: rem( 50 );
+    height: rem( 32 );
+  }
+}
+
+$icon-heart-fill-stroke: #b2b2b2;
+// Heart Fill Hover States
+.icon--heart-fill--animate {
+  fill: $color__white;
+  stroke: $icon-heart-fill-stroke;
+  stroke-width: rem(6);
+  &:hover {
+    stroke: $color__black;
+  }
+}

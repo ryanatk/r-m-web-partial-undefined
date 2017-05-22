@@ -1,0 +1,57 @@
+---
+notes: |
+  The validation push button module acts the same as the one without validation
+  with the exception that at least one radio button needs to be checked in
+  order to submit the form. This will leverage the radio group validation and
+  it can be expressed through data attributes where the error should be applied
+  (`data-radio-group-insert-error-(before|after)` or fallback to default
+  placement) and the text for the error message (`data-radio-group-error-message`).
+---
+
+<form class="form-no-submit">
+  <fieldset class="form-section validate-radio-group"
+            data-radio-group-error-message="Please select a push button"
+            data-radio-group-insert-error-after=".form-section__title">
+    <legend class="form-section__title">Smoky, this is not 'nam. This is bowling. There are rules.</legend>
+
+    <div class="form-section__content">
+      {{> push-button
+          span=4
+          columns=12
+          id="pb-radio-1-required"
+          name="about-the-fit"
+          value="runs small"
+          label="Body Copy"
+          required=true }}
+
+      {{> push-button
+          span=4
+          columns=12
+          id="pb-radio-2-required"
+          name="about-the-fit"
+          value="true to size"
+          label="Extended Copy Body Example"
+          required=true }}
+
+      {{> push-button
+          span=4
+          columns=12
+          id="pb-radio-3-required"
+          name="about-the-fit"
+          value="runs large"
+          label="Extended Copy Body Example Extended Copy"
+          required=true }}
+
+      {{> push-button
+          span=12
+          columns=12
+          id="pb-radio-4-required"
+          name="about-the-fit"
+          value="runs small"
+          label="<span class=\"h4 u-margin-t--none u-margin-b--none\">Title</span>Body Copy"
+          required=true }}
+    </div>
+  </fieldset>
+
+  <button class="btn">Submit Push Button Form</button>
+</form>

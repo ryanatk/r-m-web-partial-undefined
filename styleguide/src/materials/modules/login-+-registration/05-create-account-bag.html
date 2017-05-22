@@ -1,0 +1,50 @@
+---
+notes: Create Account Bag - Form
+---
+<header>
+  <h1 class="btn btn--black btn--full u-margin-t--xl u-margin-b--none">Save My Bag</h1>
+</header>
+
+<div class="u-padding-a--xl">
+
+  <div class="u-center">
+    <h2 class="u-margin-t--none u-margin-b--sm">Create An Account</h2>
+    <p class="u-text-lg">Your information will never be released or sold to<br>
+      third parties.  You may un-subscribe at any time.</p>
+  </div>
+
+  <form name="create_acct" class="acct_form" onsubmit="createAccountLogin();">
+
+    <div class="floating-label " data-iconify-valid="Valid" data-iconify-invalid="Invalid" data-iconify-clear="Clear">
+    	<label for="createEmail" class="floating-label__label floating-label__label--hidden ">Email Address</label>
+    	<input type="email" class="floating-label__input floating-label__input--inset" id="createEmail" name="email" placeholder="Email Address" value="">
+    </div>
+
+    <div class="floating-label u-margin-b--none" data-iconify-valid="Valid" data-iconify-invalid="Invalid" data-iconify-clear="Clear">
+    	<label for="createPassword" class="floating-label__label floating-label__label--hidden ">Create Password</label>
+    	<input type="password" class="floating-label__input floating-label__input--inset" id="createPassword" name="password" placeholder="Create Password" value="">
+    </div>
+
+    <div class="floating-label " data-iconify-valid="Valid" data-iconify-invalid="Invalid" data-iconify-clear="Clear">
+    	<label for="createVerify" class="floating-label__label floating-label__label--hidden ">Verify Password</label>
+    	<input type="password" class="floating-label__input floating-label__input--inset u-border-t--none" id="createVerify" name="confirmPassword" placeholder="Verify Password" value="">
+    </div>
+
+    <div class="field u-margin-b--md">
+      <input aria-checked=“true” type="checkbox" id="new-arrivals" name="new-arrivals" value="new-arrivals" class="form__checkbox" checked>
+      <label for="new-arrivals"><div class="label__multiline u-text-sm">Sign up for New Arrivals, cute lookbooks, sales,<br>
+        exclusives, social updates + more!</div></label>
+    </div>
+
+    <a rel="external" href="javascript:createAccountLogin();if(event) event.returnValue=false;" class="btn btn--black btn--full">Create Account &amp; save my bag</a>
+
+  </form>
+
+  <div class="u-center u-margin-t--md">
+    <span class="icon icon--md icon--lock u-margin-r--sm u-color--black"> <!-- check icon size and color -->
+      <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-lock"></use></svg>
+    </span>
+    <span class="u-text-sm u-uppercase">Shop safe &amp; secure</span>
+  </div>
+
+</div>

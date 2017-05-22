@@ -1,0 +1,225 @@
+%floating-label-shell {
+  background: $color__white;
+  font-size: em(16);
+  border: rem(1) solid $color__grey--lighter;
+  width: 100%;
+}
+
+%floating-label-select {
+  @extend %h4;
+  @extend %u-ellipsis;
+  display: block;
+  width: 100%;
+  padding: rem(30 24 15 16);
+  box-shadow: none;
+  background-color: transparent;
+  color: $color__black;
+}
+
+$floating-label-gutter: 16;
+$floating-label-icon-size: 32;
+
+.floating-label {
+  @mixin buffer($top, $bottom) {
+    padding: {
+      top: rem($top);
+      bottom: rem($bottom);
+    }
+  }
+
+  @mixin invalid-input($selector) {
+    &:not(:focus) {
+      &:invalid {
+        @content;
+        border-color: $color__error;
+        color: $color__error;
+        background-color: transparent;
+
+        &:not(#{$selector}--filled) {
+          background: white;
+        }
+      }
+    }
+  }
+
+  position: relative;
+  margin-bottom: rem($base-margin);
+  z-index: 1; // need this for the label overlap trickery
+
+  // .floating-label--hidden
+  &--hidden {
+    z-index: -1;
+  }
+
+  // .floating-label__label
+  &__label {
+    position: absolute;
+    top: rem(12);
+    left: rem(16);
+    font-size: $text-size--md;
+
+    &--hidden {
+      z-index: -1; // to stay behind the select it overlaps
+    }
+
+    &--invalid {
+      color: $color__error;
+    }
+
+    &--selected,
+    &--filled {
+      top: rem(12);
+      z-index: 1;
+    }
+  }
+
+  // .floating-label__input
+  &__input {
+    @include invalid-input(&);
+    @extend %floating-label-shell;
+    padding: rem(20 $floating-label-gutter);
+
+    &:required {
+      background: $color__white;
+    }
+
+    &:focus {
+      @include buffer(28, 12);
+      @include placeholder {
+        opacity: 0;
+      }
+    }
+
+    &--inset {
+      padding-right: rem($floating-label-gutter + $floating-label-icon-size + 4);
+    }
+
+    &--selected {
+      @include buffer(28, 12);
+      &, &:required {
+        border-color: $color__black;
+      }
+    }
+
+    &--filled {
+      @include buffer(28, 12);
+    }
+  }
+
+  // .floating-label__textarea
+  &__textarea {
+    @extend %floating-label-shell;
+    padding: rem(32 13 6);
+
+    @include invalid-input(&) {
+      @include placeholder {
+        color: $color__error;
+        opacity: 1;
+      }
+    }
+
+    &--selected {
+      border-color: $color__black;
+    }
+  }
+
+  // .floating-label__select
+  &__select {
+    @extend %floating-label-select;
+
+    &, &:required {
+      background-color: $color__offwhite;
+      border: {
+        color: transparent;
+        width: 0;
+      }
+      border-right-width: rem(16);
+    }
+    &:disabled {
+      -webkit-text-fill-color: $color__black;
+      color: $color__black;
+      opacity: 1;
+      background-image: none;
+    }
+    &:active {
+      background-color: $color__black;
+      color: $color__white;
+    }
+  }
+
+  // .floating-label__counter
+  &__counter {
+    position: absolute;
+    top: rem(12);
+    right: rem(16);
+  }
+
+  &__iconify {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    right: rem($floating-label-gutter);
+    transform: translate(0, -50%);
+  }
+
+  &__hint {
+    color: $color__grey--light;
+    font: {
+      size: smaller;
+      style: italic;
+    }
+    line-height: 1;
+    margin-top: rem(6);
+  }
+}
+
+/// Styles icons that appear within a floating label. It'll control when
+/// certain icons should be shown, as well as take care of the presentation of
+/// icons since there are subtle differences.
+.iconify {
+  position: relative;
+
+  &__icon {
+    width: rem($floating-label-icon-size);
+    height: rem($floating-label-icon-size);
+
+    &--hidden {
+      display: none;
+    }
+
+    &--visible {
+      display: inline-block;
+    }
+
+    &--clear {
+      fill: $color__grey--light;
+      $padding: 16;
+      $size: $floating-label-icon-size - $padding;
+      width: rem($size);
+      height: rem($size);
+      padding: rem($padding);
+      position: relative;
+
+      // For clear, we target svg due to it's size and placement different from
+      // the other icons. Positioning svg icons can be tedious, so to ensure we
+      // are seeing the right placement, we position the clear icon in the
+      // middle of where a normal icon would be to have the visual placement
+      // as the other icons.
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &--check-mark,
+    &--details {
+      fill: $color__black;
+    }
+
+    &--exclamation-point {
+      fill: $color__error;
+    }
+  }
+}

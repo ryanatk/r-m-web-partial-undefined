@@ -1,0 +1,34 @@
+/**
+
+  @prices
+
+**/
+
+.price {
+  @extend %h4;
+  @extend %u-ellipsis;
+  margin-top: 4px;
+
+  // .price--on-sale
+  &--on-sale {
+    color: $color__error;
+  }
+
+  // .price__regular
+  &__regular {
+    color: $color__grey;
+    text-decoration: line-through;
+    padding-left: rem(2);
+  }
+
+  // .price--lg
+  &--lg {
+    @include h3();
+  }
+
+  // .price--horizontal
+  &--horizontal {
+    @include text-md();
+    font-weight: normal;
+  }
+}

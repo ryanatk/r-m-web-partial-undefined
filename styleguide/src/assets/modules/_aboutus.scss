@@ -1,0 +1,201 @@
+/**
+
+  @aboutus
+--------------------------------------------------------
+  modules/_aboutus.scss
+--------------------------------------------------------
+
+ about us page.
+
+------------------------------------------------------ */
+
+.aboutus {
+  &__hed-divider {
+    position: relative;
+    margin-left: rem(-7);
+    padding-bottom: rem(10);
+    &::before {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: rem(38);
+      height: rem(2);
+      margin-left: rem(-19);
+      background-color: $color__black;
+      content: '';
+
+    }
+  }
+  &__double-border {
+    position: relative;
+    border: rem(2) solid $color__black;
+    &::before {
+      display: block;
+      position: absolute;
+      top: rem(-7);
+      left: rem(7);
+      width: 100%;
+      height: 100%;
+      border: rem(4) solid $color__black;
+      background: $color__white;
+      content: '';
+      z-index: 1;
+    }
+  }
+  &__double-border-content {
+    position: relative;
+    height: rem(157);
+    margin-left: rem(7);
+    z-index: 2;
+    &--lg {
+      height: rem(275);
+      .form__checkbox + label::before {
+        padding-left: rem(2);
+      }
+    }
+  }
+  &__double-border-content--careers {
+    position: relative;
+    height: rem(236);
+    margin-left: rem(7);
+    z-index: 2;
+  }
+  &__social-links {
+    position: relative;
+    &--size {
+      width: rem(176);
+      height: rem(176);
+    }
+    &--icons {
+      position: absolute;
+      top: rem(75);
+      left: 51%;
+      transform: translateX(-50%);
+    }
+    &--icons-alt {
+      position: absolute;
+      top: 73px;
+      left: 51%;
+      transform: translateX(-50%);
+    }
+  }
+  &__stats-num {
+    position: relative;
+    margin: rem(68 29 -42 17);
+    color: $color__grey--md;
+    font-size: em(65.24);
+    z-index: 0;
+    &--hed {
+      position: relative;
+      margin: rem(18 24 0 14);
+      z-index: 3;
+    }
+    &--alt {
+      position: relative;
+      color: $color__grey--md;
+      font-size: em(54.74);
+      z-index: 0;
+      top: 46px;
+    }
+    &--alt-2 {
+      position: relative;
+      margin: rem(25 5 -42 -5);
+      color: $color__grey--md;
+      font-size: em(64.4);
+      z-index: 0;
+    }
+    &--alt--3 {
+      position: relative;
+      margin: rem(25 5 -42 -5);
+      color: $color__grey--md;
+      font-size: em(51.8);
+      z-index: 0;
+    }
+  }
+  &__friends-wrap {
+    position: relative;
+    &--large-num {
+      position: absolute;
+      top: 41%;
+      right: 52%;
+      left: 0%;
+      color: $color__grey--md;
+      font-size: em(170.324);
+    }
+    &--hed {
+      position: absolute;
+      top: 24%;
+      right: 44%;
+      left: 0;
+    }
+    &--hed-statement {
+      position: absolute;
+      top: 38%;
+      right: 42%;
+      left: 0%;
+    }
+  }
+  &__stack-text__item {
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    text-anchor: middle;
+    fill: $color__black;
+    alignment-baseline: central;
+  }
+  &__social-wrap {
+    position: relative;
+    &--box {
+      position: absolute;
+      top: 27%;
+      right: 12%;
+      left: 12%;
+      opacity: .95;
+    }
+  }
+  &__friends-margin {
+    font-size: 2em;
+  }
+  &__stats-margin-t {
+    margin-top: rem(-29);
+  }
+  &__buyer-margin-t {
+    margin-top: rem(35);
+  }
+  &__brands-padding-l {
+    padding-left: rem(60);
+  }
+  &__designer-padding-l {
+    padding-left: rem(60);
+  }
+  &__designer-margin-b {
+    margin-bottom: rem(12);
+  }
+  &__editorial-margin-t {
+    margin-top: 6%;
+  }
+  &__contact-margin-t {
+    margin-top: rem(30);
+  }
+  &__icons-margin-t {
+    margin-top: 10%;
+  }
+  &__icons-margin-l--sm {
+    margin-left: 2%;
+  }
+  &__icons-margin-l--md {
+    margin-left: 6%;
+  }
+  &__pagewrap-margin-b {
+    margin-bottom: rem(34);
+  }
+  &__badges-btn {
+    display: inline;
+    width: rem(161);
+    padding-left: rem(10);
+  }
+  &__fb-icon {
+    width: rem(16);
+    height: rem(16);
+  }
+}

@@ -1,0 +1,27 @@
+/**
+
+  @fixed-fluid
+--------------------------------------------------------
+  modules/_fixed-fluid.scss
+--------------------------------------------------------
+
+  Blocks contain sections of content.  Blocks can have
+  different visual styling, but usually have the same
+  structure; one spacing unit margin at the bottom,
+  and some have borders, and padding, etc.
+
+-----------------------------------------------------  */
+
+// Blocks add bottom margin
+//
+.fixed-fluid__fixed {
+  float: left;
+}
+
+
+// Block with top and bottom margin
+//
+.fixed-fluid__fluid {
+  display: block;
+  overflow: hidden;
+}

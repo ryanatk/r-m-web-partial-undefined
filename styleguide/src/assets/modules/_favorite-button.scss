@@ -1,0 +1,87 @@
+/**
+
+  @favorite-button
+--------------------------------------------------------
+  modules/_favorite-button.scss
+--------------------------------------------------------
+
+  Favorite Button Styling
+
+------------------------------------------------------ */
+
+.favorite-button {
+  position: absolute;
+  top: rem( 16 );
+  right: rem( 16 );
+  padding: rem( 13 12 );
+  border: rem( 1 ) solid $color__grey--lightest;
+  border-radius: 50%;
+  background: $color__white;
+  line-height: rem( 12 );
+  cursor: pointer;
+  z-index: 6;
+  // .favorite-button--active
+  &--active,
+  // adding .active class to abide to heartProduct harded coded function
+  .active {
+    background: $color__womens;
+    border-color: $color__womens;
+    .favorite-button__icon {
+      fill: $color__black;
+      stroke: $color__black;
+    }
+  }
+
+  &:focus {
+    border-color: $color__grey--lightest;
+    .icon {
+      fill: $color__black;
+    }
+  }
+
+  // .favorite-button__icon
+  &__icon {
+    width: rem( 22 );
+    height: rem( 20 );
+
+    fill: $color__white;
+    stroke: $color__black;
+    stroke-width:  rem( 1 );
+  }
+  // .favorite-button--inline
+  &--inline {
+    display: inline-block;
+    position: static;
+    margin: 0;
+  }
+  // .favorite-button__container
+  &__container {
+    cursor: pointer;
+    &--active .favorite-button {
+      background: $color__womens;
+      .favorite-button__icon {
+        fill: $color__black;
+        stroke: $color__black;
+      }
+    }
+  }
+  &--sm {
+    top: 8px;
+    right: 8px;
+    padding: 7px 6px;
+    .favorite-button__icon {
+      width: 18px;
+      height: 16px;
+    }
+  }
+}
+
+.favorite-button--men {
+  &.favorite-button--active,
+  // adding .active class to abide to heartProduct harded coded function
+  &.active {
+    // .favorite-button--men .favorite-button--active
+      background: $color__mens;
+      border-color: $color__mens;
+  }
+}

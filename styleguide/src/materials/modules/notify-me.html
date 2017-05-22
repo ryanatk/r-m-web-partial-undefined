@@ -1,0 +1,32 @@
+---
+notes:
+---
+
+<div class="notify-me {{#if tabs}}ui-tabs__content{{/if}}" id="{{id}}">
+  <p class="notify-me__intro">{{intro}}</p>
+
+  {{> product-title-large }}
+
+  <form class="notify-me__form " data-validate="true" action="?thank-you">
+    {{> product-options.size
+        enableOOS="true"
+        attrs='data-validate-not-empty="true"' }}
+
+    {{> floating-label-input
+        id="email"
+        type="email"
+        label="Enter your Email Address"
+        attrs='data-validate-not-empty="true"'
+        fieldAttrs='data-iconify-valid="Valid" data-iconify-invalid="Invalid" data-iconify-clear="Clear"'}}
+
+    <div class="notify-me__auto-order"></div>
+    <div class="notify-me__notification"></div>
+    <div class="notify-me__cta" data-validate-trigger="true">{{> cta-buttons.notify-me }}</div>
+  </form>
+
+  <h4 class="notify-me__details">How does {{title}} work?</h4>
+  <ul class="notify-me__details ui-list">
+    <li class="ui-list__item">{{title}} requests are not guaranteed.</li>
+    <li class="ui-list__item">Unfulfilled requests will be canceled after 6 weeks.</li>
+  </ul>
+</div>

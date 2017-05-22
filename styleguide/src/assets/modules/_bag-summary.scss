@@ -1,0 +1,41 @@
+/**
+
+  @bag-summary
+
+**/
+
+.bag-summary {
+  @extend %text-lg;
+
+  // .bag-summary__line
+  &__line {
+    margin: rem( 0 16 );
+    padding: rem( 13 0 );
+    border-bottom: 1px solid $color__grey--lighter;
+
+    &--total {
+      @extend %h3;
+      border: none;
+    }
+  }
+
+  // .bag-summary__link
+  &__link {
+    text-decoration: underline;
+    margin-left: rem(6);
+    color: $color__grey--light;
+  }
+
+  // .bag-summary__price
+  &__price {
+    float: right;
+  }
+
+  // .bag-summary__message
+  &__message {
+    margin-bottom: 0;
+    padding: rem( $base-margin/2 0 );
+    text-align: center;
+    color: $color__error;
+  }
+}

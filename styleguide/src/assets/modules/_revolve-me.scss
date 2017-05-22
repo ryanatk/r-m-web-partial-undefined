@@ -1,0 +1,61 @@
+/**
+
+  @revolve-me
+--------------------------------------------------------
+  modules/_revolve-me.scss
+--------------------------------------------------------
+
+  Revolve Me
+
+------------------------------------------------------ */
+.revolve-me {
+  border-top: rem( 1 ) solid $color__grey--lightest;
+  text-align: center;
+
+  &__carousel {
+    overflow: hidden;
+    text-align: left;
+    white-space: nowrap;
+    overflow-x: scroll;
+    padding-left: rem( 16 );
+    font-size: 0;
+  }
+  &__image {
+    display: inline-block;
+    height: rem( 126 );
+    width: auto;
+    margin-right: rem( 16 );
+  }
+  .icon {
+    margin: rem( 0 2 );
+  }
+
+  &__popup {
+   display: none;
+  }
+  &__close {
+    position: absolute;
+    top: rem(10);
+    right: rem(10);
+  }
+  &__caption {
+    margin-top: rem(16);
+  }
+  &__caption-profile {
+    display: inline-block;
+    width: rem(45);
+    border-radius: 50%;
+    vertical-align: bottom;
+  }
+  &__caption-ig {
+    display: inline-block;
+    width: rem(23);
+    margin-left: rem(6);
+    vertical-align: bottom;
+  }
+  &__caption-text {
+    display: inline-block;
+    margin-left: rem(10);
+    vertical-align: bottom;
+  }
+}

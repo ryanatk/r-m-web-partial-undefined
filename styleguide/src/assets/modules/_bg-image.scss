@@ -1,0 +1,27 @@
+/**
+
+  @background image
+--------------------------------------------------------
+  modules/_bg-image.scss
+--------------------------------------------------------
+
+  This style handles content over images.
+
+------------------------------------------------------ */
+
+.bg-image {
+  position: relative;
+  display: block;
+  &__image {
+    position: relative;
+    z-index: 1;
+  }
+  &__content {
+    position: absolute;
+    z-index: 2;
+    top:50%;
+    right:0;
+    left:0;
+    transform: translateY(-50%);
+  }
+}

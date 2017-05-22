@@ -1,0 +1,30 @@
+/**
+
+  @product sections
+--------------------------------------------------------
+  modules/_product-sections.scss
+--------------------------------------------------------
+
+  Product's name and brand
+
+------------------------------------------------------ */
+
+.product-sections {
+  &__header {
+    border-bottom: 1px solid $color__border;
+    margin-bottom:rem(14);
+  }
+  &__hed {
+    @extend %font-secondary--bold;
+    padding-bottom: rem( 6 );
+    color: $color__black;
+    font-size: em( 13 );
+    letter-spacing: rem(1.75);
+    line-height: em( 13 );
+    text-transform: uppercase;
+    &--b-none {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}

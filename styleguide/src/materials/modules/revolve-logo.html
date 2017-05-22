@@ -1,0 +1,15 @@
+---
+notes: |
+  Simple Revolve logo that can be used anywhere on the site.
+  Links to Revolve Homepage by default.
+---
+
+{{!--
+  @param {string} [href] - optionally set an href other than the homepage
+  @param {string} [modifier] - optionally set a BEM modifier
+  @param {string} [className] - optionally set a BEM element name
+--}}
+
+<a href="{{#if href}}{{href}}{{else}}{{url.homepage}}{{/if}}"
+  class="icon icon--revolve-logo revolve-logo {{#modifier}}revolve-logo--{{.}}{{/modifier}} {{className}}"
+  title="Revolve Homepage">{{> icons.revolve-logo skip-wrap=true title="Revolve Logo" }}</a>

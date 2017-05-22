@@ -1,0 +1,162 @@
+@import '../sprite/main';
+
+.webfont-icon-base {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: 0;
+  text-shadow: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+
+#jqt {
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: "Helvetica Neue", Helvetica;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+}
+
+#jqt > * {
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow-x: hidden;
+  position: absolute;
+  z-index: 0;
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  min-height: 100% !important;
+}
+
+#jqt.touchscroll:not(.animating3d) {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#jqt.touchscroll:not(.animating3d) > * {
+  height: 100%;
+}
+#jqt.touchscroll:not(.animating3d) .scroll {
+  position: relative;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#jqt .scroll {
+  -webkit-margin-collapse: separate;
+  position:relative;
+}
+
+#jqt .out {
+  z-index: 0 !important;
+}
+/*
+#jqt.supports3d {
+  -webkit-perspective: 1000;
+}
+#jqt.supports3d > * {
+  -webkit-transform: translate3d(0, 0, 0) rotate(0) scale(1);
+}*/
+
+
+#jqt .whiteButton, #jqt .grayButton, #jqt .redButton, #jqt .blueButton, #jqt .greenButton {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 20px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: inherit;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px, rgba(0, 0, 0, 0.4) 0 0 0 5px, rgba(255, 255, 255, 0.3) 0 1px 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 1px 3px, rgba(0, 0, 0, 0.4) 0 0 0 5px, rgba(255, 255, 255, 0.3) 0 1px 0 5px;
+}
+
+#jqt ul {
+  padding: 0;
+  -webkit-margin-collapse: separate;
+	margin: 0;
+}
+#jqt .bottom_nav_mhp > ul {
+  color: #d5d6d7;
+  width: 100%;
+	background-color: black;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: block;
+	font-family: "Helvetica Neue", Helvetica;
+	font-weight: bold;
+}
+
+#jqt .bottom_nav_mhp > ul > li {
+  list-style-type: none;
+  overflow: hidden;
+  border-top: 1px solid #c1c1c1;
+}
+#jqt .bottom_nav_mhp > ul > li > a, #jqt > .bottom_nav_mhp > ul > .occ_tab a {
+	font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+  text-decoration: none;
+  letter-spacing: .120em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  padding: 17px 10px 10px 17px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: black;
+  width: auto;
+  height: 22px;
+	font-weight: normal;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: 16px;
+  background: #fff;
+
+  .icon-arrow {
+    @include sprite($icons-black-arrow);
+    position: absolute;
+    top: 16px;
+    right: 14px;
+  }
+}
+#jqt .bottom_nav_mhp ul .occ_tab a {
+  background: #fff url(//is4.revolveassets.com/images/mobile/bottom_nav_tabarrow.png) no-repeat right top;
+  background-size:21px 98px;
+}
+#jqt .bottom_nav_mhp ul .occ_tab .active_tab {
+  background: #fff url(//is4.revolveassets.com/r/images/bottom_nav_tabarrow.png) no-repeat right bottom;
+  background-size:21px 98px;
+}
+#jqt .bottom_nav_mhp ul li a:active {
+  opacity: 0.8;
+}
+#jqt .bottom_nav_mhp ul .occ_box li a {
+    font-family: 'Karla', 'Helvetica', 'Arial', sans-serif;
+    text-indent: 15px;
+    text-transform: none;
+}
+
+#jqt .bottom_nav_mhp {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: black;
+}

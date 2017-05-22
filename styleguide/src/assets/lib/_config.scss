@@ -1,0 +1,14 @@
+/***
+
+  @config
+---------------------------------------------------------
+
+  Config for main stylesheet. Declares variable to compile
+  regular browser stylesheet
+
+-----------------------------------------------------  */
+
+$old-ie: false !default;
+$px-only: false !default;
+$dev-mode: false !default;
+$is-mobile: true !default;

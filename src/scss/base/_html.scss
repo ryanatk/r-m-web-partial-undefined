@@ -1,0 +1,79 @@
+/**
+
+   @html
+--------------------------------------------------------
+  base/_html.scss
+--------------------------------------------------------
+
+  HTML should contain the site's default background color
+  and font-size
+
+------------------------------------------------------ */
+
+// scss-lint:disable VendorPrefix, Indentation
+html {
+  // changes the base fontsize to be able to properly use rem
+  // DO NOT change this value
+  // see _body.scss to see gradual font size change in media queries
+  font-size: $base-html-size; // 14px defined in _vars.scss
+
+  // Font families based on lang attr
+  // Remove body font-family after eagle
+  //
+  // Japanese
+  &:lang(ja) {
+    &,
+    body {
+      @extend %font-japanese;
+    }
+  }
+  // Korean
+  &:lang(ko) {
+    &,
+    body {
+      @extend %font-korean;
+    }
+  }
+
+  // Font sizes based on lang attr
+  //
+  // ?
+  &:lang(ch) {
+    font-size: $base-html-size - 1;
+  }
+  // Russian
+  &:lang(ru) {
+    font-size: $base-html-size - 1;
+  }
+  // Chinese
+  &:lang(zh) {
+    font-size: $base-html-size - 1;
+  }
+  // These values will not show up in content, but can be
+  // queried by JavaScript to know which breakpoint is active.
+  &:before {
+    $bpLength: length($breakpointsViews);
+    $i: 0;
+    $content: '';
+
+    @each $view, $size in $breakpointsViews {
+      $i: $i + 1;
+      $content: $content + $view;
+      @if $i < $bpLength {
+        $content: $content + ',';
+      }
+    }
+    display: none;
+    content: $content;
+  }
+}
+
+
+* {
+  // -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+      -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// scss-lint:enable VendorPrefix, Identation

@@ -1,0 +1,83 @@
+/*
+  @product-titles
+
+  Product's name and brand
+*/
+
+// TODO: product__name element should be deprecated in favor of product-name block
+// keeping here for now, to be backwards compatible with PLP
+.product__name,
+.product-name {
+  @extend %h4;
+  // .product-name--lg
+  &--lg {
+    @include h3();
+  }
+}
+
+// these styles diverge product__name from what's implemented for product-name
+.product__name {
+  // Previous mocks have explicitly stated to not truncate long names/brands.
+  // Adding --ellipsis modifier (below) to optionally truncate product-name & product-brand
+  @extend %u-ellipsis;
+  // currently product-name is at 20px
+  line-height: rem( 1.2 );
+}
+
+.product-brand {
+  @extend %text-md;
+
+  // .product-brand--lg
+  &--lg {
+    @include text-lg();
+  }
+
+  // .product-brand__link
+  &__link {
+    color: $color__black;
+  }
+}
+
+// TODO: product__name element should be deprecated in favor of product-name block
+// keeping here for now, to be backwards compatible with PLP
+.product__name,
+.product-name,
+.product-brand,
+.product-number {
+  margin: rem( 0 );
+
+  // .product-name--lg
+  // .product-brand--lg
+  &--lg {
+    margin-bottom: 2px;
+  }
+  // .product-name--ellipsis
+  // .product-brand--ellipsis
+  &--ellipsis {
+    @extend %u-ellipsis;
+  }
+  // .product-name--font-primary
+  // .product-brand--font-primary
+  &--font-primary {
+    @extend %text-md;
+    font: {
+      family: $font-primary;
+      weight: normal;
+    }
+    letter-spacing: em(0);
+    text-transform: none;
+  }
+
+  // .product-name--long
+  // .product-brand--long
+  &--long {
+    text-overflow: initial !important;
+    white-space: normal !important;
+    overflow: auto !important
+  }
+  // .product-name--grey
+  // .product-brand--grey
+  &--grey {
+    color: $color__grey;
+  }
+}

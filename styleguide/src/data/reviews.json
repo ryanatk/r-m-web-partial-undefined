@@ -1,0 +1,123 @@
+{
+  "product": {
+    "brand": "Super Cool",
+    "name": "New Hat"
+  },
+  "aggregate": {
+    "stars": {
+      "rating": "4.0",
+      "quantity": "123"
+    },
+    "fit": {
+      "quantity": "623",
+      "attributes": [
+        {
+          "label": "Runs Small",
+          "percent": "14"
+        }, {
+          "label": "True to Size",
+          "percent": "31"
+        }, {
+          "label": "Runs Large",
+          "percent": "54"
+        }
+      ],
+      "top-index": 2
+    }
+  },
+  "customer": [
+    {
+      "author": {
+        "name": "Lincoln Rice",
+        "location": "Broad City, NY",
+      },
+      "star-rating": "4.0",
+      "fit-attributes": [
+        "Size Down",
+        "Straight Hips",
+        "Tall"
+      ],
+      "comments": "Who teaches the bucket drummers? I never seen a bucket drummer class anywhere. I'm not over Amy Winehouse. It's like, we knew it would happen but we didn't do anything about it. Ilana, I can't inflict upon a dog the crazy life of a dentist."
+    }, {
+      "author": {
+        "name": "Abbi Abrams",
+        "location": "Broad City, NY",
+      },
+      "star-rating": "1.0",
+      "fit-attributes": [
+        "True to Size",
+        "Some Curves",
+        "Average Height"
+      ],
+      "comments": "You know what's the biggest luxury? Pooping when no one is home."
+    }, {
+      "author": {
+        "location": "Broad City, NY",
+      },
+      "star-rating": "2.0",
+      "fit-attributes": [
+        "True to Size",
+        "Some Curves",
+        "Average Height"
+      ],
+      "comments": "You know what I've been thinking about? Every animal, from every movie we've loved as a kid.... probably dead."
+    }, {
+      "author": {
+        "name": "Ilana Wexler",
+      },
+      "star-rating": "5.0",
+      "fit-attributes": [
+        "Size Up",
+        "Curvy",
+        "Short"
+      ],
+      "comments": "Something I love about myself is, rain or shine, thick or thin, if I have to take a dump I can go anywhere."
+    }, {
+      "author": {
+        "name": "Ilana Wexler",
+        "location": "Broad City, NY",
+      },
+      "star-rating": "4.0",
+      "fit-attributes": [
+        "Size Up",
+        "Curvy",
+        "Short"
+      ]
+    }, {
+      "star-rating": "2.0",
+      "fit-attributes": [
+        "True to Size",
+        "Some Curves",
+        "Average Height"
+      ],
+      "comments": "I know how you like to write your name on your food."
+    }, {
+      "author": {
+        "location": "Carmel by the Sea, CA",
+      },
+      "star-rating": "3.0",
+      "fit-attributes": [
+        "True to Size",
+        "Some Curves",
+        "Average Height"
+      ]
+    }, {
+      "author": {
+        "name": "Matthew \"Matt\" Bevers",
+      },
+      "star-rating": "4.0",
+      "fit-attributes": [
+        "True to Size",
+        "Some Curves",
+        "Average Height"
+      ]
+    }, {
+      "star-rating": "2.0",
+      "fit-attributes": [
+        "Size Up",
+        "Curvy",
+        "Short"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+/**
+
+  @table
+--------------------------------------------------------
+  modules/_table.scss
+--------------------------------------------------------
+
+  tables
+
+------------------------------------------------------ */
+
+.table {
+  border: 0;
+  font-size: em(12);
+  display: table;
+  &__header {
+    padding: rem(10);
+    border: rem(1) solid $color__offwhite;
+    background-color: $color__grey--lightest;
+    color: $color__black;
+    font-family: $font-secondary;
+    font-size: em(12);
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &.table--highlight-leftcol {
+    .table__header {
+      background-color: $color__offwhite;
+    }
+    .table__header:first-child,
+    .table__data:first-child {
+      background-color: $color__grey--lightest;
+    }
+  }
+  &__data {
+    padding: rem(10);
+    border: rem(1) solid $color__offwhite;
+    color: $color__black;
+    font-size: em(12);
+    text-align: center;
+    text-transform: uppercase;
+    border-collapse: collapse;
+  }
+  &.table--secondary {
+    margin-top: 0;
+    .table__header {
+      border: rem(1) solid $color__white;
+    }
+    .table__data {
+      border: rem(1) solid $color__white;
+      background-color: $color__offwhite;
+      &--highlight {
+         background-color: $color__grey--lightest;
+      }
+    }
+  }
+  &__caption {
+    width: 100%;
+    padding: rem(10 0);
+    background-color: $color__black;
+    color: $color__white;
+    font-size: em(12);
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &.table--flex {
+    .table__row {
+      display: flex;
+    }
+    .table__header,
+    .table__data {
+      flex: 1 1 100%;
+    }
+  }
+  &__cell {
+    display: table-cell;
+    &--middle {
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>{{title}}</title>
+
+  <!-- Styles -->
+	<link rel="stylesheet" href="../site/mock.css">
+	<link rel="stylesheet" href="../lib/styleguide.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	{{> rc-props this}}
+</head>
+
+<body>
+  <!-- Head -->
+  <header id="site-header">
+    {{#if site-header }}
+      {{!-- site-header override, set within the views html --}}
+      {{> (lookup . "site-header") }}
+    {{else}}
+      {{!-- default site-header --}}
+      {{> site-header.shopping }}
+    {{/if}}
+  </header>
+
+  <!-- Content -->
+  <div id="page-content">
+
+    <!-- Page content passed in from view html -->
+    {% body %}
+
+    <!-- Templates for javascript to dynamically update HTML -->
+    {{> mock-templates templates=(lookup (lookup ./this page-name) 'templates')}}
+
+  </div>
+
+
+  <footer id="site-footer" class="u-bg-color--black u-margin-t--xl u-clear-both">
+    <h2 class="u-color--white u-margin-b--none u-padding-a--xl">page options:</h2>
+    <!-- Mock Page Options
+         Handlebars Templates (templates array defined in data/*.json files) -->
+    {{> mock-page-options (lookup (lookup ./this page-name) 'page-options')}}
+    <!-- These templates are used by the mock to show various versions of the PDP.
+         In the mock they are applied using javascript whenever the correct options are set in the url parameters.
+         On the website, these should be applied on the server side (in the HTML), in the same location where the javascript adds them now. -->
+    <ul id="mock-page-options" class="u-margin-a--none u-padding-a--xl u-padding-t--none">
+      <li><a href="?">Default Page w/ No Options</a>
+    </ul>
+  </footer>
+
+  <!-- JavaScript for Mock Pages -->
+  <script>
+    window.pageName = '{{page-name}}';
+  </script>
+	<script src="../site/mock.js"></script>
+
+  <!-- Style Guide JavaScript -->
+	<script src="../lib/styleguide.js"></script>
+
+  <!-- SVG Sprites -->
+	<script>
+		(function(doc) {
+			var sprite = '../lib/sprite.svg';
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', sprite, true);
+			xhr.overrideMimeType('image/svg+xml');
+			xhr.send();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === 4) {
+					var el = document.createElement('div');
+					el.innerHTML = xhr.responseText;
+					el.id = 'svg-sprite';
+					doc.body.appendChild(el);
+				}
+			};
+		}(document));
+	</script>
+</body>
+</html>

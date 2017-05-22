@@ -1,0 +1,91 @@
+@import '../lib/lib';
+
+/// After moving useful helpers into separate files
+/// as placeholders, these are the leftovers.
+/// They are unused, even by the style guide.
+/// It likely makes more sense to remove these completely,
+/// however if we want to keep them, they should be moved
+/// to appropriate sibling files as placeholders and
+/// extended by a class in the parent `helpers.scss`.
+/// @deprecated
+/// @todo move or remove
+
+.u-before--none {
+  &:before {
+    display:none;
+  }
+}
+
+/* General error class that covers border-color, color, and hover color
+--------------------------------------------------------
+*/
+.u-error {
+  border-color: $color__error;
+  color: $color__error;
+  &:hover {
+    color: $color__error;
+  }
+}
+
+/* @push-pull-helpers
+--------------------------------------------------------
+*/
+// Need to document
+.u-full-bleed {
+  margin-right: - rem($base-unit) !important;
+  margin-left: - rem($base-unit) !important;
+
+  // if fullbleed is child of island layout classes
+  // Remove after eagle - Remove comment below
+  // .island & {
+  //   margin-right: - rem( $base-unit) !important;
+  //   margin-left: - rem($base-unit) !important;
+  // }
+  // .islet & {
+  //   margin-right: - rem( $base-unit / 2) !important;
+  //   margin-left: - rem($base-unit / 2) !important;
+  // }
+}
+
+/* @opacity-helpers
+--------------------------------------------------------
+*/
+
+// hide with opacity
+.u-hide-opacity {
+  opacity: 0;
+}
+
+/* @width-auto
+--------------------------------------------------------
+*/
+
+.u-height-auto {
+  height: auto !important;
+}
+
+/* @overflow
+--------------------------------------------------------
+*/
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+/* @u-no-wrap - @todo: move over mobile styles
+--------------------------------------------------------
+*/
+.u-no-wrap {
+  white-space: nowrap !important;
+}
+
+.u-flex {
+  display: flex;
+}
+
+/* @ui-list--links-block
+--------------------------------------------------------
+*/
+.ui-list--links-block li a {
+  display: block;
+}

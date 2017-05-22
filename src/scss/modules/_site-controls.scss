@@ -1,0 +1,21 @@
+/**
+
+  @site-controls
+--------------------------------------------------------
+  modules/_site-controls.scss
+--------------------------------------------------------
+
+  Site Controls
+
+------------------------------------------------------ */
+
+.site-controls {
+  border-top: rem(1) solid $input-border-color--invert;
+  border-bottom: rem(1) solid $input-border-color--invert;
+  &__link {
+    padding: rem(13 5 15 5);
+    &:first-child {
+      border-right: rem(1) solid $input-border-color--invert;
+    }
+  }
+}

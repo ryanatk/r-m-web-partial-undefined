@@ -1,0 +1,25 @@
+/*
+  @placeholders
+
+  This file is used to pull CSS from mixins into placeholders.
+  Use these placeholders in your `scss` files, like so:
+    `.selector { @extend %myPlaceholder; }`
+  Placeholders have the advantage of only outputting styles once,
+    including multiple selectors, saving page weight.
+  Placeholders have 2 main drawbacks:
+    1. they don't work within media blocks
+    2. because they're hoisted, they may be overridden by later styles
+  When presented with 1 of these problems, instead use the mixin, like so:
+    `.selector { @include myMixin(); }`
+  For more on placeholders:
+    http://thesassway.com/intermediate/understanding-placeholder-selectors
+*/
+
+// Headings
+%headings { @include headings(); }
+%h1 { @include h1(); }
+%h2 { @include h2(); }
+%h3 { @include h3(); }
+%h4 { @include h4(); }
+%h5 { @include h5(); }
+%h6 { @include h6(); }

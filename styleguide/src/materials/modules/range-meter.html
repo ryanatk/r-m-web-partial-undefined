@@ -1,0 +1,23 @@
+---
+notes: |
+  Displays a given range, by showing the `label`,
+  a `meter` providing a visual display of a percentage of the range,
+  and the `value`.
+
+  The "filling" of the meter is done by adding a percentage `width`
+  to the inner `span` element.
+---
+
+{{!--
+  - `label` {string} label for the meter
+  - `percent` {float} percent to be used to fill the meter
+  - `value` {string} [optional] to show next to the meter, when you don't want a percent
+--}}
+
+<div class="range-meter">
+  <h4 class="range-meter__label">{{#if label}}{{label}}{{else}}Range Label{{/if}}</h4>
+  <p class="range-meter__meter">
+    <span class="range-meter__fill" style="width:{{#if percent}}{{percent}}{{else}}68{{/if}}%;">{{percent}}% {{label}}</span>
+  </p>
+  <span class="range-meter__percent">{{#if value}}{{value}}{{else if percent}}{{percent}}%{{else}}68%{{/if}}</span>
+</div>

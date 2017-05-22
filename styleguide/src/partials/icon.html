@@ -1,0 +1,19 @@
+{{!--
+    Icon partial used as standard template for all svg icons
+    @param {string} svg - name of the svg
+    @param {string} [size] - shortcut for optional size modifier
+    @param {string} [modifier] - additional optional modifier
+    @param {string} [title] - optional title for svg
+    @param {string} [description] - optional description for svg
+    @param {boolean} [skip-wrap] - option to skip `span` wrap, for when you're using your own wrap
+    @param {string} [icon-class-name] - optional className used on the icon container
+    @param {string} [svg-attrs] - optional attributes used on the svg element
+--}}
+
+{{#unless skip-wrap}}<span class="icon {{#size}}icon--{{.}}{{/size}} {{#modifier}}icon--{{.}}{{/modifier}} icon--{{svg}} {{icon-class-name}}" aria-label="{{title}}">{{/unless}}
+  <svg{{#svg-attrs}} {{{.}}}{{/svg-attrs}}>
+    {{#title}}<title>{{.}}</title>{{/title}}
+    {{#description}}<description>{{.}}</description>{{/description}}
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-{{svg}}"></use>
+  </svg>
+{{#unless skip-wrap}}</span>{{/unless}}

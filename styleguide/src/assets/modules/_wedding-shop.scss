@@ -1,0 +1,131 @@
+/**
+
+  @wedding-shop
+--------------------------------------------------------
+  modules/_wedding-shop.scss
+--------------------------------------------------------
+
+  Wedding Shop HP
+
+------------------------------------------------------ */
+
+
+.wedding-shop {
+  &__header--container {
+    position: absolute;
+    top: 22%;
+    left: 0%;
+    width: 100%;
+  }
+  &__header {
+    @extend %font-secondary--bold;
+    margin: 0;
+    color: $color__white;
+    font-size: em(25);
+    letter-spacing: em(.35);
+    text-transform: none;
+  }
+  &__img--shop {
+    display: inline-block;
+    margin-bottom: rem(6);
+    font-family: $font-wedding;
+    font-size: em(16);
+    letter-spacing: em(.5);
+  }
+  &__img--header {
+    @extend %font-secondary--bold;
+    display: inline-block;
+    margin-bottom: rem(6);
+    border-bottom: rem(3) solid $color__white;
+    font-size: em(22);
+    font-weight: 600;
+    letter-spacing: em(.5);
+  }
+  &__img--header-nb {
+    @extend %font-secondary--bold;
+    display: inline-block;
+    margin-bottom: rem(6);
+    font-size: em(22);
+    letter-spacing: em(.5);
+  }
+  &__img--header-main {
+    font-family: "ProximaNova", "Helvetica", "Arial", sans-serif;
+    font-size: em(25);
+    font-weight: 600;
+  }
+  &__img--header-main-border {
+    display: inline-block;
+    position: relative;
+    border-bottom: rem(3) solid $color__black;
+    font-family: "ProximaNova", "Helvetica", "Arial", sans-serif;
+    font-size: em(22);
+    font-weight: 600;
+    line-height: .8em;
+  }
+  &__img-r-logo {
+    width: rem(205);
+    height: rem(55);
+    color: $color__white;
+  }
+}
+
+.wedding-shop__position {
+  &-01 {
+    position: absolute;
+    top: initial;
+    bottom: 60%;
+    left: -12%;
+    width: 100%;
+  }
+  &-02 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  &-03 {
+    position: absolute;
+    top: initial;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  &-04 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  &-05 {
+    position: absolute;
+    top: initial;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  &-06 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  &-07 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  &-08 {
+    position: absolute;
+    top: 50%;
+    left: -37%;
+    right: 0;
+    text-align: center;
+  }
+}

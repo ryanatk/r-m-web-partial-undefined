@@ -1,0 +1,61 @@
+/**
+
+  @email-signup
+--------------------------------------------------------
+  modules/_email-signup.scss
+--------------------------------------------------------
+
+  Email signup landing pages
+
+------------------------------------------------------ */
+
+
+// men yeezy
+.email-signup {
+  &__color--grey {
+    color: #858377;
+  }
+  &__img--width {
+  	width: 65%;
+  }
+}
+
+//shared
+.email-signup {
+	&__input--email {
+		padding: rem(15);
+		width: 60%;
+	}
+	&__input--submit {
+		line-height: initial;
+		padding: rem(13);
+		width: 30%;
+	}
+}
+
+//women yeezy
+.email-signup {
+	&__img--width-w {
+		width: 60%;
+	}
+}
+
+//women style
+
+.email-signup {
+  &__border {
+    border: rem(2) solid  #ac8947;
+    display: inline-block;
+    padding: rem(10);
+  }
+  &__border--text {
+    margin: 0;
+    color: #ac8947;
+  }
+  &__color--gold {
+    color: #ac8947;
+  }
+  &__img--style-icon {
+    width: 45%;
+  }
+}

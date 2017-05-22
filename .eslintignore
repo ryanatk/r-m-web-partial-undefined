@@ -1,0 +1,8 @@
+lib/scripts/vendor
+lib/scripts/tracking
+
+# files we may want to punt on for an education opportunity
+src/assets/modules/trap-focus.js
+
+# TODO: Do this work you munch
+ui/assets

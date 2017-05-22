@@ -1,0 +1,35 @@
+---
+notes: |
+  Demonstrates a floating label with an input that contains an error message
+  outside of the floating label. To utilize this functionality, the following
+  must be provided on the floating label container:
+
+  - `data-floating-error-message`: The message to use when an error occurs
+
+  Here are other available options:
+
+  - `data-floating-error-element`: The name of the element used for the floating
+    error. Defaults to a `p` (for paragraph).
+  - `data-floating-error-class-name`: An additional className added to the
+    floating error message element. Defaults to `''`.
+  - `data-floating-container-class-name`: A className applied to the floating
+    label container when the floating error is shown. Defaults to
+    `floating-label--floating-error`.
+
+  This functionality can be mixed with iconify (pick and choose any that are
+  applicable) or details.
+---
+
+{{> floating-label-input
+    id="floating-label-input-error-message"
+    type="text"
+    label="URL"
+    placeholder="Gimmie A Valid URL"
+    pattern="https?://.+"
+    fieldAttrs='
+      data-iconify-valid="Valid"
+      data-iconify-invalid="Invalid"
+      data-iconify-clear="Clear"
+      data-floating-error-message="Dude, no valid URL!"
+    '
+}}

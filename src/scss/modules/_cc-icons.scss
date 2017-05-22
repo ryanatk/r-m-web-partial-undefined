@@ -1,0 +1,39 @@
+/**
+
+  @cc-icons
+--------------------------------------------------------
+  modules/_cc-icons.scss
+--------------------------------------------------------
+
+  CC Icons
+
+------------------------------------------------------ */
+
+.cc-icons {
+  &::before {
+    content:'';
+    width: rem(39);
+    height: rem(24);
+    display: inline-block;
+    background: url('//is4.revolveassets.com/r/i/cc.png') no-repeat;
+    background-size: rem(320) auto;
+    margin-bottom: rem(-2);
+    margin-right: rem(5);
+  }
+  &--visa::before {
+    background-position: rem(0 0);
+  }
+  &--mastercard::before {
+    background-position: rem(-40 0);
+  }
+  &--amex::before {
+    background-position: rem(-80 0);
+  }
+  &--jcb::before {
+    background-position: rem(-120 0);
+  }
+  &--paypal-logo::before {
+    background-position: rem(-252 0);
+    width: rem(68);
+  }
+}

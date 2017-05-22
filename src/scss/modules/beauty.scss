@@ -1,0 +1,157 @@
+/**
+
+  @beauty-shop
+--------------------------------------------------------
+  modules/_beauty-shop.scss
+--------------------------------------------------------
+
+  Beauty Shop Feature
+
+------------------------------------------------------ */
+
+.beautyshop {
+  &__banner {
+    background-image: url('//is4.revolveassets.com/r/assets/main/banner/beatyshop-pdp-banner.jpg');
+    height: rem(80);
+    background-size: contain;
+    width: 100%;
+    text-align: center;
+    background-repeat: no-repeat;
+    &-text {
+      line-height: rem(62);
+      @include bp-at-least($tablet) {
+        line-height: rem(80);
+      }
+    }
+    &.beautyshop__banner-plp {
+      background-image: url('//is4.revolveassets.com/r/assets/main/banner/R_main_beauty_plpbanner_videos.jpg');
+      height: rem(262);
+      max-width: rem(200);
+      position: relative;
+      @include bp-at-least($tablet) {
+        height: rem(300);
+      }
+      .beautyshop__banner-text {
+        line-height: normal;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translate3d(0, -50%, 0);
+        transition: transform .35s;
+        padding: rem(0 10);
+        }
+      }
+    }
+    &-lp {
+      &__button {
+        color: $color__black;
+        width: 75%;
+        margin: 0 auto;
+        background-color: $color__white;
+        height: rem(58);
+        line-height: rem(58);
+        border: rem(2) solid $color__black;
+        font-size: rem(14);
+        @include bp-at-least($tablet) {
+          width: 65%;
+          font-size: rem(16);
+        }
+      }
+      &__banner {
+        background-image: url('//is4.revolveassets.com/r/assets/main/landing-page/2016/beauty-shop/beauty-shop_06.jpg');
+        height: rem(193);
+        width: 100%;
+        position: relative;
+        text-align: center;
+        background-position: center;
+        margin: 3% 0;
+        &-text {
+          position: absolute;
+          top: 50%;
+          right: 50%;
+          transform: translate3d(50%, -50%, 0);
+          padding: rem(0 10);
+          width: 100%;
+        }
+      }
+    }
+    &-lb {
+      &__zoom {
+        position: relative;
+        overflow: hidden;
+        margin-top: 2%;
+        &-img {
+          transition: all 0.5s ease;
+        }
+        &:hover .beautyshop-lb__zoom-img {
+          transform: scale(1.1);
+        }
+      }
+      &__video-container {
+        position: relative;
+      	padding-bottom: 56.5%; /* 16:9 */
+      	margin-top: 2%;
+      	height: 0;
+      }
+      &__video {
+        position: absolute;
+      	top: 0;
+      	left: 0;
+      	width: 100%;
+      	height: 100%;
+        &-play-btn,
+        &-play-btn:hover,
+        &-play-btn:active,
+        &-play-btn:focus {
+          background-color: transparent;
+          color: $color__white;
+          border: solid rem(3) $color__white;
+        }
+      }
+      &__blogger {
+        position: absolute;
+        top: 7%;
+        left: 15.5%;
+        width: 75%;
+        @include bp-at-least($tablet) {
+          left: 17.5%;
+          top: 13%;
+          width: 70%;
+        }
+        &.beauty-shop-lb__blogger-r {
+          left: 12%;
+        }
+        &-portrait {
+          max-width: rem(80);
+          max-height: rem(80);
+          border-radius: 50%;
+          margin-bottom: 10%;
+          @include bp-at-least($tablet) {
+            max-width: rem(100);
+            max-height: rem(100);
+            margin-bottom: 20%;
+            }
+          }
+        &-info {
+          font-size: rem(10);
+          @include bp-at-least($tablet) {
+            font-size: rem(14);
+          }
+        }
+      }
+    }
+    &__video-time {
+      position: absolute;
+      bottom: 3.5%;
+      right: 2%;
+      background: $color__black;
+      display: inline-block;
+      padding: rem(0 6);
+      opacity: .7;
+      transition: opacity .3s;
+    }
+  }
+  
+  .image-hover:hover .beautyshop__video-time {
+    opacity: .2;
+  }

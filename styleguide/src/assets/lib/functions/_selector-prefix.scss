@@ -1,0 +1,9 @@
+/// Sets prefix to generate either placeholder or class
+/// @param {boolean} $output - should generated code be output?
+@function selector-prefix($output) {
+  @if ($output) {
+    @return '.';
+  } @else {
+    @return '%';
+  }
+}

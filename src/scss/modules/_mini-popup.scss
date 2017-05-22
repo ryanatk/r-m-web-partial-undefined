@@ -1,0 +1,19 @@
+/**
+
+  @mini-popup
+--------------------------------------------------------
+  modules/_mini-popup.scss
+--------------------------------------------------------
+
+  Modal Section
+
+------------------------------------------------------ */
+
+.mini-popup {
+	&__background {
+		background-color: $color__white;
+		z-index: 11;
+		position: absolute;
+		width: 100%;
+	}
+}

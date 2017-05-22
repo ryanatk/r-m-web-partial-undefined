@@ -1,0 +1,39 @@
+---
+notes: Sign In Checkout - Form
+---
+
+<header>
+  <h1 class="btn btn--black btn--full u-margin-b--none">Checkout</h1>
+</header>
+
+<div class="u-padding-a--xl">
+  <div class="u-center">
+    <h2 class="u-margin-t--none u-margin-b--md">Returning Customer</h2>
+  </div>
+
+  <form id="loginForm">
+
+    <div class="floating-label " data-iconify-valid="Valid" data-iconify-invalid="Invalid" data-iconify-clear="Clear">
+    	<label for="loginEmail" class="floating-label__label floating-label__label--hidden ">Email Address</label>
+    	<input type="email" class="floating-label__input floating-label__input--inset" id="loginEmail" name="email" placeholder="Email Address" value="">
+    </div>
+
+    <div class="floating-label " data-iconify-valid="Valid" data-iconify-invalid="Invalid" data-iconify-clear="Clear">
+    	<label for="loginPassword" class="floating-label__label floating-label__label--hidden ">Password</label>
+    	<input type="password" class="floating-label__input floating-label__input--inset" id="loginPassword" name="password" placeholder="Password" value="">
+    </div>
+
+    <a rel="external" href="javascript:login();if(event) event.returnValue=false;" class="btn btn--black btn--full">Proceed to Checkout</a>
+
+    <p class="forgot_pass_mc u-center u-margin-t--xxl u-margin-b--xxl">
+      <a rel="external" href="/r/mobile/LoginPage.jsp#forgotpwd" class="link link--underline u-text--lg">Forgot Password?</a>
+    </p>
+
+  </form>
+
+  <a href="#" class="btn btn--ghost btn--full">Guest Checkout</a>
+
+  <p class="u-text-lg u-center u-padding-t--xl">You will have a chance to create your account<br>
+  after you place your order</p>
+
+</div>

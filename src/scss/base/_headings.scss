@@ -1,0 +1,169 @@
+/**
+
+  @headings
+--------------------------------------------------------
+  base/_headings.scss
+--------------------------------------------------------
+
+  We set any base styles for any headings that have
+  no classnames.
+
+  Base Headings ONLY - see ui-headings in /modules for
+  more stylized headings.
+
+  Example: Headings
+  <h1>This is an h1 heading</h1>
+  <h2>This is an h2 heading</h2>
+  <h3>This is an h3 heading</h3>
+  <h4>This is an h4 heading</h4>
+  <h5>This is an h5 heading</h5>
+  <h6>This is an h6 heading</h6>
+
+  Additionally, we add classnames so you
+  can apply the styling of, for instance, an h1 to an h2.
+
+  Example: H1 styled like an H3
+  <h1 class="h3">This is an h1 but looks like an h3</h1>
+
+------------------------------------------------------ */
+
+// Global Heading Placeholder
+%headings {
+  @extend %font-secondary--bold;
+  @include lang-font(japanese, bold);
+  @include lang-font(korean, bold);
+  color: $color__black;
+  letter-spacing: em(.07 * 12);
+  text-transform: uppercase;
+}
+
+// H1
+h1,
+%h1,
+.h1 {
+  @extend %headings;
+  margin-top: $h1-margin-top;
+  margin-bottom: $h1-margin-bottom;
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
+}
+
+
+
+// H2
+h2,
+%h2,
+.h2 {
+  @extend %headings;
+  margin-top: $h2-margin-top;
+  margin-bottom: $h2-margin-bottom;
+  font-size: $h2-font-size;
+  line-height: $h2-line-height;
+}
+
+
+
+// H3
+h3,
+%h3,
+.h3 {
+  @extend %headings;
+  margin-top: $h3-margin-top;
+  margin-bottom: $h3-margin-bottom;
+  font-size: $h3-font-size;
+  line-height: $h3-line-height;
+}
+
+
+
+// H4
+h4,
+%h4,
+.h4 {
+  @extend %headings;
+  margin-top: $h4-margin-top;
+  margin-bottom: $h4-margin-bottom;
+  font-size: $h4-font-size;
+  line-height: $h4-line-height;
+}
+
+
+
+// H5
+h5,
+%h5,
+.h5 {
+  @extend %headings;
+  margin-top: $h5-margin-top;
+  margin-bottom: $h5-margin-bottom;
+  font-size: $h5-font-size;
+  line-height: $h5-line-height;
+}
+
+
+// H6
+h6,
+%h6,
+.h6 {
+  @extend %headings;
+  margin-top: $h6-margin-top;
+  margin-bottom: $h6-margin-bottom;
+  font-size: $h6-font-size;
+  letter-spacing: em(1.353, 12);
+  line-height: $h6-line-height;
+}
+
+
+
+
+/* @alt-headings
+--------------------------------------------------------
+
+  Alternative headings class for heading 1-6 tags or class
+  Make sure to use a h1-h6 element if symantically correct
+  or a h1-h6 class and the heading base class along with
+  any optional headding modifier classes. Use correct semantic
+  heading first and then add desired .h1-.h6 classes and
+  any modifiers after
+
+------------------------------------------------------ */
+
+
+// Page title decoration
+%heading-decor {
+  display: block;
+  margin-left: rem(-10);
+  border-bottom: rem(1) solid $color__border;
+  content: '';
+}
+
+.heading {
+  &:after {
+    @extend %heading-decor;
+  }
+}
+
+// used in conjunction with heading & h1-h6
+.heading--left {
+  &:after {
+    width: rem(50);
+    // height: rem(12);
+  }
+}
+
+// used in conjunction with heading & h1-h6
+.heading--center {
+  text-align: center;
+  &:after {
+    width: rem(60);
+    // height: rem(12);
+    margin: auto;
+  }
+}
+
+// used in conjunction with heading & h1-h6
+.heading--sub {
+  &:after {
+    height: rem(8);
+  }
+}

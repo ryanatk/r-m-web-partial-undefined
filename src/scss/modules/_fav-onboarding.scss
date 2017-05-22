@@ -1,0 +1,27 @@
+.fav-ui__list{
+  &--item {
+    color: $color__pink;
+    font-size: rem(20)!important;
+  }
+}
+
+
+.onboard-fav__hdr-margin {
+  margin-left: rem(16);
+  margin-right: rem(16);
+  margin-bottom: rem(16);
+  margin-top: rem(24);
+}
+
+.onboard-fav__margin-b {
+	margin-bottom: rem(24);
+}
+
+
+.favorites-onboard__num-margin-t {
+	margin-top: rem(42);
+}
+
+
+
+

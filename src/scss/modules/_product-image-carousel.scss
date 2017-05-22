@@ -1,0 +1,46 @@
+.product__image {
+  position: relative;
+
+  // .pdp-main-image-carousel__imgs
+  &--carousel {
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+    margin: 0 48px;
+
+    // .pdp-main-image-carousel__img
+    &__image {
+      width: auto;
+    }
+
+    // .pdp-main-image-carousel__dots
+    &__dots {
+      position: static;
+      height: 8px;
+      padding: 0;
+      margin: 16px;
+      text-align: center;
+
+      // elements created by slick-carousel
+      // with little control over the mark-up
+      li {
+        display: inline-block;
+        height: 8px;
+        line-height: 1em;
+        padding: 0 4px;
+        &.slick-active button {
+          background-color: $color__black;
+        }
+      }
+      button {
+        text-indent: -99em;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 1px solid $color__black;
+        width: 8px;
+        height: 8px;
+        background-color: $color__white;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+/**
+
+  @double-border
+--------------------------------------------------------
+  modules/_double-border.scss
+--------------------------------------------------------
+
+  Refine Dropdown
+
+------------------------------------------------------ */
+
+.double-callout {
+  position: relative;
+  border: rem(2) solid $color__black;
+  &::before {
+    display: block;
+    position: absolute;
+    top: rem(-7);
+    left: rem(7);
+    width: 100%;
+    height: 100%;
+    border: rem(4) solid $color__black;
+    background: $color__white;
+    content: '';
+    z-index: 1;
+  }
+  &__content {
+    position: relative;
+    height: auto;
+    margin-left: rem(7);
+    z-index: 2;
+    padding: rem(16);
+  }
+  &.double-callout--right {
+    &::before {
+      left: rem(-7);
+      bottom: rem(7);
+    }
+    .double-callout__content {
+      margin-left: rem(-7)
+    }
+  }
+}

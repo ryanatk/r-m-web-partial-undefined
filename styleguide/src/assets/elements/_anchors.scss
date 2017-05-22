@@ -1,0 +1,15 @@
+/// Anchors will have this base styling
+
+a {
+  transition: color .25s ease-in-out;
+  color: $color__link;
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &.active {
+    color: $color__link--hover;
+    text-decoration: underline;
+  }
+}

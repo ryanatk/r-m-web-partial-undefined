@@ -1,0 +1,121 @@
+/**
+
+  @text
+--------------------------------------------------------
+  base/_text.scss
+--------------------------------------------------------
+
+  Some basic styles to paragraphs and
+  inline styles.
+
+  Base text ONLY - see ui-text in /modules for
+  more stylized text.
+
+-----------------------------------------------------  */
+
+
+
+
+
+/* @paragraphs
+--------------------------------------------------------
+
+  Example: Paragraphs
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+--------------------------------------------------------  */
+
+p {
+  // margin-top: rem($base-margin);
+  margin-bottom: rem($base-margin);
+  // line-height: 1.25 * $unit;
+}
+
+// .p__wide {
+//   margin-top: rem($base-margin);
+//   margin-bottom: rem($base-margin);
+//   font-size: em(14);
+//   letter-spacing: em(2);
+//   // line-height: 1.25 * $unit;
+// }
+
+// .p__small {
+//   margin-top: rem($base-margin);
+//   margin-bottom: rem($base-margin);
+//   font-size: em(12);
+//   // line-height: 1.25 * $unit;
+// }
+
+// .p__small__wide {
+//   margin-top: rem($base-margin);
+//   margin-bottom: rem($base-margin);
+//   font-size: em(12);
+//   letter-spacing: em(2);
+//   // line-height: 1.25 * $unit;
+// }
+
+
+
+/* @inline
+--------------------------------------------------------
+
+  Common inline elements with class names too to avoid non-semantic markup
+
+  Example: inline elements
+  <p>Lorem Ipsum is <b>bold</b> text of the <strong>strong</strong> printing and typesetting industry. Lorem Ipsum is <i>italic</i> simply dummy text <em>emphasized</em> of the printing and typesetting industry.</p<
+
+-------------------------------------------------------- */
+
+b,
+strong,
+%strong,
+.strong {
+  // NOTE: use bold font-face if available instead of 'font-weight: bold'
+  font-weight: bold;
+}
+
+
+i,
+em,
+%em,
+.em {
+  // NOTE: use italic font-face if available instead of 'font-style: italic'
+  font-style: italic;
+}
+
+
+small,
+%small,
+.small {
+  font-size: em(10);
+}
+
+del,
+%del,
+.del {
+  color: $color__grey;
+  text-decoration: line-through;
+}
+
+
+code,
+%code,
+.code {
+  padding: rem(1) rem(5);
+  background: rgba(193, 199, 208, .3);
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+
+pre,
+%pre,
+.pre {
+  margin-top: rem($base-margin);
+  margin-bottom: rem($base-margin);
+  overflow-x: scroll;
+}
+
+
+

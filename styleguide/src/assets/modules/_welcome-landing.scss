@@ -1,0 +1,68 @@
+// Welcome Landing Page
+// ====================
+
+.welcome {
+
+  &__header {
+    /* Line Height set for spacing of HR */
+    line-height: 2.3em;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 87px;
+      border: 1px solid #000000;
+      margin: 0 auto;
+    }
+  }
+
+
+  // Advantages
+  // ----------
+
+  &__advantage-copy {
+
+    p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+  }
+
+
+  // Connected
+  // ---------
+
+  &__connected-list__item{
+    background: $color__black;
+    border-radius: 50%;
+    margin: rem(8);
+  }
+
+  &__connected-svg {
+    color: $color__white;
+    padding: rem(10);
+  }
+
+  // Shop Now
+  // --------
+  &__shop-now {
+    position: absolute;
+    transform: translate(-46%, -50%);
+    left: 48%;
+    top: 50%;
+  }
+
+
+  //Line Slick Carousel
+  // -------
+  &__slick-carousel {
+
+    .slick-dots {
+      bottom: rem(64) !important;
+    }
+
+  }
+
+}

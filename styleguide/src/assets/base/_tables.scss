@@ -1,0 +1,155 @@
+/**
+
+  @tables
+---------------------------------------------------------
+  base/_tables.scss
+--------------------------------------------------------
+
+  Base styling for tables
+
+--------------------------------------------------------- */
+
+
+/* @table
+--------------------------------------------------------
+  Base table styling
+
+  Example: Table
+  <table>
+    <thead>
+      <tr>
+        <th>Heading</th>
+        <th>Heading</th>
+        <th>Heading</th>
+        <th>Heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+    </tbody>
+  </table>
+
+------------------------------------------------------ */
+
+
+table {
+  width: 100%;
+  margin-top: rem($base-margin);
+  margin-bottom: rem($base-margin);
+  border: 0;
+  border-collapse: collapse;
+}
+
+th {
+  @extend %font-primary--bold;
+}
+
+th,
+td {
+  padding: 0 rem($base-unit / 2);
+  vertical-align: middle;
+  // first <th> or <td> in a row
+  // &:first-child {
+  //   padding-left: 0;
+  // }
+  // // last <th> or <td> in a row
+  // &:last-child {
+  //   padding-right: 0;
+  // }
+}
+
+
+
+
+
+/* @table--striped
+--------------------------------------------------------
+  Striped tables
+
+  Example: Table, striped
+  <table class="table--striped">
+    <thead>
+      <tr>
+        <th>Heading</th>
+        <th>Heading</th>
+        <th>Heading</th>
+        <th>Heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+      <tr>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+        <td>Test</td>
+      </tr>
+    </tbody>
+  </table>
+
+------------------------------------------------------ */
+
+// Striped tables
+.table--striped {
+  tbody tr {
+    &:nth-of-type(even) {
+      background-color: rgba($color__offwhite, .5);
+    }
+  }
+}
+
+/* Foundation v2.1.4 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */

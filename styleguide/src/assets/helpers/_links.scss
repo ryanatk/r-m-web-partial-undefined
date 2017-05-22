@@ -1,0 +1,94 @@
+@import '../lib/lib';
+
+/// Use link as base class along with any other modifier class
+/// @todo Should this be `u-link` for consistency?
+@mixin links($output: false) {
+  $prefix: selector-prefix($output);
+
+  #{$prefix}link {
+    display: inline;
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+    // Underline link by default and on hover/focus
+  #{$prefix}link--underline {
+    text-decoration: underline;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  // No line by default or on hover/focus
+  #{$prefix}link--noline {
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      border-color: transparent;
+      text-decoration: none;
+    }
+  }
+
+  // lighter link color
+  #{$prefix}link--light {
+    color: $color__link;
+    &:hover,
+    &:focus {
+      color: $color__link--hover;
+    }
+  }
+
+  // larger underline styled links
+  #{$prefix}link--bold {
+    @extend %font-secondary--bold;
+    transition: border-color .25s ease-in-out;
+    color: $color__black;
+    border-bottom: rem(2) solid $color__black;
+    font-size: em(12);
+    line-height: em(13);
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover,
+    &:focus,
+    .active {
+      border-color: transparent;
+      text-decoration: none;
+    }
+  }
+
+  // larger underline styled links
+  #{$prefix}link--light-bold {
+    @extend %font-secondary--bold;
+    transition: border-color .25s ease-in-out;
+    border-bottom: rem(2) solid transparent;
+    color: $color__grey--light;
+    font-size: em(12);
+    line-height: em(20);
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover,
+    &:focus,
+    &.active {
+      color: $color__black;
+      text-decoration: none;
+    }
+    &.active {
+      border-color: $color__black;
+    }
+  }
+
+  #{$prefix}link--sm {
+    padding-bottom: 0;
+    border-bottom: rem(1) solid transparent;
+    font-size: em( 10 );
+  }
+}
+
+@include links();

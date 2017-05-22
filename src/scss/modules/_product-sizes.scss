@@ -1,0 +1,70 @@
+/**
+
+  @product sizes
+--------------------------------------------------------
+  modules/_product-sizes.scss
+--------------------------------------------------------
+
+  Product's sizes
+
+------------------------------------------------------ */
+
+.product-sizes {
+  &__size {
+    display: inline-block;
+    margin-right: rem(4);
+    margin-bottom: rem(6);
+    &--sm {
+      margin-right: rem(1);
+    }
+  }
+  &__btn {
+    @extend %font-primary;
+    border: rem(1) solid $color__grey--lightest;
+    background: $color__white;
+    color: $color__grey;
+    font-size: em(14);
+    letter-spacing: .125em;
+    line-height: em(14, 14);
+    cursor: pointer;
+    min-width: rem(48);
+    text-transform: uppercase;
+    &--sm{
+      padding: rem(4 6);
+    }
+  }
+  &__link {
+    @extend %font-primary;
+    letter-spacing: normal;
+    line-height: em(14, 14);
+    text-decoration: underline;
+    text-transform: capitalize;
+  }
+}
+.product-sizes__label {
+    padding: rem(10 8);
+}
+.product-sizes__input:checked + .product-sizes__btn,
+.product-sizes__input:focus + .product-sizes__btn {
+    color: $color__black;
+    border-color: $color__black;
+}
+.product-sizes__input:disabled + .product-sizes__btn {
+    position: relative;
+    color: $color__grey--lightest;
+    cursor: initial;
+    &:before {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: rem(1);
+      background: $color__grey--lightest;
+      content: '';
+    }
+    &:hover,
+    &:focus {
+      border-color: $color__grey--lightest;
+    }
+}

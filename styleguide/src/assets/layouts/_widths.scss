@@ -1,0 +1,117 @@
+@import '../lib/lib';
+
+/// Set the widths configuration variable to specify
+/// how many or how few classes you want available.
+///
+/// @example SASS
+///   $widths__number-of-divisions-at-breakpoint: (
+///     sm:  2,
+///     md:  3,
+///     lg:  4,
+///   );
+///
+/// @example css - generated classes
+///   .sm-1-of-2 { width: 50%; }
+///   .sm-2-of-2 { width: 100%; }
+///   .md-1-of-3 { width: 33.3333%; }
+///   .md-2-of-3 { width: 66.6666%; }
+///   .md-3-of-3 { width: 100%; }
+///   .lg-1-of-4 { width: 25%; }
+///   .lg-2-of-4 { width: 50%; }
+///   .lg-3-of-4 { width: 75%; }
+///   .lg-4-of-4 { width: 100%; }
+///
+/// Use 0 if you don't want any responsive width classes for a given breakpoint.
+///
+/// The max is `12` divisions for each breakpoint.
+/// Pare this down to what you need, as filesize will grow quickly.
+$widths__number-of-divisions-at-breakpoint: (
+  n:   12,
+  xs:  0,
+  sm:  4,
+  md:  6,
+  lg:  8,
+  xl:  10,
+  xxl: 12,
+);
+
+
+/// Generates placeholders or classes, based on settings
+/// To be used with .grid
+/// @example markup - Expected HTML
+///   <div class="g">
+///     <div class="gc .n-1-of-3">Column 1</div>
+///     <div class="gc .n-2-of-3">Column 2</div>
+///   </div>
+///
+/// @example css - Generated width classes
+///   .n-1-of-3 { width: 33.3333%; }
+///   .n-2-of-3 { width: 66.6666%; }
+///
+/// This will output a 3-column grid, containing 2 divs:
+/// 1 spanning 1 column, and the other spanning 2 columns
+///
+/// @param {boolean} [$output] - should we output classes? (if false, generate placeholders)
+/// @param {boolean} [$generate-all-100-percents] - should generate all 100% widths: 'n-2-of-2'
+/// @param {boolean} [$generate-common-denominators] - keep all widths, even if equal to another fraction: 'n-1-of-2' & 'n-2-of-4'
+@mixin loop-thru-width-divisions-at-breakpoint($output: false, $generate-all-100-percents: true, $generate-common-denominators: true) {
+  /// Outputs a width class, extended from placeholder
+  /// @param {number} $numerator - number of colums to fill
+  /// @param {number} $denominator - total number of colums
+  /// @output width class
+  @mixin grid-width-class($numerator, $denominator, $breakpoint) {
+    $selector: '#{unquote($breakpoint)}-#{$numerator}-of-#{$denominator}';
+    $class-selector: '.#{$selector}';
+    $placeholder-selector: '%#{$selector}';
+    #{$class-selector} { @extend #{$placeholder-selector}; }
+  }
+
+  /// Generates a placeholder to be extended by CSS classes
+  /// @param {number} $numerator - number of colums to fill
+  /// @param {number} $denominator - total number of colums
+  /// @output width placeholder, to be extended
+  @mixin grid-width-placeholder($numerator, $denominator, $breakpoint) {
+    $placeholder-selector: '%#{unquote($breakpoint)}-#{$numerator}-of-#{$denominator}';
+    #{$placeholder-selector} { width: ($numerator / $denominator) * 100%; }
+  }
+
+  /// Loop through all divisions
+  /// @param {number} $divisions - number of divisions for this breakpoint
+  /// @param {string} $breakpoint - name of this breakpoint, to be used as a prefix
+  /// @output class or placeholder mixin (above), depending on conditions
+  @mixin loop-thru-divisions($divisions, $breakpoint) {
+    @for $denominator from 1 through $divisions {
+      @for $numerator from 1 through $denominator {
+        $suppressed-100-percent: not $generate-all-100-percents and $numerator / $denominator == 1 and $denominator > 1;
+        $suppressed-common-denominator: not $generate-common-denominators and gcd($numerator, $denominator) > 1;
+
+        @if (not $suppressed-100-percent and not $suppressed-common-denominator) {
+          @if ($output) {
+            @include grid-width-class($numerator, $denominator, $breakpoint);
+          } @else {
+            @include grid-width-placeholder($numerator, $denominator, $breakpoint);
+          }
+        }
+      }
+    }
+  }
+
+  // loop thru the divisions
+  @each $breakpoint, $num-divisions in $widths__number-of-divisions-at-breakpoint {
+    // Check if there are divisions to loop thru divisions to loop thru
+    @if ($num-divisions > 0) {
+       @if ($breakpoint == 'n') {
+        // Widths at default Viewport
+        @include loop-thru-divisions($num-divisions, $breakpoint);
+      } @else {
+        // Responsive widths
+        @include bp-at-least ( map-get($breakpoints, $breakpoint) ) {
+          @include loop-thru-divisions($num-divisions, $breakpoint);
+        }
+      }
+    }
+  }
+}
+
+// run function once to generate placeholders
+@include loop-thru-width-divisions-at-breakpoint();

@@ -1,0 +1,133 @@
+/**
+
+  @pagination
+--------------------------------------------------------
+  modules/_pagination.scss
+--------------------------------------------------------
+
+  pagination
+
+-----------------------------------------------------  */
+
+.pagination {
+  // .pagination__controls
+  position: relative;
+  &__controls {
+    padding: rem(4 0);
+    line-height: normal;
+    vertical-align: middle;
+    position: relative;
+    // .pagination__controls-icon
+    &-icon {
+      margin-top: rem(14);
+    }
+    // .pagination__controls--round
+    // Round controls modifier
+    &--round {
+      width: rem(64);
+      height: rem(64);
+      margin: 0 rem(10);
+      padding: 0;
+      color: $color__black;
+      vertical-align: middle;
+      &:hover,
+      &:active {
+        color: $color__grey--light;
+      }
+    }
+   
+
+    // .pagination__controls--disabled
+    // Round controls modifier
+    &--disabled{
+      //color: $color__offwhite;
+      &:hover,
+      &:active {
+        color: $color__offwhite;
+        background-color: $color__offwhite;
+      }
+      .btn {
+        color: $color__grey--light;
+        background-color: $color__offwhite;
+      }
+    }
+    // .pagination__controls .btn
+    .btn {
+      padding: 1%;
+      width: rem(48);
+      height: rem(48);
+      border-radius: 50%;
+      &:hover,
+      &:active {
+        background-color: $color__white;
+        border-color: $color__grey--light;
+        color: $color__grey--light;
+      }
+    }
+
+    .btn--top {
+      padding: 1%;
+      width: rem(48);
+      height: rem(48);
+      border-radius: 50%;
+      background-color: $color__offwhite;
+      border-color: $color__offwhite;
+      color: $color__black;
+      &:hover,
+      &:active {
+        background-color: $color__offwhite;
+        border-color: $color__offwhite;
+        color: $color__black;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      margin-top: rem(10);
+      text-align: center;
+      width: 100%;
+      font-size: rem(11);
+    }
+  }
+  &__controls-left {
+    float: left;
+  }
+  &__controls-right {
+    float: right;
+  }
+   &__top {
+      position: absolute;
+      right: 0;
+      top: rem(5);
+      opacity: 0.8;
+    }
+  &__wrap {
+    @extend %u-clearfix;
+    padding-top: rem(64);
+    padding-bottom: rem(32);
+    text-align: center;
+  }
+
+  // .pagination__item
+  // List item for pagination
+  &__item {
+    display: inline-block;
+  }
+  &__list {
+    list-style: none;
+    display: inline;
+    font-size: rem(14);
+    position: relative;
+    top: 15px;
+  }
+  // .pagination__link
+  // List item link
+  &__link {
+    padding: 0 rem(6);
+    color: $color__grey--light;
+    // .pagination__link.active
+    // Active list item
+    &.active {
+    }
+  }
+}

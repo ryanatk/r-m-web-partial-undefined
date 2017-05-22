@@ -1,0 +1,39 @@
+---
+notes: |
+  When submitting a form with validation, there is the ability to show an
+  overarching message, render the message to a spot in the DOM, and scroll to
+  a specific position. To do so, the following data attributes are available
+  on the form for configuration purposes:
+
+  - `data-validate-error-message`: the error message, if not found no error
+    will be rendered
+  - `data-validate-scroll-to-position`: y-axis to scroll to
+  - `data-validate-scroll-to-selector`: the top part of the selector of an
+    element that exists in the DOM, if not found no error will be rendered
+  - `data-validate-insert-error-before`: a selector within the form where the
+    error should be injected to before, if not found no error will be rendered
+  - `data-validate-insert-error-after`: a selector within the form where the
+    error should be injected to after, if not found no error will be rendered
+
+  In terms of ordering, `data-validate-scroll-to-position` supersedes
+  `data-validate-scroll-to-selector` and `data-validate-insert-error-before`
+  will supersede `data-validate-insert-error-after`.
+---
+
+<form class="form form-no-submit"
+      data-validate="true"
+      data-validate-error-message="You maaaad! You maaaad!"
+      data-validate-scroll-to-position="0"
+      data-validate-insert-error-before=".floating-label">
+  <h2>Warning: when submitted with an error, will scroll to the top of the page</h2>
+  {{#> floating-label-input
+      id="custom-scroll-error-input"
+      type="text"
+      label="Field is required"
+      required="true"
+  }}
+    <p class="floating-label__hint">This field has an attribute of <code>required</code></p>
+  {{/floating-label-input}}
+
+  <p><a href="#forms.validation-with-custom-scroll-error" class="btn btn--block" data-validate-trigger="true">Submit</a></p>
+</form>

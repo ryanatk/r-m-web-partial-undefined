@@ -1,0 +1,25 @@
+/**
+
+  @option-lists
+--------------------------------------------------------
+  modules/_option-list.scss
+--------------------------------------------------------
+
+
+
+-----------------------------------------------------  */
+
+.option-list {
+  &__ul {
+      max-height: 180px;
+      margin: 0;
+      padding: 0;
+      overflow-y: scroll;
+  }
+  &__item {
+    background-color: #eaeaea;
+    border-bottom: 1px solid #e1e1e1;
+    display: block;
+    padding: 2px;
+  }
+}

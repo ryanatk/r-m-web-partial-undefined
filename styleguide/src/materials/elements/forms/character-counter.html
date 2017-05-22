@@ -1,0 +1,22 @@
+---
+notes: |
+  The character counter will display the number of characters used based on
+  the `maxlength` attribute set on the form field, i.e. an input, textarea, or
+  something similar. It'll accept the following data attributes on the field:
+
+  - `data-character-counter-add-class-name`: allows for a custom class name to
+    be added to the feedback mechanism created within.
+  - `data-character-insert-position`: the insert position based the element
+    passed in using the position values found on insertAdjacentHTML. If this
+    doesn't exist, it'll use the one provided on wiring, and then fallback to
+    afterbegin.
+
+  Based on the insert position, CSS should be used to handle the physical
+  location of the feedback mechanism.
+---
+
+{{> character-counter
+    id="the-dude-says"
+    label="Quote from the dude"
+    placeholder="The dude says..."
+    maxlength=200}}

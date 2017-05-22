@@ -1,0 +1,23 @@
+{{!--
+    Renders a favorite button
+    @param {string} favorite-message - Message used denoting an item can be favorited
+    @param {string} unfavorite-message - Message used denoting an item can be unfavorited
+    @param {string} favorite-notification - Contains notification for when an item has been favorited
+    @param {string} unfavorite-notification - Contains notification for when an item has been unfavorited
+    @param {string} [favorite-button-class-name] - Optional class name for the favorite button
+--}}
+
+<a
+    href="#favorite-button"
+    class="favorite-button{{#favorite-button-class-name}} {{.}}{{/favorite-button-class-name}}"
+    data-favorite-message="{{favorite-message}}"
+    data-unfavorite-message="{{unfavorite-message}}"
+    data-favorite-notification="{{favorite-notification}}"
+    data-unfavorite-notification="{{unfavorite-notification}}"
+>
+  {{> icon
+      svg="heart-fill"
+      icon-class-name="favorite-button__icon"
+      svg-attrs='focusable="false" aria-hidden="true"'
+  }}
+</a>

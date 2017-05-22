@@ -1,0 +1,51 @@
+/**
+
+  @currency-flags
+--------------------------------------------------------
+  modules/_currency-flags.scss
+--------------------------------------------------------
+
+  Currency Flags
+
+------------------------------------------------------ */
+.currency-flags {
+  &::before {
+    content:'';
+    width: rem(22);
+    height: rem(12);
+    display: inline-block;
+    background: url('//is4.revolveassets.com/r/i/currency_sprite.png') no-repeat;
+    margin-bottom: rem(-2);
+    margin-right: rem(5);
+  }
+  &--en::before {
+    background-position: rem(-53 -363);
+  }
+  &--es::before {
+    background-position: rem(-53 -460);
+  }
+  &--ch::before {
+    background-position: rem(-53 -197);
+  }
+  &--ru::before {
+    background-position: rem(-53 -52);
+  }
+  &--pt::before {
+    background-position: rem(-3 -77);
+  }
+  &--de::before {
+    background-position: rem(-3 -481);
+  }
+  &--zh::before {
+    background-position: rem(-3 -197);
+  }
+  &--ko::before {
+    background-position: rem(-26 -173);
+  }
+  &--fr::before {
+    background-position: rem(-53 -436);
+  }
+  &--ja::before {
+    background-position: rem(-28 -149);
+  }
+}

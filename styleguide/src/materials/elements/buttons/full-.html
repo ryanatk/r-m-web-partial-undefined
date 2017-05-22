@@ -1,0 +1,9 @@
+---
+notes: The default, large button style.
+---
+
+{{#if href}}
+  <a href="{{href}}" class="btn btn--full {{class}}">{{{text}}}</a>
+{{else}}
+  <button type="submit" class="btn btn--full {{class}}">{{{text}}}</button>
+{{/if}}

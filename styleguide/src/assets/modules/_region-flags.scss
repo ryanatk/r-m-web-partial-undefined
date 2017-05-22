@@ -1,0 +1,29 @@
+
+.region-flag {
+	width: rem(25);
+	height: rem(13);
+	display: inline-block !important;
+	background-image: url('//is4.revolveassets.com/r/assets/main/source/flags/currency_sprite_mobile_25.png');
+	background-repeat: no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-bottom:  rem(-2);
+  margin-right: rem(5);
+
+&.en_lang{ background-position: rem(-51 -262); }
+&.de_lang{ background-position: rem(-51 -228); }
+&.zh_lang{ background-position: rem(0 -121); }
+&.ko_lang{ background-position: rem(-25 -89); }
+&.ru_lang{ background-position: rem(-51 -38); }
+&.pt_lang{ background-position: rem(0 -54); }
+&.fr_lang{ background-position: rem(0 -89); }
+&.es_lang{ background-position: rem(-25 -142); }
+&.ch_lang{ background-position: rem(-25 -175); }
+&.ja_lang { background-position: rem(-25 -72); }  
+
+&.eur_language { background-position: rem(-5 -333); }
+&.gbp_language { background-position: rem(-53 -333); }
+
+
+}

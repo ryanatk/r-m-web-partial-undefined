@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Saturday Love Sweater",
+    "brand": "Chaser",
+    "styleNumber": "ABBA-WJ111",
+    "link": "/saturday-love-sweater/dp/CSER-WK37/?d=Womens&amp;srcType=hp_recs_viewed",
+    "img": "//is4.revolveassets.com/images/p4/ip2/pl2/CSER-WK37_V1.jpg",
+    "price": "79"
+  }, {
+    "name": "English Rose Sweater",
+    "brand": "Chaser",
+    "styleNumber": "ABBA-WJ222",
+    "link": "/english-rose-sweater/dp/CSER-WK35/?d=Womens&amp;srcType=hp_recs_viewed",
+    "img": "//is4.revolveassets.com/images/p4/ip2/pl2/CSER-WK35_V1.jpg",
+    "regular-price": "90",
+    "price": "79"
+  }, {
+    "name": "Morch Bodysuit",
+    "brand": "Motel",
+    "styleNumber": "ABBA-WJ333",
+    "link": "/morch-bodysuit/dp/MOTE-WS94/?d=Womens&amp;srcType=hp_recs_viewed",
+    "img": "//is4.revolveassets.com/images/p4/ip2/pl2/MOTE-WS94_V1.jpg",
+    "price": "53"
+  }, {
+    "name": "Greenwood Bomber Jacket",
+    "brand": "Ganni",
+    "styleNumber": "ABBA-WJ444",
+    "link": "/greenwood-bomber-jacket/dp/GANR-WO8/?d=Womens&amp;srcType=hp_recs_viewed",
+    "img": "//is4.revolveassets.com/images/p4/ip2/pl2/GANR-WO8_V1.jpg",
+    "price": "260"
+  }, {
+    "name": "Clare Romper",
+    "brand": "BB Dakota",
+    "styleNumber": "ABBA-WJ555",
+    "link": "/clare-romper/dp/BBDA-WR59/?d=Womens&amp;srcType=hp_recs_viewed",
+    "img": "//is4.revolveassets.com/images/p4/ip2/pl2/BBDA-WR59_V1.jpg",
+    "regular-price": "169",
+    "price": "120"
+  }, {
+    "name": "Rima Highneck Maxi Dress",
+    "brand": "Line & Dot",
+    "styleNumber": "ABBA-WJ666",
+    "link": "/rima-highneck-maxi-dress/dp/LEAX-WD125/?d=Womens&amp;srcType=hp_recs_viewed",
+    "img": "//is4.revolveassets.com/images/p4/ip2/pl2/LEAX-WD125_V1.jpg",
+    "price": "126"
+  }
+]

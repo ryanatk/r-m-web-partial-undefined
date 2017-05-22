@@ -1,0 +1,119 @@
+---
+notes: |
+  Performs validation on a form via a form submission or via a trigger. To
+  provide this validation, add a `data-validate` attribute on a form or element
+  like so:
+
+  ```html
+  <form data-validate="true">
+    <input type="text" required>
+    <button type="submit">Submit</button>
+  </form>
+  ```
+
+  Although by default, the validation is triggered by form submit, it can also
+  occur by applying a `data-validate-trigger` attribute that will trigger a
+  validation like so:
+
+  ```html
+  <form data-validate="true">
+    <input type="text" required>
+    <a data-validate-trigger="true" href="/go-to-some-place">Go To Some Place</a>
+  </form>
+  ```
+
+  This can be applied to any element that should trigger a validation.
+
+  For both `data-validate` and `data-validate-trigger`, to follow how HTML
+  attributes work, neither attributes need a value, but they have been provided
+  here for clarity. Therefore, just setting `data-validate` and
+  `data-validate-trigger` without any value is acceptable.
+
+  The validation will hook into the [constraint validation](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Constraint_validation)
+  to see whether any of the elements are invalid. However, there are
+  "constraints" with the constraint validation API (Thank you folks, I'll be
+  here all week!). Therefore, there are additional data validate attributes
+  that provide more granular validation:
+
+  - `data-validate-not-empty`: Ensures the field is not empty. Different from
+  from the `required` attribute as it's only invalid upon blur or submission
+  - `data-validate-not`: Ensures the field isn't set to a specific value.
+  It's similar to the `pattern` attribute except you don't have to monkey
+  around with regular expressions.
+
+  Here are some examples:
+
+  ```html
+  <form data-validate="true">
+    <!-- Will apply an invalid pseudo class either on blur or submit when the field doesn't have a value -->
+    <input id="not-empty-example" name="not-empty-example" type="text" data-validate-not-empty="true">
+    <!-- Will apply an invalid pseudo class either on blur or submit when the field equals nice marmot -->
+    <input id="not-example" name="not-example" type="text" data-validate-not="nice marmot">
+    <button type="submit">Submit</button>
+  </form>
+  ```
+
+  The idea is that new data-validate attributes can be added later on and
+  reused.
+---
+
+<form class="form form-no-submit" data-validate="true">
+  {{#> floating-label-input
+      id="required-attribute"
+      type="text"
+      label="Field is required"
+      required="true"
+  }}
+    <p class="floating-label__hint">This field has an attribute of <code>required</code></p>
+  {{/floating-label-input}}
+
+  {{#> floating-label-input
+      id="email-field"
+      type="email"
+      label="Field expects a valid email address"
+  }}
+    <p class="floating-label__hint">This field has an attribute of <code>type="email"</code></p>
+  {{/floating-label-input}}
+
+  {{#> floating-label-input
+      id="url-field"
+      type="text"
+      label="Field expects a valid URL"
+      pattern="https?://.+"
+  }}
+    <p class="floating-label__hint">This field has an attribute of <code>pattern="https?://.+"</code></p>
+  {{/floating-label-input}}
+
+  {{#> floating-label-input
+      id="not-empty-field"
+      type="text"
+      label="Field cannot be empty"
+      attrs='data-validate-not-empty="true"'
+  }}
+    <p class="floating-label__hint">This field has an attribute of <code>data-validate-not-empty="true"</code></p>
+  {{/floating-label-input}}
+
+  {{#> floating-label-input
+      id="cannot-equal-field"
+      type="text"
+      label="Field cannot equal donny"
+      attrs='data-validate-not="donny"'
+  }}
+    <p class="floating-label__hint">This field has an attribute of <code>data-validate-not="donny"</code></p>
+  {{/floating-label-input}}
+
+  {{#> floating-label-input
+      id="validate-email"
+      type="text"
+      label="Field must be a valid email with tighter restrictions"
+      attrs='data-validate-email="true"'
+  }}
+    <p class="floating-label__hint">This field has an attribute of <code>data-validate-email="true"</code></p>
+  {{/floating-label-input}}
+
+  <p>
+    <a href="#forms.validation" class="link link--bold" data-validate-trigger="true">Submit with Anchor</a>
+  </p>
+
+  <button type="submit" class="btn btn--block">Submit with Button</button>
+</form>

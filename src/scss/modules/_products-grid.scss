@@ -1,0 +1,19 @@
+/**
+
+  @products grid
+--------------------------------------------------------
+  modules/_products-grid.scss
+--------------------------------------------------------
+
+  Product's grid for PLP style pages
+
+------------------------------------------------------ */
+
+.products-grid {
+  margin-left: rem(-12);
+  .grid__col,
+  .gc {
+    margin-bottom: rem(10);
+    padding: rem(0 0 12 12);
+  }
+}

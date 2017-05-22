@@ -1,0 +1,99 @@
+/**
+
+  @likeshop
+--------------------------------------------------------
+  modules/_likeshop.scss
+--------------------------------------------------------
+
+    Styles for carousels
+    // clean up after eagle
+    // remove unused classes
+    // add BEM SCSS style and remove all non carousel named classes
+
+------------------------------------------------------ */
+.ls-container .ls-photo-wrapper {
+    width: 47.4%!important;
+    margin: 1.3%!important;
+}
+.likeshop__container {
+  position: relative;
+  left: 2.2%;
+}
+.likeshop-carousel {
+  .slick-prev {
+    display: inline-block;
+    width: rem(50) !important;
+    height: rem(50) !important;
+    border-radius: rem(25);
+    background-color: $color__white !important;
+    z-index: 2 !important;
+    position: absolute;
+    top: 36% !important;
+    left: -6.5% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    &:before {
+    background-image: url('/r/r_src/mobile/lib/imgs/svg/enabled/arrow-left--thin.svg') !important;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    content:"";
+    width: rem(24) !important;
+    height: rem(24) !important;
+    z-index: 3;
+    position: absolute;
+    top: 25.5%;
+    right: 28%;
+  }
+}
+  .slick-next {
+    position: absolute;
+    top: 36% !important;
+    right: -.5% !important;
+    width: rem(50) !important;
+    height: rem(50) !important;
+    border-radius: 50%;
+    display: block;
+    background-color: $color__white !important;
+    z-index: 2 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+      &:before {
+      background-image: url('/r/r_src/mobile/lib/imgs/svg/enabled/arrow-right--thin.svg') !important;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content:"";
+      width: rem(24) !important;
+      height: rem(24) !important;
+      z-index: 3;
+      position: absolute;
+      top: 25.5%;
+      right: 24%;
+    }
+  }
+}
+
+.ls-detail .ls-detail-link-box>div a span.anchor-static {
+  background-color: $color__black !important;
+}
+.ls-detail .ls-detail-link-box>div a p {
+  color: $color__black !important;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__grey--light !important;
+  }
+}
+.ls-detail .ls-detail-caption {
+  color: $color__grey !important;
+}
+.ls-detail .ls-detail-caption a {
+  color: $color__black !important;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color__grey--light !important;
+  }
+}
+.ls-detail .ls-detail-footer {
+  display: none;
+}

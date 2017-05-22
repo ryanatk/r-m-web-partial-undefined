@@ -1,0 +1,755 @@
+/*-------------------------------------------------------------------------------------------
+
+      ___           ___           ___           ___           ___       ___           ___
+     /\  \         /\  \         /\__\         /\  \         /\__\     /\__\         /\  \
+    /::\  \       /::\  \       /:/  /        /::\  \       /:/  /    /:/  /        /::\  \
+   /:/\:\  \     /:/\:\  \     /:/  /        /:/\:\  \     /:/  /    /:/  /        /:/\:\  \
+  /::\~\:\  \   /::\~\:\  \   /:/__/  ___   /:/  \:\  \   /:/  /    /:/__/  ___   /::\~\:\  \
+ /:/\:\ \:\__\ /:/\:\ \:\__\  |:|  | /\__\ /:/__/ \:\__\ /:/__/     |:|  | /\__\ /:/\:\ \:\__\
+ \/_|::\/:/  / \:\~\:\ \/__/  |:|  |/:/  / \:\  \ /:/  / \:\  \     |:|  |/:/  / \:\~\:\ \/__/
+    |:|::/  /   \:\ \:\__\    |:|__/:/  /   \:\  /:/  /   \:\  \    |:|__/:/  /   \:\ \:\__\
+    |:|\/__/     \:\ \/__/     \::::/__/     \:\/:/  /     \:\  \    \::::/__/     \:\ \/__/
+    |:|  |        \:\__\        ~~~~          \::/  /       \:\__\    ~~~~          \:\__\
+     \|__|         \/__/                       \/__/         \/__/                   \/__/
+
+ _______ _________          _        _______    _______          _________ ______   _______
+(  ____ \\__   __/|\     /|( \      (  ____ \  (  ____ \|\     /|\__   __/(  __  \ (  ____ \
+| (    \/   ) (   ( \   / )| (      | (    \/  | (    \/| )   ( |   ) (   | (  \  )| (    \/
+| (_____    | |    \ (_) / | |      | (__      | |      | |   | |   | |   | |   ) || (__
+(_____  )   | |     \   /  | |      |  __)     | | ____ | |   | |   | |   | |   | ||  __)
+      ) |   | |      ) (   | |      | (        | | \_  )| |   | |   | |   | |   ) || (
+/\____) |   | |      | |   | (____/\| (____/\  | (___) || (___) |___) (___| (__/  )| (____/\
+\_______)   )_(      \_/   (_______/(_______/  (_______)(_______)\_______/(______/ (_______/
+
+-------------------------------------------------------------------------------------------*/
+
+
+/****
+
+  Style Guide Stylesheet override
+
+---------------------------------------------------------
+
+  Style Guide specific CSS.
+  Boring Rules:
+
+  1. Prefix all classes with 'sg-' so we can differentiate
+     style guide classes and framework classes in our style-
+     guide markup.
+
+  2. When defining a new style guide class try to find a
+     relevant block below to place it in.
+
+  3. If no relevant blocks are to be found find the most
+     relvant area to place it in, then name and describe
+     the block.
+
+  4. Use 3 lined spacing between blocks;
+
+  5. Use the same rules and naming methodologies that are
+     in place for our framework.
+
+---------------------------------------------------------  */
+
+.eagle {
+
+/* @sg-container
+--------------------------------------------------------
+
+  Override framework's container property
+
+------------------------------------------------------ */
+.container {
+  max-width: rem(1200);
+}
+
+
+
+/* @sg-vars
+--------------------------------------------------------
+
+  Global variables used on style-guide only
+
+------------------------------------------------------ */
+  $color--gold: #a7924d;
+
+  $color-syntax--bg: #282828;
+  $color-syntax--all: #F4F2BE;
+  $color-syntax--class: #b4d388;
+  $color-syntax--rule: #6ca6b9;
+  $color-syntax--value: #fff;
+  $color-syntax--value-alt: #bddcdc;
+  $color-syntax--function: #f49d62;
+  $color-syntax--number: #ecec89;
+  $color-syntax--comment: #777777;
+  $color-syntax--tag: #92bfbf;
+  $color-syntax--title: #b4d388;
+  $color-syntax--attr: #ecec89;
+
+  // Colors for grid examples
+  $color-grid--xs: #94c1c8;
+  $color-grid--sm: #a2bb60;
+  $color-grid--md: #eb6d58;
+  $color-grid--lg: #0D699C;
+  $color-grid--xl: #c492bc;
+  $color-grid--xxl: #151e23;
+  // Define background opacity
+  $dev__bg-opacity: .25;
+
+
+
+
+/* @sg-code
+--------------------------------------------------------
+
+  Code styling for style guide and syntax highlighter
+  Importants are used to over-ride default plugin
+
+------------------------------------------------------ */
+
+.sg-code,
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: rem(20);
+  background: $color-syntax--bg;
+  color: #839496;
+  font-size: rem(15);
+  -webkit-text-size-adjust: none;
+  background-color: $color-syntax--bg !important;
+}
+
+.sg-code--class {
+  color: $color-syntax--class !important;
+}
+
+.sg-code--rules {
+  color: $color-syntax--all !important;
+}
+
+.sg-code--rule {
+  color: $color-syntax--rule !important;
+}
+
+.sg-code--function {
+  color: $color-syntax--function !important;
+}
+
+.sg-code--number {
+  color: $color-syntax--number !important;
+}
+
+.sg-code--tag {
+  color: $color-syntax--tag !important;
+}
+
+.sg-code--title {
+  color: $color-syntax--title !important;
+}
+
+.sg-code--attribute {
+  color: $color-syntax--attr !important;
+}
+
+.sg-code--value {
+  color: $color-syntax--value !important;
+  .sg-code--html & {
+    color: $color-syntax--value-alt !important;
+  }
+}
+
+.sg-code--scss, .sg-code--json {
+  color: $color-syntax--all !important;
+}
+
+.sg-code--regexp, .sg-code--comment {
+  color: $color-syntax--comment !important;
+}
+
+.sg-code__label {
+  font-size: em(12);
+}
+
+.sg-code--small {
+  margin-right: rem(2);
+  font-size: em(12);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sg-code--large {
+  font-size: em(14);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// code hover
+.zeroclipboard-is-hover,
+code:hover {
+  position: relative;
+  overflow: visible;
+  box-shadow: inset rem(0 0 0 3) $color__success;
+  &::before {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    display: block;
+    padding: rem(0 10);
+    font-size: em(13);
+    background-color: $color__success;
+    color: $color__white;
+    content: 'Copy';
+  }
+}
+
+
+
+/* @sectpage
+--------------------------------------------------------
+
+  Code styling for style guide section
+
+------------------------------------------------------ */
+.sg-page {
+  // padding-top: rem(20);
+}
+
+.sg-page__header {
+  padding: rem(10) 0 0;
+  border-bottom: rem(1) solid $color__grey--lighter;
+}
+
+.sg-page__title {
+  font-size: em(25);
+  font-family: $font-primary;
+  float: left;
+  line-height: auto;
+  letter-spacing: 2px;
+}
+
+.sg-page__logo{
+  width: rem(120);
+  padding: rem(2) 0;
+  float: left;
+}
+
+
+
+/* @sg-hero
+--------------------------------------------------------
+
+  Style Guide Page Hero
+
+------------------------------------------------------ */
+.sg-hero {
+  padding: rem(20) 0;
+  // text-align: center;
+  // border-bottom: none;
+  // max-width: rem(850);
+  // margin: 0 auto;
+}
+
+.sg-hero__title {
+  margin: 0;
+  text-align: center;
+}
+
+
+
+/* @sg-main-nav
+--------------------------------------------------------
+
+  Style Guide Main Navigation
+
+------------------------------------------------------ */
+.sg-main-nav {
+  float: right;
+  position: relative;
+  margin: 0;
+}
+.sg-main-nav__item {
+  float: left;
+  list-style: none;
+  padding: 0 rem(10);
+}
+
+
+
+
+/* @sg-blockquote
+--------------------------------------------------------
+
+  Style Guide Main Navigation
+
+------------------------------------------------------ */
+.sg-blockquote {
+  padding-left: rem(20);
+  text-align: left;
+  border-left: rem(4) solid $color--gold;
+  quotes: '\201C''\201D''\2018''\2019';
+  &::before {
+    margin-right: rem(4);
+    color: $color__grey--light;
+    content: open-quote;
+    font-size: em(64);
+    vertical-align: bottom;
+  }
+  // p element
+  > * {
+    display: inline
+  }
+}
+
+
+
+/* @sg-section
+--------------------------------------------------------
+
+  Code styling for style guide section
+
+------------------------------------------------------ */
+.sg-section {
+  padding-bottom: rem(20);
+  // sibling horizontal rules
+  ~ hr {
+    margin-bottom: rem(60);
+    border-color: $color__grey--light;
+  }
+}
+
+.sg-section__header {
+  padding-bottom: rem($base-unit);
+  > *:first-child {
+    margin: 0;
+  }
+}
+
+.sg-section__header--bare {
+  margin-bottom: 0;
+  padding: rem($base-unit);
+  background-color: $color__offwhite;
+}
+
+.sg-section__title {
+  display: inline-block;
+  margin: 0;
+  font-size: em(28);
+  color: $color--gold;
+}
+
+.sg-section__sub-title {
+  @extend %font-primary;
+  font-size: em(20);
+  margin: 0;
+  color: $color__grey--light;
+  letter-spacing: em(2,16);
+}
+
+.sg-section__ex-title {
+  display: inline-block;
+  font-size: em(16);
+  margin: 0 0 rem(10);
+  color: $color--gold;
+  border-bottom: rem(1) solid $color__grey--lighter;
+  letter-spacing: em(2,16);
+}
+
+// .bg-mens-color {
+//   background-color: $color__mens;
+// }
+// .bg-womens-color {
+//   background-color: $color__womens;
+// }
+// .bg-wedding-shop-color {
+//   background-color: $wedding-shop-color;
+// }
+// .bg-input-background-color{
+//   background-color: $input-background-color;
+// }
+// .bg-input-border-color{
+//   background-color: $input-border-color;
+// }
+// .bg-error-text-color{
+//   background-color: $error-text-color;
+// }
+// .bg-input-error-text-color{
+//   background-color: $input-error-text-color;
+// }
+// .bg-input-error-background-color{
+//   background-color: $input-error-background-color;
+// }
+// .bg-input-error-border-color{
+//   background-color: $input-error-border-color;
+// }
+
+
+
+/* @sg-documentation
+--------------------------------------------------------
+
+  Style Guide Article tag filled with docs
+
+------------------------------------------------------ */
+.sg-documentation {
+  max-height: 0;
+  overflow: hidden;
+  // active state
+  &.is-toggled-documentation {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+
+
+/* @sg-sidebar
+--------------------------------------------------------
+
+  Color Section within style guide
+
+------------------------------------------------------ */
+.sg-sidebar {
+  margin-top: rem(60);
+  // -- Min Width @ $tablet
+  @include bp-at-least($tablet) {
+    position: fixed;
+  }
+}
+
+
+
+/* @sg-color
+--------------------------------------------------------
+
+  Color Section within style guide
+
+------------------------------------------------------ */
+.sg-color {
+  // min-height: rem(340);
+  // margin-bottom: rem(40);
+}
+
+.sg-color__pick {
+  width: 50%;
+  margin: rem(20) auto;
+  padding-top: 50%;
+  border: rem(1) solid $color__grey--light;
+  border-radius: 100%;
+}
+
+.sg-color__hex {
+  font-size: em(12);
+  color: $color__grey--light;
+  border-top: rem(1) solid $color__grey;
+  width: 50%;
+  margin: rem(20) auto 0 auto;
+  padding-top: rem(10);
+  letter-spacing: em(2,12);
+}
+
+
+
+/* @sg-button
+--------------------------------------------------------
+
+  Style Guide Button BLocks
+
+------------------------------------------------------ */
+.sg-button {
+  padding: rem(10);
+}
+// .sg-color__btn{
+//   display:inline-block;
+//   font-family: monospace;
+//   font-size: em(14);
+//   padding: rem(1) rem(5);
+//   background: rgba(193, 199, 208, .3);
+//   cursor: pointer;
+//   vertical-align: middle;
+//   text-transform: lowercase;
+//   margin:5px 0;
+//   &:hover {
+//     font-weight: 900;
+//   }
+// }
+
+
+
+/* @sg-style-bg
+--------------------------------------------------------
+
+  Style Guide Style block - use on visual example items
+
+------------------------------------------------------ */
+.sg-style-bg {
+  // margin-top: rem(20);
+  padding: rem(10);
+  background-color: rgba(darken($color__offwhite, 8), .4);
+  border-bottom: rem(1) solid $color__grey--lighter;
+}
+
+.sg-style-color {
+  background-color: rgba(darken($color__offwhite, 8), .4);
+}
+
+.sg-style-color--dark {
+  background-color: rgba(darken($color__offwhite, 16), .8);
+}
+
+.sg-style-color--darkest {
+  background-color: rgba(darken($color__offwhite, 20), 1);
+}
+
+
+
+
+/* @sg-ex-block
+--------------------------------------------------------
+
+  Style Guide Example Block
+
+------------------------------------------------------ */
+.sg-ex-block {
+  position: relative;
+  padding: rem(25) 0 0;
+  border: rem(1) solid $color__grey--lighter;
+  & + & {
+    margin-top: rem(20);
+  }
+}
+
+.sg-ex-block__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: rem(20 20);
+  background-color: rgba(darken($color__offwhite, 8), .4);
+  border-bottom: rem(1) solid $color__grey--lighter;
+}
+
+.sg-ex-block__sample {
+  margin-top: rem(-59);
+  padding: rem(45 25);
+  background-color: rgba(darken($color__offwhite, 8), .4);
+}
+
+
+
+
+/* @sg-font
+--------------------------------------------------------
+
+  Site Wide fonts
+
+------------------------------------------------------ */
+.sg-font {
+  font-size: em(21);
+  line-height: em(24);
+}
+
+$font-list: $font-primary $font-primary $font-secondary $font-secondary $font-secondary $font-japanese $font-japanese $font-korean $font-korean;
+$font-list-name: font-primary font-primary--bold font-secondary font-secondary--bold font-secondary--lighter font-japanese font-japanese--bold font-korean font-korean--bold;
+$font-list-weight: normal bold normal bold lighter normal bold normal bold;
+$i : 1;
+
+@each $current-font in $font-list {
+
+
+  .sg-#{nth($font-list-name, $i)} {
+      font-family: $current-font;
+      font-weight: nth($font-list-weight, $i);
+  }
+
+  $i : $i + 1;
+}
+
+
+
+/* @sg-grid
+--------------------------------------------------------
+
+  Grid example styling
+
+------------------------------------------------------ */
+.sg-gx {
+  position: relative;
+  display: block;
+  padding: rem(10 0 10 0);
+  text-align: center;
+  background: rgba(193, 199, 208, .5);
+  border: rem(1) solid rgba(193, 199, 208, .5);
+}
+
+// .anchor-box {
+//   display: block;
+//   padding: rem(30 0 30 0);
+//   text-align: center;
+//   background: #f4f4f4;
+//   border: rem(1) solid rgba(193, 199, 208, .5);
+// }
+// .anchor-box__black {
+//   display: block;
+//   padding: rem(30 0 30 0);
+//   text-align: center;
+//   background: $color__black;
+//   border: rem(1) solid rgba(193, 199, 208, .5);
+// }
+
+
+
+
+
+
+/* @highlight elements at breakpoint
+--------------------------------------------------------
+
+  Highlight an element at certain breakpoints by changing
+  its color;
+
+-------------------------------------------------------- */
+
+.sg-hl-el {
+  @include bp-at-least($small-mobile)  {
+    [class*="-hl"] { color: inherit; }
+    .xs-hl { color: $color-grid--xs; }
+  }
+  @include bp-at-least($mobile)  {
+    [class*="-hl"] { color: inherit; }
+    .sm-hl { color: $color-grid--sm; }
+  }
+  @include bp-at-least($tablet)  {
+    [class*="-hl"] { color: inherit; }
+    .md-hl { color: $color-grid--md; }
+  }
+  @include bp-at-least($small-desktop)  {
+    [class*="-hl"] { color: inherit; }
+    .lg-hl { color: $color-grid--lg; }
+  }
+  @include bp-at-least($desktop)  {
+    [class*="-hl"] { color: inherit; }
+    .xl-hl { color: $color-grid--xl; }
+  }
+  @include bp-at-least($large-desktop) {
+    [class*="-hl"] { color: inherit; }
+    .xxl-hl { color: $color-grid--xxl; }
+  }
+}
+
+
+
+/* @highlight grids in dev mode
+--------------------------------------------------------
+
+  Indicate grids using responsive widths at certain breakpoints.
+
+-------------------------------------------------------- */
+
+.sg-hl-gx {
+  // Grids
+  //
+  .gc, .grid__col {
+
+    @include bp-at-least($small-mobile) {
+      &[class*="xs-"] .sg-gx {
+        border-color: $color-grid--xs;
+        background: rgba($color-grid--xs, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($mobile) {
+      &[class*="sm-"] .sg-gx {
+        border-color: $color-grid--sm;
+        background: rgba($color-grid--sm, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($tablet) {
+      &[class*="md-"] .sg-gx {
+        border-color: $color-grid--md;
+        background: rgba($color-grid--md, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($small-desktop) {
+      &[class*="lg-"] .sg-gx {
+        border-color: $color-grid--lg;
+        background: rgba($color-grid--lg, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($desktop) {
+      &[class*="xl-"] .sg-gx {
+        border-color: $color-grid--xl;
+        background: rgba($color-grid--xl, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($large-desktop) {
+      &[class*="xxl-"] .sg-gx {
+        border-color: $color-grid--xxl;
+        background: rgba($color-grid--xxl, $dev__bg-opacity);
+      }
+    }
+  }
+
+  // Block grid
+  .g, .grid {
+    @include bp-at-least($small-mobile) {
+      &[class*="xs-block"] .sg-gx {
+        border-color: $color-grid--xs;
+        background: rgba($color-grid--xs, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($mobile) {
+      &[class*="sm-block"] .sg-gx {
+        border-color: $color-grid--sm;
+        background: rgba($color-grid--sm, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($tablet) {
+      &[class*="md-block"] .sg-gx {
+        border-color: $color-grid--md;
+        background: rgba($color-grid--md, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($small-desktop) {
+      &[class*="lg-block"] .sg-gx {
+        border-color: $color-grid--lg;
+        background: rgba($color-grid--lg, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($desktop) {
+      &[class*="xl-block"] .sg-gx {
+        border-color: $color-grid--xl;
+        background: rgba($color-grid--xl, $dev__bg-opacity);
+      }
+    }
+    @include bp-at-least($large-desktop) {
+      &[class*="xxl-block"] .sg-gx {
+        border-color: $color-grid--xxl;
+        background: rgba($color-grid--xxl, $dev__bg-opacity);
+      }
+    }
+  }
+
+}
+
+.sg-heading-size {
+  font-size: 12px;
+  vertical-align: top;
+}
+
+/* @sg-helpers
+--------------------------------------------------------
+
+  Style Guide Helpers
+
+------------------------------------------------------ */
+.sg-text-c {
+  text-align: center;
+}
+
+.sg-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+}

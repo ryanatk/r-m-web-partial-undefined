@@ -1,0 +1,48 @@
+{{!--
+  This `product` partial should be used across the site, wherever a `product` is found.
+  It can be further extended here (using handlebars blocks) and in styling (leveraging BEM modifiers).
+  While there are `if` statements and other conditionals,
+    these are mainly for minor variations better shared across all instances,
+    specifically when values or flags can be set within data objects.
+  For larger differences (i.e. the interactive portion of the `pdp` greatly differs from other pages),
+    the content should be passed in so it can be applied within the `partial-block` below.
+--}}
+
+{{!-- Set the default `block-tag`, for the product wrapper --}}
+{{#*inline "wrap"}}{{#block-tag}}{{.}}{{else}}section{{/block-tag}}{{/inline}}
+
+<{{> wrap }}
+  class="product {{#modifier}}product--{{.}}{{/modifier}} {{productClassName}}"
+  itemscope itemtype="http://schema.org/Product">
+  <div class="product__image product__image--{{#if modifier}}{{modifier}}{{else}}default{{/if}}">
+    {{#> product__image}}
+      {{> product-image src=image brand=brand name=name href=link }}
+    {{/product__image}}
+  </div>
+
+  <div class="product__information {{#modifier}}product__information--{{.}}{{/modifier}}">
+    <div class="product__badge {{#modifier}}product__badge--{{.}}{{/modifier}}">
+      {{#if badge}}
+        {{> (lookup . 'badge') }}
+      {{/if}}
+    </div>
+
+    <div class="product__title {{#modifier}}product__title--{{.}}{{/modifier}}">
+      {{> product-brand-title product-name=name brand-name=brand product-number=styleNumber modifier=modifier }}
+    </div>
+
+    {{#if color}}
+      <p class="product__detail {{#modifier}}product__detail--{{.}}{{/modifier}}" itemprop="color">Color: {{color}}</p>
+    {{/if}}
+
+    <div class="product__price {{#modifier}}product__price--{{.}}{{/modifier}}"
+      data-template-regular="price.{{#if modifier}}{{modifier}}{{else}}default{{/if}}"
+      data-template-on-sale="price.{{#if modifier}}{{modifier}}{{else}}default{{/if}}-on-sale">
+      {{> price price=price modifier=modifier}}
+    </div>
+
+    {{#if @partial-block}}
+      {{> @partial-block }}
+    {{/if}}
+  </div>
+</{{> wrap }}>

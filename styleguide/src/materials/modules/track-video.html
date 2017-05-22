@@ -1,0 +1,25 @@
+---
+notes: |
+ Google Analytics Tracking goodness for Beauty Videos.
+
+ ### Class for initialization
+ By default you could use the `.js-track-video` class for plugin initiation. This class need to be in an iframe.
+
+
+ ### Alternative initialization
+ If you're a controlling type and you gotta have it your way... Alternatively you could initiate the plugin with unique or custom identifier, like so:
+
+ ```javascript
+   $(".your-iframe-selector").trackVideo();
+ ```
+
+ ### YouTube Quirks
+ YT videos needs `?enablejsapi=1` within the video url for api to work.
+
+ ### Vimeo and Youtube Examples
+ (View console log to see tracking titles):
+
+---
+
+<iframe class="js-track-video" src="https://player.vimeo.com/video/163439272?autoplay=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe class="js-track-video" type="text/html" width="640" height="360" src="http://www.youtube.com/embed/AIbFAaXELrE?enablejsapi=1" frameborder="0"></iframe>

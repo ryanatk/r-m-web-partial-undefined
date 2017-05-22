@@ -1,0 +1,71 @@
+---
+title: Write a Review
+page-name: writeReview
+fabricator: false
+layout: mock-page
+---
+
+{{> title-bar page-title=writeReview.title}}
+
+<section class="page__main">
+  <form class="form submit-modal" data-validate="true"
+        data-open="thank-you-modal"
+        data-submit-modal-url="https://mockbin.org/bin/5b5f61e0-0dd4-44a3-849f-70d479c62d15"
+        data-submit-modal-method="POST">
+
+    {{> product
+        image=writeReview.product.image
+        name=writeReview.product.name
+        brand=writeReview.product.brand
+        price=writeReview.product.price }}
+
+    {{> rating-scale
+        starRatings=writeReview.starRatings
+        required=true
+        fieldset-class-name="validate-radio-group"
+        error-message="Please rate this item"
+        insert-error-after=".form-section__title"}}
+
+    {{#writeReview.multipleChoices}}
+      <fieldset class="form-section validate-radio-group"
+                data-radio-group-error-message="{{errorMessage}}"
+                data-radio-group-insert-error-after=".form-section__title">
+        <h2 class="form-section__title">{{title}}</h2>
+
+        <div class="form-section__content">
+          {{#choices}}
+            {{> push-button span=4 columns=12 id=id name=../name value=value label=label required=true }}
+          {{/choices}}
+        </div>
+      </fieldset>
+    {{/writeReview.multipleChoices}}
+
+    <section class="form-section">
+      {{#with writeReview.comment}}
+        <h2 class="form-section__title">{{title}}</h2>
+        <p>{{description}}</p>
+
+        {{> character-counter id="comment" label="Comment" placeholder=placeholder maxlength=200}}
+      {{/with}}
+
+      {{#writeReview.inputFields}}
+        {{> floating-label-input
+            id=id
+            type=type
+            label=label
+            attrs=attrs
+            fieldAttrs=fieldAttrs}}
+      {{/writeReview.inputFields}}
+    </section>
+
+    <button data-validate-trigger="true" type="submit" class="btn btn--full">{{writeReview.submit.value}}</button>
+  </form>
+
+  {{#writeReview.thankYouModal}}
+    <div id="thank-you-modal" class="modal u-center" data-type="default-modal">
+      <h2>{{title}}</h2>
+      <p>{{body}}</p>
+      <a href="{{url}}" class="btn btn--full">{{action}}</a>
+    </div>
+  {{/writeReview.thankYouModal}}
+</section>

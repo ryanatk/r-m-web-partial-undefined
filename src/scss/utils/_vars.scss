@@ -1,0 +1,268 @@
+/**
+
+  @variables
+---------------------------------------------------------
+  base/_vars.scss
+--------------------------------------------------------
+
+  Global variables are defined here.  Define your colors,
+  spacing, type, and grid settings.
+
+-----------------------------------------------------  */
+
+
+
+/* @type
+--------------------------------------------------------
+
+  All type variables are defined here.
+  Ems are used for font sizes and rem for layout
+
+------------------------------------------------------ */
+
+// Base body type
+$base-html-size: 12px; // DO NOT change this value - used for REMS
+$base-line-height: em(18);
+
+$h1-font-size: em(24);
+$h1-line: 15; // 20px
+$h1-lines: 2;
+$h1-line-height: rem($h1-line * $h1-lines);
+$h1-margin-top: rem(1.5 * $h1-line);
+$h1-margin-bottom: rem(1 * $h1-line);
+
+$h2-font-size: em(18);
+$h2-line: 12; // 20px
+$h2-lines: 2;
+$h2-line-height: rem($h2-line * $h2-lines);
+$h2-margin-top: rem(1.5 * $h2-line);
+$h2-margin-bottom: rem(1 * $h2-line);
+
+$h3-font-size: em(14);
+$h3-line: 10;
+$h3-lines: 2;
+$h3-line-height: rem($h3-line * $h3-lines);
+$h3-margin-top: rem(1 * $h3-line);
+$h3-margin-bottom: rem(.75 * $h3-line);
+
+$h4-font-size: em(12);
+$h4-line: 16; // 20px
+$h4-lines: 1;
+$h4-line-height: rem($h4-line * $h4-lines);
+$h4-margin-top: rem(1 * $h4-line);
+$h4-margin-bottom: rem(.75 * $h4-line);
+
+$h5-font-size: em(10);
+$h5-line: 14; // 20px
+$h5-lines: 1;
+$h5-line-height: rem($h5-line * $h5-lines);
+$h5-margin-top: rem(1 * $h5-line);
+$h5-margin-bottom: rem(.75 * $h5-line);
+
+$h6-font-size: em(10);
+$h6-line: 14; // 20px
+$h6-lines: 1;
+$h6-line-height: rem($h6-line * $h6-lines);
+$h6-margin-top: rem(1 * $h6-line);
+$h6-margin-bottom: rem(.75 * $h6-line);
+
+
+/* @colors
+--------------------------------------------------------
+
+  All color variables are defined here.
+
+  We use real color names here.  Although naming something
+  like 'brand' is in fact more generic and reusable, we've
+  found that you end up creating variables like $brand-2,
+  $brand-alt, $brand-complimentary etc.  While coding,
+  it's too easy to forget what those mean.
+
+  If the design changes drastically and the brand changes
+  from, let's say, blue to green, just do a global
+  find/replace - that's what text editors are for.
+
+------------------------------------------------------ */
+
+
+// Primary Colors
+//
+$color__black: #000;
+$color__grey--dark: #3b3b3b;
+$color__grey: #717171;
+$color__grey--md: #f5f5f5;
+$color__grey--light: #949494;
+$color__grey--lighter: #e4e4e4;
+$color__grey--lightest: #eaeaea;
+$color__offwhite: #f4f4f4;
+$color__white: #fff;
+$color__blue: #b3d4fc;
+$color__blue--dark: #2aa2d4;
+$color__pink: #ffc9c9;
+$color__pink--light: #f4e8e8;
+$color__pink--dark: #e43fa4;
+$color__green:#d2f4d7;
+$color__gold: #a7924d;
+$color__red: #961c1c;
+$color__error: $color__red;
+$color__warning: #f1c40f;
+$color__info: #2980b9;
+$color__success: #27ae60;
+
+
+// Site Property / Feature Colors
+//
+$color__brand: $color__black;
+$color__text: $color__grey;
+$color__text--darkest: $color__black;
+$color__text--invert: #808080;
+$color__link: $color__grey;
+$color__link--hover: $color__black;
+$color__heading: $color__black;
+$color__hr: $color__black;
+$color__border: $color__grey--lightest;
+$color__table-cell: #fdfdfd;
+
+
+
+$customer-text-color: #8b8b8b;
+
+// Forms
+$input-background-color: $color__white;
+$input-border-color: #eeeeee;
+$input-border-color--darker: #a6a6a6;
+$input-border-color--invert: #3b3b3b;
+
+// ERRORS
+$error-text-color: $color__error;
+$input-error-text-color: $color__error;
+$input-error-background-color: $color__pink--light;
+$input-error-border-color: $color__error;
+
+// NAVIGATION
+$main-nav-link-color: $color__white;
+$main-nav-link-hover-color: $color__white;
+$main-nav-dropdown-link-color: $color__grey;
+$main-nav-dropdown-link-hover-color: $color__black;
+
+// Mens
+$color__mens: $color__blue;
+
+// Womens
+$color__womens: $color__pink;
+
+//Kids
+$color__kids: $color__green;
+
+
+
+
+
+// FEATURES
+// ------------------------
+// Wedding Shop
+$wedding-shop-color: #f6d9d0;
+
+// Eary Access
+$early-access-color: #bab274;
+
+// Refer a friend
+$refer-friend__border-color: #f6f2db;
+
+// Alipay
+$alipay-color: #f87e13;
+
+//Grlfrnd
+$color--denim: #193d5a;
+
+//Collections
+$collections-color: #ceb097;
+
+/* @breakpoints
+---------------------------------------------------------
+
+  Define global breakpoints as xs, sm, md, lg, xl, xxl
+
+--------------------------------------------------------- */
+
+// Define breakpoints map to help with some other functions
+// and mixins.  Very fancy :)
+//
+$breakpoints: (
+ n:  0,
+ xs: 320,
+ sm: 550,
+ md: 768,
+ lg: 1024,
+ xl: 1256,
+ xxl: 1600
+);
+
+// Define individual variables
+//
+// Base
+$base: map-get($breakpoints, n);
+
+// Extra Small: Small mobile
+$small-mobile: map-get($breakpoints, xs);
+
+// Small: Larger mobile
+$mobile: map-get($breakpoints, sm);
+
+// Medium: Tablet
+$tablet: map-get($breakpoints, md);
+
+// Large: Landscape tablet, beginning desk size
+$small-desktop: map-get($breakpoints, lg);
+
+// Extra Large: Large Desk size
+$desktop: map-get($breakpoints, xl);
+
+// Double Extra Large: Huge Desk size
+$large-desktop: map-get($breakpoints, xxl);
+
+// Orientation Media Queries
+//
+// Landscape Orientation
+$landscape: "only screen and (orientation: landscape)" !default;
+
+// Portrait Orientation
+$portrait: "only screen and (orientation: portrait)" !default;
+
+
+/*
+
+Define breakpoints name for JS detections.
+Nomenclature is similar to the variables set for each device view.
+This is used in the body.
+
+*/
+
+$breakpointsViews: (
+  base: $base,
+  mobile: $small-mobile,
+  tablet: $mobile,
+  small-desktop: $tablet,
+  desktop: $small-desktop,
+  large-desktop: $desktop
+);
+
+
+
+/* @global spacing units
+---------------------------------------------------------
+
+  Define a value for $base-unit.  $base-unit is a helpful little
+  variable that serves to keep your spacing consistent.
+
+  Most often, 1 $base-unit is equal to your baseline height.  So
+  if your baseline height is 16px, that's
+  the value of 1 $base-unit.
+
+  These units are used on the grid and helper classes
+
+--------------------------------------------------------- */
+
+$base-unit:   8 !global; // used in rem function
+$base-margin: 14 !global; // used in rem function
+$base-pad:    20 !global; // used in rem function

@@ -1,0 +1,113 @@
+/**
+ * CSS overrides for Revolve Style Guide
+ */
+
+/* give the side nav some breathing room */
+.f-container {
+  padding: 0 24px;
+}
+
+/* help readability when viewing on large screen */
+@media (min-width: 967px) {
+  .f-container {
+    padding-right: 3%;
+  }
+}
+
+/* add revolve logo to menu (in place of overview) */
+.f-menu {
+  .icon--revolve-logo {
+    width: 110px;
+  }
+  .branding__logo {
+    color: #000;
+  }
+}
+
+/* move toggle controls to main container */
+.f-control-bar {
+  padding-top: 0;
+
+  .f-menu-toggle  {
+    float: left;
+    margin: 14px 18px 14px 0;
+  }
+
+ .f-controls {
+    float: left;
+    width: 20rem;
+  }
+}
+
+/* override revolve's ul default styles that are messing up the side nav */
+.f-menu ul {
+  margin-left: 0;
+}
+
+/* fabricator toggle icons are tiny */
+.f-control svg,
+.f-item-controls .f-control {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* fabricator is shrinking our text */
+.f-menu a,
+.f-menu .f-menu__heading,
+.f-item-notes,
+pre[class*='language-'] {
+  font-size: inherit;
+}
+
+/* add background color and styling to icons */
+.f-graphic-bg {
+    padding: 10px;
+    background-color: rgba(224, 224, 224, 0.4);
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.f-grid-item {
+  position: relative;
+  display: block;
+  padding: 10px 0;
+  text-align: center;
+  background: rgba(193, 199, 208, .5);
+  border: 1px solid rgba(193, 199, 208, .5);
+}
+
+
+/**
+ * CSS to help modules live without wrappers
+ */
+
+/* fix for favorite button's absolute position */
+#favorite-buttons\.default .f-item-preview {
+  position: relative;
+  width: 200px;
+  height: 80px;
+  border: 1px solid;
+}
+
+/* add background and padding for wrapper */
+#layout\.truncate .f-item-preview,
+#truncate-toggle .f-item-preview {
+  padding: 16px;
+  background-color: #e4e4e4;
+}
+
+/* fix for badges absolute position */
+#badges\.01-product .f-item-preview,
+#badges\.final-sale .f-item-preview,
+#badges\.wedding .f-item-preview,
+#badges\.center .f-item-preview {
+  position: relative;
+  width: 320px;
+  height: 483px;
+  background: url('//is4.revolveassets.com/images/p4/n/z/TULA-WD273_V1.jpg?resize=320:*') no-repeat center center;
+}
+
+/* center product added confirmation modal */
+#modals\.product-added-confirmation .f-item-preview {
+  text-align: center;
+}

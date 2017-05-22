@@ -1,0 +1,16 @@
+@import '../lib/lib';
+
+// Cursor
+%u-pointer {
+  cursor: pointer;
+
+}
+
+%u-pointer-default {
+  cursor: default;
+}
+
+// Text Selection
+%u-no-select {
+  user-select: none;
+}

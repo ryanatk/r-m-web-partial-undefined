@@ -1,0 +1,315 @@
+@import './bem';
+@import './fonts';
+
+$utility-menu-config: (
+  item-spacing: 10px,
+  height: 80px,
+  border: 1px
+);
+
+$site-menu-config: (
+  gutter: 1em,
+  link-color: #000,
+  horizontal-spacing: .89em,
+  menu-width: 300px
+);
+
+@function mobile-menu-gutter($gutter-top: 0, $gutter-bottom: 0) {
+  @return $gutter-top map-get($site-menu-config, 'gutter') $gutter-bottom;
+}
+
+@function mobile-menu-header-spacing($spacing-left: 0, $spacing-right: 0) {
+  $spacing: map-get($site-menu-config, 'horizontal-spacing');
+  @return $spacing $spacing-right $spacing $spacing-left;
+}
+
+%mask {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	content: '';
+	opacity: 0;
+}
+
+%reset {
+  transform: translate3d(0, 0, 0);
+}
+
+%heading-reset {
+  border-top: none;
+  margin-top: 0;
+}
+
+#jqt {
+  overflow: hidden;
+  height: 100%;
+
+  .fs-site-menu {
+    overflow: visible;
+    position: relative;
+    left: 0;
+    height: 100%;
+    perspective: 1000px;
+    transition: all 0.5s;
+
+    &::after {
+      @extend %mask;
+    	background: rgba(0,0,0,0.8);
+    	transition: opacity 0.3s, width 0.1s 0.3s, height 0.1s 0.3s;
+    }
+
+    @include modifier('pushed') {
+      &::after {
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        -webkit-transition: opacity 0.3s;
+        -moz-transition: opacity 0.3s;
+        transition: opacity 0.3s;
+        z-index: 10000;
+      }
+
+      #home {
+        overflow: hidden;
+      }
+    }
+  }
+
+  .fs-top-level-list {
+    padding: 6px 0 12px;
+  }
+}
+
+#home {
+  height: 100%;
+  overflow: auto;
+}
+
+.fs-utility-menu {
+  @include element('cta') {
+    font: 12px $karla;
+    color: map-get($site-menu-config, 'link-color');
+  }
+}
+
+.fs-top-level-list {
+  @include element('item') {
+    display: inline-block;
+  }
+
+  @include element('link') {
+    display: block;
+    text-transform: uppercase;
+    font: 16px $proxima;
+    letter-spacing: .05em;
+    color: #111;
+    padding-top: 6px;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+
+    @include modifier('active') {
+      border-color: #111;
+    }
+  }
+}
+
+.fs-site-menu {
+  @include element('utility') {
+    $border-width: map-get($utility-menu-config, 'border');
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    background: #fff;
+    border-bottom: $border-width solid #b3b3b3;
+    height: map-get($utility-menu-config, 'height');
+  }
+
+  @include element('container') {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	z-index: 1;
+  	width: map-get($site-menu-config, 'menu-width');
+  	height: 100%;
+  	transform: translate3d(-100%, 0, 0);
+    overflow: hidden;
+
+    > .fs-site-menu__level,
+    > .fs-site-menu__level.fs-site-menu__level--open {
+      @extend %reset;
+    }
+
+    @include modifier('overlap') {
+      > .fs-site-menu__level,
+      > .fs-site-menu__level.fs-site-menu__level--open,
+      .fs-site-menu__level.fs-site-menu__level--open {
+        @extend %reset;
+      }
+    };
+  }
+
+  @include element('level') {
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+    z-index: 1;
+  	width: 100%;
+  	height: 100%;
+    background: #fff;
+  	transform: translate3d(map-get($site-menu-config, 'menu-width'), 0, 0);
+    box-sizing: border-box;
+    padding-top: map-get($utility-menu-config, 'height') + map-get($utility-menu-config, 'border');
+  	transition: all 0.5s;
+    @extend %reset;
+
+    &::before {
+      @extend %mask;
+    }
+
+    &::after {
+      @extend %mask;
+    	z-index: -1;
+    }
+
+    @include modifier('overlay') {
+    	width: 100%;
+    	height: 100%;
+    	opacity: 1;
+    	-webkit-transition: opacity 0.3s;
+    	-moz-transition: opacity 0.3s;
+    	transition: opacity 0.3s;
+      cursor: pointer;
+
+      .fs-site-menu__level {
+        &::before {
+        	width: 100%;
+        	height: 100%;
+        	background: transparent;
+        	opacity: 1;
+        }
+      }
+    }
+
+    ul {
+    	margin: 0;
+    	padding: 0;
+    	list-style: none;
+    }
+
+    h2 {
+      $font-color: #111;
+      $font-size: 16px;
+      $border-styling: 1px solid #ddd;
+      $spacing: map-get($site-menu-config, 'horizontal-spacing');
+
+      margin: mobile-menu-gutter(0, 0);
+      padding: mobile-menu-header-spacing(0, 0);
+      border: {
+        top: $border-styling;
+        bottom: $border-styling;
+      }
+    	color: $font-color;
+      font: $font-size $proxima;
+      text-transform: uppercase;
+      letter-spacing: .120em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+
+      &:first-child {
+        @extend %heading-reset;
+      }
+
+      a {
+        font: $font-size $proxima;
+        color: $font-color;
+        padding: 0;
+      }
+    }
+
+    a {
+      $spacing: map-get($site-menu-config, 'horizontal-spacing');
+
+      position: relative;
+    	display: block;
+      padding: mobile-menu-gutter($spacing, $spacing);
+      color: map-get($site-menu-config, 'link-color');
+      font: 1em $karla;
+
+      &:active {
+        background: #f4f4f4;
+      }
+
+      .icon-arrow {
+        @extend .icon;
+        @include sprite($icons-black-arrow);
+        position: absolute;
+        top: 50%;
+        right: map-get($site-menu-config, 'gutter');
+        transform: translateY(-50%);
+      }
+    }
+
+    .menu-section {
+      a {
+        background: #F2F2F2;
+        border-bottom: 1px solid #fff;
+        padding: .78em 1em .78em 2em;
+        font: 16px "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: .120em;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: 500;
+        color: #949494;
+        position: relative;
+
+        &:active {
+          background: #ccc;
+        }
+
+        .icon-left-gray-arrow {
+          @extend .icon;
+          @include sprite($icons-left-gray-arrow);
+          position: absolute;
+          top: 50%;
+          left: map-get($site-menu-config, 'gutter');
+          transform: translateY(-50%);
+
+        }
+
+      }
+
+      + h2 {
+        @extend %heading-reset;
+      }
+    }
+
+    @include modifier('active') {
+      overflow: {
+        y: auto;
+        x: hidden;
+      }
+      z-index: 10;
+    }
+
+  }
+
+  @include element('compartment') {
+    padding: mobile-menu-gutter(.8em, 0);
+
+    h3 {
+      text-transform: uppercase;
+      color: #c0c0c0;
+      margin-bottom: .6em;
+      font: {
+        size: .8em;
+        weight: bold;
+      }
+    }
+  }
+}

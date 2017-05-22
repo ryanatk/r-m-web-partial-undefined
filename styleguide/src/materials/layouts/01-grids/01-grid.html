@@ -1,0 +1,21 @@
+---
+notes: |
+
+  RESPONSIVE GRID DOCUMENTATION AND USAGE
+
+  1)The grid system supports up to a 12-Column grid. So if you fancy a 5-Column grid you could do that. For consistency, use the framework's settings and variables set-up for the grid. View proper implementation below:
+
+  1) Start by using a wrapping div with the class `.grid`, or you can use the shortened version, which is: `.g`.
+  1) Within the grid wrapper, grid child elements are added using the class `.grid__col` or `.gc` for short.
+  1) Responsive width classes start with a two-letter viewport related prefix (xs, sm, md, lg, xl), follow by width define as fractions, but instead of 1/2 it is written as 1-of-2. Basic math yo.
+  1) These widths are built in the '_widths.scss' partial and are meant to be used alongside the `.grid__col` classes, but they can really be used anywhere if necessary.
+---
+
+  <div class="grid">
+    <div class="grid__col n-1-of-2 md-6-of-12 lg-12-of-12">
+      <div class="f-grid-item"></div>
+    </div>
+    <div class="grid__col n-1-of-2 md-6-of-12 lg-12-of-12">
+      <div class="f-grid-item"></div>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+{
+  "back-in-stock": "./back-in-stock.html",
+  "bag": "./bag.html",
+  "cant-find-your-size": "./cant-find-your-size.html",
+  "categories": "./categories.html",
+  "checkout": "./checkout.html",
+  "designers": "./designers.html",
+  "empty-bag": "./empty-bag.html",
+  "gift-certificates": "./gift-certificates.html",
+  "homepage": "./",
+  "mens": "./search.html?filter=mens",
+  "new-items": "./search.html?filter=new",
+  "paypal": "./paypal",
+  "pdp": "./pdp.html",
+  "preorder-notify": "./preorder-notify.html",
+  "reviews": "./reviews.html",
+  "sale": "./search.html?filter=sale",
+  "special-order": "./special-order.html",
+  "thank-you-email": "./thank-you-email.html",
+  "thank-you-submitted": "./thank-you-submitted.html",
+  "womens": "./search.html?filter=womens",
+  "write-review": "./write-review.html"
+}

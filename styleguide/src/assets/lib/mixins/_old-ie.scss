@@ -1,0 +1,32 @@
+
+/**
+
+  @old-ie
+--------------------------------------------------------
+  base/_mixin-old-ie.scss
+--------------------------------------------------------
+
+@link http://geoffgraham.me/mobile-first-sass-for-internet-explorer/
+
+------------------------------------------------------ */
+
+/**
+ * IE legacy mixin - returns content to ie stylesheet only
+ *
+ * @example scss
+ * // @include old-ie {
+ * // 	filter:alpha(opacity=100);
+ * // }
+ *
+ */
+
+$old-ie: false !default;
+
+
+@mixin old-ie {
+    // Only use this content if we're dealing with old IE
+
+    @if $old-ie {
+        @content;
+    }
+}

@@ -1,0 +1,75 @@
+/**
+
+  @site-footer
+--------------------------------------------------------
+  modules/_site-footer.scss
+--------------------------------------------------------
+
+  Site Footer Section
+
+------------------------------------------------------ */
+
+.site-footer {
+  padding: rem(16);
+  background: $color__black;
+  color: $color__white;
+  text-align: center;
+  position: relative;
+
+  &__header {
+    color: $color__white;
+    font-size: em(14);
+    text-decoration: none;
+    margin: rem(6 0 0 0);
+    display: inline-block;
+  }
+  &__link-white {
+      color: $color__white;
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color__white;
+    }
+  }
+  &__link-grey {
+    color: $color__grey--light;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color__grey--light;
+    }
+  }
+  &__email-input {
+    font-size: rem(14);
+    padding: rem(21 16);
+    height: rem(60);
+    @include placeholder {
+      color: $color__white;
+      opacity: 1;
+      &:focus{
+       color: $color__grey--light;
+       opacity: 1;
+      }
+     }
+    &-confirm {
+      border: rem(1) solid $color__grey--dark;
+      height: rem(60);
+      line-height: rem(60);
+    }
+  }
+  &__email-input:not(:focus):invalid {
+    border: rem(1) solid $color__grey--dark;
+    background-color: $color__black;
+    color: $color__error;
+  }
+  &__cc {
+    height: rem(32);
+  }
+  &__lang {
+    font-size: em(14);
+    border: rem(1) solid $color__grey--dark;
+    text-align: left;
+    padding: rem(20 16 20 30);
+    position: relative;
+  }
+}

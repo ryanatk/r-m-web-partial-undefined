@@ -1,0 +1,136 @@
+/**
+
+  @image-hover
+--------------------------------------------------------
+  modules/_image-hover.scss
+--------------------------------------------------------
+
+    Styles for image hover
+    // CLEAN AFTER EAGLE TO CORRECT CSS STYLE
+------------------------------------------------------ */
+.image-hover {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  &__cta-wrap,
+  &__cta-wrap::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &__cta-wrap {
+    transition: opacity .35s;
+    opacity: 0;
+    &::before {
+      display: inline-block;
+      transition: opacity .35s;
+      background-color: transparent;
+      content: '';
+    }
+    &--dark::before {
+      background-color: $color__black;
+    }
+    &--light::before {
+      background-color: $color__white;
+    }
+  }
+  // .image-hover__btn
+  // Small button thats exposed over images on hover - Quickview
+  &__btn {
+    @extend %font-secondary--bold;
+    position: absolute;
+    bottom: 20%;
+    left: -50%;
+    padding: rem(2) rem(32);
+    transform: translateX(-50%);
+    transition: opacity .35s ease;
+    border: rem(1) solid $color__grey--lighter;
+    background-color: $color__white;
+    color: $color__black;
+    font-size: em(12);
+    letter-spacing: em(.12 * 14);
+    // line-height: inherit;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    opacity: 0;
+  }
+  &--static {
+    .image-hover__cta {
+      transform: translate3d(0, -50%, 0);
+      transition: transform .35s;
+    }
+    .image-hover__cta-wrap {
+      transition: opacity .35s;
+      opacity: 1;
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+  &--slide-up {
+    .image-hover__cta {
+      transform: translate3d(0, 2%, 0);
+      transition: transform .35s;
+    }
+  }
+  &__cta {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translate3d(0, -50%, 0);
+    transition: transform .35s;
+  }
+  &--btw {
+    color: $color__black;
+  }
+  &:hover .image-hover--btw {
+    border-color: $color__white;
+    color: $color__white;
+  }
+}
+.image-hover:hover,
+.image-hover:active,
+.image-hover:focus {
+  .no-touch & ,
+  .no-touchevents & {
+    .image-hover__cta {
+      transform: translate3d(0, -50%, 0);
+      transition: transform .35s;
+    }
+    .image-hover__cta-wrap {
+      transition: opacity .35s;
+      opacity: 1;
+      &::before {
+        opacity: .5;
+      }
+    }
+    .image-hover__btn {
+      left: 50%;
+      opacity: .85;
+    }
+    .image-hover__btn--alt {
+      opacity: .5;
+    }
+    &.image-hover--outline {
+      .image-hover__image {
+        transition: all .09s ease-in;
+        outline: rem(6) solid $color__black;
+        outline-offset: rem(-6);
+      }
+    }
+  }
+}
+.image-hover__btn--focusable:focus {
+  left: 50%;
+  opacity: .85;
+}
+.image-hover__cta-wrap-alt {
+  transition: opacity .35s;
+  opacity: 1;
+  &::before {
+      opacity: .5;
+  }
+}

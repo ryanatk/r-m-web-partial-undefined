@@ -1,0 +1,177 @@
+/**
+
+  @badges
+--------------------------------------------------------
+  modules/_badges.scss
+--------------------------------------------------------
+
+  Badges
+
+-----------------------------------------------------  */
+
+%badge {
+  background-color: $color__black;
+  opacity: 0.80;
+  color: $color__white;
+  text-align: center;
+  text-transform: uppercase;
+  transition: opacity 2.5s ease-in-out;
+  opacity: 1;
+}
+
+.image-badge {
+  @extend %badge;
+  position: absolute;
+  width: 100%;
+  padding: rem(5) 0;
+  // .image-badge__hed
+  &__hed {
+    display: block;
+    font: em(10) $font-secondary;
+    letter-spacing: rem(1);
+  }
+  // .image-badge__dek
+  &__dek {
+    display: block;
+    font: bold em(12) $font-primary;
+    text-transform: lowercase;
+  }
+  // .image-badge--bottom
+  &--bottom {
+    bottom: 0;
+  }
+  // .image-badge--relative
+  &--relative {
+    display: block;
+    position: relative;
+  }
+  // .image-badge--white
+  &--white {
+    background-color: $color__white;
+    color: $color__black;
+  }
+  &--warning {
+    background: rgba(150, 28, 28, .80);
+  }
+}
+
+// product-badge
+.product-badge {
+  @extend %badge;
+  display: inline-block;
+  padding: rem(3 8);
+  font-size: rem(10);
+  letter-spacing: rem(1);
+
+  // .product-badge--sale
+  &--sale {
+    background-color: #961c1c;
+  }
+  // .product-badge--wedding
+  &--wedding {
+    background-color: $wedding-shop-color;
+    color: $color__black;
+  }
+
+  // TODO: deprecate these product-badge modifiers
+  // .product-badge now represents only the badge itself.
+  // The badge is positioned by modifying the .product__badge BEM element
+
+  // .product-badge--top-left
+  &--top-left {
+    top: 16px;
+    left: 16px;
+  }
+  // .product-badge--bottom
+  &--bottom {
+    bottom: 0;
+  }
+  // .product-badge--inline
+  &--inline {
+    width: auto;
+  }
+
+  // .product-badge--center
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  // .product-badge--fade-out
+  &--fade-out {
+    opacity: 0;
+  }
+}
+
+/*
+.image-badge__outline {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: rem(10);
+  .image-badge {
+    position: static;
+  }
+}
+
+.earlyaccess-badge {
+  display: inline-block;
+  margin-bottom: rem(15);
+  padding: rem(10 15 9 12);
+  clear: both;
+  border: 1px solid $early-access-color;
+  color: $early-access-color;
+  font: bold em(12) $font-secondary;
+  letter-spacing: em(1.5, 12);
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  // .earlyaccess-badge .icon
+  .icon {
+    margin-top: rem(-4);
+    margin-right: rem(6);
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $early-access-color;
+  }
+
+}
+
+.wedding-badge {
+  display: inline-block;
+  margin-top: rem(-1);
+  margin-left: rem(-22);
+  padding: rem(6 22);
+  background-color: $wedding-shop-color;
+  color: $color__white;
+  font: em(10) $font-wedding;
+  letter-spacing: em(3.2);
+  text-transform: uppercase;
+  vertical-align: middle;
+  // .wedding-badge .icon
+  .icon {
+    margin-top: rem(-4);
+    margin-right: rem(6);
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color__white;
+  }
+}
+
+.secure-shopping-badge {
+  .icon {
+    display: inline-block;
+    width: rem(21);
+    height: rem(21);
+  }
+  .h6 {
+    color: $color__white;
+    font-size: em(11);
+  }
+}
+*/

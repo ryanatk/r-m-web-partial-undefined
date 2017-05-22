@@ -1,0 +1,25 @@
+---
+notes: |
+  Demonstrates how to use a floating label with built in behaviors or using a
+  standard set of icons that dictate behavior. The following data attributes
+  are supported to use this functionality:
+
+  - `data-iconify-valid`: shows when a field is valid and able to be submitted
+  - `data-iconify-invalid`: shows when a field has an error
+  - `data-iconify-clear`: shows when the value in the field can be cleared
+
+  The value of these data attributes is the title element within the SVG icon
+  that is used for both i18n and accessibility. The icons can be mismatched
+  based on the use case. For example, let's say an icon doesn't have any
+  validation, so it may not make sense to have an invalid or valid icon, but it
+  might be nice to have a clear icon so the user has the ability to clear the
+  field.
+---
+
+{{> floating-label-input
+    id="floating-label-input-icons"
+    type="email"
+    label="Email"
+    placeholder="Gimmie Your Email"
+    inputClassName="floating-label__input--inset"
+    fieldAttrs='data-iconify-valid="Valid" data-iconify-invalid="Invalid" data-iconify-clear="Clear"'}}

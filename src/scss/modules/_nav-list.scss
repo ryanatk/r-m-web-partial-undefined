@@ -1,0 +1,69 @@
+/**
+
+  @nav-list
+--------------------------------------------------------
+  modules/_nav-list.scss
+--------------------------------------------------------
+
+  Nav List Section
+
+------------------------------------------------------ */
+
+.nav-list {
+  margin-left: 0;
+  list-style: none;
+  &__link {
+    display: block;
+    width: 100%;
+    padding: rem(12 10 9 14);
+    border-bottom: rem(1) solid $color__border;
+    &:hover {
+      text-decoration: none;
+      color: $color__black;
+    }
+  }
+  &__link--dark {
+    color: $color__black;
+    letter-spacing: em(1,13);
+    font-size: em(13)
+  }
+  &__link--dark-bold {
+    color: $color__black;
+    @extend %font-secondary--bold;
+    letter-spacing: em(1.26);
+    text-transform: uppercase;
+  }
+  &__link--grey {
+    padding: rem(12 10 9 14);
+    color: $color__grey--light;
+    @extend %font-secondary;
+    font-size: em(11);
+    letter-spacing: em(1.26);
+    text-transform: uppercase;
+  }
+  &__section-title {
+    padding: rem(17 14 14 14);
+    border-bottom: rem(1) solid $color__border;
+    color: $color__grey--light;
+    text-transform: uppercase;
+  }
+  &__back-btn {
+    margin-bottom: rem(1);
+    padding: rem(10);
+    background-color: $color__offwhite;
+    color: $color__grey--light;
+    letter-spacing: em(1.26);
+    text-transform: uppercase;
+    @extend %font-secondary--bold;
+  }
+  &__arrow {
+    margin-top: rem(8);
+    padding-right: rem(20);
+    float: right;
+    &--down {
+      margin-top: rem(5);
+    }
+  }
+  
+}
+

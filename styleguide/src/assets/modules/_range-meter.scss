@@ -1,0 +1,35 @@
+/**
+
+  @range meter
+
+ */
+
+.range-meter {
+  @extend %text-sm;
+  display: flex;
+
+  &__label {
+    flex-basis: 25%;
+    display: inline-block;
+    margin:0;
+    line-height: inherit;
+    white-space: nowrap;
+    font-weight: normal;
+  }
+  &__meter {
+    flex-basis: 65%;
+    overflow: hidden;
+    height: rem( 3 );
+    margin: rem( 7 0 );
+    background-color: $color__grey--light;
+  }
+  &__fill {
+    display: inline-block;
+    border-right: rem( 1 ) solid $color__grey--lighter;
+    background-color: $color__black;
+  }
+  &__percent {
+    flex-basis: 10%;
+    text-align: right;
+  }
+ }

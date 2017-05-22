@@ -1,0 +1,23 @@
+---
+notes: |
+  To add a "more|less" toggle button/link to the truncated element,
+    add the `data-truncate` property.
+
+  It also accepts the following additional optional properties:
+
+  - `data-truncate-more` - The text for the toggle button when clicking will show more
+  - `data-truncate-less` - The text for the toggle button when clicking will show less
+  - `data-truncate-lines` - The number of lines to show.
+    For more on these modifiers, see [the truncate helper](./helpers.html#truncate).
+---
+
+<p data-truncate="true"
+   data-truncate-show-more="{{#more}}{{.}}{{else}}more{{/more}}"
+   data-truncate-show-less="{{#less}}{{.}}{{else}}less{{/less}}"
+   data-truncate-lines="4">
+  I've moved on, I've moved on. And I'm in the dating pool, so...
+  But it's funny, you know, I love having clothes made for me but, I don't know, ladies, you have this situation, but no matter what you're buying, in a store you always hear "wear it with jeans."
+  I don't care what I'm buying -- "Oh, wear it with jeans."
+  One time, this lady said to me, "You know, if you're going to a rock concert..." I go, "A rock concert?!"
+  That's hilarious to me. Me at a rock concert. Ok. Wear it with jeans. Jeans. Pay attention from now on.
+</p>

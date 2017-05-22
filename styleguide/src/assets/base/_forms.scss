@@ -1,0 +1,111 @@
+@import '../helpers/text';
+
+/*
+
+  @forms
+
+  Base styles for all forms and form related elements
+  Specific styles for variation & modules belong elsewhere
+
+*/
+
+form,
+fieldset,
+legend,
+label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+input,
+select,
+textarea {
+  @extend %font-primary;
+  @extend %text-md;
+  color: $color__black;
+
+  border-radius: 0;
+  text-rendering: optimizeLegibility;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  // Invalid
+  &:not(:focus) {
+    &:invalid {
+      color: $color__error;
+    }
+  }
+
+  // Disabled
+  &:disabled {
+    opacity: .5;
+  }
+}
+
+input,
+textarea {
+  border: rem(1) solid $color__grey--lighter;
+
+  &[type="checkbox"],
+  &[type="radio"] {
+    border: 0;
+  }
+
+  // Invalid
+  &:not(:focus) {
+    &:invalid {
+      border-color: $color__error;
+      @include placeholder {
+        color: $color__error;
+        opacity: 1;
+      }
+    }
+  }
+
+  // Placeholders
+  @include placeholder {
+    font-family: $font-primary;
+    color: $color__black;
+    transition: opacity .25s ease-in-out;
+    opacity: .3;
+  }
+
+  &:focus {
+    @include placeholder {
+      opacity: .4;
+    }
+  }
+}
+
+select {
+  @include background-image('arrow-down--thin');
+  padding-right: rem( 30 );
+  border: 0;
+  border-right: rem(10) solid $color__offwhite;
+  background: {
+    color: $color__offwhite;
+    repeat: no-repeat;
+    position: right center;
+    size: rem( 15 10 );
+  }
+
+  &:not(:focus) {
+    &:invalid {
+      background-color: $color__pink--light;
+    }
+  }
+}
+
+textarea {
+  width: 100%;
+  min-height: rem(96);
+  resize: none;
+}

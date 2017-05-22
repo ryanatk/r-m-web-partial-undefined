@@ -1,0 +1,30 @@
+---
+notes: |
+
+  RESPONSIVE BLOCK GRID DOCUMENTATION AND USAGE
+
+  The grid system supports up to a 12-Column grid. So if you fancy a 5-Column grid you could do that. This grid is used for when you want to maintain the grid when columns have different heights, for example, a product list. For consistency, use the framework's settings and variables set-up for the grid. View proper implementation below:
+
+  1) Start by using a div with the class `.grid`, or you can use the shortened version, which is: `.g`.
+  1) Imediate child elements should have the class of `.grid__col` or `.gc` for short.
+  1) Responsive width classes start with a two-letter viewport related prefix (xs, sm, md, lg, xl), follow by the string "block-grid" and finishing with the number of columns. Example, `.sm-block-grid--3`
+  1) These widths are built in the '_widths.scss' partial and are meant to be used alongside the `.grid__col` classes, but they can really be used anywhere if necessary.
+
+  A BASIC BLOCK GRID
+
+  Build a simple, responsive grid by defining a `.grid` parent and `.grid__col` children right beneath. Use the grid up classes in the same element that the grid class is being used on.
+
+  We are putting these blocks into a `.sm-block-grid--3`, `.sm-block-grid--2` `.sm-block-grid--4`, and `.sm-block-grid--5` grid respectively
+---
+
+  <div class="grid n-block-grid--3 sm-block-grid--3">
+    <div class="grid__col">
+      <div class="f-grid-item"></div>
+    </div>
+    <div class="grid__col">
+      <div class="f-grid-item"></div>
+    </div>
+    <div class="grid__col">
+      <div class="f-grid-item"></div>
+    </div>
+  </div>

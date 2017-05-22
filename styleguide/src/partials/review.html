@@ -1,0 +1,30 @@
+<article class="review" itemprop="review" itemscope itemtype="https://schema.org/Review">
+  {{#author}}
+    <address class="review__author">
+      {{#name}}<span class="review__author-name" itemprop="author">{{.}}</span>{{/name}}
+      {{#location}}<span class="review__author-location" itemprop="locationCreated">{{.}}</span>{{/location}}
+    </address>
+  {{/author}}
+
+  <div class="review__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+    {{> star-rating filled=star-rating modifier="sm"}}
+    <meta itemprop="worstRating" content="1">
+    <span class="review__rating" itemprop="ratingValue">{{star-rating}}</span>
+    <meta itemprop="bestRating" content="5">
+  </div>
+
+  {{#if fit-attributes}}
+    <ul class="review__attributes-list">
+    {{#each fit-attributes}}
+      <li class="review__attribute" itemprop="comment">{{.}}</li>
+    {{/each}}
+    </ul>
+  {{/if}}
+
+  {{#if comments}}
+    <p class="review__comments" itemprop="reviewBody"
+      {{#truncate}}data-truncate="true" data-truncate-lines="{{.}}"{{/truncate}}>
+      {{comments}}
+    </p>
+  {{/if}}
+</article>

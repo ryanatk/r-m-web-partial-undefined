@@ -1,0 +1,54 @@
+/**
+
+  @stacked-menu
+--------------------------------------------------------
+  modules/_stacked-menu.scss
+--------------------------------------------------------
+
+  stacked menu
+
+------------------------------------------------------ */
+.stacked-menu {
+  margin: 0;
+  border-top: rem(1) solid $color__border;
+  list-style: none;
+  &__hed {
+    @extend %h1;
+    text-align: center;
+    margin:0;
+    line-height: rem(60);
+    vertical-align: middle;
+    &--sm {
+      line-height: rem(40);
+    }
+  }
+  &__item {
+    border-bottom: rem(1) solid $color__border;
+  }
+  &__label {
+    @extend %headings;
+    display: block;
+    padding: rem(0 12 0 17);
+    font-size: em(16);
+    line-height: rem(50);
+    overflow: hidden;
+    vertical-align: middle;
+    &--normal {
+      font-family: $font-primary;
+      padding: rem(20 12 20 17);
+      font-size: em(14);
+      font-weight: normal;
+      line-height: rem(21);
+      text-transform: capitalize;
+    }
+    &.is-active {
+      .icon {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  &__icon {
+    margin-top: rem(16);
+    float: right;
+  }
+}

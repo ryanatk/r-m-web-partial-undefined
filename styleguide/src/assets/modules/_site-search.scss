@@ -1,0 +1,34 @@
+/**
+
+  @site-search
+--------------------------------------------------------
+  modules/_site-search.scss
+--------------------------------------------------------
+
+  Site Search Section
+
+------------------------------------------------------ */
+
+.site-search {
+    position: absolute;
+    width: 100%;
+    z-index: 101;
+    background: $color__white;
+  &__toggle-btn {
+    border: 0;
+    line-height: 0;
+  }
+  &__close {
+    position: absolute;
+    top: rem(10);
+    right: rem(10);
+    margin-right: rem(10);
+  }
+  &__form {
+    position: relative;
+    border-bottom: rem(1) solid $color__border;
+  }
+  &__input-wrap {
+    padding-right: rem(46);
+  }
+}

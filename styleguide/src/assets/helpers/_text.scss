@@ -1,0 +1,142 @@
+@import '../lib/lib';
+
+// Alignment
+%u-center {
+  text-align: center;
+}
+
+%u-left {
+  text-align: left;
+}
+
+%u-right {
+  text-align: right;
+}
+
+
+// Fonts
+/// Font placeholders currently live in `src/assets/lib/_fonts.scss`
+/// They should live here, so they're not imported with lib (aka "the world")
+/// @todo Move in font placeholders
+
+// Reassigning deprecated placeholder names from `lib/fonts`
+%font-primary-bold { @extend %font-primary--bold; }
+%font-secondary-bold { @extend %font-secondary--bold; }
+%font-secondary-lighter { @extend %font-secondary--lighter; }
+%font-secondary-condensed { @extend %font-secondary--condensed; }
+
+
+// Text Sizes
+%text-sm { @include text-sm(); }
+%text-md { @include text-md(); }
+%text-lg { @include text-lg(); }
+%text-inherit { @include text-inherit(); }
+
+
+// Font weights
+%u-weight-normal {
+  font-weight: normal;
+}
+
+%u-weight-bold {
+  font-weight: bold;
+}
+
+
+// Text Styles
+%u-underline {
+  text-decoration: underline;
+}
+
+%u-text-decoration-none {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+%u-uppercase {
+  text-transform: uppercase;
+}
+
+%u-lowercase {
+  text-transform: lowercase;
+}
+
+%u-capitalize {
+  text-transform: capitalize;
+}
+
+%u-text-transform-none {
+  text-transform: none;
+}
+
+%u-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+%u-truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; // a default, for no modifier
+  padding: 0 !important; // padding will hide text
+
+  $clamps: (
+    show: 999 !important, // untruncates, showing all the text (used for toggling)
+    short: 2,
+    long: 10,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+  );
+
+  @each $modifier, $lines in $clamps {
+    &--#{$modifier} {
+      -webkit-line-clamp: #{$lines};
+    }
+  }
+
+  &__toggle {
+    @extend %h4;
+  }
+}
+
+
+// Spacing
+%u-letter-space {
+  letter-spacing: em(2) !important;
+}
+
+%u-letter-space-sm {
+  letter-spacing: em(1.35, 12);
+}
+
+%u-letter-space-xs {
+  letter-spacing: em(1, 12);
+}
+
+// Line Height
+%u-line-height {
+  line-height: normal !important;
+}
+
+%u-line-height-xs {
+  line-height: em(16, 12) !important;
+}
+
+%u-line-height-sm {
+  line-height: em(24, 16) !important;
+}
+
+%u-line-height-one {
+  line-height: em(16, 16);
+}
+
+%u-line-height-lg {
+  line-height: em(32, 16);
+}

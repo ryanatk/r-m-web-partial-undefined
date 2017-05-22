@@ -1,0 +1,15 @@
+/**
+
+  @favorites-chart
+---------------------------------------------------------
+  layout/_favorites-chart.scss
+--------------------------------------------------------
+
+Favorites Heart Chart
+
+------------------------------------------------------ */
+
+.favorites-chart__item {
+  border: rem(1) solid $input-border-color;
+  background-color: $color__white;
+}

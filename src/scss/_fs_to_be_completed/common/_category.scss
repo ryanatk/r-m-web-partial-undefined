@@ -1,0 +1,996 @@
+/* ----- Product List Page ------- */
+
+.clear {
+    clear: both;
+}
+
+.refine-btn {
+    color: #000;
+    font-size: 10px;
+    width: 20px;
+    background-color: #ccc;
+}
+.img_active_highlight img:active {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.mcp {
+    clear: left;
+    margin-left: 2px;
+    background-color: white;
+}
+.citem {
+    -webkit-box-sizing: border-box; /* Safari 3.0 - 5.0, Chrome 1 - 9, Android 2.1 - 3.x */
+    -moz-box-sizing: border-box;    /* Firefox 1 - 28 */
+    box-sizing: border-box;         /* Safari 5.1+, Chrome 10+, Firefox 29+, Opera 7+, IE 8+, Android 4.0+, iOS any */
+    position: relative;
+    float: left;
+    width: 50%;
+    display: block;
+    margin: 0 auto 5px;
+    clear: none;
+}
+.citem:nth-of-type(2n+1) {
+    clear: both;
+}
+
+.citem p {
+    line-height: 1.3;
+    padding-left: 5px;
+    color: black;
+    font-size: 12px;
+}
+
+.c-brand-name, .c-color {
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .120em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p.c-color {margin: 10px 0;}
+
+p.item-price {
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+}
+
+p.sale-item-price {
+    color: #A53838;
+    float: left;
+    font-weight: bold;
+}
+
+p.old-item-price {
+    color: #888888;
+    float: left;
+    text-decoration: line-through;
+}
+
+.prevfull {
+    width: 97%!important;
+}
+.viewmore {
+    margin: 5px;
+    background-color: #EEEEEE;
+    border: 1px solid #C1C1C1;
+    clear: both;
+    color: #000000;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    height: 45px;
+    letter-spacing: 0.12em;
+    text-align: center;
+    text-transform: uppercase;
+    width: 75%;
+    display: inline-block;
+}
+.viewmore-btn {
+    margin-top: 15px;
+}
+.viewmore-btn:active {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.viewmore a {
+    color: black;
+}
+.viewmore a:active {
+    color: white;
+}
+.viewprev-btn {
+    padding-top: 11px;
+    width: 100%;
+}
+.viewprev-btn:active {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+.viewmore span {
+    vertical-align: middle;
+}
+.backtotop_btn {
+    display: inline-block;
+    width: 15%;
+    height: 47px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #ccc;
+    background: url("//is4.revolveassets.com/r/mobile/images/m/backtop.png") no-repeat center center / 15px auto #EEEEEE;
+    text-indent: -99999px;
+}
+.backtotop_btn a {
+    text-indent: -99999px;
+}
+/* Search Results / Filter */
+.filter_results {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.filter_results .select_style_mpdp select {
+    background: none repeat scroll 0 0 transparent;
+    border-style: none;
+    color: #000;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    height: 30px;
+    padding: 7px 5px 5px 10px;
+    text-overflow: ellipsis;
+    width: 100%;
+    letter-spacing: 0.120em;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    font-weight: normal;
+}
+
+
+.filter_results .select_style_mpdp {
+   overflow: hidden;
+   background: #eeeeee url("//is4.revolveassets.com/images/mobile/select_arrows.png") no-repeat scroll right center;
+   background-size: 30px 27.5px;
+    height: 30px;
+    float: left;
+    margin-bottom: 13px;
+    width: 100%;
+    color: #000;
+    border: 1px solid #e1e1e1;
+    margin-top: 14px;
+    text-transform: uppercase;
+}
+
+.filter_results .select_style_mpdp.mr_boutiques_refine {
+   overflow: hidden;
+   background: #eeeeee url("//is4.revolveassets.com/images/mobile/select_arrows.png") no-repeat scroll right center;
+   background-size: 30px 27.5px;
+    height: 30px;
+    float: none;
+    width: 98%;
+    color: #000;
+    border: 1px solid #e1e1e1;
+    margin: 14px auto 13px;
+    text-transform: uppercase;
+}
+
+.filter_results .select_style_month select, .select_style_year select {
+    background: none repeat scroll 0 0 transparent;
+    border-style: none;
+    color: #000;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    height: 30px;
+    padding: 7px 5px 5px 10px;
+    text-overflow: ellipsis;
+    width: 100%;
+    letter-spacing: 0.120em;
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    font-weight: normal;
+}
+
+
+.filter_results .select_style_month, .select_style_year {
+   overflow: hidden;
+   background: #eeeeee url("//is4.revolveassets.com/images/mobile/select_arrows.png") no-repeat scroll right center;
+   background-size: 30px 27.5px;
+    border: 1px solid #E1E1E1;
+    color: #000000;
+    float: left;
+    height: 30px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    width: 48.3%;
+    margin-top: 8px;
+}
+.plp_search_results span {
+    padding: 10px 5px 0px;
+    display: block;
+    font: 12px "Karla", Arial, sans-serif;
+}
+.plp_filter_count {
+    font: bold 11px "Karla", Arial, sans-serif;
+    text-align: left;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    float: right;
+    margin-right: 8px;
+}
+.plp_filter_refine a {
+    text-decoration: underline;
+    color: #000;
+    font-size: 11px;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    float: left;
+    margin-left: 8px;
+    margin-right: 6px;
+    margin-top: 15px;
+}
+.diamond_sep {
+    //background: url("//is4.revolveassets.com/images/diamond_sep.gif") no-repeat;
+    @extend .icon;
+    @include sprite($icons-diamond);
+    display: inline-block;
+
+    float: left;
+    margin-top: 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#filter_options{
+    padding: 0 8px;
+}
+#set_filters .select_multiple, #set_filters .select_single, .filter_results .select_multiple, .filter_results .select_single {
+    border-radius: 0px;
+    border-style: none;
+    color: #494949;
+    height: 45px;
+    overflow: hidden;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.120em;
+}
+.select_single {
+    background: url("//is4.revolveassets.com/r/mobile/images/m/select_arrows.png") no-repeat scroll right center / 15.5px 27.5px #DFDFDF;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+#set_filters select, .filter_results select {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-style: none;
+    color: #494949;
+    cursor: pointer;
+    height: 45px;
+    padding: 5px 10px;
+    text-overflow: ellipsis;
+    width: 100%;
+
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.120em;
+    position: relative;
+    z-index: 2;
+}
+.select_multiple {
+    //background: #eeeeee url("//is4.revolveassets.com/r/mobile/images/m/select_multiple.jpg") no-repeat scroll right center;
+    background-color: #eee;
+    margin:  0 auto;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.120em;
+    border: 1px solid #e1e1e1!important;
+}
+.filter_apply input {
+    background-color: #000;
+    border: none;
+    border-radius: 0px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-right: 12px;
+    line-height: 45px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    width: 65%;
+     font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 0.120em;
+    float: left;
+}
+.plp_filter_refine .filter_clear{
+    margin-right: 0;
+}
+.filter_clear a {
+    border-radius: 0px;
+    color: #494949;
+    cursor: pointer;
+    float: right;
+    font-size: 11px;
+    width: 26.5%;
+    background-color: #eeeeee;
+    border: 1px solid #d6d6d6;
+    text-align: center;
+     font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.120em;
+    margin-right: 0;
+    line-height: 45px;
+}
+.apply_clear {
+    width: 100%;
+    margin: 13px 0 0 0;
+}
+/*
+.plp_filter {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 0 17px;
+}
+.plp_filter a {
+    color:black;
+    text-decoration: underline;
+    letter-spacing: .100em;
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    margin: 0 5px;
+    font-weight: normal;
+    font-size: 12px;
+
+}
+.plp_filter .plp_filter_sort {
+    float: left;
+}
+.plp_filter .plp_filter_refine {
+    float: right;
+}
+.plp_filter .plp_no_items {
+    width: 20%;
+    margin: 0 auto;
+    font-size: 11px;
+}
+*/
+
+.select_style select {
+    height: 27.5px;
+    width: 120px;
+    float: left;
+    padding: 5px;
+    background: transparent;
+    border-style: none;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.select_style {
+   overflow: hidden;
+   background: #d4d4d4 url("//is4.revolveassets.com/images/mobile/select_arrows.png") no-repeat right;
+   background-size: 15.5px 27.5px;
+    height: 27.5px;
+    width: 90px;
+    float: left;
+    border-style: none;
+    margin-bottom: 16px;
+}
+
+/* @media only screen and (min-width: 600px) and (max-width: 1000px) {
+    .citem img {width:160px;}
+} */
+
+p.c-prod-desc {
+    font-family: "Karla", Arial, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p.c-brand-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+h1.blue_title {
+    text-align: center;
+    font-size:18px;
+    text-decoration: none;
+    color: #fff; /*was 18bbe4 */
+}
+.detail_price_mpdp {
+    line-height: 12px;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    color: #00aac1;
+    text-align: center;
+    bottom: 17px;
+    margin: 10px auto 0;
+    z-index: 700;
+    text-decoration: none;
+    height: 15px;
+    padding-top: 5px;
+    width: 180px;
+}
+
+.detail_price_old_mpdp {
+    line-height: 12px;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    color: #00aac1;
+    text-align: center;
+    bottom: 17px;
+    margin: 5px auto 0;
+    z-index: 700;
+    text-decoration: line-through;
+    height: 15px;
+    padding-top: 5px;
+    width: 293.5px;
+}
+.detail_price_sale_mpdp {
+    line-height: 12px;
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    color: #A53838;
+    width: 120px;
+    text-align: center;
+    z-index: 700;
+    display: inline;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* PLP Product Info */
+
+.product-info {
+    display: block;
+    min-height: 80px;
+    margin: 5px 0;
+    padding: 2px 0;
+}
+/* PLP Color Swatches */
+
+.plp_color {
+    position: relative;
+    z-index: 7;
+    font-size: 0;
+    clear: both;
+    display: block;
+}
+.plp_color:hover {}
+.plp_color:hover .more {
+    display:block;
+    transition: all .09s ease;
+    -moz-transition: all .09s ease;
+    -webkit-transition: all .09s ease;
+    -o-transition: all .09s ease;
+    -ms-transition: all .09s ease;
+}
+.plp_color ul {
+    /*width: 190px;*/
+    padding:  0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: left;
+}
+.plp_color li.icon-arrow-down {
+    cursor: pointer;
+    background: url("//is4.revolveassets.com/r/mobile/images/m/accordion_arrow.jpg") 5px -62px no-repeat transparent;
+    background-size: 21px 97px;
+    border: 0;
+    border-radius: 0;
+    margin: 2px 4px 2px 2px;
+}
+.plp_color li.icon-arrow-down a {
+    width: 23px;
+    height: 23px;
+    border: 0;
+    border-radius: 0;
+}
+.plp_color li.icon-arrow-up {
+    cursor: pointer;
+    background: url("//is4.revolveassets.com/r/mobile/images/m/accordion_arrow.jpg") 5px -12px no-repeat transparent;
+    background-size: 21px 97px;
+    border: 0;
+    border-radius: 0;
+    margin: 2px 4px 2px 2px;
+}
+.plp_color li.icon-arrow-up a {
+    width: 23px;
+    height: 23px;
+    border: 0;
+    border-radius: 0;
+}
+.plp_color li {
+    position:relative;
+    display: inline-block;
+    float: none;
+    margin: 1px 6px 0 0;
+    border-radius: 100px;
+    border: 2px solid #fff;
+    z-index: 2;
+}
+.plp_color li.plp_active_color {
+    border: 2px solid #000;
+}
+.plp_color li a {
+    display:block;
+    width: 21px;
+    height:21px;
+    overflow: hidden;
+    border: 1px solid #e4e4e4;
+    border-radius: 100px;
+}
+.plp_color li img {
+    display: block;
+    width: 37px;
+    height: 21px;
+}
+
+/*.plp_color li img.plp_active_color {
+    border: 2px solid #000;
+}
+
+.plp_color li img:hover {
+    border: 2px solid #000;
+    transition: all .09s ease-in;
+    -moz-transition: all .09s ease-in;
+    -webkit-transition: all .09s ease-in;
+    -o-transition: all .09s ease-in;
+    -ms-transition: all .09s ease-in;
+}*/
+
+/* Shop the Look Popup */
+.getthelook_header {
+    padding: 10px 0;
+    position: relative;
+}
+.getthelook_header .getthelook_close {
+    cursor:pointer;
+    position: absolute;
+    display: block;
+    right: 8%;
+    top: 7px;
+    width: 37px;
+    height: 37px;
+    background: url("//is4.revolveassets.com/images/getthelook_close.png") no-repeat;
+    background-size: 100%;
+}
+.getthelook_header h1 {
+    font-family: "ProximaNovaBold","Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    letter-spacing: .120em;
+    text-transform: uppercase;
+    text-align:center;
+    margin: 5px 0 10px;
+}
+.getthelook_header .page_sep {
+    width: 80px;
+    margin: 0 auto;
+}
+.spotlight_revolveme .rev_content .citem .c-brand-name, .spotlight_revolveme .rev_content .citem .c-color {
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .120em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* Lookbook Section */
+.lookbooks_wrap {
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    padding: 10px;
+    background: white;
+}
+.lookbooks_wrap .lookbook_item {
+    width: 100%;
+    margin: 10px 0;
+}
+.lookbooks_wrap .lookbook_item .lookbook_img {
+    position:relative;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+.lookbooks_wrap .lookbook_item .lookbook_img img {
+    width: 100%;
+}
+.lookbooks_wrap .lookbook_item .lookbook_img .lookbook_title {
+    background: white;
+    bottom: 15px;
+    left: 50%;
+    margin-left: -45%;
+    opacity: 0.7;
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    padding: 10px 0;
+}
+.lookbooks_wrap .lookbook_item .lookbook_img .lookbook_title h1 {
+    font-family: "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .120em;
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
+}
+.lookbooks_wrap .lookbook_item .lookbook_img .lookbook_title p {
+    color: black;
+    font-size: 12px;
+    letter-spacing: .110em;
+}
+.mcp_pagenav {
+    display: block;
+    width:200px;
+    margin: 25px auto 0 auto;
+    text-align: center;
+}
+.mcp_pagenav p span{
+    font-size: 9px;
+    display: inline-block;
+    padding: 0 4px;
+    line-height:50px;
+    vertical-align: middle;
+}
+.mcp_pagenav a {
+    display:inline-block;
+    text-align: center;
+    margin: 15px 0;
+}
+.mcp_pagenav a span {
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 15px 25px;
+    letter-spacing: 0.120em;
+    font-family: 'ProximaNovaBold', 'Helvetica', 'Arial', sans-serif;
+}
+.mcp_pagenav p {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin: 5px 0 10px;
+}
+.citem .citem_img_wrap {
+
+}
+.citem .item_badge {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: absolute;
+    width: 86%;
+    background: white;
+    opacity: 0.7;
+    bottom: 100px;
+    margin-left: -43%;
+    left: 50%;
+    padding: 8px 0;
+    border:1px solid #e1e1e1;
+    font-size: 12px;
+    font-family: 'ProximaNovaBold', 'Helvetica', 'Arial', sans-serif;
+    text-align: center;
+    text-transform:uppercase;
+    color: black;
+
+}
+/* Shop the Look */
+.shoplook_grid {
+
+}
+.rev_page_header.shoplook {
+    position: relative;
+}
+.rev_page_header .backbtn a {
+    background: url("//is4.revolveassets.com/images/mobile/backarrow.png") no-repeat;
+    display:block;
+    width: 20px;
+    height: 20px;
+    background-size: 21px;
+    position: absolute;
+    left:8px;
+    text-indent: -99999px;
+}
+.rev_page_header_back .backbtn {
+    background: url("//is4.revolveassets.com/images/mobile/backarrow_2.png") no-repeat;
+    display: block;
+    width: 8px;
+    height: 13px;
+    background-size: 8px auto;
+    position: absolute;
+    left: 8px;
+    margin-top: 2px;
+    text-indent: -99999px;
+}
+.rev_page_header_back a {
+    color: white;
+}
+.shoplook_grid .citem .shoplook_add {
+    padding: 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.shoplook_grid .citem .add_bag_btn {
+    width: 60%;
+    display: inline-block;
+}
+.shoplook_grid .citem .add_bag_btn.css_btn a {
+    padding: 10px 0;
+    font-size: 10px;
+    font-family: 'ProximaNovaBold', 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: .10em;
+}
+.shoplook_grid .co_input_box {
+    margin: 0;
+    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+}
+.shoplook_grid .select_style_size {
+    margin: 0;
+    background-size: 22px;
+    background-position: 36px center;
+}
+.shoplook_grid .select_style_size.errorselect {
+    background-color: #EAD1D3!important;
+    border: 1px solid red!important;
+}
+.shoplook_grid .select_style_size select {
+    padding: 5px;
+    font-size: 10px;
+}
+.shoplook_cta {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 5px;
+    margin: 10px 0;
+    font-family: 'ProximaNovaBold', 'Helvetica', 'Arial', sans-serif;
+    letter-spacing: .120em;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.shoplook_cta a {
+    color: black;
+    margin: 0 5px;
+    display: block;
+    text-decoration: underline;
+}
+.shoplook_add .outofstock {
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.shoplook_add .outofstock span {
+    color:#A53838;
+    border: 1px solid red;
+    display:block;
+    font-family: 'ProximaNovaBold', 'Helvetica', 'Arial', sans-serif;
+    font-size: 12px;
+    padding: 8px;
+    text-align:center;
+}
+.shoplook_cta.outofstock a {
+    color:#ccc!important;
+}
+
+@media only screen and (min-width: 320px) {
+    .citem img {width:100%; height: auto; display:block;}
+    p.c-prod-desc {width:152px;}
+    p.c-brand-name {width:152px;}
+
+}
+
+/* category loader */
+.loader {
+  margin: auto;
+  float: none;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/* Wedding Shop */
+
+.weddingshop_landing {
+    background-color: white;
+}
+.imageheader img {
+    max-width: 100%;
+    display: block;
+    padding-top: 3px;
+}
+.videogallery {
+    background-color: white;
+}
+.videogallery *, .videogallery *:before, .videogallery *:after {
+  box-sizing: border-box;
+}
+.videogallery_video_innerwrap {
+    padding: 30px 0;
+    background-color: black;
+}
+.videogallery_video_wrap {
+    padding: 25px 25px 15px 25px;
+}
+.videogallery_video {
+    width: 100%;
+    padding-top: 56.2%;
+    display: block;
+    position: relative;
+}
+.videogallery_video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.button {
+    background-color: black;
+    padding: 20px 28px;
+    color: white;
+    font: normal 11px "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    display: inline-block;
+}
+.button.fullwidth {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.morevideos .maintitle {
+    font: normal 14px "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+    border-bottom: 1px solid #c5c5c5;
+    padding-top: 26px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+.morevideos_list {
+    margin: 10px 0;
+}
+.videogallery_cta {
+    padding: 0 25px 0 25px;
+    margin-bottom: 10px;
+}
+.morevideos_item {
+    display: table;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #c5c5c5;
+}
+.morevideos a {
+    color: black;
+}
+.morevideos_image {
+    width: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.morevideos_image img {
+    max-width: 100%;
+}
+.morevideos_image,
+.morevideos_copy {
+    display: table-cell;
+}
+.morevideos_image img {
+    display: block;
+}
+.morevideos_copy {
+    vertical-align: middle;
+}
+
+.morevideos_title {
+    font: normal 12px "Karla", Arial, sans-serif;
+}
+.morevideos_title span {
+    font: normal 12px "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+}
+.morevideos_subtext {
+    font: normal 11px "Karla", Arial, sans-serif;
+    color: #717171;
+}
+.weddingshop_back {
+    background-color: #f9c5b1;
+    text-align: center;
+    text-transform: uppercase;
+}
+.weddingshop_back h1 {
+    font: bold 15px "EB Garamond";
+    letter-spacing: .15em;
+    display: inline-block;
+    vertical-align: top;
+}
+.weddingshop_back span {
+    background: url("//is4.revolveassets.com/images/mobile/backarrow_2.png") no-repeat;
+    display: inline-block;
+    width: 8px;
+    height: 13px;
+    vertical-align: top;
+    background-size: 8px auto;
+    margin-top: 1px;
+    text-indent: -99999px;
+    margin-right: 20px;
+}
+.weddingshop_back a {
+    color: white;
+    padding: 20px 17px 17px 17px;
+    display: block;
+}
+.morevideos .weddingshop_back {
+    margin: 20px 10px 20px 10px;
+}
+.weddingshop_landing {
+    background: white;
+}
+.weddingshop_item img {
+    max-width: 100%;
+    display: block;
+}
+.weddingshop_item {
+    position: relative;
+    margin: 10px 0;
+    letter-spacing: 0.2em;
+}
+.weddingshop_item_copy {
+    position: absolute;
+    top: 46%;
+    width: 100%;
+    text-align: center;
+}
+.weddingshop_item_copy img {
+    width: 70%;
+    margin: 0 auto 20px auto;
+}
+.weddingshop_item a {
+    color: white;
+}
+.weddingshop_item_copy_title {
+    font: normal 14px "ProximaNovaBold", "Helvetica Neue", Arial, sans-serif;
+    text-shadow: 0 0 10px #646464;
+}
+.weddingshop_item_copy_cta {
+    font-size: 10px;
+    margin-top: 4px;
+    letter-spacing: .2em;
+}
+.weddingshop_item.main .weddingshop_item_copy {
+    top: 73%;
+}
+.weddingshop_landing .page_container {
+    padding: 0 10px;
+}
+.weddingshop_landing .rev_page_caption {
+    font-family: "Karla", Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    margin: 20px 0;
+}
