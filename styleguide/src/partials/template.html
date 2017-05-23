@@ -4,12 +4,16 @@
     and in case changes are made in the future.
   `html` is used to pass HTML in from javascript, mainly for tests
     (surrounding tildas trim whitespace '\n', needed for tests)
-  `partial-block` will output output the nested content
-    when this partial is used in another handlebars template.
+  `partial` is a reference to a full handlebars partial to be output
+  `partial-block` will output the nested content
+     when this partial is used in another handlebars template.
 --}}
 
 <template id="{{id}}">
   {{~{html}~}}
+  {{#if partial }}
+    {{> (lookup . 'partial')}}
+  {{/if}}
   {{#if @partial-block}}
     {{> @partial-block }}
   {{/if}}
